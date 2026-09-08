@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL QR Code Generator – Free Online Tool</title>
+<meta name="description" content="Generate a QR code for any website URL for free. Instant preview, high-resolution PNG download, no signup required.">
+<link rel="canonical" href="https://example.com/qr-code-tools/url-qr-code-generator.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">QR<span>Tools</span></a>
+    <nav class="tool-nav">
+      <a href="url-qr-code-generator.html" class="active">URL QR</a>
+      <a href="vcard-qr-code-generator.html">vCard QR</a>
+      <a href="wifi-qr-code-generator.html">WiFi QR</a>
+      <a href="text-qr-code-generator.html">Text QR</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="breadcrumb"><a href="index.html">Home</a> / URL QR Code Generator</p>
+  <div class="hero">
+    <h1>URL QR Code Generator</h1>
+    <p>Paste any website link below and get an instant, downloadable QR code that opens it on scan.</p>
+  </div>
+
+  <div class="generator-layout">
+    <div class="panel">
+      <div class="form-group">
+        <label for="urlInput">Website URL</label>
+        <input type="url" id="urlInput" placeholder="https://example.com" value="https://example.com">
+      </div>
+      <button class="btn" onclick="generateURLCode()">Generate QR Code</button>
+    </div>
+
+    <div class="panel qr-output">
+      <div id="qrcode"></div>
+      <div class="qr-actions">
+        <button class="btn btn-outline" onclick="downloadQRCode('url-qr-code.png')">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+
+  <article class="content-block">
+    <h2>How to Create a URL QR Code</h2>
+    <p>Enter the full web address you want people to visit, including "https://" at the start, then click Generate. The QR code updates instantly and can be downloaded as a PNG image for use on websites, posters, packaging, or business cards.</p>
+    <h2>Common Uses for URL QR Codes</h2>
+    <p>Restaurants use them to link to digital menus, marketers use them on flyers to track campaign traffic, and businesses print them on packaging to direct customers to product pages or reviews. Because the destination is a live link, you can update the page content later without needing to reprint the QR code.</p>
+  </article>
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> ·
+    <a href="services.html">Services</a> ·
+    <a href="about.html">About</a> ·
+    <a href="faq.html">FAQ</a>
+  </p>
+  &copy; 2026 QRTools. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "https://example.com",
+    width: 256,
+    height: 256
+  });
+
+  function generateURLCode() {
+    const val = document.getElementById("urlInput").value.trim() || "https://example.com";
+    qr.clear();
+    qr.makeCode(val);
+  }
+</script>
+
+</body>
+</html>

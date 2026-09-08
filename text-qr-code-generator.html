@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text QR Code Generator – Encode Any Message, Free</title>
+<meta name="description" content="Turn any plain text into a QR code for free. Great for messages, addresses, notes, or codes. Instant download, no signup.">
+<link rel="canonical" href="https://example.com/qr-code-tools/text-qr-code-generator.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">QR<span>Tools</span></a>
+    <nav class="tool-nav">
+      <a href="url-qr-code-generator.html">URL QR</a>
+      <a href="vcard-qr-code-generator.html">vCard QR</a>
+      <a href="wifi-qr-code-generator.html">WiFi QR</a>
+      <a href="text-qr-code-generator.html" class="active">Text QR</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="breadcrumb"><a href="index.html">Home</a> / Text QR Code Generator</p>
+  <div class="hero">
+    <h1>Text QR Code Generator</h1>
+    <p>Encode any message, note, or piece of text into a scannable QR code.</p>
+  </div>
+
+  <div class="generator-layout">
+    <div class="panel">
+      <div class="form-group">
+        <label for="textInput">Your Text</label>
+        <textarea id="textInput" placeholder="Type or paste any text here...">Hello, world!</textarea>
+      </div>
+      <button class="btn" onclick="generateTextCode()">Generate QR Code</button>
+    </div>
+
+    <div class="panel qr-output">
+      <div id="qrcode"></div>
+      <div class="qr-actions">
+        <button class="btn btn-outline" onclick="downloadQRCode('text-qr-code.png')">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+
+  <article class="content-block">
+    <h2>What Can You Encode?</h2>
+    <p>This tool accepts any plain text — a short note, a physical address, an event detail, a product code, or instructions. Unlike a URL QR code, scanning it simply displays the text rather than opening a link.</p>
+    <h2>Tips for Reliable Scanning</h2>
+    <p>Keep the text reasonably short for a cleaner, easier-to-scan code — very long text creates a denser QR pattern that can be harder for some cameras to read at a distance. When printing, leave white space around the code and avoid shrinking it below about 2cm per side.</p>
+  </article>
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> ·
+    <a href="services.html">Services</a> ·
+    <a href="about.html">About</a> ·
+    <a href="faq.html">FAQ</a>
+  </p>
+  &copy; 2026 QRTools. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "Hello, world!",
+    width: 256,
+    height: 256
+  });
+
+  function generateTextCode() {
+    const val = document.getElementById("textInput").value.trim() || " ";
+    qr.clear();
+    qr.makeCode(val);
+  }
+</script>
+
+</body>
+</html>

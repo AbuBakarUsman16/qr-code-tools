@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vCard QR Code Generator – Digital Business Card, Free</title>
+<meta name="description" content="Create a free vCard QR code with your name, phone, email, company, and website. Scan to save contact details directly to any phone.">
+<link rel="canonical" href="https://example.com/qr-code-tools/vcard-qr-code-generator.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">QR<span>Tools</span></a>
+    <nav class="tool-nav">
+      <a href="url-qr-code-generator.html">URL QR</a>
+      <a href="vcard-qr-code-generator.html" class="active">vCard QR</a>
+      <a href="wifi-qr-code-generator.html">WiFi QR</a>
+      <a href="text-qr-code-generator.html">Text QR</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="breadcrumb"><a href="index.html">Home</a> / vCard QR Code Generator</p>
+  <div class="hero">
+    <h1>vCard QR Code Generator</h1>
+    <p>Fill in your contact details and generate a QR code that saves them straight into someone's phone contacts.</p>
+  </div>
+
+  <div class="generator-layout">
+    <div class="panel">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label for="org">Company / Organization</label>
+        <input type="text" id="org" placeholder="Acme Inc.">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 555 123 4567">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="jane@example.com">
+      </div>
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="url" id="website" placeholder="https://example.com">
+      </div>
+      <button class="btn" onclick="generateVCard()">Generate QR Code</button>
+    </div>
+
+    <div class="panel qr-output">
+      <div id="qrcode"></div>
+      <div class="qr-actions">
+        <button class="btn btn-outline" onclick="downloadQRCode('vcard-qr-code.png')">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+
+  <article class="content-block">
+    <h2>What Is a vCard QR Code?</h2>
+    <p>A vCard QR code stores a digital business card in a standard contact-card format (vCard). When someone scans it with their phone camera, their device recognizes the contact info and offers to save it directly — no app needed on iOS or Android.</p>
+    <h2>How to Use It</h2>
+    <p>Fill in as many fields as you'd like included on the card, then click Generate. Download the resulting QR code and add it to your email signature, printed business card, or event badge so people can save your details with a single scan instead of typing them manually.</p>
+  </article>
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> ·
+    <a href="services.html">Services</a> ·
+    <a href="about.html">About</a> ·
+    <a href="faq.html">FAQ</a>
+  </p>
+  &copy; 2026 QRTools. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "BEGIN:VCARD\nVERSION:3.0\nEND:VCARD",
+    width: 256,
+    height: 256
+  });
+
+  function generateVCard() {
+    const name = escapeVCardValue(document.getElementById("fullName").value);
+    const org = escapeVCardValue(document.getElementById("org").value);
+    const phone = escapeVCardValue(document.getElementById("phone").value);
+    const email = escapeVCardValue(document.getElementById("email").value);
+    const website = escapeVCardValue(document.getElementById("website").value);
+
+    let lines = ["BEGIN:VCARD", "VERSION:3.0"];
+    if (name) lines.push("FN:" + name, "N:" + name + ";;;;");
+    if (org) lines.push("ORG:" + org);
+    if (phone) lines.push("TEL;TYPE=CELL:" + phone);
+    if (email) lines.push("EMAIL:" + email);
+    if (website) lines.push("URL:" + website);
+    lines.push("END:VCARD");
+
+    qr.clear();
+    qr.makeCode(lines.join("\n"));
+  }
+</script>
+
+</body>
+</html>
