@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – QRTools</title>
+<meta name="description" content="Get in touch with the QRTools team for questions, feedback, tool requests, or bug reports.">
+<link rel="canonical" href="https://example.com/contact.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">QR<span>Tools</span></a>
+    <nav class="tool-nav">
+      <a href="url-qr-code-generator.html">URL QR</a>
+      <a href="vcard-qr-code-generator.html">vCard QR</a>
+      <a href="wifi-qr-code-generator.html">WiFi QR</a>
+      <a href="text-qr-code-generator.html">Text QR</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+  <div class="hero">
+    <h1>Contact Us</h1>
+    <p>Questions, feedback, or a tool you'd like us to build? We'd like to hear from you.</p>
+  </div>
+
+  <div class="generator-layout">
+    <div class="panel">
+      <h2 style="margin-top:0;">Send Us a Message</h2>
+      <div class="form-group">
+        <label for="cName">Your Name</label>
+        <input type="text" id="cName" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="cEmail">Your Email</label>
+        <input type="email" id="cEmail" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="cSubject">Subject</label>
+        <input type="text" id="cSubject" placeholder="What is this about?">
+      </div>
+      <div class="form-group">
+        <label for="cMessage">Message</label>
+        <textarea id="cMessage" placeholder="Write your message here..."></textarea>
+      </div>
+      <button class="btn" onclick="sendContactMessage()">Send Message</button>
+      <p id="contactNote" style="font-size:0.85rem;color:var(--muted);margin-top:12px;">This opens your email app with the message pre-filled.</p>
+    </div>
+
+    <div class="panel">
+      <h2 style="margin-top:0;">Other Ways to Reach Us</h2>
+      <p><strong>Email</strong><br>
+      <a href="mailto:hello@example.com">hello@example.com</a></p>
+
+      <p><strong>Response time</strong><br>
+      We usually reply within 2–3 business days.</p>
+
+      <p><strong>Before you write</strong><br>
+      Many common questions are already answered on our <a href="faq.html">FAQ page</a> — it's worth a quick look first.</p>
+
+      <p><strong>Reporting a problem</strong><br>
+      If a QR code isn't scanning or a tool isn't working, please tell us which tool you used and which browser and device you were on. That helps us fix it faster.</p>
+    </div>
+  </div>
+
+  <article class="content-block">
+    <h2>What We Can Help With</h2>
+    <p>We're happy to help with questions about how our QR code generators work, which QR code type suits your use case, or troubleshooting a code that isn't scanning correctly. If you have an idea for a QR code tool that we don't offer yet, send it over — most of the tools on this site started as user suggestions.</p>
+
+    <h2>Business and Partnership Enquiries</h2>
+    <p>For advertising, partnership, or other business enquiries, please use the email address above and include "Business" in your subject line so we can route it correctly.</p>
+  </article>
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> ·
+    <a href="services.html">Services</a> ·
+    <a href="about.html">About</a> ·
+    <a href="faq.html">FAQ</a> ·
+    <a href="contact.html">Contact</a> ·
+    <a href="privacy-policy.html">Privacy Policy</a> ·
+    <a href="terms.html">Terms</a>
+  </p>
+  &copy; 2026 QRTools. Free QR code generators for everyone.
+</footer>
+
+<script>
+  function sendContactMessage() {
+    const name = document.getElementById("cName").value.trim();
+    const email = document.getElementById("cEmail").value.trim();
+    const subject = document.getElementById("cSubject").value.trim() || "Message from QRTools";
+    const message = document.getElementById("cMessage").value.trim();
+
+    if (!message) {
+      document.getElementById("contactNote").textContent = "Please write a message before sending.";
+      return;
+    }
+
+    const body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
+    window.location.href = "mailto:hello@example.com?subject=" +
+      encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+</script>
+
+</body>
+</html>
