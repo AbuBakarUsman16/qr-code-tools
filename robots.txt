@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qrluna.com/sitemap.xml
+Sitemap: https://qrotto.com/sitemap.xml
