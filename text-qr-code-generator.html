@@ -7,6 +7,59 @@
 <meta name="description" content="Turn any plain text into a QR code for free. Great for messages, addresses, notes, or codes. Instant download, no signup.">
 <link rel="canonical" href="https://qrotto.com/text-qr-code-generator.html">
 <link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Text QR Code Generator – Encode Any Message, Free">
+<meta property="og:description" content="Turn any plain text into a QR code for free. Great for messages, addresses, notes, or codes. Instant download, no signup.">
+<meta property="og:url" content="https://qrotto.com/text-qr-code-generator.html">
+<meta property="og:image" content="https://qrotto.com/images/example-text-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text QR Code Generator – Encode Any Message, Free">
+<meta name="twitter:description" content="Turn any plain text into a QR code for free. Great for messages, addresses, notes, or codes. Instant download, no signup.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-text-qr-code.png">
+<meta name="author" content="Abu Bakar Usman">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Text QR Code Generator",
+  "url": "https://qrotto.com/text-qr-code-generator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Turn any plain text into a QR code for free. Great for messages, addresses, notes, or codes. Instant download, no signup.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text QR Code Generator",
+      "item": "https://qrotto.com/text-qr-code-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -18,6 +71,9 @@
       <a href="vcard-qr-code-generator.html">vCard QR</a>
       <a href="wifi-qr-code-generator.html">WiFi QR</a>
       <a href="text-qr-code-generator.html" class="active">Text QR</a>
+      <a href="email-qr-code-generator.html">Email QR</a>
+      <a href="sms-qr-code-generator.html">SMS QR</a>
+      <a href="blog/index.html">Blog</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
@@ -51,17 +107,115 @@
 
   <div class="ad-slot">Advertisement</div>
 
-  <article class="content-block">
-    <h2>What Can You Encode?</h2>
-    <p>This tool accepts any plain text — a short note, a physical address, an event detail, a product code, or instructions. Unlike a URL QR code, scanning it simply displays the text rather than opening a link.</p>
-    <h2>Tips for Reliable Scanning</h2>
-    <p>Keep the text reasonably short for a cleaner, easier-to-scan code — very long text creates a denser QR pattern that can be harder for some cameras to read at a distance. When printing, leave white space around the code and avoid shrinking it below about 2cm per side.</p>
+  <div class="article-meta">
+    <span>By <a href="about.html">Abu Bakar Usman</a></span>
+    <span class="sep">·</span>
+    <span>Updated <time datetime="2026-09-10">10 September 2026</time></span>
+    <span class="sep">·</span>
+    <span>5 min read</span>
+  </div>
+
+  <article class="content-block prose">
+    <h2>What a text QR code is for</h2>
+    <p>A text QR code stores plain words rather than a link. Scanning it displays the message on screen — no page loads, no internet connection needed, nothing to click. It is the simplest QR type there is, and the most underused.</p>
+    <p>The distinction from a URL code matters: a URL code sends someone somewhere, a text code tells them something. If the information is short and complete in itself, text is the better choice because it works even with no signal at all.</p>
+
+    <figure>
+      <img src="images/example-text-qr-code.png" width="370" height="370" loading="lazy"
+           alt="Example text QR code that displays a short message when scanned">
+      <figcaption>A text QR code displaying a short message — no internet required to read it.</figcaption>
+    </figure>
+
+    <h2>How to create one</h2>
+    <ol>
+      <li><strong>Type or paste your message.</strong> Anything from a single word to a short paragraph.</li>
+      <li><strong>Keep it as short as it can be.</strong> Every character adds density to the pattern, and density is what makes codes fail.</li>
+      <li><strong>Generate and scan it back.</strong> Check the message reads correctly, especially if it contains punctuation or line breaks.</li>
+    </ol>
+
+    <div class="takeaway">
+      <p><strong>Length is the whole game here.</strong> A 40-character message makes a clean, forgiving code. A 400-character one makes a dense grid that needs good light, a steady hand and a decent camera. If your text is long, consider putting it on a page and using a <a href="url-qr-code-generator.html">URL code</a> instead.</p>
+    </div>
+
+    <h2>Text code or URL code?</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>Situation</th><th>Best choice</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Short instruction, no signal available</td><td>Text code</td></tr>
+          <tr><td>Information that may change</td><td>URL code pointing at a page you control</td></tr>
+          <tr><td>Content longer than a few sentences</td><td>URL code</td></tr>
+          <tr><td>Serial number, code or reference</td><td>Text code</td></tr>
+          <tr><td>Anything with images or formatting</td><td>URL code</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Practical uses</h2>
+
+    <h3>Equipment and asset labels</h3>
+    <p>A code on a machine holding its model number, service date and internal asset ID. Technicians scan it instead of hunting for a faded sticker, and it works in a basement with no phone signal.</p>
+
+    <h3>Storage and inventory</h3>
+    <p>Boxes in a warehouse or a loft labelled with their contents. Scanning beats opening, and the label stays readable even when the handwriting on the box does not.</p>
+
+    <h3>Instructions in rentals and venues</h3>
+    <p>Bin collection day, checkout time, the alarm code procedure, how the heating works. Guests scan and read without needing WiFi — which matters, because they often scan these before they have connected.</p>
+
+    <h3>Events and classrooms</h3>
+    <p>Table numbers, seating references, a short brief for an activity, or a puzzle clue in a treasure hunt. Text codes are common in escape rooms for exactly this reason.</p>
+
+    <h3>Plant and garden markers</h3>
+    <p>Species name, planting date and watering notes on a weatherproof tag — a small use, but a genuinely popular one.</p>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>The code is dense and hard to scan</h3>
+    <p>Shorten the text. This is almost always the cause. Cutting a message in half visibly simplifies the pattern.</p>
+
+    <h3>Line breaks do not appear</h3>
+    <p>Scanner apps vary in how they display multi-line text. Some preserve breaks, others collapse them. If layout matters, use a page and a URL code.</p>
+
+    <h3>Special characters look wrong</h3>
+    <p>Non-Latin scripts and emoji use more bytes per character, which makes the code denser and can display inconsistently across scanner apps. Plain text scans most reliably.</p>
+
+    <h3>The phone tries to search the web instead of showing the text</h3>
+    <p>Some camera apps offer a web search for scanned text. That is the app's behaviour, not a fault in the code — the text itself is being read correctly.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Does a text QR code need internet?</h3>
+    <p>No. The message is inside the image, so scanning works offline. This is the main advantage over a URL code.</p>
+
+    <h3>How much text can it hold?</h3>
+    <p>The format allows several thousand characters, but usability collapses long before that limit. Under 200 characters is comfortable; under 100 is ideal for print.</p>
+
+    <h3>Can I edit the message later?</h3>
+    <p>No. Generate a new code and replace the old one.</p>
+
+    <h3>Is the text private?</h3>
+    <p>No. Anyone who scans the code sees the message, and nothing you type here leaves your browser — see the <a href="privacy-policy.html">privacy policy</a>. Do not encode anything you would not write on a printed label.</p>
+
+    <h2>Related tools</h2>
+    <p>If your message is really a web address, use the <a href="url-qr-code-generator.html">URL QR code generator</a>. For contact details use the <a href="vcard-qr-code-generator.html">vCard generator</a>, and for network access the <a href="wifi-qr-code-generator.html">WiFi generator</a>. All four are listed on the <a href="services.html">services page</a>, with common questions on the <a href="faq.html">FAQ</a>.</p>
+    <p>If you are curious how much data fits at each size, the <a href="https://en.wikipedia.org/wiki/QR_code#Storage" target="_blank" rel="noopener">QR code storage capacity tables</a> lay it out by version and error-correction level.</p>
   </article>
+
+  <div class="author-box">
+    <div class="author-avatar" aria-hidden="true">AU</div>
+    <div>
+      <h4>Abu Bakar Usman</h4>
+      <p>Builds free browser-based utilities at QRotto. Writes about QR codes, small-business tooling and the practical side of getting things to work on the first scan. Every tool on this site is tested against real phones before it ships.</p>
+    </div>
+  </div>
 </main>
 
 <footer>
   <p>
     <a href="index.html">Home</a> ·
+    <a href="blog/index.html">Blog</a> ·
     <a href="services.html">Services</a> ·
     <a href="about.html">About</a> ·
     <a href="faq.html">FAQ</a> ·

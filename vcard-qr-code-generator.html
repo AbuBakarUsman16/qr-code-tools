@@ -7,6 +7,59 @@
 <meta name="description" content="Create a free vCard QR code with your name, phone, email, company, and website. Scan to save contact details directly to any phone.">
 <link rel="canonical" href="https://qrotto.com/vcard-qr-code-generator.html">
 <link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="vCard QR Code Generator – Digital Business Card, Free">
+<meta property="og:description" content="Create a free vCard QR code with your name, phone, email, company, and website. Scan to save contact details directly to any phone.">
+<meta property="og:url" content="https://qrotto.com/vcard-qr-code-generator.html">
+<meta property="og:image" content="https://qrotto.com/images/example-vcard-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="vCard QR Code Generator – Digital Business Card, Free">
+<meta name="twitter:description" content="Create a free vCard QR code with your name, phone, email, company, and website. Scan to save contact details directly to any phone.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-vcard-qr-code.png">
+<meta name="author" content="Abu Bakar Usman">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "vCard QR Code Generator",
+  "url": "https://qrotto.com/vcard-qr-code-generator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Create a free vCard QR code with your name, phone, email, company, and website. Scan to save contact details directly to any phone.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "vCard QR Code Generator",
+      "item": "https://qrotto.com/vcard-qr-code-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -18,6 +71,9 @@
       <a href="vcard-qr-code-generator.html" class="active">vCard QR</a>
       <a href="wifi-qr-code-generator.html">WiFi QR</a>
       <a href="text-qr-code-generator.html">Text QR</a>
+      <a href="email-qr-code-generator.html">Email QR</a>
+      <a href="sms-qr-code-generator.html">SMS QR</a>
+      <a href="blog/index.html">Blog</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
@@ -67,17 +123,126 @@
 
   <div class="ad-slot">Advertisement</div>
 
-  <article class="content-block">
-    <h2>What Is a vCard QR Code?</h2>
-    <p>A vCard QR code stores a digital business card in a standard contact-card format (vCard). When someone scans it with their phone camera, their device recognizes the contact info and offers to save it directly — no app needed on iOS or Android.</p>
-    <h2>How to Use It</h2>
-    <p>Fill in as many fields as you'd like included on the card, then click Generate. Download the resulting QR code and add it to your email signature, printed business card, or event badge so people can save your details with a single scan instead of typing them manually.</p>
+  <div class="article-meta">
+    <span>By <a href="about.html">Abu Bakar Usman</a></span>
+    <span class="sep">·</span>
+    <span>Updated <time datetime="2026-09-10">10 September 2026</time></span>
+    <span class="sep">·</span>
+    <span>6 min read</span>
+  </div>
+
+  <article class="content-block prose">
+    <h2>What a vCard QR code is</h2>
+    <p>A vCard is the standard file format phones and email clients use to exchange contact details — the same format behind the “.vcf” attachment you get when someone shares a contact. A vCard QR code packs that file into a scannable image. Point a camera at it and the phone recognises the contact card and offers to save it, with the name, number, email, company and website already filled in.</p>
+    <p>The practical difference from a paper business card is what happens afterwards. A paper card gets photographed, put in a pocket, and typed up later — if at all. A vCard QR code puts the details in the phone's address book while you are still standing there.</p>
+
+    <figure>
+      <img src="images/example-vcard-qr-code.png" width="530" height="530" loading="lazy"
+           alt="Example vCard QR code containing a name, company, phone number and email address">
+      <figcaption>A working vCard QR code — scanning it offers to save a sample contact.</figcaption>
+    </figure>
+
+    <h2>How to build yours</h2>
+    <ol>
+      <li><strong>Fill only the fields you want shared.</strong> Every field you add makes the code denser and slightly harder to scan, so leave out what you do not need.</li>
+      <li><strong>Write the phone number in international format.</strong> Start with the country code (<code>+1</code>, <code>+44</code>, <code>+92</code>). A number saved without it will not dial correctly from abroad.</li>
+      <li><strong>Include the full website URL.</strong> Write <code>https://example.com</code>, not <code>example.com</code>, so phones treat it as a link.</li>
+      <li><strong>Generate, then scan it yourself.</strong> Check the saved contact looks right before it goes on anything printed.</li>
+    </ol>
+
+    <div class="takeaway">
+      <p><strong>Keep it short.</strong> A vCard with five fields produces a clean, easily scanned code. Add a postal address, a job title, a second number and a note, and the pattern gets dense enough to fail on a small print or a low-light scan.</p>
+    </div>
+
+    <h2>vCard QR code vs a paper business card</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th>Paper card</th><th>vCard QR code</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gets into the phone</td><td>Only if typed up manually</td><td>One scan, one tap</td></tr>
+          <tr><td>Cost per contact</td><td>Printing cost each time</td><td>Free, unlimited</td></tr>
+          <tr><td>Details change</td><td>Reprint the batch</td><td>Generate a new code</td></tr>
+          <tr><td>Works offline</td><td>Yes</td><td>Yes — data is in the image</td></tr>
+          <tr><td>Physical presence</td><td>Something to hand over</td><td>Needs a surface or screen</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>In practice, the two work best together: keep the paper card for the handshake, and print the QR code on the back so the details land in the phone without any typing.</p>
+
+    <h2>Where to put your vCard QR code</h2>
+
+    <h3>On the back of a printed business card</h3>
+    <p>The most common placement, and the most effective. The front stays a normal card; the back carries the code with a short instruction like “Scan to save my details”.</p>
+
+    <h3>In your email signature</h3>
+    <p>Useful for people who read your email on a laptop with a phone next to them — a quick scan and you are in their contacts. Keep the image around 120–150px so it does not dominate the signature.</p>
+
+    <h3>On an event badge or lanyard</h3>
+    <p>Conferences are where this earns its keep. Instead of exchanging cards with twenty people and losing half of them, attendees scan the badge and move on. Print the code large enough to scan from about arm's length.</p>
+
+    <h3>On a shop window, van or job-site sign</h3>
+    <p>Tradespeople and local services use this so a passer-by can save the number instantly instead of trying to remember it. Print it large — a code read from two metres away needs to be substantially bigger than one read from a table.</p>
+
+    <h3>As a phone wallpaper or lock screen</h3>
+    <p>A zero-print option: set the code as your lock screen and let the other person scan your screen directly. It works surprisingly well at informal meetups.</p>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>The contact saves with the name in the wrong order</h3>
+    <p>The vCard format stores a structured name field separately from the display name. Different phones read these differently, which is why a name occasionally lands in the wrong slot. Entering the full name as you want it displayed gives the most consistent result across devices.</p>
+
+    <h3>The code is very dense and hard to scan</h3>
+    <p>Too much data. Drop the fields you do not truly need — a postal address in particular adds a lot of characters. Fewer fields means a simpler pattern and a much more reliable scan.</p>
+
+    <h3>The phone opens a browser instead of saving a contact</h3>
+    <p>That usually means the code was generated as a URL rather than a vCard. Make sure you are using the vCard generator on this page rather than the <a href="url-qr-code-generator.html">URL generator</a>.</p>
+
+    <h3>Special characters look wrong in the saved contact</h3>
+    <p>Semicolons and commas have structural meaning inside the vCard format and must be escaped, which this tool does automatically. If a name contains unusual characters and still looks off on one particular phone, simplify the entry.</p>
+
+    <h2>What to include, and what to leave out</h2>
+    <p>A vCard QR code is public the moment it is printed. Anyone who sees it can save your details, so treat it like information on a business card rather than private data.</p>
+    <ul>
+      <li><strong>Worth including:</strong> name, company, work phone, work email, website.</li>
+      <li><strong>Think twice:</strong> personal mobile number if the code will be displayed publicly.</li>
+      <li><strong>Leave out:</strong> home address, personal email, anything you would not print on a card handed to a stranger.</li>
+    </ul>
+    <p>Nothing you enter here is sent to a server — the code is generated entirely in your browser, as described in our <a href="privacy-policy.html">privacy policy</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Do people need an app to scan it?</h3>
+    <p>No. Both iOS and Android read vCard QR codes from the built-in camera and offer to create the contact.</p>
+
+    <h3>Can I edit the contact details later?</h3>
+    <p>Not in an existing code — the data is fixed inside the image. If your number or job changes, generate a new code and replace the old one. This is worth remembering before ordering 500 printed cards.</p>
+
+    <h3>Does it expire?</h3>
+    <p>No. Because nothing is stored on a server and there is no redirect involved, the code works indefinitely.</p>
+
+    <h3>Can I track how many people scanned it?</h3>
+    <p>Not with a static vCard code — there is no server in the loop to count scans. Tracking requires a dynamic code that redirects through a service, which is a different (and usually paid) product.</p>
+
+    <h2>Related tools</h2>
+    <p>If you are putting together materials for a business, a <a href="url-qr-code-generator.html">URL QR code</a> pointing at your website or booking page pairs naturally with a vCard. Venues and rentals usually want a <a href="wifi-qr-code-generator.html">WiFi QR code</a> as well, and a <a href="text-qr-code-generator.html">text QR code</a> is handy for short printed instructions. The full list lives on our <a href="services.html">services page</a>, and common questions are answered on the <a href="faq.html">FAQ</a>.</p>
+    <p>The format itself is documented in the <a href="https://en.wikipedia.org/wiki/VCard" target="_blank" rel="noopener">vCard specification</a>, if you want to see exactly which fields are supported.</p>
   </article>
+
+  <div class="author-box">
+    <div class="author-avatar" aria-hidden="true">AU</div>
+    <div>
+      <h4>Abu Bakar Usman</h4>
+      <p>Builds free browser-based utilities at QRotto. Writes about QR codes, small-business tooling and the practical side of getting things to work on the first scan. Every tool on this site is tested against real phones before it ships.</p>
+    </div>
+  </div>
 </main>
 
 <footer>
   <p>
     <a href="index.html">Home</a> ·
+    <a href="blog/index.html">Blog</a> ·
     <a href="services.html">Services</a> ·
     <a href="about.html">About</a> ·
     <a href="faq.html">FAQ</a> ·

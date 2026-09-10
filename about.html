@@ -7,6 +7,38 @@
 <meta name="description" content="Learn about QRTools, a free suite of QR code generators built for speed, privacy, and simplicity — no signup, no data collection.">
 <link rel="canonical" href="https://qrotto.com/about.html">
 <link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="About Us – QRTools">
+<meta property="og:description" content="Learn about QRTools, a free suite of QR code generators built for speed, privacy, and simplicity — no signup, no data collection.">
+<meta property="og:url" content="https://qrotto.com/about.html">
+<meta property="og:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us – QRTools">
+<meta name="twitter:description" content="Learn about QRTools, a free suite of QR code generators built for speed, privacy, and simplicity — no signup, no data collection.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="author" content="Abu Bakar Usman">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us",
+      "item": "https://qrotto.com/about.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -18,6 +50,9 @@
       <a href="vcard-qr-code-generator.html">vCard QR</a>
       <a href="wifi-qr-code-generator.html">WiFi QR</a>
       <a href="text-qr-code-generator.html">Text QR</a>
+      <a href="email-qr-code-generator.html">Email QR</a>
+      <a href="sms-qr-code-generator.html">SMS QR</a>
+      <a href="blog/index.html">Blog</a>
       <a href="services.html">Services</a>
       <a href="about.html" class="active">About</a>
       <a href="faq.html">FAQ</a>
@@ -47,12 +82,40 @@
 
     <h2>Questions?</h2>
     <p>Check our <a href="faq.html">FAQ page</a> for common questions about how the tools work and how to use the QR codes you generate.</p>
+
+    <h2>Who runs this site</h2>
+    <p>QRotto is built and maintained by Abu Bakar Usman. The tools here started as something I needed myself — a WiFi code for a guest room that did not require signing up to a service or trusting a stranger's server with a password — and grew from there as other people asked for variations.</p>
+    <p>Everything on the site is written and tested by one person rather than assembled from templates. When a guide says a code should be printed at a certain size, or that a particular test is the only meaningful one, that comes from checking it on real phones and real print rather than repeating what other sites say.</p>
+
+    <h2>How we test</h2>
+    <p>Every generator on this site is checked the same way before it goes live:</p>
+    <ul>
+      <li>The generated code is decoded programmatically to confirm the data it contains matches the input exactly.</li>
+      <li>It is scanned with both an iPhone and an Android device using only the built-in camera app — no third-party scanner.</li>
+      <li>WiFi codes are tested on a device that has been made to forget the network, since a connected phone will appear to succeed regardless.</li>
+      <li>Codes are printed and scanned at realistic sizes and distances before any sizing advice is published.</li>
+    </ul>
+
+    <h2>What we do not do</h2>
+    <ul>
+      <li><strong>No accounts.</strong> Nothing here requires signing up, and there is no account for us to lose control of.</li>
+      <li><strong>No dynamic codes.</strong> Every code is static, meaning your data lives in the image rather than on our server. Nothing we do can make your printed codes stop working later.</li>
+      <li><strong>No data collection through the tools.</strong> The generators run entirely in your browser. Passwords, contact details and messages never reach us — see the <a href="privacy-policy.html">privacy policy</a>.</li>
+      <li><strong>No watermarks or usage limits.</strong> Codes you generate are yours, including for commercial use.</li>
+    </ul>
+
+    <h2>How the site is funded</h2>
+    <p>The tools are free and stay free. The site is supported by advertising, which is why you will see ad slots on some pages. Ads are kept away from the generate and download buttons deliberately — a tool that tricks you into tapping an advert is a broken tool.</p>
+
+    <h2>Corrections and feedback</h2>
+    <p>If something here is wrong, or a tool does not behave as described, tell us through the <a href="contact.html">contact page</a> and it will be fixed. Most of the tools on this site exist because someone asked for them.</p>
   </article>
 </main>
 
 <footer>
   <p>
     <a href="index.html">Home</a> ·
+    <a href="blog/index.html">Blog</a> ·
     <a href="services.html">Services</a> ·
     <a href="about.html">About</a> ·
     <a href="faq.html">FAQ</a> ·
