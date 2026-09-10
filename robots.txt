@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abubakarusman16.github.io/qr-code-tools/sitemap.xml
+Sitemap: https://qrotto.com/sitemap.xml
