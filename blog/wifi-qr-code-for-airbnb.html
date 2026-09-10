@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://abubakarusman16.github.io/qr-code-tools/images/example-wifi-qr-code.png">
 <meta name="author" content="Abu Bakar Usman">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -109,10 +111,30 @@
   </div>
 
   <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#why-hosts-bother-with-this">Why hosts bother with this</a></li>
+        <li><a href="#step-1-find-your-exact-network-details">Step 1: Find your exact network details</a></li>
+        <li><a href="#step-2-generate-the-code">Step 2: Generate the code</a></li>
+        <li><a href="#step-3-test-it-properly-most-hosts-skip-this">Step 3: Test it properly (most hosts skip this)</a></li>
+        <li><a href="#step-4-set-up-a-guest-network-first">Step 4: Set up a guest network first</a></li>
+        <li><a href="#step-5-print-it-so-it-actually-scans">Step 5: Print it so it actually scans</a></li>
+        <li><a href="#where-to-put-the-card">Where to put the card</a></li>
+        <li><a href="#sending-it-before-check-in">Sending it before check-in</a></li>
+        <li><a href="#if-you-host-multiple-properties">If you host multiple properties</a></li>
+        <li><a href="#what-to-do-when-you-change-the-password">What to do when you change the password</a></li>
+        <li><a href="#common-problems-quickly-solved">Common problems, quickly solved</a></li>
+        <li><a href="#other-codes-worth-printing-while-you-are-at-it">Other codes worth printing while you are at it</a></li>
+        <li><a href="#the-short-version">The short version</a></li>
+        <li><a href="#the-router-terms-you-will-run-into">The router terms you will run into</a></li>
+        <li><a href="#what-guests-actually-expect-in-2026">What guests actually expect in 2026</a></li>
+      </ol>
+    </nav>
     <p>Every host eventually gets the same message at 11pm: <em>“Hi, sorry — the WiFi password isn't working.”</em> Nine times out of ten the password is fine and the guest has typed a capital I where there was a lowercase L. A WiFi QR code removes that possibility completely. The guest scans, the phone joins, and you never hear about it.</p>
     <p>This guide covers the whole process — creating the code, testing it properly, printing it so it scans first time, and the security setup most hosts get wrong.</p>
 
-    <h2>Why hosts bother with this</h2>
+    <h2 id="why-hosts-bother-with-this">Why hosts bother with this</h2>
     <p>The obvious reason is convenience, but the real reasons are less obvious:</p>
     <ul>
       <li><strong>It removes a review risk.</strong> Connectivity problems in the first ten minutes colour the whole stay. Guests rarely mention a smooth WiFi setup in a review, but they absolutely mention a frustrating one.</li>
@@ -121,7 +143,7 @@
       <li><strong>It works before the guest is online.</strong> This is the part people miss — a guest with no WiFi cannot open your digital guidebook. The code has to work offline, and a QR code does.</li>
     </ul>
 
-    <h2>Step 1: Find your exact network details</h2>
+    <h2 id="step-1-find-your-exact-network-details">Step 1: Find your exact network details</h2>
     <p>Before generating anything, get three things right:</p>
     <ol>
       <li><strong>The network name (SSID)</strong> — exactly as it appears in the WiFi list, including capitalisation. “Flat3_Guest” and “flat3_guest” are different networks to a phone.</li>
@@ -130,7 +152,7 @@
     </ol>
     <p>If your router has a sticker with default credentials and you have never changed them, now is a good moment to. Default passwords printed on routers are widely known per manufacturer.</p>
 
-    <h2>Step 2: Generate the code</h2>
+    <h2 id="step-2-generate-the-code">Step 2: Generate the code</h2>
     <p>Use our <a href="../wifi-qr-code-generator.html">WiFi QR code generator</a>. Enter the SSID, password and security type, then generate and download the PNG. The code is created in your browser, so your WiFi password is never sent to a server.</p>
 
     <figure>
@@ -139,14 +161,14 @@
       <figcaption>The finished article — this is what goes on the welcome card.</figcaption>
     </figure>
 
-    <h2>Step 3: Test it properly (most hosts skip this)</h2>
+    <h2 id="step-3-test-it-properly-most-hosts-skip-this">Step 3: Test it properly (most hosts skip this)</h2>
     <p>There is exactly one valid way to test a WiFi QR code, and it is not scanning it with your own phone.</p>
     <div class="takeaway">
       <p><strong>The correct test:</strong> take a second phone that has never joined the network — or on your own phone, go to WiFi settings and choose “Forget this network” — then turn WiFi off, scan the code, and see if it joins. A phone that already knows the network will connect regardless of whether your code is correct.</p>
     </div>
     <p>This single step catches the majority of “my QR code doesn't work” problems before a guest ever sees them.</p>
 
-    <h2>Step 4: Set up a guest network first</h2>
+    <h2 id="step-4-set-up-a-guest-network-first">Step 4: Set up a guest network first</h2>
     <p>This is the part that separates a well-run listing from a risky one. If you print a QR code for your main network, every guest who has ever stayed has your primary WiFi password, and their devices sit on the same network as anything else you have connected — cameras, smart locks, a personal laptop, network storage.</p>
     <p>Almost every modern router can broadcast a separate <strong>guest network</strong>. It provides internet access but isolates devices from your main network. Set one up, give it its own password, and generate the QR code for that network instead.</p>
     <p>Practically, this means:</p>
@@ -159,7 +181,7 @@
     </ul>
     <p>If you ever need to change the password between guests, you change it on the guest network alone — your own devices stay connected.</p>
 
-    <h2>Step 5: Print it so it actually scans</h2>
+    <h2 id="step-5-print-it-so-it-actually-scans">Step 5: Print it so it actually scans</h2>
     <p>Printing is where good codes go to die. The rules are simple but non-negotiable:</p>
     <div class="table-wrap">
       <table class="cmp">
@@ -175,7 +197,7 @@
     </div>
     <p><strong>Always print the password as text underneath.</strong> It costs one line and covers the guest whose camera app is misconfigured, whose phone is very old, or who simply prefers typing.</p>
 
-    <h2>Where to put the card</h2>
+    <h2 id="where-to-put-the-card">Where to put the card</h2>
     <p>The three placements that work best, in order:</p>
     <ol>
       <li><strong>On the kitchen counter or entry table</strong> — the first flat surface a guest puts their bag on. A small standing frame works well.</li>
@@ -184,15 +206,15 @@
     </ol>
     <p>Do not put it only in the digital guidebook you send by email. A guest standing in your hallway with no data allowance cannot open it.</p>
 
-    <h2>Sending it before check-in</h2>
+    <h2 id="sending-it-before-check-in">Sending it before check-in</h2>
     <p>Sending the code in advance is useful <em>as well as</em>, not instead of, the printed card. Guests with roaming data can connect the moment they walk in. Attach the PNG to your check-in message, or include it in your digital guidebook.</p>
     <p>Be aware that this puts your guest WiFi password into a message thread that lives on Airbnb's servers and the guest's phone indefinitely. Another argument for the code pointing at a guest network rather than your main one.</p>
 
-    <h2>If you host multiple properties</h2>
+    <h2 id="if-you-host-multiple-properties">If you host multiple properties</h2>
     <p>Generate a separate code per property and label every printed card with the property name or unit number. Hosts with several units routinely end up with the wrong card in the wrong flat, and the guest has no way to diagnose it — the code scans fine, it just joins a network that is not in range.</p>
     <p>Keep a simple folder with the PNG for each unit, named by property. When you change a password, you will be glad you can find the right file.</p>
 
-    <h2>What to do when you change the password</h2>
+    <h2 id="what-to-do-when-you-change-the-password">What to do when you change the password</h2>
     <p>The password is stored inside the image itself, so a new password means a new code. There is no way to update an existing printed code. That has two consequences worth planning for:</p>
     <ul>
       <li><strong>Do not laminate rigidly</strong> if you rotate passwords. Use a frame or a card holder you can slide a new print into.</li>
@@ -200,7 +222,7 @@
     </ul>
     <p>If you change passwords between every guest for security reasons, build the reprint into your turnover checklist alongside the linen.</p>
 
-    <h2>Common problems, quickly solved</h2>
+    <h2 id="common-problems-quickly-solved">Common problems, quickly solved</h2>
     <h3>The code scans but the phone says “incorrect password”</h3>
     <p>A typo in the password, or the wrong security type. Regenerate carefully, then re-test on a device that has forgotten the network.</p>
     <h3>Nothing happens when the camera sees the code</h3>
@@ -210,7 +232,7 @@
     <h3>Only some guests have trouble</h3>
     <p>Usually very old Android devices, or a 5GHz-only network the device cannot see. Ensure the guest network broadcasts on 2.4GHz as well.</p>
 
-    <h2>Other codes worth printing while you are at it</h2>
+    <h2 id="other-codes-worth-printing-while-you-are-at-it">Other codes worth printing while you are at it</h2>
     <p>Hosts who add a WiFi code usually find two or three more uses in the same afternoon:</p>
     <ul>
       <li>A <a href="../url-qr-code-generator.html">URL QR code</a> pointing at your digital house manual, local recommendations, or the checkout instructions.</li>
@@ -218,14 +240,52 @@
       <li>A <a href="../vcard-qr-code-generator.html">vCard QR code</a> so guests can save your contact number without typing it.</li>
     </ul>
 
-    <h2>The short version</h2>
+    <h2 id="the-short-version">The short version</h2>
     <div class="takeaway">
       <p><strong>Set up a guest network, generate the code for that network, test it on a phone that has forgotten the WiFi, print it at 4–5cm on matte paper with the password written underneath, and stand it where guests drop their bags.</strong> That covers about 95% of what goes wrong.</p>
     </div>
     <p>Ready to make yours? The <a href="../wifi-qr-code-generator.html">WiFi QR code generator</a> is free, needs no signup, and never sends your password anywhere.</p>
+
+    <h2 id="the-router-terms-you-will-run-into">The router terms you will run into</h2>
+    <p>Setting up a guest network means opening your router's admin panel, and the labels there vary by manufacturer. These are the terms that matter and what they mean in practice:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Term</th><th>What it means for you</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SSID</strong></td><td>The network name guests see in their WiFi list. Case-sensitive.</td></tr>
+          <tr><td><strong>WPA2 / WPA3 personal</strong></td><td>The encryption standard. Choose WPA in the generator for any of these.</td></tr>
+          <tr><td><strong>Pre-shared key (PSK)</strong></td><td>Just another name for the WiFi password.</td></tr>
+          <tr><td><strong>AP isolation / client isolation</strong></td><td>Stops guest devices seeing each other and your devices. Turn this on.</td></tr>
+          <tr><td><strong>Band steering</strong></td><td>Automatically moves devices between 2.4GHz and 5GHz. Usually leave enabled.</td></tr>
+          <tr><td><strong>Captive portal</strong></td><td>A sign-in page after connecting. A QR code cannot bypass it — avoid on guest networks for rentals.</td></tr>
+          <tr><td><strong>DHCP lease time</strong></td><td>How long a device keeps its address. Short leases can drop guests overnight.</td></tr>
+          <tr><td><strong>Bandwidth throttling</strong></td><td>Caps guest speed. Useful, but set it high enough for streaming or you will get complaints.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Router brands label these differently. On a TP-Link you will find guest access under Wireless; on a Netgear it sits in the Basic menu; on an ISP-supplied router it may be hidden under Advanced. If you cannot find it, search your exact model plus "guest network".</p>
+
+    <h2 id="what-guests-actually-expect-in-2026">What guests actually expect in 2026</h2>
+    <p>Connectivity has quietly become a rated amenity rather than a bonus. A few expectations worth knowing:</p>
+    <ul>
+      <li><strong>Speed sufficient for video calls and streaming.</strong> Remote workers book rentals specifically for this, and it appears in reviews when it fails.</li>
+      <li><strong>Coverage in the bedrooms</strong>, not just next to the router. A mesh node or a repeater is cheaper than a bad review.</li>
+      <li><strong>No daily reconnection.</strong> Session limits that log guests out overnight feel broken even when they are working as configured.</li>
+      <li><strong>Instructions available offline.</strong> The reason a printed QR code beats a link in your digital guidebook.</li>
+    </ul>
+    <p>If your listing mentions fast WiFi or a dedicated workspace, the connection is part of what the guest paid for, and problems with it are treated accordingly.</p>
   </article>
 
   <div class="ad-slot">Advertisement</div>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="wifi-qr-code-not-working.html">WiFi QR Code Not Working? 7 Fixes That Actually Solve It</a>
+      <a href="qr-code-size-for-print.html">QR Code Size for Print: The Numbers That Actually Matter</a>
+      <a href="static-vs-dynamic-qr-codes.html">Static vs Dynamic QR Codes: Which One Do You Actually Need?</a>
+    </div>
+  </div>
 
   <div class="author-box">
     <div class="author-avatar" aria-hidden="true">AU</div>

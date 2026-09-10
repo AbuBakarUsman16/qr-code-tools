@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://abubakarusman16.github.io/qr-code-tools/images/example-url-qr-code.png">
 <meta name="author" content="Abu Bakar Usman">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -109,14 +111,33 @@
   </div>
 
   <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-actual-technical-difference">The actual technical difference</a></li>
+        <li><a href="#side-by-side">Side by side</a></li>
+        <li><a href="#the-risk-nobody-mentions-in-the-sales-page">The risk nobody mentions in the sales page</a></li>
+        <li><a href="#when-dynamic-is-genuinely-the-right-call">When dynamic is genuinely the right call</a></li>
+        <li><a href="#when-static-is-the-better-choice">When static is the better choice</a></li>
+        <li><a href="#the-middle-path-static-code-redirect-you-control">The middle path: static code, redirect you control</a></li>
+        <li><a href="#how-to-decide-in-one-question">How to decide in one question</a></li>
+        <li><a href="#what-we-make-here">What we make here</a></li>
+        <li><a href="#what-free-usually-means-on-generator-sites">What "free" usually means on generator sites</a></li>
+        <li><a href="#what-happens-to-a-dynamic-code-when-things-go-wrong">What happens to a dynamic code when things go wrong</a></li>
+        <li><a href="#if-you-already-have-dynamic-codes-in-the-wild">If you already have dynamic codes in the wild</a></li>
+        <li><a href="#a-note-on-privacy">A note on privacy</a></li>
+        <li><a href="#related-terminology-briefly">Related terminology, briefly</a></li>
+        <li><a href="#a-note-on-qr-code-security">A note on QR code security</a></li>
+      </ol>
+    </nav>
     <p>Search for a QR code generator and you will meet this decision within about ten seconds, usually framed as free-versus-professional. That framing is misleading. The two types solve different problems, and the free one is correct more often than the marketing suggests.</p>
 
-    <h2>The actual technical difference</h2>
+    <h2 id="the-actual-technical-difference">The actual technical difference</h2>
     <p>A <strong>static</strong> QR code contains your data inside the image. The URL, the WiFi password, the contact details — physically encoded in the pattern. Scanning reads the data straight off the image. No server is involved at any point.</p>
     <p>A <strong>dynamic</strong> QR code contains a short link to a provider's server. Scanning opens that link, the server looks up where it currently points, and redirects the phone to the real destination. The data you care about lives in the provider's database, not in the code.</p>
     <p>Everything else follows from this one difference.</p>
 
-    <h2>Side by side</h2>
+    <h2 id="side-by-side">Side by side</h2>
     <div class="table-wrap">
       <table class="cmp">
         <thead><tr><th></th><th>Static</th><th>Dynamic</th></tr></thead>
@@ -133,14 +154,14 @@
       </table>
     </div>
 
-    <h2>The risk nobody mentions in the sales page</h2>
+    <h2 id="the-risk-nobody-mentions-in-the-sales-page">The risk nobody mentions in the sales page</h2>
     <div class="takeaway">
       <p><strong>Every dynamic QR code you print becomes a dependency.</strong> If the provider raises prices, changes terms, gets acquired, shuts down, or your card expires — every printed code stops working at once. Menus, packaging, signage, business cards, all of it, simultaneously.</p>
     </div>
     <p>This is not hypothetical. QR code services have shut down and taken working codes with them, and several have moved previously free features behind paid tiers, leaving users with printed material that stops resolving unless they subscribe.</p>
     <p>A static code has no such failure mode. It is a picture of your data. It will scan in ten years exactly as it does today.</p>
 
-    <h2>When dynamic is genuinely the right call</h2>
+    <h2 id="when-dynamic-is-genuinely-the-right-call">When dynamic is genuinely the right call</h2>
     <p>There are real cases. Be honest about whether yours is one:</p>
     <ul>
       <li><strong>Large print runs where the destination will definitely change.</strong> Ten thousand product boxes with a link to a campaign that ends in three months.</li>
@@ -150,7 +171,7 @@
     </ul>
     <p>The pattern: dynamic earns its cost when the printing is expensive relative to the subscription, or when measurement genuinely changes what you do next.</p>
 
-    <h2>When static is the better choice</h2>
+    <h2 id="when-static-is-the-better-choice">When static is the better choice</h2>
     <ul>
       <li><strong>WiFi codes.</strong> There is no dynamic equivalent worth having — a WiFi code must work before the guest has internet, which rules out a redirect entirely.</li>
       <li><strong>Contact cards.</strong> Your details change rarely, and you reprint cards anyway when they do.</li>
@@ -159,7 +180,7 @@
       <li><strong>Anything where a dead code would be a serious problem</strong> — safety information, equipment labels, access instructions.</li>
     </ul>
 
-    <h2>The middle path: static code, redirect you control</h2>
+    <h2 id="the-middle-path-static-code-redirect-you-control">The middle path: static code, redirect you control</h2>
     <p>Here is the approach that gets you most of the benefit of dynamic codes without the dependency, and it costs nothing beyond a domain you probably already own.</p>
     <ol>
       <li>Create a dedicated page or path on your own site — for example <code>yoursite.com/menu</code>.</li>
@@ -169,14 +190,14 @@
     <p>You now have an editable destination, because you control the page. You have basic analytics, because your own site's stats show visits to that path. And you have no third-party dependency at all — the code points at a domain you own and renew.</p>
     <p>The one thing you do not get is scan-level analytics distinguishing a scan from an ordinary visit. Add a campaign parameter to the URL if that matters.</p>
 
-    <h2>How to decide in one question</h2>
+    <h2 id="how-to-decide-in-one-question">How to decide in one question</h2>
     <p><em>If this printed code stopped working tomorrow, what would it cost me?</em></p>
     <p>If the answer is “I would reprint a few cards” — use static. If the answer is “fifty thousand boxes in a warehouse become dead” — the calculation changes, and either a dynamic service or the self-hosted redirect above is worth the setup.</p>
 
-    <h2>What we make here</h2>
+    <h2 id="what-we-make-here">What we make here</h2>
     <p>Every code from this site is static: the data is encoded in the image, generated in your browser, and never touches a server. That means no account, no expiry, no scan limits, and nothing that can be switched off later. See the <a href="../services.html">full list of generators</a>, or read about <a href="qr-code-size-for-print.html">sizing codes correctly for print</a> before you send anything to the printer.</p>
 
-    <h2>What "free" usually means on generator sites</h2>
+    <h2 id="what-free-usually-means-on-generator-sites">What "free" usually means on generator sites</h2>
     <p>A pattern worth recognising: many generators present themselves as free, produce a dynamic code by default, and only reveal the subscription requirement later — sometimes after codes have been printed. The code works during a trial period, then stops.</p>
     <p>Signs you are being given a dynamic code when you wanted a static one:</p>
     <ul>
@@ -190,7 +211,7 @@
       <p><strong>The simplest test:</strong> scan the finished code with a plain QR reader and look at the raw contents. If it shows your own URL, it is static. If it shows a short link on someone else's domain, it is dynamic — and that domain is now a dependency for every copy you print.</p>
     </div>
 
-    <h2>What happens to a dynamic code when things go wrong</h2>
+    <h2 id="what-happens-to-a-dynamic-code-when-things-go-wrong">What happens to a dynamic code when things go wrong</h2>
     <p>Because the redirect sits with a provider, several ordinary business events can break printed material:</p>
     <ul>
       <li><strong>An expired card.</strong> A failed payment can suspend an account, and with it every code on it.</li>
@@ -201,7 +222,7 @@
     </ul>
     <p>None of these apply to a static code, because there is nothing in the middle to fail.</p>
 
-    <h2>If you already have dynamic codes in the wild</h2>
+    <h2 id="if-you-already-have-dynamic-codes-in-the-wild">If you already have dynamic codes in the wild</h2>
     <p>You are not stuck, but you should reduce the exposure:</p>
     <ol>
       <li><strong>Inventory them.</strong> List every printed code, where it is, and what it points at.</li>
@@ -210,12 +231,47 @@
       <li><strong>Keep the subscription until the old print is retired</strong> — cancelling early kills the existing codes.</li>
     </ol>
 
-    <h2>A note on privacy</h2>
+    <h2 id="a-note-on-privacy">A note on privacy</h2>
     <p>Dynamic codes log every scan: time, approximate location, device type, and often more. For a marketing campaign that is the point. For a WiFi code in a guest bedroom, a contact card, or an equipment label, routing your users through a third party's analytics is an unnecessary disclosure — both for them and for you.</p>
     <p>Static codes involve no third party at all. Nothing is logged because there is nothing in the path to log it.</p>
+
+    <h2 id="related-terminology-briefly">Related terminology, briefly</h2>
+    <p>Discussions of QR types tend to mix several concepts. Untangling them makes the choice clearer:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Term</th><th>What it actually refers to</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Static code</strong></td><td>Data encoded in the image. No server involved.</td></tr>
+          <tr><td><strong>Dynamic code</strong></td><td>A short link that redirects via a provider's server.</td></tr>
+          <tr><td><strong>Short link / URL shortener</strong></td><td>The redirect mechanism dynamic codes rely on. Same dependency risk.</td></tr>
+          <tr><td><strong>Vanity or branded code</strong></td><td>A dynamic code whose short link uses your own domain. Reduces, but does not remove, the dependency.</td></tr>
+          <tr><td><strong>Error correction level</strong></td><td>How much damage a code survives. Independent of static vs dynamic.</td></tr>
+          <tr><td><strong>Version</strong></td><td>The grid size, from 21×21 upwards. Determined by how much data you encode.</td></tr>
+          <tr><td><strong>Payload</strong></td><td>The data inside the code — a URL, WiFi credentials, a contact card.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Note that error correction and version apply to both types. A dynamic code is always small because a short link is short — that is a side effect of the redirect, not a feature of the technology.</p>
+
+    <h2 id="a-note-on-qr-code-security">A note on QR code security</h2>
+    <p>Malicious QR codes — sometimes called "quishing" — work by sending scanners to phishing pages or app downloads. Two consequences for anyone printing codes:</p>
+    <ul>
+      <li><strong>Stickers get placed over legitimate codes.</strong> Parking meters and restaurant tables have both been targeted. Check your printed codes physically, and prefer codes that are laminated or mounted rather than loose stickers.</li>
+      <li><strong>A dynamic code hides its destination.</strong> Because the visible link belongs to the provider, a scanner cannot tell where they will end up until they arrive. A static code pointing at your own domain shows your domain in the preview, which is a small but real trust signal.</li>
+    </ul>
+    <p>Advise customers to check the URL preview before tapping. Most phone cameras show it, and it is the single most effective defence.</p>
   </article>
 
   <div class="ad-slot">Advertisement</div>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="wifi-qr-code-for-airbnb.html">How to Create a WiFi QR Code for Your Airbnb</a>
+      <a href="wifi-qr-code-not-working.html">WiFi QR Code Not Working? 7 Fixes That Actually Solve It</a>
+      <a href="qr-code-size-for-print.html">QR Code Size for Print: The Numbers That Actually Matter</a>
+    </div>
+  </div>
 
   <div class="author-box">
     <div class="author-avatar" aria-hidden="true">AU</div>

@@ -1,0 +1,7 @@
+# ads.txt — authorized digital sellers
+# Replace the line below with the exact line Google AdSense gives you
+# after approval (AdSense > Sites > Ads.txt). Until then this file is
+# a placeholder and authorizes nobody.
+#
+# It will look like:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
