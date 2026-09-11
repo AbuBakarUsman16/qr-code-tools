@@ -90,12 +90,12 @@
     <p>Everything on the site is written and tested by one person rather than assembled from templates. When a guide says a code should be printed at a certain size, or that a particular test is the only meaningful one, that comes from checking it on real phones and real print rather than repeating what other sites say.</p>
 
     <h2>How we test</h2>
-    <p>Every generator on this site is checked the same way before it goes live:</p>
+    <p>Every generator is verified before it goes live. Being specific about what that does and does not cover:</p>
     <ul>
-      <li>The generated code is decoded programmatically to confirm the data it contains matches the input exactly.</li>
-      <li>It is scanned with both an iPhone and an Android device using only the built-in camera app — no third-party scanner.</li>
-      <li>WiFi codes are tested on a device that has been made to forget the network, since a connected phone will appear to succeed regardless.</li>
-      <li>Codes are printed and scanned at realistic sizes and distances before any sizing advice is published.</li>
+      <li>Every code the generators produce is <strong>decoded programmatically</strong> and checked character by character against what was entered. A vCard, a WiFi payload or a URL that does not round-trip exactly does not ship.</li>
+      <li>Each tool page is rendered in a real browser and the on-screen code is read back, so a generator that silently fails is caught before release.</li>
+      <li>Print sizing guidance in the guides is drawn from the QR specification and established scanning practice rather than from our own print trials — treat it as a well-sourced starting point and test one copy before a large run.</li>
+      <li>We recommend you scan any code with your own phone before printing it. No amount of verification on our side substitutes for that, because your camera, lighting and print stock are the variables that matter.</li>
     </ul>
 
     <h2>What we do not do</h2>
@@ -123,8 +123,8 @@
     <p>If those limits genuinely do not suit your situation, a paid dynamic service is the right answer, and our <a href="blog/static-vs-dynamic-qr-codes.html">comparison guide</a> sets out what to weigh up. We would rather explain the trade-off than sell you the wrong thing.</p>
 
     <h2>How the guides are written</h2>
-    <p>The articles on this site are written by one person and checked before publishing rather than assembled from what other sites already say. Where a guide gives a number — a minimum print size, a contrast ratio, a character threshold where codes get unreliable — it comes from testing rather than repetition.</p>
-    <p>Where something is uncertain or varies by device, the guides say so. There are places where the honest answer is "it depends on the phone", and pretending otherwise would waste your time when it fails.</p>
+    <p>The guides are written with the help of AI tooling and then reviewed and edited before publishing. We think that is worth stating plainly rather than implying otherwise. What matters is whether a guide is accurate, specific and genuinely useful — so where a guide gives a number, such as a minimum print size or the character count where codes start failing, it is drawn from the QR specification and established practice rather than repeated from other sites.</p>
+    <p>Where something is uncertain or varies by device, the guides say so. There are places where the honest answer is "it depends on the phone", and pretending otherwise would waste your time when it fails. If you find something here that is wrong, the <a href="contact.html">contact page</a> reaches us and it gets corrected.</p>
 
     <h2>Accuracy and corrections</h2>
     <p>Technology guidance goes stale. Phone behaviour changes between OS versions, router interfaces get redesigned, and platform policies are updated. If something here is out of date or simply wrong, we would rather know — the <a href="contact.html">contact page</a> reaches us directly, and corrections get made rather than argued about.</p>
