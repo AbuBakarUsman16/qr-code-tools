@@ -204,6 +204,44 @@
     <h2>Related tools</h2>
     <p>If your message is really a web address, use the <a href="url-qr-code-generator.html">URL QR code generator</a>. For contact details use the <a href="vcard-qr-code-generator.html">vCard generator</a>, and for network access the <a href="wifi-qr-code-generator.html">WiFi generator</a>. All four are listed on the <a href="services.html">services page</a>, with common questions on the <a href="faq.html">FAQ</a>.</p>
     <p>If you are curious how much data fits at each size, the <a href="https://en.wikipedia.org/wiki/QR_code#Storage" target="_blank" rel="noopener">QR code storage capacity tables</a> lay it out by version and error-correction level.</p>
+
+    <h2>How much text is too much</h2>
+    <p>The practical ceiling is much lower than the technical one. QR codes can hold thousands of characters, but usability collapses long before that. Here is roughly how length translates into scanning difficulty:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Characters</th><th>Pattern</th><th>Scans reliably at</th></tr></thead>
+        <tbody>
+          <tr><td>Under 50</td><td>Sparse, very forgiving</td><td>2cm and up, any phone</td></tr>
+          <tr><td>50–150</td><td>Comfortable</td><td>2.5cm and up</td></tr>
+          <tr><td>150–300</td><td>Getting dense</td><td>4cm, good lighting</td></tr>
+          <tr><td>300–800</td><td>Dense</td><td>6cm+, steady hand, newer phone</td></tr>
+          <tr><td>Over 800</td><td>Very dense</td><td>Often fails in real conditions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>If your message runs past a couple of hundred characters, putting it on a page and using a <a href="url-qr-code-generator.html">URL code</a> almost always produces a better experience — as long as the reader will have internet when they scan.</p>
+
+    <h2>When offline access is the deciding factor</h2>
+    <p>This is the one thing a text code does that no other type can match. There is no network request, no page load, no dependency on a server staying online. The message is inside the image.</p>
+    <p>That matters more often than people expect:</p>
+    <ul>
+      <li><strong>Basements, plant rooms and lift shafts</strong> where equipment labels live and phone signal does not reach.</li>
+      <li><strong>Rural properties</strong> where a guest arrives before connecting to WiFi.</li>
+      <li><strong>Warehouses and cold stores</strong> with patchy coverage between racking.</li>
+      <li><strong>Aircraft, tunnels and remote sites</strong> where data is unavailable by default.</li>
+      <li><strong>Anywhere the information must survive</strong> your website being redesigned, moved or taken down.</li>
+    </ul>
+    <p>A URL code in any of these places is a code that fails exactly when it is needed.</p>
+
+    <h2>Formatting and character support</h2>
+    <p>A few details worth knowing before you encode something unusual:</p>
+    <ul>
+      <li><strong>Line breaks</strong> are preserved by most scanner apps but collapsed by some. If layout genuinely matters, use a page rather than a text code.</li>
+      <li><strong>Uppercase and digits encode more efficiently</strong> than mixed case, because they fit the alphanumeric mode. A reference number written as <code>INV-2026-0481</code> produces a simpler code than the same length of mixed-case prose.</li>
+      <li><strong>Accented characters, non-Latin scripts and emoji</strong> use several bytes each, so they increase density quickly. They also render inconsistently across scanner apps.</li>
+      <li><strong>Leading and trailing spaces</strong> are encoded literally. Copying from a document often brings an invisible trailing space along with it.</li>
+    </ul>
+
   </article>
 
   <div class="author-box">
