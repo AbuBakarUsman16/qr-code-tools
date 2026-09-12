@@ -298,14 +298,23 @@ figure {
 }
 
 figure img {
-  max-width: 260px;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #fff;
   padding: 10px;
+  cursor: zoom-in;
+  transition: border-color 0.15s ease;
 }
+
+figure a.zoom { display: inline-block; max-width: 100%; }
+figure a.zoom:hover img { border-color: var(--accent); }
+figure a.zoom:focus-visible img { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* chhote example codes ko utna bara na karo */
+figure img[src*="example-"] { max-width: 300px; }
 
 figcaption {
   margin-top: 10px;
@@ -482,3 +491,63 @@ table.cmp tr:last-child td { border-bottom: none; }
 /* har halat mein page ko side mein scroll na karne do */
 html, body { max-width: 100%; }
 img, canvas, svg { max-width: 100%; height: auto; }
+
+
+/* ---------- lightbox ---------- */
+
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 16, 23, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lb-overlay img {
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+  width: auto;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.lb-cap {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  text-align: center;
+  color: #E8EAF2;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.lb-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lb-close:hover { background: rgba(255,255,255,0.26); }
+.lb-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+body.lb-open { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  figure img { transition: none; }
+}
