@@ -1,4 +1,5 @@
 :root {
+  --accent-soft: #eef1ff;
   --bg: #f7f8fb;
   --card: #ffffff;
   --text: #1a1d29;
@@ -35,13 +36,26 @@ header.site-header {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text);
   text-decoration: none;
+  letter-spacing: -0.01em;
 }
 
-.logo span { color: var(--accent); }
+.logo-mark {
+  color: var(--accent);
+  flex-shrink: 0;
+  border-radius: 7px;
+  transition: transform 0.15s ease;
+}
+
+.logo:hover .logo-mark { transform: rotate(-4deg) scale(1.04); }
+
+.logo-text span { color: var(--accent); }
 
 nav.tool-nav a {
   color: var(--muted);
@@ -98,7 +112,21 @@ main {
   box-shadow: 0 10px 24px rgba(30, 40, 90, 0.08);
 }
 
-.tool-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+.tool-card .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  border-radius: 11px;
+  background: var(--accent-soft, #eef1ff);
+  color: var(--accent);
+}
+
+.tool-card .icon svg { width: 22px; height: 22px; }
+
+.tool-card:hover .icon { background: var(--accent); color: #fff; }
 .tool-card h3 { margin: 0 0 6px; font-size: 1.1rem; }
 .tool-card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
 
@@ -493,6 +521,8 @@ table.cmp tr:last-child td { border-bottom: none; }
   #qrcode canvas, #qrcode img { max-width: 100%; height: auto; }
 
   .nav-wrap { padding: 12px 14px; gap: 8px; }
+  .logo { font-size: 1.1rem; gap: 7px; }
+  .logo-mark { width: 26px; height: 26px; }
   nav.tool-nav { display: flex; flex-wrap: wrap; gap: 10px 14px; }
   nav.tool-nav a { margin-left: 0; font-size: 0.88rem; }
 
@@ -585,10 +615,16 @@ a:focus-visible {
   border-color: var(--accent);
 }
 
-.logo:hover span { color: var(--accent-dark); }
+.logo:hover .logo-text span { color: var(--accent-dark); }
 
 .logo:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
   border-radius: 4px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark { transition: none; }
+  .logo:hover .logo-mark { transform: none; }
 }
