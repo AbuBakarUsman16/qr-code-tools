@@ -153,6 +153,12 @@
  </ul>
  <p><strong>Fix:</strong> copy the password directly from your router's admin page rather than retyping it, and regenerate the code. Generate on a desktop where you can see the characters clearly.</p>
 
+    <figure>
+      <img src="../images/wifi-security-type-test.png" width="544" height="390" loading="lazy"
+           alt="Two WiFi QR codes that both scan successfully. One carries WPA with a password, the other has the security type set to nopass and carries no password at all.">
+      <figcaption>Both of these scan without complaint. We decoded them: the first returns the password, the second returns nothing after the network name. Only the raw contents reveal the difference.</figcaption>
+    </figure>
+
  <h2 id="3-the-wrong-security-type">3. The wrong security type</h2>
  <p>The QR format includes the encryption type, and getting it wrong means the phone tries to connect the wrong way.</p>
  <div class="table-wrap">

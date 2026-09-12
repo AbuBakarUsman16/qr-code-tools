@@ -137,6 +137,12 @@
  <p>A <strong>dynamic</strong> QR code contains a short link to a provider's server. Scanning opens that link, the server looks up where it currently points, and redirects the phone to the real destination. The data you care about lives in the provider's database, not in the code.</p>
  <p>Everything else follows from this one difference.</p>
 
+    <figure>
+      <img src="../images/static-vs-dynamic-density.png" width="544" height="390" loading="lazy"
+           alt="A static QR code holding a 134 character URL next to a dynamic style code holding a 20 character short link. The static one is a 49x49 grid, the dynamic one 25x25.">
+      <figcaption>We generated both and decoded each one. The dynamic code is simpler only because a redirect link is short, not because the technology is better.</figcaption>
+    </figure>
+
  <h2 id="side-by-side">Side by side</h2>
  <div class="table-wrap">
  <table class="cmp">
