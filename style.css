@@ -447,3 +447,38 @@ table.cmp tr:last-child td { border-bottom: none; }
 }
 
 .related-grid a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 560px) {
+  main { padding: 28px 14px 48px; }
+
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.98rem; }
+
+  .panel { padding: 18px 16px; }
+  article.content-block { padding: 22px 16px; }
+
+  #qrcode {
+    min-width: 0;
+    max-width: 100%;
+    padding: 12px;
+  }
+  #qrcode canvas, #qrcode img { max-width: 100%; height: auto; }
+
+  .nav-wrap { padding: 12px 14px; gap: 8px; }
+  nav.tool-nav { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+  nav.tool-nav a { margin-left: 0; font-size: 0.88rem; }
+
+  .toc { padding: 16px 18px; }
+  .author-box { padding: 16px; gap: 12px; }
+  .prose h2 { font-size: 1.25rem; }
+  .prose h3 { font-size: 1.05rem; }
+
+  .breadcrumb { font-size: 0.8rem; word-break: break-word; }
+  .article-meta { font-size: 0.8rem; gap: 6px; }
+}
+
+/* har halat mein page ko side mein scroll na karne do */
+html, body { max-width: 100%; }
+img, canvas, svg { max-width: 100%; height: auto; }
