@@ -179,10 +179,10 @@
  <p>Shorten the text. This is almost always the cause. Cutting a message in half visibly simplifies the pattern.</p>
 
  <h3>Line breaks do not appear</h3>
- <p>Scanner apps vary in how they display multi-line text. Some preserve breaks, others collapse them. If layout matters, use a page and a URL code.</p>
+ <p>Scanner apps vary in how they display multiline text. Some preserve breaks, others collapse them. If layout matters, use a page and a URL code.</p>
 
  <h3>Special characters look wrong</h3>
- <p>Non-Latin scripts and emoji use more bytes per character, which makes the code denser and can display inconsistently across scanner apps. Plain text scans most reliably.</p>
+ <p>Other scripts and emoji use more bytes per character, which makes the code denser and can display inconsistently across scanner apps. Plain text scans most reliably.</p>
 
  <h3>The phone tries to search the web instead of showing the text</h3>
  <p>Some camera apps offer a web search for scanned text. That is the app's behaviour, not a fault in the code, the text itself is being read correctly.</p>
@@ -203,7 +203,7 @@
 
  <h2>Related tools</h2>
  <p>If your message is really a web address, use the <a href="url-qr-code-generator.html">URL QR code generator</a>. For contact details use the <a href="vcard-qr-code-generator.html">vCard generator</a>, and for network access the <a href="wifi-qr-code-generator.html">WiFi generator</a>. All four are listed on the <a href="services.html">services page</a>, with common questions on the <a href="faq.html">FAQ</a>.</p>
- <p>If you are curious how much data fits at each size, the <a href="https://en.wikipedia.org/wiki/QR_code#Storage" target="_blank" rel="noopener">QR code storage capacity tables</a> lay it out by version and error-correction level.</p>
+ <p>If you are curious how much data fits at each size, the <a href="https://en.wikipedia.org/wiki/QR_code#Storage" target="_blank" rel="noopener">QR code storage capacity tables</a> lay it out by version and error correction level.</p>
 
  <h2>How much text is too much</h2>
  <p>The practical ceiling is much lower than the technical one. QR codes can hold thousands of characters, but usability collapses long before that. Here is roughly how length translates into scanning difficulty:</p>
@@ -212,9 +212,9 @@
  <thead><tr><th>Characters</th><th>Pattern</th><th>Scans reliably at</th></tr></thead>
  <tbody>
  <tr><td>Under 50</td><td>Sparse, very forgiving</td><td>2cm and up, any phone</td></tr>
- <tr><td>50-150</td><td>Comfortable</td><td>2.5cm and up</td></tr>
- <tr><td>150-300</td><td>Getting dense</td><td>4cm, good lighting</td></tr>
- <tr><td>300-800</td><td>Dense</td><td>6cm+, steady hand, newer phone</td></tr>
+ <tr><td>50 to 150</td><td>Comfortable</td><td>2.5cm and up</td></tr>
+ <tr><td>150 to 300</td><td>Getting dense</td><td>4cm, good lighting</td></tr>
+ <tr><td>300 to 800</td><td>Dense</td><td>6cm+, steady hand, newer phone</td></tr>
  <tr><td>Over 800</td><td>Very dense</td><td>Often fails in real conditions</td></tr>
  </tbody>
  </table>
@@ -237,8 +237,8 @@
  <p>A few details worth knowing before you encode something unusual:</p>
  <ul>
  <li><strong>Line breaks</strong> are preserved by most scanner apps but collapsed by some. If layout genuinely matters, use a page rather than a text code.</li>
- <li><strong>Uppercase and digits encode more efficiently</strong> than mixed case, because they fit the alphanumeric mode. A reference number written as <code>INV-2026-0481</code> produces a simpler code than the same length of mixed-case prose.</li>
- <li><strong>Accented characters, non-Latin scripts and emoji</strong> use several bytes each, so they increase density quickly. They also render inconsistently across scanner apps.</li>
+ <li><strong>Uppercase and digits encode more efficiently</strong> than mixed case, because they fit the alphanumeric mode. A reference number written as <code>INV-2026-0481</code> produces a simpler code than the same length of mixed case prose.</li>
+ <li><strong>Accented characters, other scripts and emoji</strong> use several bytes each, so they increase density quickly. They also render inconsistently across scanner apps.</li>
  <li><strong>Leading and trailing spaces</strong> are encoded literally. Copying from a document often brings an invisible trailing space along with it.</li>
  </ul>
 
@@ -248,7 +248,7 @@
  <div class="author-avatar" aria-hidden="true">AU</div>
  <div>
  <h4>Abu Bakar Usman</h4>
- <p>Runs QRotto, a set of free browser-based QR code generators. Every generator here is verified by decoding the codes it produces and confirming the data matches exactly what was entered.</p>
+ <p>Runs QRotto, a set of free browser based QR code generators. Every generator here is verified by decoding the codes it produces and confirming the data matches exactly what was entered.</p>
  </div>
  </div>
 </main>
