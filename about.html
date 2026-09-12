@@ -94,7 +94,8 @@
  <ul>
  <li>Every code the generators produce is <strong>decoded programmatically</strong> and checked character by character against what was entered. A vCard, a WiFi payload or a URL that does not round trip exactly does not ship.</li>
  <li>Each tool page is rendered in a real browser and the on screen code is read back, so a generator that silently fails is caught before release.</li>
- <li>Print sizing guidance in the guides is drawn from the QR specification and established scanning practice rather than from our own print trials, treat it as a well sourced starting point and test one copy before a large run.</li>
+ <li>Where a claim is testable, we test it. The density comparison and inverted code test in the <a href="blog/qr-code-size-for-print.html">print sizing guide</a> are our own generated and decoded measurements.</li>
+      <li>Our testing is software decoding and browser rendering, not large scale physical printing. A software decoder is more forgiving than a phone camera in poor light, so every guide tells you to test one printed copy at the real size before a large run.</li>
  <li>We recommend you scan any code with your own phone before printing it. No amount of verification on our side substitutes for that, because your camera, lighting and print stock are the variables that matter.</li>
  </ul>
 

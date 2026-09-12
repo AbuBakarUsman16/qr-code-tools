@@ -246,7 +246,30 @@
  </ol>
  <p>That last line is the one that matters most. A single test print catches the kind of problem that is expensive to discover after a full run.</p>
 
- <h2 id="understanding-versions-and-modules">Understanding versions and modules</h2>
+ 
+    <figure>
+      <img src="../images/qr-data-length-density.png" width="1090" height="350" loading="lazy"
+           alt="Four QR codes shown at the same physical size, holding 18, 85, 296 and 812 characters. The grid goes from 25x25 modules to 109x109, so each module gets progressively smaller.">
+      <figcaption>The same physical size, four different amounts of data. We generated these and decoded each one back to confirm it was readable.</figcaption>
+    </figure>
+
+    <p>Those four codes are the same width on the page, but the grid behind them is not. Here is what we measured when generating them, and what each would mean printed at 3cm across:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Data</th><th>Version</th><th>Grid</th><th>Module size at 3cm</th></tr></thead>
+        <tbody>
+          <tr><td>18 characters</td><td>2</td><td>25 x 25</td><td>1.20mm</td></tr>
+          <tr><td>85 characters</td><td>6</td><td>41 x 41</td><td>0.73mm</td></tr>
+          <tr><td>296 characters</td><td>13</td><td>69 x 69</td><td>0.43mm</td></tr>
+          <tr><td>812 characters</td><td>23</td><td>109 x 109</td><td>0.28mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>All four decoded correctly as digital images. The difference shows up in print: at 3cm, the 812 character code puts each module at 0.28mm, below the 0.4mm figure above, while the short one has over four times that to work with. Same printed square, very different odds of a first time scan.</p>
+
+    <h2 id="understanding-versions-and-modules">Understanding versions and modules</h2>
  <p>Two terms explain most sizing behaviour, and knowing them makes the rest intuitive:</p>
  <ul>
  <li><strong>Module</strong>: one small square in the pattern. Scanning works when the camera can resolve individual modules.</li>
@@ -272,7 +295,16 @@
  </div>
  <p>A practical consequence: a URL written entirely in uppercase can encode more efficiently than the same URL in mixed case, because uppercase fits alphanumeric mode. Domain names are case insensitive, so <code>HTTPS://EXAMPLE.COM/MENU</code> works identically to the lowercase version while producing a slightly simpler code. It looks unusual, but for a code that must be small, it is a free improvement.</p>
 
- <h2 id="colour-inversion-and-brand-constraints">Colour, inversion and brand constraints</h2>
+ 
+    <figure>
+      <img src="../images/qr-inverted-test.png" width="622" height="410" loading="lazy"
+           alt="Two QR codes holding identical data. The standard dark on light version decoded correctly; the inverted light on dark version failed to decode.">
+      <figcaption>Identical data, two renderings. We ran both through a standard QR detector: the inverted one failed to decode at all.</figcaption>
+    </figure>
+
+    <p>We tested this rather than assuming it. Both codes above encode exactly the same URL. The standard version decoded correctly; the inverted version was not detected. Some scanners handle inversion and some do not, which is the whole problem, you cannot tell which one your reader is holding.</p>
+
+    <h2 id="colour-inversion-and-brand-constraints">Colour, inversion and brand constraints</h2>
  <p>Designers frequently ask whether a code can match brand colours. The honest answer is "within narrow limits":</p>
  <ul>
  <li><strong>Dark modules on a light background</strong> is the only universally safe combination.</li>
