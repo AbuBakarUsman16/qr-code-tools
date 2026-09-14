@@ -4,7 +4,7 @@
  * Khali chhorne par analytics load hi nahi hoti, koi request nahi jati.
  * ID analytics.google.com > Admin > Data streams > web stream se milti hai.
  */
-var GA_MEASUREMENT_ID = "";
+var GA_MEASUREMENT_ID = "G-LG2VQCRFXN";
 
 (function () {
   "use strict";
