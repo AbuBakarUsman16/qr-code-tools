@@ -131,27 +131,28 @@
  </div>
 
  <article class="content-block prose">
- <nav class="toc" aria-label="Table of contents">
- <h2>On this page</h2>
- <ol>
- <li><a href="#the-101-rule">The 10:1 rule</a></li>
- <li><a href="#practical-size-table">Practical size table</a></li>
- <li><a href="#why-data-length-changes-the-answer">Why data length changes the answer</a></li>
- <li><a href="#the-quiet-zone-the-most-broken-rule">The quiet zone, the most broken rule</a></li>
- <li><a href="#contrast-colour-and-finish">Contrast, colour and finish</a></li>
- <li><a href="#error-correction-and-why-it-is-a-trade-off">Error correction and why it is a tradeoff</a></li>
- <li><a href="#logos-in-the-middle">Logos in the middle</a></li>
- <li><a href="#test-before-the-print-run">Test before the print run</a></li>
- <li><a href="#checklist">Checklist</a></li>
- <li><a href="#sizing-for-unusual-surfaces">Sizing for unusual surfaces</a></li>
- <li><a href="#digital-displays-are-a-different-problem">Digital displays are a different problem</a></li>
- <li><a href="#two-mistakes-that-survive-all-the-checks">Two mistakes that survive all the checks</a></li>
- <li><a href="#a-quick-pre-print-checklist">A quick checklist before printing</a></li>
- <li><a href="#understanding-versions-and-modules">Understanding versions and modules</a></li>
- <li><a href="#encoding-modes-and-why-they-matter-for-size">Encoding modes and why they matter for size</a></li>
- <li><a href="#colour-inversion-and-brand-constraints">Colour, inversion and brand constraints</a></li>
- </ol>
- </nav>
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-101-rule">The 10:1 rule</a></li>
+        <li><a href="#practical-size-table">Practical size table</a></li>
+        <li><a href="#why-data-length-changes-the-answer">Why data length changes the answer</a></li>
+        <li><a href="#the-quiet-zone-the-most-broken-rule">The quiet zone, the most broken rule</a></li>
+        <li><a href="#contrast-colour-and-finish">Contrast, colour and finish</a></li>
+        <li><a href="#error-correction-and-why-it-is-a-tradeoff">Error correction and why it is a tradeoff</a></li>
+        <li><a href="#logos-in-the-middle">Logos in the middle</a></li>
+        <li><a href="#test-before-the-print-run">Test before the print run</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#sizing-for-unusual-surfaces">Sizing for unusual surfaces</a></li>
+        <li><a href="#digital-displays-are-a-different-problem">Digital displays are a different problem</a></li>
+        <li><a href="#two-mistakes-that-survive-all-the-checks">Two mistakes that survive all the checks</a></li>
+        <li><a href="#a-quick-checklist-before-printing">A quick checklist before printing</a></li>
+        <li><a href="#understanding-versions-and-modules">Understanding versions and modules</a></li>
+        <li><a href="#encoding-modes-and-why-they-matter-for-size">Encoding modes and why they matter for size</a></li>
+        <li><a href="#colour-inversion-and-brand-constraints">Colour, inversion and brand constraints</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
  <p>Most printed QR codes that fail do so for one reason: they were sized to fit a layout rather than sized to be scanned. The good news is that the maths is simple, and there is a single ratio that answers almost every question about print size.</p>
 
  <h2 id="the-101-rule">The 10:1 rule</h2>
@@ -204,7 +205,7 @@
  <h3>Print method</h3>
  <p>Digital and offset printing both reproduce codes well at these sizes. Where problems appear is in low resolution processes, some embroidery, low DPI thermal receipt printers, and heavily textured stock. On textured or fabric surfaces, increase the size by 30 to 50% beyond the table above.</p>
 
- <h2 id="error-correction-and-why-it-is-a-trade-off">Error correction and why it is a tradeoff</h2>
+ <h2 id="error-correction-and-why-it-is-a-tradeoff">Error correction and why it is a tradeoff</h2>
  <p>QR codes include redundancy so they still scan when partly damaged. There are four levels, from roughly 7% recovery up to about 30%.</p>
  <p>Higher error correction sounds strictly better, but it adds data, which adds modules, which makes each module smaller at a given print size. For clean indoor printing, standard levels give the best results. Raise it only for codes that will be exposed to wear, outdoor signage, packaging that gets scuffed, or codes with a logo placed over them.</p>
 
@@ -255,7 +256,7 @@
  <h3>Letting a layout tool "optimise" the image</h3>
  <p>Some design and web tools compress images aggressively or convert them to formats with lossy compression. A QR code is exactly the kind of high contrast, hard edged image that compression damages most visibly. Keep codes as PNG, never JPEG.</p>
 
- <h2 id="a-quick-pre-print-checklist">A quick checklist before printing</h2>
+ <h2 id="a-quick-checklist-before-printing">A quick checklist before printing</h2>
  <ol>
  <li>Generated at 300 DPI or higher for the final print size</li>
  <li>Saved as PNG, never JPEG</li>
@@ -333,6 +334,16 @@
  <li><strong>Gradients</strong> reduce contrast unpredictably across the pattern and should be avoided.</li>
  <li><strong>Transparent backgrounds</strong> are a common source of failure, the code ends up over a photo or a coloured panel. Always place codes on a solid light background.</li>
  </ul>
+    <h2 id="common-questions">Common questions</h2>
+    <h3>What is the minimum size for a QR code?</h3>
+    <p>About 2cm per side for anything printed, and that assumes close range scanning with short data. Below that, phone cameras cannot resolve the individual modules reliably.</p>
+
+    <h3>Can a QR code be too big?</h3>
+    <p>Not really, though very large codes need the scanner to stand further back to fit the whole code in frame. The failure mode at large sizes is being too close, not the size itself.</p>
+
+    <h3>Does the colour of a QR code matter?</h3>
+    <p>Yes. Dark modules on a light background is the only combination that reads reliably everywhere. We tested an inverted code, light on dark, and a standard detector failed to read it at all.</p>
+
  </article>
 
  <div class="ad-slot">Advertisement</div>

@@ -131,25 +131,26 @@
  </div>
 
  <article class="content-block prose">
- <nav class="toc" aria-label="Table of contents">
- <h2>On this page</h2>
- <ol>
- <li><a href="#1-you-are-testing-on-a-phone-that-already-knows-the-network">1. You are testing on a phone that already knows the network</a></li>
- <li><a href="#2-a-single-wrong-character-in-the-password">2. A single wrong character in the password</a></li>
- <li><a href="#3-the-wrong-security-type">3. The wrong security type</a></li>
- <li><a href="#4-the-ssid-does-not-match-exactly">4. The SSID does not match exactly</a></li>
- <li><a href="#5-print-problems-size-contrast-and-quiet-zone">5. Print problems, size, contrast and quiet zone</a></li>
- <li><a href="#6-camera-or-phone-settings">6. Camera or phone settings</a></li>
- <li><a href="#7-network-side-issues-that-look-like-code-issues">7. Network side issues that look like code issues</a></li>
- <li><a href="#a-diagnostic-order-that-saves-time">A diagnostic order that saves time</a></li>
- <li><a href="#still-stuck-regenerate-from-scratch">Still stuck? Regenerate from scratch</a></li>
- <li><a href="#how-to-prove-the-code-itself-is-correct">How to prove the code itself is correct</a></li>
- <li><a href="#problems-specific-to-shared-and-public-networks">Problems specific to shared and public networks</a></li>
- <li><a href="#preventing-the-problem-next-time">Preventing the problem next time</a></li>
- <li><a href="#reading-the-error-your-phone-actually-shows">Reading the error your phone actually shows</a></li>
- <li><a href="#router-side-settings-that-cause-intermittent-failures">Router side settings that cause intermittent failures</a></li>
- </ol>
- </nav>
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#1-you-are-testing-on-a-phone-that-already-knows-the-network">1. You are testing on a phone that already knows the network</a></li>
+        <li><a href="#2-a-single-wrong-character-in-the-password">2. A single wrong character in the password</a></li>
+        <li><a href="#3-the-wrong-security-type">3. The wrong security type</a></li>
+        <li><a href="#4-the-ssid-does-not-match-exactly">4. The SSID does not match exactly</a></li>
+        <li><a href="#5-print-problems-size-contrast-and-quiet-zone">5. Print problems, size, contrast and quiet zone</a></li>
+        <li><a href="#6-camera-or-phone-settings">6. Camera or phone settings</a></li>
+        <li><a href="#7-network-side-issues-that-look-like-code-issues">7. Network side issues that look like code issues</a></li>
+        <li><a href="#a-diagnostic-order-that-saves-time">A diagnostic order that saves time</a></li>
+        <li><a href="#still-stuck-regenerate-from-scratch">Still stuck? Regenerate from scratch</a></li>
+        <li><a href="#how-to-prove-the-code-itself-is-correct">How to prove the code itself is correct</a></li>
+        <li><a href="#problems-specific-to-shared-and-public-networks">Problems specific to shared and public networks</a></li>
+        <li><a href="#preventing-the-problem-next-time">Preventing the problem next time</a></li>
+        <li><a href="#reading-the-error-your-phone-actually-shows">Reading the error your phone actually shows</a></li>
+        <li><a href="#router-side-settings-that-cause-intermittent-failures">Router side settings that cause intermittent failures</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
  <p>A WiFi QR code fails in one of two distinct ways, and knowing which one you have cuts the diagnosis in half:</p>
  <ul>
  <li><strong>The camera does not react at all.</strong> This is a scanning problem: print, size, lighting or camera settings.</li>
@@ -287,6 +288,16 @@
  <li><strong>Firmware bugs.</strong> If everything is configured correctly and behaviour is erratic, check for a router firmware update before replacing hardware.</li>
  </ul>
  <p>None of these are fixed by regenerating the QR code, which is why identifying whether the code or the network is at fault, using the raw contents test above, saves so much time.</p>
+    <h2 id="common-questions">Common questions</h2>
+    <h3>Why does my WiFi QR code say incorrect password?</h3>
+    <p>Almost always a character typo or the wrong security type. Copy the password directly from your router admin page rather than retyping it, and choose WPA unless you know the network uses something else.</p>
+
+    <h3>Can a WiFi QR code stop working on its own?</h3>
+    <p>The code cannot change, but the network can. The usual cause is an internet provider engineer resetting the router, which changes both the network name and the password. If a code worked for months and suddenly stopped, check that first.</p>
+
+    <h3>Why does it work on some phones but not others?</h3>
+    <p>Usually a 5GHz only network that older devices cannot see, or a very dense code that older cameras struggle with. Enabling the 2.4GHz band fixes most of these.</p>
+
  </article>
 
  <div class="ad-slot">Advertisement</div>

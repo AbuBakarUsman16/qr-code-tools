@@ -142,6 +142,7 @@
         <li><a href="#when-nothing-works">When nothing works</a></li>
         <li><a href="#before-you-tap-what-it-opens">Before you tap what it opens</a></li>
         <li><a href="#making-your-own-codes-easier-to-scan">Making your own codes easier to scan</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
       </ol>
     </nav>
     <p>Someone sends you a QR code in a message. You cannot point your phone camera at your own screen, and there is no obvious button for it. This turns out to be one of the most searched QR questions there is, and the answer is different on every platform.</p>
@@ -233,6 +234,16 @@
       <li><strong>Send it as a file rather than inline</strong> where the app allows, since that usually skips the compression step.</li>
     </ul>
     <p>All of our generators produce codes at a size that survives this comfortably: <a href="../wifi-qr-code-generator">WiFi</a>, <a href="../vcard-qr-code-generator">vCard</a>, <a href="../url-qr-code-generator">URL</a>, <a href="../text-qr-code-generator">text</a>, <a href="../email-qr-code-generator">email</a> and <a href="../sms-qr-code-generator">SMS</a>.</p>
+    <h2 id="common-questions">Common questions</h2>
+    <h3>Can you scan a QR code from a screenshot?</h3>
+    <p>Yes. A screenshot contains the same encoded data as the original, so it decodes exactly the same way. You just cannot use the camera, you have to open the image and use Live Text on iPhone or Google Lens on Android.</p>
+
+    <h3>Why will my screenshot not scan?</h3>
+    <p>Almost always because the image is too small. We tested this: the same code decoded down to 92 pixels and failed at 55. Compression turned out not to matter, the code survived JPEG quality 5.</p>
+
+    <h3>Can I scan a QR code from a PDF?</h3>
+    <p>Yes, but crop a screenshot of just the code first. A full page screenshot leaves the code too small to decode.</p>
+
  </article>
 
   <div class="related">
