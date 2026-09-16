@@ -115,6 +115,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://qrotto.com/blog/qr-code-damage-test</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://qrotto.com/services</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
