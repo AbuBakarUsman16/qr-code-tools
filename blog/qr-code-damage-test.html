@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>We Damaged QR Codes Until They Broke: The Real Limits</title>
-<meta name="description" content="Everyone repeats that QR codes survive 30% damage. We ran the test. Level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta name="description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
 <link rel="canonical" href="https://qrotto.com/blog/qr-code-damage-test">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -19,14 +19,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="QRotto">
 <meta property="og:title" content="We Damaged QR Codes Until They Broke: The Real Limits">
-<meta property="og:description" content="Everyone repeats that QR codes survive 30% damage. We ran the test. Level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta property="og:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
 <meta property="og:url" content="https://qrotto.com/blog/qr-code-damage-test">
 <meta property="og:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta property="article:published_time" content="2026-09-16">
 <meta property="article:author" content="QRotto">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="We Damaged QR Codes Until They Broke: The Real Limits">
-<meta name="twitter:description" content="Everyone repeats that QR codes survive 30% damage. We ran the test. Level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta name="twitter:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
 <meta name="twitter:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta name="author" content="QRotto">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -119,7 +119,7 @@
 
  <div class="hero">
  <h1>We Damaged QR Codes Until They Broke</h1>
- <p>Every guide repeats the same figure: 30% damage tolerance. We could not find anyone who had actually tested it, so we did.</p>
+ <p>Every guide repeats the same figure: 30% damage tolerance. We ran our own test to see whether it holds up.</p>
  </div>
 
  <div class="article-meta">
@@ -147,6 +147,7 @@
     </nav>
     <p>Search for QR code error correction and you will meet the same four numbers everywhere: levels L, M, Q and H recover roughly 7%, 15%, 25% and 30% of a damaged code. Those figures come from the specification and they are not wrong, but they describe how much <em>data</em> the error correction can reconstruct. They say nothing about what happens when a coffee cup leaves a ring on a table card.</p>
     <p>So we tested it. We generated the same URL at each error correction level, damaged the codes three different ways, and ran a decoder over every version to find the point where each one stopped working.</p>
+    <p>We are not the first to do this. Huon Wilson published <a href="https://huonw.github.io/blog/2021/09/qr-error-correction/" rel="noopener" target="_blank">an empirical look at QR error correction</a> in 2021 and found readability dropping off above roughly 6% damage at level L, 12% at M and 20% at H. Our numbers landed close to those, which is reassuring for both of us, and we have noted where they differ below.</p>
     <p>The short version: <strong>the headline percentage is close for one kind of damage and wildly optimistic for another, and there is a part of every QR code where 0.08% of damage is fatal.</strong></p>
 
     <h2 id="what-we-tested-and-how">What we tested and how</h2>
@@ -183,6 +184,7 @@
         </tbody>
       </table>
     </div>
+    <p>Those figures sit close to the independent 2021 results mentioned above, roughly 6%, 12% and 20% for L, M and H. Two separate tests, different tools, similar answers.</p>
     <p>Every level came in <strong>below</strong> its quoted figure. That is not a contradiction of the specification. The quoted percentage is how much codeword data can be reconstructed; covering a physical area also destroys structural information the decoder needs before error correction even begins. The gap between the two is what you actually get.</p>
     <p>The practical reading: if you are putting a logo on a level H code, <strong>20% of the area is your ceiling, not 30%</strong>. And that is with a software decoder on a clean image.</p>
 
