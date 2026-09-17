@@ -213,7 +213,7 @@
  <h2>Common problems and how to fix them</h2>
 
  <h3>The code scans but the phone will not join</h3>
- <p>Nine times out of ten this is a password typo, or the wrong security type. Regenerate the code, checking each character. Also confirm the network is on 2.4GHz or 5GHz in a band the phone supports, some older devices cannot see 5GHz-only networks.</p>
+ <p>The usual cause is a password typo or the wrong security type. Regenerate the code, checking each character. Also confirm the network is on 2.4GHz or 5GHz in a band the phone supports, some older devices cannot see 5GHz-only networks.</p>
 
  <h3>The camera does not recognise the code at all</h3>
  <p>Check the print. Codes printed too small, in light grey, or on a glossy surface that reflects light are the usual culprits. Keep a clear white margin (the “quiet zone”) around the code, roughly the width of four modules, and never print the code smaller than about 2cm per side.</p>
@@ -260,7 +260,7 @@
  <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>
@@ -286,8 +286,8 @@
 <script>
  let qr = new QRCode(document.getElementById("qrcode"), {
  text: "WIFI:T:WPA;S:;P:;;",
- width: 256,
- height: 256
+ width: 1024,
+ height: 1024
  });
 
  function generateWifiCode() {

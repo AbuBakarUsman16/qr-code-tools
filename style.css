@@ -235,7 +235,12 @@ input:focus, textarea:focus, select:focus {
   min-width: 256px;
 }
 
-#qrcode canvas, #qrcode img { display: block; }
+#qrcode canvas, #qrcode img {
+  display: block;
+  width: 256px;
+  height: auto;
+  max-width: 100%;
+}
 
 .qr-actions { margin-top: 16px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
@@ -323,7 +328,7 @@ footer {
   flex-shrink: 0;
 }
 
-.author-box h4 {
+.author-box h3 {
   margin: 0 0 4px;
   font-size: 1rem;
 }
@@ -816,3 +821,10 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .checkbox-row { display: flex; align-items: center; gap: 9px; margin-bottom: 16px; }
 .checkbox-row input { width: auto; }
 .checkbox-row label { margin: 0; font-weight: 500; }
+
+.grid-heading {
+  font-size: 1.35rem;
+  margin: 0 0 18px;
+  text-align: center;
+  color: var(--text);
+}

@@ -186,7 +186,7 @@
         </tbody>
       </table>
     </div>
-    <p>For most printed material the <strong>Maps link is the safer choice</strong>, because it works the same on every phone. The <code>geo:</code> version is worth it when the scanner may have no signal, which is a real situation at rural venues, festival sites and trailheads.</p>
+    <p>For most printed material the <strong>Maps link is the safer choice</strong>, because it falls back to a browser tab when no map app is installed, so it does not simply fail. The <code>geo:</code> version is worth it when the scanner may have no signal, which is a real situation at rural venues, festival sites and trailheads.</p>
 
     <h2 id="getting-coordinates-for-a-place">Getting coordinates for a place</h2>
     <p>If you want the offline version, you need latitude and longitude. The quickest way:</p>
@@ -237,7 +237,7 @@
   <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>
@@ -268,7 +268,7 @@
   }
 
   let qr = new QRCode(document.getElementById("qrcode"), {
-    text: "https://www.google.com/maps/search/?api=1&query=York", width: 256, height: 256
+    text: "https://maps.google.com/?q=York", width: 1024, height: 1024
   });
 
   function generateLocationCode() {
@@ -279,14 +279,14 @@
     if (mode === "address") {
       const a = document.getElementById("locAddr").value.trim();
       if (!a) return;
-      payload = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(a);
+      payload = "https://maps.google.com/?q=" + encodeURIComponent(a);
     } else {
       const lat = document.getElementById("locLat").value.trim();
       const lng = document.getElementById("locLng").value.trim();
       if (!lat || !lng) return;
       payload = (type === "geo")
         ? "geo:" + lat + "," + lng
-        : "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng;
+        : "https://maps.google.com/?q=" + lat + "," + lng;
     }
     qr.clear();
     qr.makeCode(payload);

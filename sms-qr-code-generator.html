@@ -190,7 +190,7 @@
 
  <h2>Frequently asked questions</h2>
  <h3>Does the message send automatically?</h3>
- <p>No, and it should not. The draft opens and the sender taps send. This is a deliberate safeguard in every phone operating system.</p>
+ <p>No, and it should not. The draft opens and the sender taps send. Sending is left to the person holding the phone, which is a deliberate safeguard rather than a limitation of the code.</p>
  <h3>Can I use a shortcode or landline?</h3>
  <p>Shortcodes generally work. Landlines will open the messaging app but the message will not arrive unless the line supports SMS.</p>
  <h3>Can I use this for WhatsApp?</h3>
@@ -239,7 +239,7 @@
  <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>
@@ -264,7 +264,7 @@
 <script src="script.js"></script>
 <script>
  let qr = new QRCode(document.getElementById("qrcode"), {
- text: "SMSTO:+15551234567:", width: 256, height: 256
+ text: "SMSTO:+15551234567:", width: 1024, height: 1024
  });
 
  function generateSmsCode() {

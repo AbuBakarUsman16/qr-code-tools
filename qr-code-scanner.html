@@ -126,7 +126,7 @@
  <div class="scan-drop" id="scanDrop">
  <p><strong>Drop an image here</strong>, or paste one with Ctrl+V</p>
  <p class="scan-or">works with screenshots and photos</p>
- <input type="file" id="scanFile" accept="image/*" style="display:none">
+ <input type="file" id="scanFile" accept="image/*" aria-label="Choose a QR code image to scan" style="display:none">
  <button class="btn" onclick="document.getElementById('scanFile').click()">Choose an image</button>
  <button class="btn btn-outline" id="camStart" style="margin-left:8px;">Use camera</button>
  <button class="btn btn-outline" id="camStop" hidden style="margin-left:8px;">Stop camera</button>
@@ -243,7 +243,7 @@
   <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>

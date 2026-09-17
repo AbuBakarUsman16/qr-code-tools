@@ -144,7 +144,7 @@
 
  <article class="content-block prose">
  <h2>What a URL QR code does</h2>
- <p>A URL QR code encodes a web address as a scannable image. Someone points a phone camera at it, taps the banner that appears, and the page opens. It replaces the moment where a person has to type a long address from a poster into a phone keyboard, a moment where most people simply give up.</p>
+ <p>A URL QR code encodes a web address as a scannable image. Someone points a phone camera at it, taps the banner that appears, and the page opens. It replaces the moment where a person has to type a long address from a poster into a phone keyboard, a moment where a lot of people simply give up.</p>
  <p>This is the most widely used QR code type, and the reason is bridging: it connects something physical (a poster, a package, a menu, a receipt) to something online (a page, a form, a video, a review link).</p>
 
  <figure>
@@ -162,7 +162,7 @@
  </ol>
 
  <div class="takeaway">
- <p><strong>Shorter links scan better.</strong> A 25-character URL produces a noticeably sparser code than a 120-character one with campaign parameters attached. If you need tracking, consider a short link rather than a long query string.</p>
+ <p><strong>Shorter links scan better.</strong> A 25 character URL produces a noticeably sparser code than a 120 character one with campaign parameters attached. If you need tracking, consider a short link rather than a long query string.</p>
  </div>
 
 
@@ -235,7 +235,7 @@
  <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>
@@ -261,8 +261,8 @@
 <script>
  let qr = new QRCode(document.getElementById("qrcode"), {
  text: "https://example.com",
- width: 256,
- height: 256
+ width: 1024,
+ height: 1024
  });
 
  function generateURLCode() {

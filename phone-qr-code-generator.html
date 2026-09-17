@@ -206,7 +206,7 @@
 
     <h2 id="common-questions">Common questions</h2>
     <h3>Does it dial automatically?</h3>
-    <p>No, and it should not. Every phone opens the dialler with the number filled in and waits for the user to press call. That safeguard is built into the operating system.</p>
+    <p>No, and it should not. The dialler opens with the number filled in and waits for the user to press call. Both iOS and Android build that safeguard into the operating system rather than leaving it to the code.</p>
     <h3>Can I add an extension?</h3>
     <p>Some phones handle a comma or a <code>p</code> as a pause before extension digits, but support is inconsistent. For anything that must work reliably, put the main number in the code and the extension as printed text beside it.</p>
     <h3>Will it work on a tablet or laptop?</h3>
@@ -233,7 +233,7 @@
   <div class="author-box">
  <div class="author-avatar" aria-hidden="true">QR</div>
  <div>
- <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
  <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
  </div>
  </div>
@@ -258,7 +258,7 @@
 <script src="script.js"></script>
 <script>
   let qr = new QRCode(document.getElementById("qrcode"), {
-    text: "tel:+15551234567", width: 256, height: 256
+    text: "tel:+15551234567", width: 1024, height: 1024
   });
 
   function generatePhoneCode() {
