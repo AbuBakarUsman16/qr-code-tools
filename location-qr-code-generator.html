@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Location QR Code Generator | Maps &amp; GPS Codes</title>
+<meta name="description" content="Create a free QR code that opens a place on a map, from an address or GPS coordinates. Works with Google Maps, Apple Maps and offline geo codes. No signup.">
+<link rel="canonical" href="https://qrotto.com/location-qr-code-generator">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Free Location QR Code Generator | Maps &amp; GPS Codes">
+<meta property="og:description" content="Create a free QR code that opens a place on a map, from an address or GPS coordinates. Works with Google Maps, Apple Maps and offline geo codes. No signup.">
+<meta property="og:url" content="https://qrotto.com/location-qr-code-generator">
+<meta property="og:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Location QR Code Generator | Maps &amp; GPS Codes">
+<meta name="twitter:description" content="Create a free QR code that opens a place on a map, from an address or GPS coordinates. Works with Google Maps, Apple Maps and offline geo codes. No signup.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Location QR Code Generator",
+  "url": "https://qrotto.com/location-qr-code-generator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Create a free QR code that opens a place on a map, from an address or GPS coordinates. Works with Google Maps, Apple Maps and offline geo codes. No signup.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Location QR Code Generator",
+      "item": "https://qrotto.com/location-qr-code-generator"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="./" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="url-qr-code-generator">URL QR</a>
+ <a href="vcard-qr-code-generator">vCard QR</a>
+ <a href="wifi-qr-code-generator">WiFi QR</a>
+ <a href="text-qr-code-generator">Text QR</a>
+ <a href="email-qr-code-generator">Email QR</a>
+ <a href="sms-qr-code-generator">SMS QR</a>
+ <a href="phone-qr-code-generator">Phone QR</a>
+ <a href="calendar-qr-code-generator">Event QR</a>
+ <a href="location-qr-code-generator" class="active">Location QR</a>
+ <a href="social-media-qr-code-generator">Social QR</a>
+ <a href="blog/">Blog</a>
+ <a href="about">About</a>
+ <a href="faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="./">Home</a> / Location QR Code Generator</p>
+ <div class="hero">
+ <h1>Location QR Code Generator</h1>
+ <p>Scan, and the map opens on your venue. No typing an address, no wrong branch of the same street name.</p>
+ </div>
+
+ <div class="generator-layout">
+ <div class="panel">
+      <div class="form-group">
+        <label>What do you have?</label>
+        <div class="radio-row">
+          <label><input type="radio" name="locmode" value="address" checked onchange="switchMode()"> An address</label>
+          <label><input type="radio" name="locmode" value="coords" onchange="switchMode()"> GPS coordinates</label>
+        </div>
+      </div>
+      <div class="form-group" id="addrGroup">
+        <label for="locAddr">Address</label>
+        <input type="text" id="locAddr" placeholder="Village Hall, Main Street, York">
+      </div>
+      <div class="form-group" id="coordGroup" hidden>
+        <label for="locLat">Latitude</label>
+        <input type="text" id="locLat" placeholder="53.959965">
+        <label for="locLng" style="margin-top:12px;">Longitude</label>
+        <input type="text" id="locLng" placeholder="-1.087298">
+      </div>
+      <div class="form-group">
+        <label>Code type</label>
+        <div class="radio-row">
+          <label><input type="radio" name="loctype" value="maps" checked> Maps link (works everywhere)</label>
+          <label><input type="radio" name="loctype" value="geo"> geo: code (works offline)</label>
+        </div>
+      </div>
+      <button class="btn" onclick="generateLocationCode()">Generate QR Code</button>
+ </div>
+ <div class="panel qr-output">
+ <div id="qrcode"></div>
+ <div class="qr-actions">
+ <button class="btn btn-outline" onclick="downloadQRCode('location-qr-code-generator.png')">Download PNG</button>
+ </div>
+ </div>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Updated <time datetime="2026-09-17">17 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>5 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#two-kinds-of-location-code">Two kinds of location code</a></li>
+        <li><a href="#getting-coordinates-for-a-place">Getting coordinates for a place</a></li>
+        <li><a href="#where-a-location-code-earns-its-place">Where a location code earns its place</a></li>
+        <li><a href="#address-or-coordinates">Address or coordinates?</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+        <li><a href="#related-tools">Related tools</a></li>
+      </ol>
+    </nav>
+    <h2 id="two-kinds-of-location-code">Two kinds of location code</h2>
+    <p>This tool makes both, and the difference matters more than it looks.</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th></th><th>Maps link</th><th>geo: code</th></tr></thead>
+        <tbody>
+          <tr><td>What it holds</td><td>A Google Maps URL</td><td>Raw coordinates</td></tr>
+          <tr><td>Needs internet</td><td>Yes</td><td>No, the coordinates are in the image</td></tr>
+          <tr><td>Works from an address</td><td>Yes</td><td>Coordinates only</td></tr>
+          <tr><td>Opens in</td><td>Maps, or a browser</td><td>The phone's default map app</td></tr>
+          <tr><td>Support</td><td>Universal</td><td>Good on Android, patchier on iPhone</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For most printed material the <strong>Maps link is the safer choice</strong>, because it works the same on every phone. The <code>geo:</code> version is worth it when the scanner may have no signal, which is a real situation at rural venues, festival sites and trailheads.</p>
+
+    <h2 id="getting-coordinates-for-a-place">Getting coordinates for a place</h2>
+    <p>If you want the offline version, you need latitude and longitude. The quickest way:</p>
+    <ol>
+      <li>Open Google Maps on a computer and find the exact spot.</li>
+      <li><strong>Right click</strong> on it.</li>
+      <li>The first item in the menu is the coordinates. Click to copy.</li>
+      <li>Paste the first number as latitude, the second as longitude.</li>
+    </ol>
+    <p>On a phone, press and hold on the map instead, and the coordinates appear in the search bar.</p>
+
+    <div class="takeaway">
+      <p><strong>Drop the pin where people should actually arrive.</strong> A large venue's registered address is often the main office, not the entrance, the car park or the delivery bay. Coordinates let you be precise in a way a street address cannot.</p>
+    </div>
+
+    <h2 id="where-a-location-code-earns-its-place">Where a location code earns its place</h2>
+    <ul>
+      <li><strong>Event invitations and posters.</strong> Nobody wants to retype a venue address while walking.</li>
+      <li><strong>Wedding stationery.</strong> Church, reception and parking are often three different places; three small codes solve it.</li>
+      <li><strong>Delivery and trade instructions.</strong> Point at the loading bay rather than the shop front.</li>
+      <li><strong>Rural properties and holiday lets.</strong> Where the postal address puts drivers in the wrong lane, coordinates put them at the gate.</li>
+      <li><strong>Market stalls and pop ups.</strong> A temporary spot that has no address at all.</li>
+      <li><strong>Trail markers and meeting points.</strong> The offline version, for places with no signal.</li>
+    </ul>
+
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="address-or-coordinates">Address or coordinates?</h2>
+    <p>Use the <strong>address</strong> when the place is easy to find and the address is unambiguous, a high street shop, a well known venue. The map handles the search and shows the business name, which reassures the person scanning.</p>
+    <p>Use <strong>coordinates</strong> when precision matters: a specific entrance, a field, a spot with no address, or anywhere a street name repeats in the same town. Coordinates cannot be misinterpreted.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+    <h3>Will it open Apple Maps on an iPhone?</h3>
+    <p>A Google Maps link opens in the Google Maps app if it is installed, or in a browser if not. If your audience is heavily iPhone based and you would rather they land in Apple Maps, use the coordinates option, which hands off to whichever map app the phone treats as default.</p>
+    <h3>Does the location code work without internet?</h3>
+    <p>The <code>geo:</code> version holds the coordinates in the image, so the map app receives them with no connection. Whether the map can then <em>show</em> that area depends on cached or offline maps on the device.</p>
+    <h3>Can I include a place name with the coordinates?</h3>
+    <p>The geo format allows a label, but support varies enough that we leave it out. If the name matters, use the address mode or print the name next to the code.</p>
+    <h3>How accurate are the coordinates?</h3>
+    <p>Six decimal places, which is what Google Maps gives you, is accurate to roughly a tenth of a metre. Far more precision than any real world use needs.</p>
+
+    <h2 id="related-tools">Related tools</h2>
+    <p>For an event, pair this with a <a href="calendar-qr-code-generator">calendar code</a> so the date and the place both land on the phone in two scans. Venues also tend to want a <a href="wifi-qr-code-generator">WiFi code</a> and a <a href="phone-qr-code-generator">phone code</a>. Our <a href="blog/qr-codes-for-hotels">hotel guide</a> and <a href="blog/qr-codes-for-cafes-and-restaurants">café guide</a> cover which codes belong where.</p>
+ </article>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="./">Home</a> ·
+ <a href="blog/">Blog</a> ·
+ <a href="services">Services</a> ·
+ <a href="about">About</a> ·
+ <a href="author">Editorial</a> ·
+ <a href="faq">FAQ</a> ·
+ <a href="contact">Contact</a> ·
+ <a href="privacy-policy">Privacy Policy</a> ·
+ <a href="terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  function switchMode() {
+    const mode = document.querySelector('input[name="locmode"]:checked').value;
+    document.getElementById("addrGroup").hidden = (mode !== "address");
+    document.getElementById("coordGroup").hidden = (mode !== "coords");
+  }
+
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "https://www.google.com/maps/search/?api=1&query=York", width: 256, height: 256
+  });
+
+  function generateLocationCode() {
+    const mode = document.querySelector('input[name="locmode"]:checked').value;
+    const type = document.querySelector('input[name="loctype"]:checked').value;
+    let payload = "";
+
+    if (mode === "address") {
+      const a = document.getElementById("locAddr").value.trim();
+      if (!a) return;
+      payload = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(a);
+    } else {
+      const lat = document.getElementById("locLat").value.trim();
+      const lng = document.getElementById("locLng").value.trim();
+      if (!lat || !lng) return;
+      payload = (type === "geo")
+        ? "geo:" + lat + "," + lng
+        : "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng;
+    }
+    qr.clear();
+    qr.makeCode(payload);
+  }
+</script>
+<script src="lightbox.js"></script>
+
+</body>
+</html>

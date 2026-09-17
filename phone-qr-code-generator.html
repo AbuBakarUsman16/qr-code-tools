@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Phone QR Code Generator | Tap to Call Codes</title>
+<meta name="description" content="Create a free QR code that opens the phone dialler with your number ready to call. International format guidance included, and nothing leaves your browser.">
+<link rel="canonical" href="https://qrotto.com/phone-qr-code-generator">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Free Phone QR Code Generator | Tap to Call Codes">
+<meta property="og:description" content="Create a free QR code that opens the phone dialler with your number ready to call. International format guidance included, and nothing leaves your browser.">
+<meta property="og:url" content="https://qrotto.com/phone-qr-code-generator">
+<meta property="og:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Phone QR Code Generator | Tap to Call Codes">
+<meta name="twitter:description" content="Create a free QR code that opens the phone dialler with your number ready to call. International format guidance included, and nothing leaves your browser.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Phone QR Code Generator",
+  "url": "https://qrotto.com/phone-qr-code-generator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Create a free QR code that opens the phone dialler with your number ready to call. International format guidance included, and nothing leaves your browser.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Phone QR Code Generator",
+      "item": "https://qrotto.com/phone-qr-code-generator"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="./" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="url-qr-code-generator">URL QR</a>
+ <a href="vcard-qr-code-generator">vCard QR</a>
+ <a href="wifi-qr-code-generator">WiFi QR</a>
+ <a href="text-qr-code-generator">Text QR</a>
+ <a href="email-qr-code-generator">Email QR</a>
+ <a href="sms-qr-code-generator">SMS QR</a>
+ <a href="phone-qr-code-generator" class="active">Phone QR</a>
+ <a href="calendar-qr-code-generator">Event QR</a>
+ <a href="location-qr-code-generator">Location QR</a>
+ <a href="social-media-qr-code-generator">Social QR</a>
+ <a href="blog/">Blog</a>
+ <a href="about">About</a>
+ <a href="faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="./">Home</a> / Phone QR Code Generator</p>
+ <div class="hero">
+ <h1>Phone QR Code Generator</h1>
+ <p>Scan, and the dialler opens with your number already in it. One tap to call.</p>
+ </div>
+
+ <div class="generator-layout">
+ <div class="panel">
+      <div class="form-group">
+        <label for="telNum">Phone Number</label>
+        <input type="tel" id="telNum" placeholder="+1 555 123 4567">
+      </div>
+      <p style="font-size:0.85rem;color:var(--muted);margin:-6px 0 14px;">Include the country code. Spaces and dashes are removed automatically.</p>
+      <button class="btn" onclick="generatePhoneCode()">Generate QR Code</button>
+ </div>
+ <div class="panel qr-output">
+ <div id="qrcode"></div>
+ <div class="qr-actions">
+ <button class="btn btn-outline" onclick="downloadQRCode('phone-qr-code-generator.png')">Download PNG</button>
+ </div>
+ </div>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Updated <time datetime="2026-09-17">17 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>5 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-a-phone-qr-code-does">What a phone QR code does</a></li>
+        <li><a href="#getting-the-number-format-right">Getting the number format right</a></li>
+        <li><a href="#where-a-phone-code-earns-its-place">Where a phone code earns its place</a></li>
+        <li><a href="#phone-code-sms-code-or-vcard">Phone code, SMS code, or vCard?</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+        <li><a href="#printing-it-so-it-works">Printing it so it works</a></li>
+        <li><a href="#why-call-rates-beat-message-rates-and-when-they-do-not">Why call rates beat message rates, and when they do not</a></li>
+        <li><a href="#labelling-the-code">Labelling the code</a></li>
+      </ol>
+    </nav>
+    <h2 id="what-a-phone-qr-code-does">What a phone QR code does</h2>
+    <p>A phone QR code holds a <code>tel:</code> link. Scanning it opens the dialler with your number already entered, so the caller taps once instead of copying digits off a sign and retyping them.</p>
+    <p>It sounds small, but transcription is where enquiries get lost. A number read off a van at a junction, or off a shop window in the rain, gets remembered wrong more often than people admit.</p>
+
+    <h2 id="getting-the-number-format-right">Getting the number format right</h2>
+    <p>Write the number in full international format, starting with the country code. Our generator strips spaces, brackets and dashes automatically, but the country code is yours to get right:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Country</th><th>Local form</th><th>What to enter</th></tr></thead>
+        <tbody>
+          <tr><td>United States</td><td>(555) 123 4567</td><td>+1 555 123 4567</td></tr>
+          <tr><td>United Kingdom</td><td>07700 900123</td><td>+44 7700 900123</td></tr>
+          <tr><td>Pakistan</td><td>0300 1234567</td><td>+92 300 1234567</td></tr>
+          <tr><td>Australia</td><td>0412 345 678</td><td>+61 412 345 678</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Notice the pattern outside the US: the <strong>leading zero is dropped</strong> and replaced by the country code. Keeping the zero is the single most common reason a scanned number fails to connect for an international caller.</p>
+
+    <div class="takeaway">
+      <p><strong>A local number still works locally without the country code.</strong> But a code on a shop window will eventually be scanned by a visitor whose phone is registered abroad, and for them the international form is the only one that dials.</p>
+    </div>
+
+    <h2 id="where-a-phone-code-earns-its-place">Where a phone code earns its place</h2>
+    <ul>
+      <li><strong>Vans and vehicle livery.</strong> Nobody writes down a number from a moving vehicle, but they will scan one at a red light.</li>
+      <li><strong>Shop windows and A boards.</strong> Works after closing time, when the alternative is walking away.</li>
+      <li><strong>Estate agent boards.</strong> A passer by can call about the property from the pavement.</li>
+      <li><strong>Equipment and service labels.</strong> Whoever finds the fault can call the right number without hunting for it.</li>
+      <li><strong>Emergency contact cards.</strong> Works with no internet at all, which matters in exactly those situations.</li>
+    </ul>
+
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="phone-code-sms-code-or-vcard">Phone code, SMS code, or vCard?</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>You want them to</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Call you now</td><td>This phone code</td></tr>
+          <tr><td>Text you, maybe later</td><td><a href="sms-qr-code-generator">SMS code</a></td></tr>
+          <tr><td>Save your details for later</td><td><a href="vcard-qr-code-generator">vCard code</a></td></tr>
+          <tr><td>Message you on WhatsApp</td><td><a href="url-qr-code-generator">URL code</a> to a wa.me link</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Phone codes suit urgency. If the enquiry can wait, an SMS or email code gets a better response rate, because calling a stranger is a bigger ask than sending a message.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+    <h3>Does it dial automatically?</h3>
+    <p>No, and it should not. Every phone opens the dialler with the number filled in and waits for the user to press call. That safeguard is built into the operating system.</p>
+    <h3>Can I add an extension?</h3>
+    <p>Some phones handle a comma or a <code>p</code> as a pause before extension digits, but support is inconsistent. For anything that must work reliably, put the main number in the code and the extension as printed text beside it.</p>
+    <h3>Will it work on a tablet or laptop?</h3>
+    <p>Devices without a phone app usually offer to call through an app such as FaceTime or Skype, or do nothing. The code is aimed at phones.</p>
+    <h3>Is my number private?</h3>
+    <p>No. A printed phone code publishes the number to anyone who scans it, and it is readable in the code contents even without dialling. Use a business line for anything public.</p>
+
+    <h2 id="printing-it-so-it-works">Printing it so it works</h2>
+    <p>Phone codes hold very little data, which makes them one of the sparsest and most forgiving code types. That gives you room to print small, but the usual rules still apply: at least 2cm per side, dark on light, and a clear white margin. Our <a href="blog/qr-code-size-for-print">sizing guide</a> has the full table, and the <a href="blog/qr-code-damage-test">damage test</a> explains why the three corner squares matter more than anything else.</p>
+    <h2 id="why-call-rates-beat-message-rates-and-when-they-do-not">Why call rates beat message rates, and when they do not</h2>
+    <p>A phone code asks more of the person scanning than a message code does. Dialling a stranger is a bigger commitment than typing a text, and that shows up in who responds.</p>
+    <p>The trade is worth making when the enquiry is urgent or high value: a locksmith, an emergency plumber, a property viewing. Someone standing outside a locked door will call. The same person browsing at home would rather send a message and get on with their evening.</p>
+    <p>A practical approach for signage is to print both, a phone code for now and an <a href="sms-qr-code-generator">SMS code</a> for later, each clearly labelled. Two small codes with one word of explanation each convert better than one unlabelled code that might do either.</p>
+
+    <h2 id="labelling-the-code">Labelling the code</h2>
+    <p>An unlabelled QR code on a sign gets very few scans, because nobody scans a code without knowing what it does. Three words fix it:</p>
+    <ul>
+      <li><strong>"Scan to call"</strong> is clearer than a bare code and sets the expectation correctly.</li>
+      <li><strong>Print the number as text too.</strong> Some people will prefer to dial it, some phones will not cooperate, and the cost is one line.</li>
+      <li><strong>Add your opening hours</strong> if calls outside them go unanswered. A missed call is worse than no call, because the person assumes you are unreliable rather than closed.</li>
+    </ul>
+ </article>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="./">Home</a> ·
+ <a href="blog/">Blog</a> ·
+ <a href="services">Services</a> ·
+ <a href="about">About</a> ·
+ <a href="author">Editorial</a> ·
+ <a href="faq">FAQ</a> ·
+ <a href="contact">Contact</a> ·
+ <a href="privacy-policy">Privacy Policy</a> ·
+ <a href="terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "tel:+15551234567", width: 256, height: 256
+  });
+
+  function generatePhoneCode() {
+    let num = document.getElementById("telNum").value.trim();
+    num = num.replace(/[\s()\-\.]/g, "");
+    if (!num) return;
+    if (num.charAt(0) !== "+" && num.charAt(0) !== "0") num = "+" + num;
+    qr.clear();
+    qr.makeCode("tel:" + num);
+  }
+</script>
+<script src="lightbox.js"></script>
+
+</body>
+</html>
