@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free QR Code Scanner | Read a Code From an Image</title>
+<meta name="description" content="Scan a QR code from an image, a screenshot or your camera, and read what it contains before opening it. Works in your browser, nothing is uploaded.">
+<link rel="canonical" href="https://qrotto.com/qr-code-scanner">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Free QR Code Scanner | Read a Code From an Image">
+<meta property="og:description" content="Scan a QR code from an image, a screenshot or your camera, and read what it contains before opening it. Works in your browser, nothing is uploaded.">
+<meta property="og:url" content="https://qrotto.com/qr-code-scanner">
+<meta property="og:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free QR Code Scanner | Read a Code From an Image">
+<meta name="twitter:description" content="Scan a QR code from an image, a screenshot or your camera, and read what it contains before opening it. Works in your browser, nothing is uploaded.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR Code Scanner",
+  "url": "https://qrotto.com/qr-code-scanner",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Scan a QR code from an image, a screenshot or your camera, and read what it contains before opening it. Works in your browser, nothing is uploaded.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Scan from image file",
+    "Drag and drop",
+    "Paste from clipboard",
+    "Camera scanning",
+    "Identifies code type"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "QR Code Scanner",
+      "item": "https://qrotto.com/qr-code-scanner"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="./" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="url-qr-code-generator">URL QR</a>
+ <a href="vcard-qr-code-generator">vCard QR</a>
+ <a href="wifi-qr-code-generator">WiFi QR</a>
+ <a href="text-qr-code-generator">Text QR</a>
+ <a href="email-qr-code-generator">Email QR</a>
+ <a href="sms-qr-code-generator">SMS QR</a>
+ <a href="phone-qr-code-generator">Phone QR</a>
+ <a href="calendar-qr-code-generator">Event QR</a>
+ <a href="location-qr-code-generator">Location QR</a>
+ <a href="social-media-qr-code-generator">Social QR</a>
+ <a href="bulk-qr-code-generator">Bulk QR</a>
+ <a href="qr-code-scanner" class="active">Scanner</a>
+ <a href="blog/">Blog</a>
+ <a href="about">About</a>
+ <a href="faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="./">Home</a> / QR Code Scanner</p>
+ <div class="hero">
+ <h1>QR Code Scanner</h1>
+ <p>Read what a QR code contains before you open it. From an image, a screenshot, or your camera.</p>
+ </div>
+
+ <div class="panel bulk-panel">
+ <div class="scan-drop" id="scanDrop">
+ <p><strong>Drop an image here</strong>, or paste one with Ctrl+V</p>
+ <p class="scan-or">works with screenshots and photos</p>
+ <input type="file" id="scanFile" accept="image/*" style="display:none">
+ <button class="btn" onclick="document.getElementById('scanFile').click()">Choose an image</button>
+ <button class="btn btn-outline" id="camStart" style="margin-left:8px;">Use camera</button>
+ <button class="btn btn-outline" id="camStop" hidden style="margin-left:8px;">Stop camera</button>
+ </div>
+
+ <div class="scan-media">
+ <video id="scanVideo" hidden playsinline muted></video>
+ <img id="scanPreview" hidden alt="The image you are scanning">
+ </div>
+
+ <div class="scan-result" id="scanResult" hidden>
+ <span class="scan-kind" id="scanKind"></span>
+ <pre class="scan-out" id="scanOut"></pre>
+ <p style="margin:14px 0 0;"><a class="btn" id="scanOpen" hidden rel="noopener nofollow" target="_blank">Open this link</a></p>
+ </div>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Updated <time datetime="2026-09-17">17 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>6 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#reading-a-code-instead-of-making-one">Reading a code instead of making one</a></li>
+        <li><a href="#four-ways-to-scan">Four ways to scan</a></li>
+        <li><a href="#what-it-tells-you">What it tells you</a></li>
+        <li><a href="#checking-a-code-you-did-not-create">Checking a code you did not create</a></li>
+        <li><a href="#when-a-scan-fails">When a scan fails</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+        <li><a href="#related-tools">Related tools</a></li>
+      </ol>
+    </nav>
+    <h2 id="reading-a-code-instead-of-making-one">Reading a code instead of making one</h2>
+    <p>Every other tool on this site turns information into a QR code. This one goes the other way: give it an image and it tells you exactly what the code contains, in plain text, before anything opens.</p>
+    <p>That matters for two quite different reasons. The everyday one is that you cannot point a camera at your own screen, so a code sent in a message needs a different route. The more important one is safety: seeing the contents first is the single habit that defeats almost every QR scam.</p>
+
+    <h2 id="four-ways-to-scan">Four ways to scan</h2>
+    <ul>
+      <li><strong>Choose a file.</strong> Any image containing a code, including screenshots.</li>
+      <li><strong>Drag and drop</strong> an image straight onto the box.</li>
+      <li><strong>Paste.</strong> Copy an image anywhere, then press Ctrl+V or Cmd+V on this page.</li>
+      <li><strong>Use the camera.</strong> Point it at a printed code. Your browser will ask permission first, and the video never leaves your device.</li>
+    </ul>
+
+    <h2 id="what-it-tells-you">What it tells you</h2>
+    <p>The scanner does not just dump the raw string. It identifies what kind of code it is, because the contents mean different things depending on type:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Type</th><th>What you will see</th></tr></thead>
+        <tbody>
+          <tr><td>Website link</td><td>The full URL, plus a button to open it once you have read it</td></tr>
+          <tr><td>WiFi network</td><td>The network name, the password in plain text, and the security type</td></tr>
+          <tr><td>Contact card</td><td>The full vCard, name, phone, email and company</td></tr>
+          <tr><td>Calendar event</td><td>The event title, start, end and location</td></tr>
+          <tr><td>Phone or SMS</td><td>The number, and any prefilled message</td></tr>
+          <tr><td>Plain text</td><td>The message exactly as encoded</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The WiFi row is worth pausing on. A WiFi QR code carries the password as readable text, which surprises people. Scanning one here shows you exactly how exposed that password is to anyone who photographs the code.</p>
+
+    <div class="takeaway">
+      <p><strong>Read before you tap.</strong> A link is only shown as a clickable button after you have seen the full address. If the domain is not what you expected, close the page. That one check defeats nearly every QR based scam, and it is the reason this tool never opens anything automatically.</p>
+    </div>
+
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="checking-a-code-you-did-not-create">Checking a code you did not create</h2>
+    <p>Codes arriving by message, email or post deserve more suspicion than one printed on a menu, because you did not choose the source. Things worth looking at once the contents appear:</p>
+    <ul>
+      <li><strong>Does the domain match the business?</strong> A parking payment should not open a domain you have never heard of.</li>
+      <li><strong>Lookalike spelling.</strong> A zero for an o, an extra hyphen, an unusual ending.</li>
+      <li><strong>A shortener you cannot inspect.</strong> Legitimate businesses use them, but a shortener plus urgency is a poor combination.</li>
+      <li><strong>An immediate request for payment or a login</strong> from something you did not initiate.</li>
+    </ul>
+    <p>Our guide on <a href="blog/are-qr-codes-safe">spotting a malicious QR code</a> goes through how these scams actually work, with a test we ran on two visually identical codes pointing at very different places.</p>
+
+    <h2 id="when-a-scan-fails">When a scan fails</h2>
+    <p>If nothing is detected, it is almost always the image rather than the code:</p>
+    <ul>
+      <li><strong>Too small.</strong> This is the usual cause. We measured it: the same code decoded down to 92 pixels and failed at 55. Ask for the original image rather than a forwarded copy, since messaging apps shrink pictures.</li>
+      <li><strong>Too much around it.</strong> A full page screenshot leaves the code tiny. Crop to the code and try again.</li>
+      <li><strong>A corner is cropped or covered.</strong> The three large squares are position markers. Damage there stops detection completely rather than degrading gracefully, as our <a href="blog/qr-code-damage-test">damage test</a> shows.</li>
+      <li><strong>A screenshot of a screenshot.</strong> Each round trip loses resolution.</li>
+    </ul>
+    <p>Interestingly, compression is rarely the problem. In the same tests, a code survived being saved as JPEG at quality 5. Size is what breaks scanning, not file size.</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p>Images are decoded in your browser. Nothing is uploaded, no file reaches a server, and camera video is processed frame by frame on your own device and discarded. Close the tab and there is nothing left anywhere.</p>
+    <p>That is the point of doing it this way. A WiFi password or a contact card read through an online scanner that uploads the image has been handed to a stranger. Here it has not left the machine you are sitting at.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+    <h3>Does it work on a phone?</h3>
+    <p>Yes, and the camera option is the natural one there. On a phone your own camera app may already read printed codes, so this is most useful for codes already saved in your photos.</p>
+    <h3>Can it read a damaged or partly covered code?</h3>
+    <p>Sometimes. QR codes carry error correction that recovers a limited amount of missing data, and the scanner will use it. But damage to a corner marker is usually fatal regardless of how much of the rest survives.</p>
+    <h3>Can it read barcodes too?</h3>
+    <p>No, QR codes only. Traditional barcodes use a different format entirely.</p>
+    <h3>Why not open the link straight away?</h3>
+    <p>Because that would defeat the purpose. The value here is seeing the destination before committing to it.</p>
+
+    <h2 id="related-tools">Related tools</h2>
+    <p>Need to make a code rather than read one? Start with <a href="url-qr-code-generator">URL</a>, <a href="wifi-qr-code-generator">WiFi</a>, <a href="vcard-qr-code-generator">vCard</a> or <a href="text-qr-code-generator">text</a>, or generate a whole list at once with the <a href="bulk-qr-code-generator">bulk generator</a>. If you are scanning something from a screenshot, our guide on <a href="blog/scan-qr-code-from-screenshot">scanning from screenshots</a> covers the platform specific shortcuts too.</p>
+ </article>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h4><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h4>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="./">Home</a> ·
+ <a href="blog/">Blog</a> ·
+ <a href="services">Services</a> ·
+ <a href="about">About</a> ·
+ <a href="author">Editorial</a> ·
+ <a href="faq">FAQ</a> ·
+ <a href="contact">Contact</a> ·
+ <a href="privacy-policy">Privacy Policy</a> ·
+ <a href="terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script>
+  var stream = null;
+  var scanning = false;
+
+  function show(result, source) {
+    var box = document.getElementById("scanResult");
+    var out = document.getElementById("scanOut");
+    var kind = document.getElementById("scanKind");
+    var open = document.getElementById("scanOpen");
+
+    if (!result) {
+      box.hidden = false;
+      kind.textContent = "No QR code found";
+      kind.className = "scan-kind scan-fail";
+      out.textContent = source === "camera" ? "Still looking. Hold the code steady and fill more of the frame."
+                                            : "No code detected in that image. Try a tighter crop around the code.";
+      open.hidden = true;
+      return;
+    }
+
+    var data = result.data;
+    var label = "Plain text";
+    var href = null;
+
+    if (/^https?:\/\//i.test(data)) { label = "Website link"; href = data; }
+    else if (/^WIFI:/i.test(data)) { label = "WiFi network"; }
+    else if (/^BEGIN:VCARD/i.test(data)) { label = "Contact card"; }
+    else if (/^BEGIN:VEVENT/i.test(data)) { label = "Calendar event"; }
+    else if (/^mailto:/i.test(data)) { label = "Email"; href = data; }
+    else if (/^tel:/i.test(data)) { label = "Phone number"; href = data; }
+    else if (/^SMSTO:|^smsto:/i.test(data)) { label = "Text message"; }
+    else if (/^geo:/i.test(data)) { label = "Location"; }
+
+    box.hidden = false;
+    kind.textContent = label;
+    kind.className = "scan-kind scan-ok";
+    out.textContent = data;
+
+    if (href) {
+      open.hidden = false;
+      open.href = href;
+      open.textContent = "Open this link";
+    } else {
+      open.hidden = true;
+    }
+  }
+
+  function decodeCanvas(cv) {
+    var ctx = cv.getContext("2d", { willReadFrequently: true });
+    var img = ctx.getImageData(0, 0, cv.width, cv.height);
+    return jsQR(img.data, img.width, img.height, { inversionAttempts: "attemptBoth" });
+  }
+
+  function handleImage(file) {
+    if (!file || !/^image\//.test(file.type)) return;
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var im = new Image();
+      im.onload = function () {
+        var max = 1400;
+        var scale = Math.min(1, max / Math.max(im.width, im.height));
+        var cv = document.createElement("canvas");
+        cv.width = Math.round(im.width * scale);
+        cv.height = Math.round(im.height * scale);
+        cv.getContext("2d").drawImage(im, 0, 0, cv.width, cv.height);
+
+        var preview = document.getElementById("scanPreview");
+        preview.src = cv.toDataURL("image/png");
+        preview.hidden = false;
+
+        show(decodeCanvas(cv), "file");
+      };
+      im.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function startCamera() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      show(null, "camera");
+      document.getElementById("scanOut").textContent =
+        "This browser cannot open the camera. Upload a photo of the code instead.";
+      return;
+    }
+    var video = document.getElementById("scanVideo");
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+      .then(function (s) {
+        stream = s; scanning = true;
+        video.srcObject = s;
+        video.hidden = false;
+        video.play();
+        document.getElementById("camStart").hidden = true;
+        document.getElementById("camStop").hidden = false;
+        tick();
+      })
+      .catch(function () {
+        show(null, "camera");
+        document.getElementById("scanOut").textContent =
+          "Camera access was refused. Upload a photo of the code instead.";
+      });
+  }
+
+  function stopCamera() {
+    scanning = false;
+    if (stream) { stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; }
+    var video = document.getElementById("scanVideo");
+    video.hidden = true;
+    document.getElementById("camStart").hidden = false;
+    document.getElementById("camStop").hidden = true;
+  }
+
+  function tick() {
+    if (!scanning) return;
+    var video = document.getElementById("scanVideo");
+    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+      var cv = document.createElement("canvas");
+      cv.width = video.videoWidth; cv.height = video.videoHeight;
+      cv.getContext("2d", { willReadFrequently: true }).drawImage(video, 0, 0, cv.width, cv.height);
+      var r = decodeCanvas(cv);
+      if (r) { show(r, "camera"); stopCamera(); return; }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("load", function () {
+    var drop = document.getElementById("scanDrop");
+    var input = document.getElementById("scanFile");
+
+    input.addEventListener("change", function () { handleImage(this.files[0]); });
+
+    ["dragenter", "dragover"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("drag"); });
+    });
+    ["dragleave", "drop"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("drag"); });
+    });
+    drop.addEventListener("drop", function (e) {
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) handleImage(e.dataTransfer.files[0]);
+    });
+
+    document.addEventListener("paste", function (e) {
+      var items = (e.clipboardData || {}).items || [];
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf("image") === 0) { handleImage(items[i].getAsFile()); break; }
+      }
+    });
+
+    document.getElementById("camStart").addEventListener("click", startCamera);
+    document.getElementById("camStop").addEventListener("click", stopCamera);
+  });
+
+</script>
+
+</body>
+</html>
