@@ -739,3 +739,80 @@ a:focus-visible {
   margin: 0;
   color: var(--text);
 }
+
+/* ---------- QR designer ---------- */
+
+.ds-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 800px) { .ds-layout { grid-template-columns: 1fr; } }
+
+.ds-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.ds-row .form-group { flex: 1; min-width: 130px; }
+
+input[type="color"] {
+  width: 100%;
+  height: 42px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  cursor: pointer;
+}
+
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+.ds-slider-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ds-slider-label span { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+
+.ds-check {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.ds-verdict {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.ds-pass { background: #e9f3ed; color: #1b7a52; }
+.ds-fail { background: #fbeded; color: #9e2020; }
+.ds-detail { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+
+.ds-note { font-size: 0.82rem; color: #9a6110; margin: 6px 0 0; }
+
+.ds-preview {
+  text-align: center;
+  background: #fbfbfe;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-preview img { max-width: 300px; border-radius: 8px; }
+
+.checkbox-row { display: flex; align-items: center; gap: 9px; margin-bottom: 16px; }
+.checkbox-row input { width: auto; }
+.checkbox-row label { margin: 0; font-weight: 500; }
