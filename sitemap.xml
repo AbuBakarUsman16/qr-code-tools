@@ -55,6 +55,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://qrotto.com/appointment-qr-code-generator</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qrotto.com/booking-qr-code-generator</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qrotto.com/feedback-qr-code-generator</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://qrotto.com/location-qr-code-generator</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>

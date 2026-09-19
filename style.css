@@ -855,3 +855,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   .st-thumb img { width: 130px; }
   .st-case, .st-case img { width: 132px; }
 }
+
+/* ---------- booking and feedback helpers ---------- */
+.bk-hint { margin: 12px 0 0; font-size: 0.9rem; color: var(--muted); min-height: 1.2em; }
+.fb-help { margin: 6px 0 0; font-size: 0.85rem; color: var(--muted); }

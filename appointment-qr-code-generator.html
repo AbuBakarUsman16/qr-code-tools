@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Appointment QR Code Generator | With Reminder Alert</title>
+<meta name="description" content="Create a QR code that saves an appointment to your client's calendar, sets a reminder, and carries your reschedule link. Free, no signup, works in the browser.">
+<link rel="canonical" href="https://qrotto.com/appointment-qr-code-generator">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Free Appointment QR Code Generator | With Reminder Alert">
+<meta property="og:description" content="Create a QR code that saves an appointment to your client's calendar, sets a reminder, and carries your reschedule link. Free, no signup, works in the browser.">
+<meta property="og:url" content="https://qrotto.com/appointment-qr-code-generator">
+<meta property="og:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Appointment QR Code Generator | With Reminder Alert">
+<meta name="twitter:description" content="Create a QR code that saves an appointment to your client's calendar, sets a reminder, and carries your reschedule link. Free, no signup, works in the browser.">
+<meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Appointment QR Code Generator",
+  "url": "https://qrotto.com/appointment-qr-code-generator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Create a QR code that saves an appointment to a calendar with a reminder alert and a reschedule link attached.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Appointment QR Code Generator", "item": "https://qrotto.com/appointment-qr-code-generator" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="./" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="url-qr-code-generator">URL QR</a>
+ <a href="vcard-qr-code-generator">vCard QR</a>
+ <a href="wifi-qr-code-generator">WiFi QR</a>
+ <a href="text-qr-code-generator">Text QR</a>
+ <a href="email-qr-code-generator">Email QR</a>
+ <a href="sms-qr-code-generator">SMS QR</a>
+ <a href="phone-qr-code-generator">Phone QR</a>
+ <a href="calendar-qr-code-generator">Event QR</a>
+ <a href="appointment-qr-code-generator" class="active">Appointment QR</a>
+ <a href="location-qr-code-generator">Location QR</a>
+ <a href="social-media-qr-code-generator">Social QR</a>
+ <a href="bulk-qr-code-generator">Bulk QR</a>
+ <a href="qr-code-scanner">Scanner</a>
+ <a href="qr-code-designer">Designer</a>
+ <a href="qr-code-stress-test">Stress Test</a>
+ <a href="blog/">Blog</a>
+ <a href="about">About</a>
+ <a href="faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="./">Home</a> / Appointment QR Code Generator</p>
+ <div class="hero">
+ <h1>Appointment QR Code Generator</h1>
+ <p>One scan puts the appointment in their calendar, sets a reminder, and keeps your reschedule link attached to it. No app, no account.</p>
+ </div>
+
+ <div class="generator-layout">
+ <div class="panel">
+      <div class="form-group">
+        <label for="apTitle">Appointment title</label>
+        <input type="text" id="apTitle" placeholder="Dental check up with Dr Rivera">
+      </div>
+      <div class="form-group">
+        <label for="apStart">Starts</label>
+        <input type="datetime-local" id="apStart">
+      </div>
+      <div class="form-group">
+        <label for="apDur">Length</label>
+        <select id="apDur">
+          <option value="15">15 minutes</option>
+          <option value="30" selected>30 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="90">1 hour 30</option>
+          <option value="120">2 hours</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="apLoc">Where (optional)</label>
+        <input type="text" id="apLoc" placeholder="14 Bridge Street, Suite 3">
+      </div>
+      <div class="form-group">
+        <label for="apUrl">Reschedule or booking link (optional)</label>
+        <input type="url" id="apUrl" placeholder="https://yourclinic.com/reschedule">
+      </div>
+      <div class="form-group">
+        <label for="apRemind">Reminder</label>
+        <select id="apRemind">
+          <option value="">No reminder</option>
+          <option value="15">15 minutes before</option>
+          <option value="60">1 hour before</option>
+          <option value="1440" selected>1 day before</option>
+          <option value="2880">2 days before</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="apNotes">Notes (optional)</label>
+        <textarea id="apNotes" placeholder="Please arrive 10 minutes early. Bring your insurance card."></textarea>
+      </div>
+      <button class="btn" onclick="generateAppointment()">Generate QR Code</button>
+ </div>
+ <div class="panel qr-output">
+ <div id="qrcode"></div>
+ <div class="qr-actions">
+ <button class="btn btn-outline" onclick="downloadQRCode('appointment-qr-code.png')">Download PNG</button>
+ </div>
+ </div>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Updated <time datetime="2026-09-19">19 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>6 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-this-makes">What this code actually contains</a></li>
+        <li><a href="#why-the-reminder-matters">Why the reminder is the point</a></li>
+        <li><a href="#the-reschedule-link">The reschedule link, and why it belongs here</a></li>
+        <li><a href="#the-timezone-question">The timezone question</a></li>
+        <li><a href="#where-to-put-it">Where to put the code</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+        <li><a href="#related-tools">Related tools</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="what-this-makes">What this code actually contains</h2>
+    <p>The code holds a complete iCalendar entry, the same format email invitations use. Scanning it offers to add the appointment to whatever calendar the phone uses, with your title, time, place and notes already filled in.</p>
+    <p>It contains three things a plain event code usually leaves out:</p>
+    <ul>
+      <li><strong>A reminder alert</strong>, so the phone warns the client before the appointment rather than relying on them to check.</li>
+      <li><strong>A reschedule link</strong>, stored in the entry's URL field, so the way to move the appointment travels with it.</li>
+      <li><strong>A full calendar wrapper</strong> rather than a bare event block, which more apps accept cleanly.</li>
+    </ul>
+    <p>Nothing is sent anywhere. The code is built in your browser, and once it is printed it keeps working with no service behind it.</p>
+
+    <h2 id="why-the-reminder-matters">Why the reminder is the point</h2>
+    <p>A no show costs you the slot, and most no shows are not people changing their mind. They are people who forgot. Putting the appointment in the calendar helps. Putting an alert in the calendar is what actually reaches them.</p>
+    <p>The default here is one day before, which gives someone time to call and move it rather than simply not turning up. For a short appointment where travel is trivial, one hour before is usually better. For anything people need to prepare for, such as fasting before bloods or bringing documents, use one day and put the instruction in the notes so the reminder carries it.</p>
+    <div class="takeaway">
+      <p><strong>Worth knowing:</strong> reminder support is not universal. Apple Calendar and most Android calendar apps honour the alert in a scanned entry, but some third party calendar apps ignore it and keep only the event. The appointment itself always survives, so the worst case is the client gets the entry without the alert, never a broken code.</p>
+    </div>
+
+    <h2 id="the-reschedule-link">The reschedule link, and why it belongs here</h2>
+    <p>Most practices print a booking link on the card and hope it gets kept. The card goes in a pocket and then a bin. The calendar entry does not.</p>
+    <p>Putting your reschedule URL in the entry means that three weeks later, when the client opens the appointment to check the time, the link to move it is right there. That turns a potential no show into a rebooking, which is the difference between losing the slot and filling it.</p>
+    <p>Use a link that goes straight to your booking page rather than your homepage. Our test of <a href="blog/location-qr-code-format-test">how link length affects code size</a> applies here too: a short URL keeps the code sparser, and an appointment code is already carrying a lot of text.</p>
+
+    <h2 id="the-timezone-question">The timezone question</h2>
+    <p>This tool writes the time without a timezone attached, which is deliberate and is what you want for an in person appointment.</p>
+    <p>A time with no timezone is treated as local time by the calendar app. If you write 2pm, the client sees 2pm, whatever their phone is set to. That is correct for someone walking into your clinic at 2pm.</p>
+    <p>It is the wrong choice for a remote appointment across timezones, such as a video consultation with a client in another country. In that case the safer route is a booking page that handles timezones properly, and a plain <a href="url-qr-code-generator">URL code</a> pointing at it.</p>
+
+    <h2 id="where-to-put-it">Where to put the code</h2>
+    <ul>
+      <li><strong>The appointment card you hand over at reception.</strong> This is the main one. Print it at 2 to 3 cm, next to the written date so there is a fallback if the scan fails.</li>
+      <li><strong>The confirmation email or text.</strong> Attach the PNG, because the calendar entry is more reliable than asking someone to add it manually.</li>
+      <li><strong>The back of a business card</strong> for a follow up appointment booked on the spot.</li>
+      <li><strong>A printed treatment plan</strong> where several future dates are listed, one small code per date.</li>
+    </ul>
+    <p>Always keep the date in readable text beside the code. A code is a convenience, not a replacement for the information. If the scan fails, or the client has no phone to hand, the card still has to work.</p>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>How is this different from your event code?</h3>
+    <p>Our <a href="calendar-qr-code-generator">event generator</a> makes a plain calendar entry, which is right for an open day, a wedding or a class where everyone gets the same code. This one adds the reminder alert and the reschedule link, which only make sense when the entry belongs to one person and you have a business interest in them turning up.</p>
+
+    <h3>Can I put the client's name in it?</h3>
+    <p>You can, in the title or notes, but think first. A printed code is readable by anyone who picks up the card, and a calendar entry saying a person's name alongside a clinic name is health information sitting on a piece of paper. For anything sensitive, keep the title generic and let the client's own calendar hold the detail.</p>
+
+    <h3>Will it work if the client scans it weeks later?</h3>
+    <p>Yes. The code holds the appointment, not a link to it, so it works offline and does not expire. It will still add the appointment after the date has passed, which is worth knowing if you reuse a card design.</p>
+
+    <h3>Why did my code get so dense?</h3>
+    <p>Long notes. Every character goes into the image, and a paragraph of instructions can double the module count, which means it has to be printed larger. Keep notes to one short line, or leave them out and put the instructions in printed text beside the code where they cost nothing. You can check the result with our <a href="qr-code-stress-test">stress test</a> before printing.</p>
+
+    <h3>Does the client need an app?</h3>
+    <p>No. The camera app on both iPhone and Android reads the code and offers to add the appointment using the calendar the phone already has.</p>
+
+    <h2 id="related-tools">Related tools</h2>
+    <p>For a public event rather than a personal appointment, use the <a href="calendar-qr-code-generator">event code generator</a>. If you want people to book rather than confirming a booked slot, the <a href="booking-qr-code-generator">booking code generator</a> covers online, phone, text and WhatsApp bookings. Add a <a href="location-qr-code-generator">location code</a> if your entrance is hard to find, and a <a href="vcard-qr-code-generator">vCard code</a> so your number is saved before they need it.</p>
+ </article>
+
+ <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="./">Home</a> ·
+ <a href="blog/">Blog</a> ·
+ <a href="services">Services</a> ·
+ <a href="about">About</a> ·
+    <a href="author">Editorial</a> ·
+ <a href="faq">FAQ</a> ·
+ <a href="contact">Contact</a> ·
+ <a href="privacy-policy">Privacy Policy</a> ·
+ <a href="terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+<script>
+  let qr = new QRCode(document.getElementById("qrcode"), {
+    text: "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Appointment\nEND:VEVENT\nEND:VCALENDAR",
+    width: 1024, height: 1024
+  });
+
+  function esc(v) {
+    return (v || "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+  }
+  function stamp(local) {
+    if (!local) return "";
+    return local.replace(/[-:]/g, "").replace("T", "T") + "00";
+  }
+  function plusMinutes(local, mins) {
+    if (!local) return "";
+    var d = new Date(local);
+    if (isNaN(d.getTime())) return "";
+    d = new Date(d.getTime() + mins * 60000);
+    function p(n) { return String(n).padStart(2, "0"); }
+    return d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "T" +
+           p(d.getHours()) + p(d.getMinutes()) + "00";
+  }
+
+  function generateAppointment() {
+    var title = esc(document.getElementById("apTitle").value.trim());
+    var startLocal = document.getElementById("apStart").value;
+    var dur = parseInt(document.getElementById("apDur").value, 10);
+    var loc = esc(document.getElementById("apLoc").value.trim());
+    var url = document.getElementById("apUrl").value.trim();
+    var remind = document.getElementById("apRemind").value;
+    var notes = esc(document.getElementById("apNotes").value.trim());
+    if (!title || !startLocal) return;
+
+    var lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//QRotto//Appointment//EN", "BEGIN:VEVENT"];
+    lines.push("SUMMARY:" + title);
+    lines.push("DTSTART:" + stamp(startLocal));
+    var end = plusMinutes(startLocal, dur);
+    if (end) lines.push("DTEND:" + end);
+    if (loc) lines.push("LOCATION:" + loc);
+    if (url) lines.push("URL:" + url);
+    var desc = notes;
+    if (url) desc = desc ? desc + "\\n" + "Reschedule: " + url : "Reschedule: " + url;
+    if (desc) lines.push("DESCRIPTION:" + desc);
+    if (remind) {
+      lines.push("BEGIN:VALARM", "ACTION:DISPLAY",
+                 "DESCRIPTION:" + title,
+                 "TRIGGER:-PT" + remind + "M", "END:VALARM");
+    }
+    lines.push("END:VEVENT", "END:VCALENDAR");
+
+    qr.clear();
+    qr.makeCode(lines.join("\n"));
+  }
+</script>
+<script src="lightbox.js"></script>
+
+</body>
+</html>
