@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Stress Test | Find Out Where Your Code Breaks</title>
+<meta name="description" content="Upload a QR code and we damage it the way the real world does: blur, angle, shrinking and corner damage. Find out where yours stops scanning, before you print it.">
+<link rel="canonical" href="https://qrotto.com/qr-code-stress-test">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="QR Code Stress Test | Find Out Where Your Code Breaks">
+<meta property="og:description" content="Upload a QR code and we damage it the way the real world does: blur, angle, shrinking and corner damage. Find out where yours stops scanning, before you print it.">
+<meta property="og:url" content="https://qrotto.com/qr-code-stress-test">
+<meta property="og:image" content="https://qrotto.com/images/qr-scan-limits-test.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Code Stress Test | Find Out Where Your Code Breaks">
+<meta name="twitter:description" content="Upload a QR code and we damage it the way the real world does: blur, angle, shrinking and corner damage. Find out where yours stops scanning, before you print it.">
+<meta name="twitter:image" content="https://qrotto.com/images/qr-scan-limits-test.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR Code Stress Test",
+  "url": "https://qrotto.com/qr-code-stress-test",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "description": "Upload a QR code and we degrade it the way the real world does, with blur, viewing angle, reduced resolution and corner damage, then report where it stops decoding.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "QR Code Stress Test", "item": "https://qrotto.com/qr-code-stress-test" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="./" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="url-qr-code-generator">URL QR</a>
+ <a href="vcard-qr-code-generator">vCard QR</a>
+ <a href="wifi-qr-code-generator">WiFi QR</a>
+ <a href="text-qr-code-generator">Text QR</a>
+ <a href="email-qr-code-generator">Email QR</a>
+ <a href="sms-qr-code-generator">SMS QR</a>
+ <a href="phone-qr-code-generator">Phone QR</a>
+ <a href="calendar-qr-code-generator">Event QR</a>
+ <a href="location-qr-code-generator">Location QR</a>
+ <a href="social-media-qr-code-generator">Social QR</a>
+ <a href="bulk-qr-code-generator">Bulk QR</a>
+ <a href="qr-code-scanner">Scanner</a>
+ <a href="qr-code-designer">Designer</a>
+ <a href="qr-code-stress-test" class="active">Stress Test</a>
+ <a href="blog/">Blog</a>
+ <a href="services">Services</a>
+ <a href="about">About</a>
+ <a href="faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="./">Home</a> / QR Code Stress Test</p>
+ <div class="hero">
+ <h1>QR Code Stress Test</h1>
+ <p>Every generator tells you a code works. This one tells you where it stops working. Upload a code and we break it four different ways.</p>
+ </div>
+
+ <div class="panel st-panel">
+   <div class="scan-drop" id="stDrop">
+     <p><strong>Drop a QR code image here</strong></p>
+     <input type="file" id="stFile" accept="image/*" aria-label="Choose a QR code image to stress test" style="display:none">
+     <button class="btn" type="button" id="stPick">Choose an image</button>
+     <p class="scan-or">or test a code made from text</p>
+     <div class="st-gen">
+       <label class="st-label" for="stText">Text or link</label>
+       <input type="text" id="stText" value="https://qrotto.com" placeholder="https://example.com">
+       <label class="st-label" for="stEc">Error correction</label>
+       <select id="stEc">
+         <option value="L">L, lowest</option>
+         <option value="M" selected>M, common default</option>
+         <option value="Q">Q</option>
+         <option value="H">H, highest</option>
+       </select>
+       <button class="btn btn-outline" type="button" id="stMake">Make it and test</button>
+     </div>
+   </div>
+
+   <div id="stBusy" class="st-busy" hidden>Running the tests, this takes a moment…</div>
+
+   <div id="stResults" hidden>
+     <div class="st-top">
+       <div class="st-thumb"><img id="stImg" alt="The QR code being tested"></div>
+       <div class="st-facts">
+         <h2>What we are testing</h2>
+         <dl id="stFacts"></dl>
+       </div>
+     </div>
+
+     <h2 class="st-h">Where it breaks</h2>
+     <div class="table-wrap">
+       <table class="cmp st-table">
+         <thead><tr><th>Test</th><th>Survived up to</th><th>Reading</th></tr></thead>
+         <tbody id="stRows"></tbody>
+       </table>
+     </div>
+
+     <div id="stAdvice" class="takeaway"></div>
+
+     <h2 class="st-h">The failure points</h2>
+     <p class="st-note">Each pair is the last version that decoded and the first that did not. In most cases you cannot see the difference.</p>
+     <div class="st-strip" id="stStrip"></div>
+   </div>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Updated <time datetime="2026-09-19">19 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>6 min read</span>
+ </div>
+
+ <article class="content-block prose">
+   <nav class="toc" aria-label="Table of contents">
+     <h2>On this page</h2>
+     <ol>
+       <li><a href="#what-this-does">What this actually does</a></li>
+       <li><a href="#the-four-tests">The four tests, and why these four</a></li>
+       <li><a href="#reading-your-results">Reading your results</a></li>
+       <li><a href="#what-it-cannot-tell-you">What it cannot tell you</a></li>
+       <li><a href="#common-questions">Common questions</a></li>
+       <li><a href="#related-tools">Related tools</a></li>
+     </ol>
+   </nav>
+
+   <h2 id="what-this-does">What this actually does</h2>
+   <p>A QR code either decodes or it does not, and every generator on the internet will happily show you one that decodes on a clean screen at full size. That tells you almost nothing about whether it will still work printed on a table card in a dim restaurant.</p>
+   <p>This tool answers the more useful question. It takes your code, degrades it step by step in four ways that actually happen to printed codes, and reports the exact point where each one stops decoding. Everything runs in your browser using <a href="https://github.com/cozmo/jsQR" rel="noopener" target="_blank">jsQR</a>. Your image is never uploaded anywhere.</p>
+
+   <h2 id="the-four-tests">The four tests, and why these four</h2>
+   <p>We chose these four because we measured all of them first, and published what we found in our <a href="blog/why-qr-codes-fail-to-scan">scan limits test</a> and our <a href="blog/qr-code-damage-test">damage test</a>. The short version of both:</p>
+   <ul>
+     <li><strong>Blur.</strong> The one that matters. In our testing a code died once the image was blurred by roughly four tenths of one module, which on a 20 mm printed code is about two tenths of a millimetre. Focus, not size, is what breaks most real scans.</li>
+     <li><strong>Viewing angle.</strong> Far more forgiving than people expect. A code survived being tilted 60 degrees off square. If someone is standing to the side of your poster, that is not their problem.</li>
+     <li><strong>Resolution.</strong> Also forgiving. Ours held down to about 1.7 pixels per module, which is why a screenshot is essentially never too small.</li>
+     <li><strong>Corner damage.</strong> The brutal one. The three large corner squares are position markers, and they have no error correction at all. A single missing module there killed a code that shrugged off 19% of its area being covered in the middle.</li>
+   </ul>
+   <p>We left rotation out of the results table because it makes no difference whatsoever. We tested 15, 45, 90, 135 and 180 degrees and every one decoded. A QR code has no up.</p>
+
+   <h2 id="reading-your-results">Reading your results</h2>
+   <p>The numbers that matter most are the blur figure and the corner result.</p>
+   <p><strong>Blur</strong> is reported as a fraction of one module, so it transfers to any print size. A higher number is better. If your code fails at a low blur figure it is usually because it is dense, meaning you have encoded a lot of data, and every module is therefore small relative to the whole. The fix is not a better printer, it is less data. Shorten the URL, drop optional vCard fields, or print larger.</p>
+   <p><strong>Resolution</strong> is reported as the fewest pixels per module that still decoded. Multiply that by your module count to get the smallest usable image, and note that print is a different question from screen: our <a href="blog/qr-code-size-for-print">print sizing guide</a> covers the distance arithmetic.</p>
+   <p><strong>Corner damage</strong> should fail immediately on any code. If yours survives a corner hit, the image probably has a generous quiet zone and the decoder found the pattern anyway. It is not a sign that you can safely put a sticker there.</p>
+
+   <div class="ad-slot">Advertisement</div>
+
+   <h2 id="what-it-cannot-tell-you">What it cannot tell you</h2>
+   <p>Being clear about the limits, because a confident number from a tool is easy to over trust:</p>
+   <ul>
+     <li><strong>This is a software decoder on a clean image.</strong> A phone camera adds sensor noise, uneven light and lens softness that we do not simulate. Treat every figure here as a best case.</li>
+     <li><strong>A phone gets many attempts, we give one.</strong> Your camera captures roughly thirty frames a second and refocuses between them, so it retries constantly. A code that fails one of our single shots may still work in someone's hand.</li>
+     <li><strong>Different decoders disagree.</strong> We use jsQR. iOS, Android and every scanning app use their own, and they do not all draw the line in the same place.</li>
+     <li><strong>We cannot test your printer.</strong> Ink spread, paper texture and lamination all matter, and none of them exist in a PNG.</li>
+   </ul>
+   <p>What the tool is genuinely good for is <em>comparison</em>. Run two versions of the same code, one with a logo and one without, or one with a long URL and one with a short one, and the difference between the two results is real and useful even if the absolute numbers are optimistic.</p>
+
+   <h2 id="common-questions">Common questions</h2>
+
+   <h3>Is my image uploaded to a server?</h3>
+   <p>No. The file is read by your browser and all four tests run on your own machine. There is no upload step, and the page works with your connection dropped once it has loaded.</p>
+
+   <h3>Why did my code fail the very first test?</h3>
+   <p>If the baseline decode fails, nothing else can run. The usual causes are a photograph of a code rather than the code itself, a code with no white border around it, or an image where the code is only a small part of a larger picture. Crop to the code, keep the white margin, and try again.</p>
+
+   <h3>What is a module?</h3>
+   <p>One of the small squares that make up the code. A code described as 29 by 29 has 29 modules on each side. Measuring blur and resolution in module widths rather than pixels means the answer holds no matter what size you print at.</p>
+
+   <h3>My code has a logo. Should I test it here?</h3>
+   <p>Yes, and this is one of the better uses for the tool. Export the finished code with the logo in place and run it. A logo eats the error correction budget you would otherwise be spending on print imperfections, so a logo code usually shows visibly worse blur tolerance than the same code without one. Our <a href="qr-code-designer">designer</a> applies a 15% coverage ceiling for that reason.</p>
+
+   <h3>Can I test a code I did not make?</h3>
+   <p>Yes. If you have been handed artwork by a designer or a printer, this is a quick way to check it before it goes on a thousand flyers. Use our <a href="qr-code-scanner">scanner</a> first if you also want to see where the code points.</p>
+
+   <h2 id="related-tools">Related tools</h2>
+   <p>Make a code with the <a href="url-qr-code-generator">URL</a>, <a href="wifi-qr-code-generator">WiFi</a> or <a href="vcard-qr-code-generator">vCard</a> generator, style one in the <a href="qr-code-designer">designer</a>, or read an existing one with the <a href="qr-code-scanner">scanner</a>. If you are producing a batch, the <a href="bulk-qr-code-generator">bulk generator</a> makes them all at once, and it is worth stress testing one from the batch before printing the rest.</p>
+ </article>
+
+ <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. The thresholds this tool checks against come from tests we ran and published ourselves. See our <a href="author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="./">Home</a> ·
+ <a href="blog/">Blog</a> ·
+ <a href="services">Services</a> ·
+ <a href="about">About</a> ·
+    <a href="author">Editorial</a> ·
+ <a href="faq">FAQ</a> ·
+ <a href="contact">Contact</a> ·
+ <a href="privacy-policy">Privacy Policy</a> ·
+ <a href="terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  var baseImg = null, modules = 0;
+
+  function canvasOf(img, w, h) {
+    var c = document.createElement("canvas");
+    c.width = Math.max(1, Math.round(w)); c.height = Math.max(1, Math.round(h));
+    return c;
+  }
+  function decode(cv) {
+    try {
+      var d = cv.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, cv.width, cv.height);
+      var r = jsQR(d.data, d.width, d.height, { inversionAttempts: "attemptBoth" });
+      return r || null;
+    } catch (e) { return null; }
+  }
+  function draw(img, w, h) {
+    var c = canvasOf(img, w, h), x = c.getContext("2d", { willReadFrequently: true });
+    x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height);
+    x.drawImage(img, 0, 0, c.width, c.height);
+    return c;
+  }
+
+  // ---- degradations -------------------------------------------------
+  function blurred(img, px) {
+    var c = canvasOf(img, img.width, img.height), x = c.getContext("2d", { willReadFrequently: true });
+    x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height);
+    x.filter = "blur(" + px + "px)";
+    x.drawImage(img, 0, 0);
+    x.filter = "none";
+    return c;
+  }
+  // proper projective warp, so the result is a viewing angle rather than a
+  // linear taper. a linear taper is not a perspective and decoders cannot
+  // correct it, which makes it unfairly harsh.
+  function solve8(A, b) {
+    var n = 8, i, j, k, m = [];
+    for (i = 0; i < n; i++) m.push(A[i].slice().concat([b[i]]));
+    for (i = 0; i < n; i++) {
+      var piv = i;
+      for (k = i + 1; k < n; k++) if (Math.abs(m[k][i]) > Math.abs(m[piv][i])) piv = k;
+      var t = m[i]; m[i] = m[piv]; m[piv] = t;
+      if (Math.abs(m[i][i]) < 1e-12) return null;
+      for (k = i + 1; k < n; k++) {
+        var fct = m[k][i] / m[i][i];
+        for (j = i; j <= n; j++) m[k][j] -= fct * m[i][j];
+      }
+    }
+    var out = new Array(n);
+    for (i = n - 1; i >= 0; i--) {
+      var sum = m[i][n];
+      for (j = i + 1; j < n; j++) sum -= m[i][j] * out[j];
+      out[i] = sum / m[i][i];
+    }
+    return out;
+  }
+
+  function tilted(img, deg) {
+    var w = img.width, h = img.height, f = Math.cos(deg * Math.PI / 180);
+    var inset = (1 - f) * h * 0.5;
+    // destination quad -> source quad
+    var dst = [[0, 0], [w, inset], [w, h - inset], [0, h]];
+    var src = [[0, 0], [w, 0], [w, h], [0, h]];
+    var A = [], b = [];
+    for (var i = 0; i < 4; i++) {
+      var X = dst[i][0], Y = dst[i][1], U = src[i][0], V = src[i][1];
+      A.push([X, Y, 1, 0, 0, 0, -U * X, -U * Y]); b.push(U);
+      A.push([0, 0, 0, X, Y, 1, -V * X, -V * Y]); b.push(V);
+    }
+    var co = solve8(A, b);
+    var out = canvasOf(img, w, h), ox = out.getContext("2d", { willReadFrequently: true });
+    if (!co) { ox.fillStyle = "#fff"; ox.fillRect(0, 0, w, h); ox.drawImage(img, 0, 0); return out; }
+
+    var srcC = draw(img, w, h);
+    var sd = srcC.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, w, h).data;
+    var od = ox.createImageData(w, h), o = od.data;
+    var a = co[0], b2 = co[1], c2 = co[2], d2 = co[3], e2 = co[4], f2 = co[5], g2 = co[6], h2 = co[7];
+    for (var y = 0; y < h; y++) {
+      for (var x2 = 0; x2 < w; x2++) {
+        var den = g2 * x2 + h2 * y + 1;
+        var sx = (a * x2 + b2 * y + c2) / den;
+        var sy = (d2 * x2 + e2 * y + f2) / den;
+        var p = (y * w + x2) * 4;
+        if (sx < 0 || sy < 0 || sx > w - 1 || sy > h - 1) {
+          o[p] = o[p + 1] = o[p + 2] = 255; o[p + 3] = 255; continue;
+        }
+        var x0 = Math.floor(sx), y0 = Math.floor(sy);
+        var x1 = Math.min(x0 + 1, w - 1), y1 = Math.min(y0 + 1, h - 1);
+        var fx = sx - x0, fy = sy - y0;
+        for (var ch = 0; ch < 3; ch++) {
+          var v00 = sd[(y0 * w + x0) * 4 + ch], v10 = sd[(y0 * w + x1) * 4 + ch];
+          var v01 = sd[(y1 * w + x0) * 4 + ch], v11 = sd[(y1 * w + x1) * 4 + ch];
+          o[p + ch] = (v00 * (1 - fx) + v10 * fx) * (1 - fy) + (v01 * (1 - fx) + v11 * fx) * fy;
+        }
+        o[p + 3] = 255;
+      }
+    }
+    ox.putImageData(od, 0, 0);
+    return out;
+  }
+  function cornerHit(img, loc, mod) {
+    var c = draw(img, img.width, img.height), x = c.getContext("2d", { willReadFrequently: true });
+    var tl = loc.topLeftCorner;
+    x.fillStyle = "#fff";
+    x.fillRect(tl.x, tl.y, Math.max(1, mod), Math.max(1, mod));
+    return c;
+  }
+
+  // ---- the run ------------------------------------------------------
+  function run(img) {
+    baseImg = img;
+    $("stBusy").hidden = false;
+    $("stResults").hidden = true;
+    setTimeout(function () { doRun(img); }, 30);
+  }
+
+  function doRun(img) {
+    var full = draw(img, img.width, img.height);
+    var base = decode(full);
+    if (!base) {
+      $("stBusy").hidden = true;
+      $("stResults").hidden = false;
+      $("stImg").src = full.toDataURL("image/png");
+      $("stFacts").innerHTML = "<dt>Result</dt><dd>We could not decode this image at all, so there is nothing to stress test.</dd>";
+      $("stRows").innerHTML = "";
+      $("stStrip").innerHTML = "";
+      $("stAdvice").innerHTML = "<p><strong>Nothing to test yet.</strong> Crop the image down to the code itself, keep the white border around it, and make sure it is the code rather than a photo of a screen showing one.</p>";
+      return;
+    }
+    var want = base.data;
+    modules = base.version ? base.version * 4 + 17 : 0;
+    var loc = base.location;
+    var codePx = Math.abs(loc.topRightCorner.x - loc.topLeftCorner.x) || img.width;
+    var mod = modules ? codePx / modules : img.width / 33;
+    var ppm = mod;
+
+    var strip = [];
+    function ok(cv) { var r = decode(cv); return !!r && r.data === want; }
+
+    // 1. blur, in module widths
+    var blurLast = 0, blurFirstFail = null;
+    for (var b = 0.05; b <= 1.2; b += 0.05) {
+      var cv = blurred(img, b * mod);
+      if (ok(cv)) { blurLast = b; } else { blurFirstFail = { v: b, cv: cv }; break; }
+      if (b >= 1.15) blurFirstFail = null;
+    }
+    if (blurLast > 0) strip.push(["Blur " + blurLast.toFixed(2) + " of a module", blurred(img, blurLast * mod), true]);
+    if (blurFirstFail) strip.push(["Blur " + blurFirstFail.v.toFixed(2) + " of a module", blurFirstFail.cv, false]);
+
+    // 2. tilt
+    var tiltLast = 0, tiltFail = null;
+    for (var d = 5; d <= 85; d += 5) {
+      var cv2 = tilted(img, d);
+      if (ok(cv2)) { tiltLast = d; } else { tiltFail = { v: d, cv: cv2 }; break; }
+    }
+    if (tiltLast > 0) strip.push(["Tilted " + tiltLast + " degrees", tilted(img, tiltLast), true]);
+    if (tiltFail) strip.push(["Tilted " + tiltFail.v + " degrees", tiltFail.cv, false]);
+
+    // 3. resolution, in pixels per module
+    var resLast = null, resFail = null;
+    for (var p = 6; p >= 0.8; p -= 0.1) {
+      var side = Math.round((p / ppm) * img.width);
+      if (side < 20) break;
+      var cv3 = draw(img, side, side);
+      if (ok(cv3)) { resLast = { v: p, cv: cv3 }; } else { if (resLast) { resFail = { v: p, cv: cv3 }; break; } }
+    }
+    if (resLast) strip.push([resLast.v.toFixed(1) + " px per module", resLast.cv, true]);
+    if (resFail) strip.push([resFail.v.toFixed(1) + " px per module", resFail.cv, false]);
+
+    // 4. one module off a corner
+    var cHit = cornerHit(img, loc, mod);
+    var cornerOk = ok(cHit);
+    strip.push(["One module off a corner", cHit, cornerOk]);
+
+    // ---- report -----------------------------------------------------
+    $("stImg").src = full.toDataURL("image/png");
+    var kind = want.length > 60 ? want.slice(0, 60) + "…" : want;
+    $("stFacts").innerHTML =
+      "<dt>Content</dt><dd class=\"st-content\">" + esc(kind) + "</dd>" +
+      "<dt>Grid</dt><dd>" + (modules ? modules + " x " + modules + " modules" : "not reported") + "</dd>" +
+      "<dt>Image</dt><dd>" + img.width + " x " + img.height + " pixels, about " + ppm.toFixed(1) + " px per module</dd>";
+
+    var rows = "";
+    rows += row("Blur", blurLast ? blurLast.toFixed(2) + " of a module" : "failed immediately",
+      blurLast >= 0.3 ? "Good. This is the figure that usually decides a real scan."
+      : blurLast >= 0.2 ? "Workable, but tight. Print larger than you think you need."
+      : "Fragile. Shorten the data or print much larger.");
+    rows += row("Viewing angle", tiltLast ? tiltLast + " degrees off square" : "failed at 5 degrees",
+      tiltLast >= 45 ? "Normal. Angle will not be your problem."
+      : "Lower than expected, which usually means the code is already dense.");
+    rows += row("Resolution", resLast ? resLast.v.toFixed(1) + " px per module" : "not reached",
+      resLast && resLast.v <= 2.5 ? "Normal. On screen this code is hard to make too small."
+      : "Needs more pixels than usual per module.");
+    rows += row("One module off a corner", cornerOk ? "still decoded" : "failed",
+      cornerOk ? "Unusual. The decoder recovered, but never rely on this."
+      : "Expected, and the point. Corner markers have no error correction.");
+    $("stRows").innerHTML = rows;
+
+    var minPx = resLast ? Math.ceil(resLast.v * (modules + 8)) : null;
+    var mm = modules ? ((modules + 8) * 0.4).toFixed(1) : null;
+    var adv = "<p><strong>What we would do with this code.</strong> ";
+    if (blurLast >= 0.3) adv += "Blur tolerance is healthy. ";
+    else adv += "Blur tolerance is the weak point here, and blur is what actually breaks scans, so give this one extra print size. ";
+    if (mm) adv += "At 0.4 mm per module it needs about " + mm + " mm of printed width including the quiet zone. ";
+    if (minPx) adv += "On screen it stayed readable down to roughly " + minPx + " pixels square. ";
+    adv += "Test a printed copy before committing to a run.</p>";
+    $("stAdvice").innerHTML = adv;
+
+    var html = "";
+    for (var i = 0; i < strip.length; i++) {
+      html += "<figure class=\"st-case\"><img src=\"" + strip[i][1].toDataURL("image/png") + "\" alt=\"" + esc(strip[i][0]) + "\">" +
+              "<figcaption>" + esc(strip[i][0]) + "<br><span class=\"" + (strip[i][2] ? "st-pass" : "st-failtxt") + "\">" +
+              (strip[i][2] ? "decoded" : "did not decode") + "</span></figcaption></figure>";
+    }
+    $("stStrip").innerHTML = html;
+
+    $("stBusy").hidden = true;
+    $("stResults").hidden = false;
+  }
+
+  function row(a, b, c) {
+    return "<tr><td>" + esc(a) + "</td><td><strong>" + esc(b) + "</strong></td><td>" + esc(c) + "</td></tr>";
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (m) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m];
+    });
+  }
+
+  // ---- inputs -------------------------------------------------------
+  function fromFile(file) {
+    if (!file) return;
+    var fr = new FileReader();
+    fr.onload = function (e) {
+      var img = new Image();
+      img.onload = function () { run(img); };
+      img.src = e.target.result;
+    };
+    fr.readAsDataURL(file);
+  }
+
+  $("stPick").addEventListener("click", function () { $("stFile").click(); });
+  $("stFile").addEventListener("change", function (e) { fromFile(e.target.files[0]); });
+
+  var drop = $("stDrop");
+  ["dragenter", "dragover"].forEach(function (ev) {
+    drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("drag"); });
+  });
+  ["dragleave", "drop"].forEach(function (ev) {
+    drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("drag"); });
+  });
+  drop.addEventListener("drop", function (e) {
+    if (e.dataTransfer && e.dataTransfer.files) fromFile(e.dataTransfer.files[0]);
+  });
+
+  $("stMake").addEventListener("click", function () {
+    var text = $("stText").value.trim();
+    if (!text) return;
+    var q = qrcode(0, $("stEc").value);
+    q.addData(text);
+    q.make();
+    var n = q.getModuleCount(), quiet = 4, cell = 8;
+    var size = (n + quiet * 2) * cell;
+    var c = document.createElement("canvas");
+    c.width = size; c.height = size;
+    var x = c.getContext("2d");
+    x.fillStyle = "#fff"; x.fillRect(0, 0, size, size);
+    x.fillStyle = "#000";
+    for (var r = 0; r < n; r++) {
+      for (var col = 0; col < n; col++) {
+        if (q.isDark(r, col)) x.fillRect((col + quiet) * cell, (r + quiet) * cell, cell, cell);
+      }
+    }
+    var img = new Image();
+    img.onload = function () { run(img); };
+    img.src = c.toDataURL("image/png");
+  });
+})();
+</script>
+
+</body>
+</html>

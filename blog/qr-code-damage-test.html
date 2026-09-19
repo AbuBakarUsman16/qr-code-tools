@@ -114,6 +114,7 @@
  <a href="../bulk-qr-code-generator">Bulk QR</a>
  <a href="../qr-code-scanner">Scanner</a>
  <a href="../qr-code-designer">Designer</a>
+ <a href="../qr-code-stress-test">Stress Test</a>
  <a href="./" class="active">Blog</a>
  <a href="../about">About</a>
  <a href="../faq">FAQ</a>
@@ -256,6 +257,7 @@
     <p>Higher is not free. Level H made the same URL a 37 x 37 grid where level M needed only 29 x 29. At a fixed print size that means noticeably smaller modules, which costs scan reliability in exactly the conditions where you wanted the extra protection. Our <a href="qr-code-size-for-print">sizing guide</a> covers that trade off.</p>
 
     <h2 id="reproducing-this">Reproducing this</h2>
+    <p>We have also built this into a tool. Our <a href="../qr-code-stress-test">QR code stress test</a> runs blur, viewing angle, resolution and corner damage against any code you upload, and reports the point where each one fails.</p>
     <p>Nothing here needs special equipment. Generate a code, open it in any image editor, paint over parts of it, and try to scan the result. The interesting comparison is the one in the figure above: cover a solid block, then cover the same total area scattered around, and watch the second one fail while the first survives.</p>
     <p>If you get different numbers with a different decoder or a phone camera, that is expected and worth knowing.</p>
 

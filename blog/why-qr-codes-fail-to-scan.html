@@ -114,6 +114,7 @@
  <a href="../bulk-qr-code-generator">Bulk QR</a>
  <a href="../qr-code-scanner">Scanner</a>
  <a href="../qr-code-designer">Designer</a>
+ <a href="../qr-code-stress-test">Stress Test</a>
  <a href="./" class="active">Blog</a>
  <a href="../about">About</a>
  <a href="../faq">FAQ</a>
@@ -259,6 +260,7 @@
       <li><strong>Check the white border.</strong> A code cropped flush to its edge loses the quiet zone the decoder uses to find it. Designers crop this away constantly.</li>
       <li><strong>Only then worry about angle and size.</strong> By this point you have covered what the data says is actually going wrong.</li>
     </ol>
+    <p>You can also run this whole test on your own code. Our <a href="../qr-code-stress-test">stress test tool</a> applies the same four degradations described here to any image you give it and reports where yours breaks.</p>
     <p>If you have the code as a file rather than on a wall, you can skip the guessing. Our <a href="../qr-code-scanner">QR code scanner</a> reads an image in the browser and shows you the content as text, so you find out whether the code is readable at all, and what it contains, before you tap anything. It uses the same decoder library we used for this test.</p>
 
     <h2 id="how-we-tested-this">How we tested this</h2>
