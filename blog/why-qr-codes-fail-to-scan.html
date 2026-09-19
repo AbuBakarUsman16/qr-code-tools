@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Won't This QR Code Scan? We Measured Blur, Angle and Size</title>
+<meta name="description" content="We decoded one QR code hundreds of times while tilting, blurring and shrinking it. Angle barely matters, size barely matters, and blur kills it almost instantly.">
+<link rel="canonical" href="https://qrotto.com/blog/why-qr-codes-fail-to-scan">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Why Won't This QR Code Scan? We Measured Blur, Angle and Size">
+<meta property="og:description" content="We decoded one QR code hundreds of times while tilting, blurring and shrinking it. Angle barely matters, size barely matters, and blur kills it almost instantly.">
+<meta property="og:url" content="https://qrotto.com/blog/why-qr-codes-fail-to-scan">
+<meta property="og:image" content="https://qrotto.com/images/qr-scan-limits-test.png">
+<meta property="article:published_time" content="2026-09-19">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Won't This QR Code Scan? We Measured Blur, Angle and Size">
+<meta name="twitter:description" content="We decoded one QR code hundreds of times while tilting, blurring and shrinking it. Angle barely matters, size barely matters, and blur kills it almost instantly.">
+<meta name="twitter:image" content="https://qrotto.com/images/qr-scan-limits-test.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Won't This QR Code Scan? We Measured Blur, Angle and Size",
+  "description": "We decoded one QR code hundreds of times while tilting, blurring and shrinking it. Angle barely matters, size barely matters, and blur kills it almost instantly.",
+  "image": "https://qrotto.com/images/qr-scan-limits-test.png",
+  "datePublished": "2026-09-19",
+  "dateModified": "2026-09-19",
+  "author": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/author"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QRotto",
+    "url": "https://qrotto.com/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qrotto.com/blog/why-qr-codes-fail-to-scan"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qrotto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://qrotto.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why Won't This QR Code Scan?",
+      "item": "https://qrotto.com/blog/why-qr-codes-fail-to-scan"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="../url-qr-code-generator">URL QR</a>
+ <a href="../vcard-qr-code-generator">vCard QR</a>
+ <a href="../wifi-qr-code-generator">WiFi QR</a>
+ <a href="../text-qr-code-generator">Text QR</a>
+ <a href="../email-qr-code-generator">Email QR</a>
+ <a href="../sms-qr-code-generator">SMS QR</a>
+ <a href="../phone-qr-code-generator">Phone QR</a>
+ <a href="../calendar-qr-code-generator">Event QR</a>
+ <a href="../location-qr-code-generator">Location QR</a>
+ <a href="../social-media-qr-code-generator">Social QR</a>
+ <a href="../bulk-qr-code-generator">Bulk QR</a>
+ <a href="../qr-code-scanner">Scanner</a>
+ <a href="../qr-code-designer">Designer</a>
+ <a href="./" class="active">Blog</a>
+ <a href="../about">About</a>
+ <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Why Won't This QR Code Scan?</p>
+
+ <div class="hero">
+ <h1>Why Won't This QR Code Scan? We Measured Blur, Angle and Size</h1>
+ <p>One code, decoded hundreds of times while we tilted it, blurred it and shrank it. Three of the four things people blame turned out not to matter.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-19">19 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-short-answer">The short answer</a></li>
+        <li><a href="#blur-is-the-one-that-matters">Blur is the one that matters</a></li>
+        <li><a href="#angle-almost-never-matters">Angle almost never matters</a></li>
+        <li><a href="#size-matters-less-than-you-think">Size matters far less than you think</a></li>
+        <li><a href="#rotation-does-not-matter-at-all">Rotation does not matter at all</a></li>
+        <li><a href="#what-to-actually-do">What to actually do when a code will not scan</a></li>
+        <li><a href="#how-we-tested-this">How we tested this</a></li>
+        <li><a href="#the-summary">The summary</a></li>
+      </ol>
+    </nav>
+
+    <p>When a QR code refuses to scan, people reach for the same four explanations: the code is too small, they are holding the phone at an angle, the image is sideways, or the photo is a bit soft.</p>
+    <p>We measured all four. Three of them are close to harmless. The fourth kills a code faster than almost anything else we have tested.</p>
+    <p>The short version: <strong>a code survived being tilted 60 degrees away from the camera and shrunk to under two pixels per module, but died once the image was blurred by roughly four tenths of one module.</strong></p>
+
+    <h2 id="the-short-answer">The short answer</h2>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>What you change</th><th>Still decodes up to</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Blur</td><td>0.35 of a module width</td><td><strong>This is the killer</strong></td></tr>
+          <tr><td>Viewing angle (tilt)</td><td>60 degrees off square</td><td>Very forgiving</td></tr>
+          <tr><td>Resolution</td><td>1.7 pixels per module</td><td>Very forgiving</td></tr>
+          <tr><td>Rotation in the plane</td><td>Any angle at all</td><td>Irrelevant</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <img src="../images/qr-scan-limits-test.png" width="1316" height="398" loading="lazy"
+           alt="Four versions of the same QR code. Tilted 60 degrees decoded, tilted 65 degrees failed, blurred by 0.35 of a module decoded, blurred by half a module failed. The failing images look almost identical to the passing ones.">
+      <figcaption>The two that failed look almost the same as the two that worked. That is the uncomfortable part: the boundary is invisible to the eye.</figcaption>
+    </figure>
+
+    <p>That last point is worth sitting with. You cannot look at a code and tell whether it is about to stop working. The failing blur in that figure looks perfectly readable to a person. The decoder disagreed.</p>
+
+    <h2 id="blur-is-the-one-that-matters">Blur is the one that matters</h2>
+    <p>We rendered the code large, at six pixels per module, so resolution could not be the limiting factor, then applied increasing amounts of Gaussian blur measured in module widths.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Blur (as a fraction of one module)</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>0.25</td><td>Decoded</td></tr>
+          <tr><td>0.30</td><td>Decoded</td></tr>
+          <tr><td>0.35</td><td>Decoded</td></tr>
+          <tr><td>0.40</td><td>Failed</td></tr>
+          <tr><td>0.45</td><td>Failed</td></tr>
+          <tr><td>0.50 and above</td><td>Failed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>There is no gentle decline here. It works, and then four hundredths of a module later it does not.</p>
+    <p>Translate that into something physical. Our test code was 29 modules across, 37 including the quiet zone. Print it 20 mm wide and one module is about 0.54 mm. The failure threshold is 0.4 of that, which is <strong>roughly two tenths of a millimetre of softness</strong>. That is less than the ink spread on a cheap inkjet. It is less than the focus error of a phone camera held slightly too close.</p>
+
+    <div class="takeaway">
+      <p><strong>Why this explains most real failures:</strong> when someone says a code "sometimes works", they are almost always describing a focus problem. The phone is inside its minimum focus distance, or moving, or the print is soft. Not the angle, not the size.</p>
+    </div>
+
+    <p>It also explains a specific everyday failure: holding a phone very close to a small code. Instinct says get closer so the code is bigger. But most phone cameras cannot focus below roughly 10 cm, so moving closer makes the image larger and blurrier at the same time, and blur is the thing that actually breaks the decode. <strong>Backing away usually works better than leaning in.</strong></p>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="angle-almost-never-matters">Angle almost never matters</h2>
+    <p>We applied a perspective transform to simulate viewing the code from increasingly off to one side.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Tilt from square on</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>15, 30, 40, 50 degrees</td><td>Decoded</td></tr>
+          <tr><td>60 degrees</td><td>Decoded</td></tr>
+          <tr><td>61 to 62 degrees</td><td>Inconsistent, one decoded and one failed</td></tr>
+          <tr><td>63 degrees and beyond</td><td>Failed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Sixty degrees is a lot. That is standing well off to the side of a poster, not in front of it. QR codes carry alignment patterns for exactly this reason: the decoder finds the three corners, works out the distortion, and straightens the grid mathematically before reading it.</p>
+    <p>So if someone is struggling with a code on a wall, telling them to stand square on is unlikely to be the fix. Their problem is almost certainly focus.</p>
+    <p>One caveat worth naming: our tilt was a clean geometric transform. A real code viewed at 60 degrees is also receiving less light and is partly out of focus across its depth, because the far edge is further away than the near edge. In the real world those effects arrive together, and the focus one is the dangerous one.</p>
+
+    <h2 id="size-matters-less-than-you-think">Size matters far less than you think</h2>
+    <p>We scaled the image down until it stopped decoding, measuring in pixels per module rather than total pixels, since that is what actually determines whether a module can be distinguished.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Pixels per module</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>1.7 and above</td><td>Decoded every time</td></tr>
+          <tr><td>1.5 to 1.6</td><td>Mostly decoded</td></tr>
+          <tr><td>1.1 to 1.4</td><td>Unreliable, some decoded and some failed</td></tr>
+          <tr><td>1.0 exactly</td><td>Decoded, see the note below</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Below about 1.5 pixels per module the results stopped being a clean line and became a coin flip, and the reason is alignment rather than information. At exactly one pixel per module every module lands on exactly one pixel, so the image is a perfect miniature and decodes fine. At 1.25 pixels per module the module edges fall in the middle of pixels, each pixel becomes a grey average of two neighbours, and the decoder has to guess. More pixels, worse result.</p>
+    <p>We are reporting the one pixel per module case because it happened, not because it is useful. You will never hit that alignment by accident. The honest working figure from this test is <strong>1.7 pixels per module, above which everything decoded</strong>.</p>
+    <p>Put that in practical terms. Our 37 module image needs about 63 pixels square to be readable. A screenshot on any modern phone is over a thousand pixels wide. <strong>If you are trying to read a code from a screenshot, the image is essentially never too small</strong>, which is why the advice to "take a bigger screenshot" so rarely helps. If a screenshot will not read, the code was already soft, or something is covering part of it.</p>
+    <p>This is a different question from how large to <em>print</em> a code, where the camera, the distance and the lighting all get a say. Our <a href="qr-code-size-for-print">print sizing guide</a> covers that separately.</p>
+
+    <h2 id="rotation-does-not-matter-at-all">Rotation does not matter at all</h2>
+    <p>We rotated the code 15, 45, 90, 135 and 180 degrees in the plane of the image. Every single one decoded.</p>
+    <p>This one is not a surprise once you know how the format works, but it comes up constantly, so it is worth stating plainly: <strong>a QR code has no up</strong>. The three large corner squares tell the decoder which way round it is, which is precisely why there are three of them and not four. Printing a code upside down on a menu costs you nothing.</p>
+
+    <h2 id="what-to-actually-do">What to actually do when a code will not scan</h2>
+    <p>In the order we would actually try them, based on what the numbers above say is likely:</p>
+    <ol>
+      <li><strong>Move further away, not closer.</strong> Most phones cannot focus closer than about 10 cm. Back off to 20 or 30 cm and let the camera focus. This is the single most effective fix and the least intuitive.</li>
+      <li><strong>Hold still for a second.</strong> Motion blur and focus blur do the same damage. Phones scan continuously, so one still moment is often all it needs.</li>
+      <li><strong>Add light, but not glare.</strong> Low light makes the camera slow its shutter, which reintroduces motion blur. A direct reflection on a laminated card is worse than dim light.</li>
+      <li><strong>Check the three corners.</strong> If one is scuffed, covered by a sticker or cropped off, the code is unreadable no matter what you do. We measured that separately in our <a href="qr-code-damage-test">damage test</a>, where removing 0.08% of the code from a corner was fatal while 21% from the middle was survivable.</li>
+      <li><strong>Check the white border.</strong> A code cropped flush to its edge loses the quiet zone the decoder uses to find it. Designers crop this away constantly.</li>
+      <li><strong>Only then worry about angle and size.</strong> By this point you have covered what the data says is actually going wrong.</li>
+    </ol>
+    <p>If you have the code as a file rather than on a wall, you can skip the guessing. Our <a href="../qr-code-scanner">QR code scanner</a> reads an image in the browser and shows you the content as text, so you find out whether the code is readable at all, and what it contains, before you tap anything. It uses the same decoder library we used for this test.</p>
+
+    <h2 id="how-we-tested-this">How we tested this</h2>
+    <p>Method, so you can judge the numbers or repeat them:</p>
+    <ul>
+      <li><strong>One code throughout:</strong> a 34 character URL at error correction level M, 29 modules square, 37 including the four module quiet zone.</li>
+      <li><strong>One decoder:</strong> jsQR, the same library our own scanner runs, given each image once.</li>
+      <li><strong>Blur measured in module widths</strong> rather than pixels, so the figure transfers to any size. Applied at six pixels per module so resolution was never the limit.</li>
+      <li><strong>Tilt applied as a perspective transform</strong>, then narrowed in one degree steps around the failure point.</li>
+      <li><strong>Resolution measured in pixels per module</strong>, tested with both smooth and hard resampling, since the two disagree below 1.5.</li>
+      <li><strong>Every result compared character by character</strong> against the original URL. A partial read counts as a failure.</li>
+    </ul>
+
+    <div class="takeaway">
+      <p><strong>Two honest limitations.</strong> First, we gave the decoder one clean synthetic image per test. A phone gets roughly thirty frames a second, refocusing between them, so in practice it retries constantly and will often succeed where our single shot failed. Second, a real camera adds sensor noise, uneven lighting and lens softness that our images do not have. The direction of the finding holds, but treat the exact thresholds as the best case rather than a promise.</p>
+    </div>
+
+    <p>The reason we still think the numbers are useful is the <em>ranking</em> rather than the precise figures. Blur failed at 0.4 of a module while tilt survived to 60 degrees. That gap is so large that no amount of real world messiness reverses it.</p>
+
+    <h2 id="the-summary">The summary</h2>
+    <p>Almost everything people blame for a failed scan is fine. Angle is fine to 60 degrees. Rotation is completely irrelevant. Resolution is fine down to under two pixels per module, which no screenshot ever reaches.</p>
+    <div class="takeaway">
+      <p><strong>It is nearly always focus.</strong> Blur of four tenths of one module was enough to kill a code that shrugged off a 60 degree tilt. Step back, hold still, add light. In that order.</p>
+    </div>
+    <p>If you are making codes rather than scanning them, the same finding points somewhere specific: print larger than feels necessary, because a bigger module makes the same amount of blur a smaller fraction of it. That is the whole reason print size matters, and it is covered in our <a href="qr-code-size-for-print">sizing guide</a>. You can also check any code you have made against our <a href="../qr-code-scanner">scanner</a> before it goes anywhere near a printer.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="qr-code-damage-test">We Damaged QR Codes Until They Broke</a>
+      <a href="scan-qr-code-from-screenshot">Scan a QR Code From a Screenshot</a>
+      <a href="qr-code-size-for-print">QR Code Size for Print</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
