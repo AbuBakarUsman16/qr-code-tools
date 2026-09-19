@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>We Damaged QR Codes Until They Broke: The Real Limits</title>
-<meta name="description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta name="description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 19% in one place and failed on a single module in another. Location beats quantity.">
 <link rel="canonical" href="https://qrotto.com/blog/qr-code-damage-test">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -19,14 +19,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="QRotto">
 <meta property="og:title" content="We Damaged QR Codes Until They Broke: The Real Limits">
-<meta property="og:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta property="og:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 19% in one place and failed on a single module in another. Location beats quantity.">
 <meta property="og:url" content="https://qrotto.com/blog/qr-code-damage-test">
 <meta property="og:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta property="article:published_time" content="2026-09-16">
 <meta property="article:author" content="QRotto">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="We Damaged QR Codes Until They Broke: The Real Limits">
-<meta name="twitter:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.">
+<meta name="twitter:description" content="Everyone repeats that QR codes survive 30% damage. We tested it: level H managed 19% in one place and failed on a single module in another. Location beats quantity.">
 <meta name="twitter:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta name="author" content="QRotto">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -36,7 +36,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "We Damaged QR Codes Until They Broke",
-  "description": "Everyone repeats that QR codes survive 30% damage. We ran the test. Level H managed 21% in one place and failed at 0.08% in another. Location beats quantity.",
+  "description": "Everyone repeats that QR codes survive 30% damage. We ran the test. Level H managed 19% in one place and failed on a single module in another. Location beats quantity.",
   "image": "https://qrotto.com/images/qr-damage-test.png",
   "datePublished": "2026-09-16",
   "dateModified": "2026-09-16",
@@ -155,14 +155,15 @@
     <p>Search for QR code error correction and you will meet the same four numbers everywhere: levels L, M, Q and H recover roughly 7%, 15%, 25% and 30% of a damaged code. Those figures come from the specification and they are not wrong, but they describe how much <em>data</em> the error correction can reconstruct. They say nothing about what happens when a coffee cup leaves a ring on a table card.</p>
     <p>So we tested it. We generated the same URL at each error correction level, damaged the codes three different ways, and ran a decoder over every version to find the point where each one stopped working.</p>
     <p>We are not the first to do this. Huon Wilson published <a href="https://huonw.github.io/blog/2021/09/qr-error-correction/" rel="noopener" target="_blank">an empirical look at QR error correction</a> in 2021 and found readability dropping off above roughly 6% damage at level L, 12% at M and 20% at H. Our numbers landed close to those, which is reassuring for both of us, and we have noted where they differ below.</p>
-    <p>The short version: <strong>the headline percentage is close for one kind of damage and wildly optimistic for another, and there is a part of every QR code where 0.08% of damage is fatal.</strong></p>
+    <p>The short version: <strong>the headline percentage is close for one kind of damage and wildly optimistic for another, and there is a part of every QR code where one missing module is fatal.</strong></p>
 
     <h2 id="what-we-tested-and-how">What we tested and how</h2>
     <p>Method, so you can judge the numbers:</p>
     <ul>
       <li><strong>One piece of data throughout</strong>, a 41 character URL, so the only variable was the error correction level.</li>
       <li><strong>Three damage types:</strong> a solid block in the centre, the same total area scattered as individual modules, and damage to a corner finder pattern.</li>
-      <li><strong>Damage applied in 1% steps</strong> from 1% upwards, recording the last percentage that still decoded.</li>
+      <li><strong>The solid block grown one module at a time</strong>, centred and aligned to the module grid, recording the last size that still decoded.</li>
+      <li><strong>Scattered damage run twenty times at each step</strong> with a different random pattern each time, because where the missing modules land changes the answer. A single run would have given us a number we could not stand behind.</li>
       <li><strong>Every code checked undamaged first.</strong> This turned out to matter, see the note on level Q below.</li>
       <li><strong>Decoding done in software</strong> on clean digital images, using OpenCV's QR detector.</li>
     </ul>
@@ -173,9 +174,9 @@
 
     <h2 id="the-headline-result">The headline result</h2>
     <figure>
-      <img src="../images/qr-damage-test.png" width="1010" height="376" loading="lazy"
-           alt="Four QR codes at error correction level H. Undamaged and a 20 percent centre block both decoded. The same 20 percent scattered across the code failed, as did a code with a fifth of one corner marker removed.">
-      <figcaption>All four are level H. The second survived 20% of its area being covered. The third failed with the same area removed, just spread out. The fourth failed with 0.2% missing from the wrong place.</figcaption>
+      <img src="../images/qr-damage-test.png" width="1316" height="398" loading="lazy"
+           alt="Four QR codes at error correction level H. Undamaged and a solid centre block covering 19 percent of the area both decoded. The same number of modules scattered at random failed, and so did a code with a single module removed from one corner marker.">
+      <figcaption>All four are level H, same code, same decoder. The second lost 19% of its area in one block and still read. The third lost exactly the same number of modules, scattered, and failed. The fourth is missing one module from a corner, which you cannot see, and it failed too.</figcaption>
     </figure>
     <p>Those four images are the whole finding. Same code, same error correction level, four very different outcomes that have almost nothing to do with how much was damaged.</p>
 
@@ -185,51 +186,58 @@
       <table class="cmp">
         <thead><tr><th>Error correction</th><th>Commonly quoted</th><th>Last size that decoded</th></tr></thead>
         <tbody>
-          <tr><td>L (Low)</td><td>~7%</td><td>5%</td></tr>
-          <tr><td>M (Medium)</td><td>~15%</td><td>9%</td></tr>
-          <tr><td>H (High)</td><td>~30%</td><td>21%</td></tr>
+          <tr><td>L (Low)</td><td>~7%</td><td>4%</td></tr>
+          <tr><td>M (Medium)</td><td>~15%</td><td>8%</td></tr>
+          <tr><td>H (High)</td><td>~30%</td><td>19%</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Those figures sit close to the independent 2021 results mentioned above, roughly 6%, 12% and 20% for L, M and H. Two separate tests, different tools, similar answers.</p>
+    <p>The level H figure sits close to the independent 2021 result mentioned above, roughly 20%. Our L and M numbers came out lower than that test's 6% and 12%, which is worth noting rather than smoothing over: different decoders and different block placement move these figures by a few points, so treat them as the same story rather than the same measurement.</p>
     <p>Every level came in <strong>below</strong> its quoted figure. That is not a contradiction of the specification. The quoted percentage is how much codeword data can be reconstructed; covering a physical area also destroys structural information the decoder needs before error correction even begins. The gap between the two is what you actually get.</p>
-    <p>The practical reading: if you are putting a logo on a level H code, <strong>20% of the area is your ceiling, not 30%</strong>. And that is with a software decoder on a clean image.</p>
+    <p>The practical reading: a level H code stopped at 19% of its area covered, with a software decoder on a clean image. Since a phone camera in a real room is harsher than that, <strong>treat 15% as your working ceiling for a logo, not 30%</strong>.</p>
 
 
     <div class="ad-slot">Advertisement</div>
 
     <h2 id="result-2-scattered-damage-is-far-worse">Result 2: scattered damage is far worse</h2>
-    <p>Here is the finding we did not expect. We took the same total area and, instead of one block, removed individual modules at random across the code:</p>
+    <p>Here is the finding we did not expect. We took the same total area and, instead of one block, removed individual modules at random across the code.</p>
+    <p>Scattered damage does not have a clean threshold, because it depends on where the missing modules happen to land. So we ran twenty random patterns at each step and counted how many still decoded:</p>
     <div class="table-wrap">
       <table class="cmp">
-        <thead><tr><th>Error correction</th><th>Solid block</th><th>Scattered</th></tr></thead>
+        <thead><tr><th>Area removed</th><th>L decoded</th><th>M decoded</th><th>H decoded</th></tr></thead>
         <tbody>
-          <tr><td>L</td><td>5%</td><td>3%</td></tr>
-          <tr><td>M</td><td>9%</td><td>4%</td></tr>
-          <tr><td>H</td><td>21%</td><td>5%</td></tr>
+          <tr><td>1%</td><td>14 of 20</td><td>19 of 20</td><td>16 of 20</td></tr>
+          <tr><td>2%</td><td>8 of 20</td><td>8 of 20</td><td>9 of 20</td></tr>
+          <tr><td>3%</td><td>3 of 20</td><td>9 of 20</td><td>7 of 20</td></tr>
+          <tr><td>4%</td><td>0 of 20</td><td>8 of 20</td><td>2 of 20</td></tr>
+          <tr><td>5%</td><td>&mdash;</td><td>0 of 20</td><td>2 of 20</td></tr>
+          <tr><td>8%</td><td>&mdash;</td><td>&mdash;</td><td>0 of 20</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Level H drops from 21% to 5%. The same amount of missing ink, four times less tolerance.</p>
+    <p>Read that against the solid block column: level H tolerated a 19% solid block every time, but scattered damage had already become a coin flip at 2%, and only one pattern in twenty survived at 6%.</p>
+    <p>This is also why a single number would have been misleading. Run this test once and you might record 5% as the limit for level H, because two patterns in twenty do survive there. Run it twenty times and the honest answer is that you cannot rely on 2%.</p>
     <p>The reason is how Reed Solomon error correction is organised. It works on blocks of data, and it can fully rebuild a limited number of blocks. A solid square destroys a few blocks completely, which is exactly the situation the correction is designed for. Scattered damage puts a little corruption into <em>many</em> blocks at once, and the budget runs out long before the total area does.</p>
     <div class="takeaway">
-      <p><strong>Why this matters in the real world:</strong> the damage that actually happens to printed codes is scattered, not solid. Ink spatter, fading, dust, a scuffed surface, a low quality print. That is the 5% column, not the 21% one.</p>
+      <p><strong>Why this matters in the real world:</strong> the damage that actually happens to printed codes is scattered, not solid. Ink spatter, fading, dust, a scuffed surface, a low quality print. Those land in the few percent column, not the 19% one.</p>
     </div>
 
     <h2 id="result-3-the-corners-have-no-protection-at-all">Result 3: the corners have no protection at all</h2>
     <p>The three large squares in the corners are finder patterns. A scanner uses them to locate and orient the code before it reads anything. We removed increasing amounts of one:</p>
     <div class="table-wrap">
       <table class="cmp">
-        <thead><tr><th>Damage to one corner</th><th>Share of the whole code</th><th>Result</th></tr></thead>
+        <thead><tr><th>Damage to one corner</th><th>Modules</th><th>Share of the whole code</th><th>Result</th></tr></thead>
         <tbody>
-          <tr><td>A sliver</td><td>0.08%</td><td>failed</td></tr>
-          <tr><td>A quarter</td><td>0.22%</td><td>failed</td></tr>
-          <tr><td>Half</td><td>0.89%</td><td>failed</td></tr>
-          <tr><td>The whole square</td><td>3.58%</td><td>failed</td></tr>
+          <tr><td>One module</td><td>1</td><td>0.07%</td><td>failed</td></tr>
+          <tr><td>A 2 by 2 bite from the corner</td><td>4</td><td>0.29%</td><td>failed</td></tr>
+          <tr><td>One edge row of it</td><td>7</td><td>0.51%</td><td>failed</td></tr>
+          <tr><td>A quarter of it</td><td>14</td><td>1.02%</td><td>failed</td></tr>
+          <tr><td>Half of it</td><td>28</td><td>2.05%</td><td>failed</td></tr>
+          <tr><td>The whole square</td><td>49</td><td>3.58%</td><td>failed</td></tr>
         </tbody>
       </table>
     </div>
-    <p>A level H code that shrugged off 21% of its area being covered failed with <strong>0.08%</strong> missing from a corner. That is roughly a 260 fold difference, decided entirely by location.</p>
+    <p>A level H code that shrugged off 19% of its area being covered failed with a <strong>single module</strong> missing from a corner, which is 0.07% of the code. That is a difference of more than 250 times, decided entirely by location.</p>
     <p>Error correction protects the data. It does not protect the structure that lets the decoder find the data in the first place, and no error correction level changes this.</p>
 
     <h2 id="a-note-on-level-q-and-why-we-left-it-out">A note on level Q, and why we left it out</h2>
@@ -238,8 +246,8 @@
 
     <h2 id="what-this-changes-in-practice">What this changes in practice</h2>
     <h3>If you are adding a logo</h3>
-    <p>Use level H, keep the logo centred, and treat <strong>20% of the code area as the limit</strong> rather than 30%. Never let a logo touch a corner marker. Print larger than you otherwise would, since you have spent the error correction budget on the logo and have none left for print imperfections.</p>
-    <p>These limits are built into our <a href="../qr-code-designer">QR code designer</a>: adding a logo forces level H, the corner markers are never restyled, and the tool warns you once the logo passes 20% of the area. It also decodes the finished image on every change, so you find out immediately rather than after printing.</p>
+    <p>Use level H, keep the logo centred, and treat <strong>15% of the code area as your working limit</strong> rather than 30%. We measured failure at 19% on a clean image, and a phone in a real room gets less than that. Never let a logo touch a corner marker. Print larger than you otherwise would, since you have spent the error correction budget on the logo and have none left for print imperfections.</p>
+    <p>These limits are built into our <a href="../qr-code-designer">QR code designer</a>: adding a logo forces level H, the corner markers are never restyled, and the tool warns you once the logo passes 15% of the area. It also decodes the finished image on every change, so you find out immediately rather than after printing.</p>
     <h3>If your codes live somewhere dirty</h3>
     <p>Table cards, packaging, outdoor signage, workshop labels. The relevant number is the scattered one, around 5% at level H. Protect the surface rather than relying on error correction: lamination, an acrylic holder, a position that does not collect dust.</p>
     <h3>If you are checking a damaged code</h3>
@@ -253,7 +261,7 @@
 
     <h2 id="the-summary">The summary</h2>
     <div class="takeaway">
-      <p><strong>Location beats quantity.</strong> A level H code survived 21% of its area covered in one block, 5% scattered, and 0.08% removed from a corner marker. If you remember one thing, protect the corners.</p>
+      <p><strong>Location beats quantity.</strong> A level H code survived 19% of its area covered in one block, became a coin flip at 2% once that damage was scattered, and failed outright with one module missing from a corner marker. If you remember one thing, protect the corners.</p>
     </div>
     <p>Making a code you want to last? All of our <a href="../services">generators</a> produce static codes, so nothing on our end can break them later, and you can test any of them the way we did here.</p>
  </article>

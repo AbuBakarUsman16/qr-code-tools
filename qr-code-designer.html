@@ -232,11 +232,11 @@
       <table class="cmp">
         <thead><tr><th>Choice</th><th>What we found</th><th>What the tool does</th></tr></thead>
         <tbody>
-          <tr><td>Logo size</td><td>Level H survived 21% of the area covered, and failed above that</td><td>Warns past 20%, caps the slider at 30%</td></tr>
+          <tr><td>Logo size</td><td>Level H survived 19% of the area covered on a clean image, and failed above that</td><td>Warns past 15%, caps the slider at 30%</td></tr>
           <tr><td>Error correction with a logo</td><td>Anything below H fails quickly once modules are covered</td><td>Forces H automatically when a logo is added</td></tr>
           <tr><td>Inverted codes</td><td>A light on dark code failed to decode at all in our test</td><td>Warns you when the foreground is lighter than the background</td></tr>
           <tr><td>Contrast</td><td>Low contrast decodes in software but struggles with real cameras</td><td>Warns below a ratio of 4 to 1</td></tr>
-          <tr><td>Corner markers</td><td>Covering 0.08% of one corner killed the code outright</td><td>Never styles or covers the three corner patterns</td></tr>
+          <tr><td>Corner markers</td><td>Removing a single module from one corner killed the code outright</td><td>Never styles or covers the three corner patterns</td></tr>
         </tbody>
       </table>
     </div>
@@ -272,9 +272,9 @@
 
     <h2 id="common-questions">Common questions</h2>
     <h3>Why does the tool force level H when I add a logo?</h3>
-    <p>Because anything lower fails almost immediately once modules are covered. In our testing, level M managed 9% of its area covered while H managed 21%. With a logo you need every bit of that budget.</p>
+    <p>Because anything lower fails almost immediately once modules are covered. In our testing, level M managed 8% of its area covered while H managed 19%. With a logo you need every bit of that budget.</p>
     <h3>Why can I not style the three corner squares?</h3>
-    <p>They are position markers, and the scanner uses them to locate the code before reading anything. We tested this: covering 0.08% of one corner, a sliver, killed a code that had shrugged off 21% of damage elsewhere. Styling them is a popular feature elsewhere and a bad idea.</p>
+    <p>They are position markers, and the scanner uses them to locate the code before reading anything. We tested this: removing a single module from one corner killed a code that had shrugged off 19% of damage elsewhere. Styling them is a popular feature elsewhere and a bad idea.</p>
     <h3>Do dot and rounded styles reduce scannability?</h3>
     <p>Slightly, because each module ends up marginally smaller than a full square. At normal print sizes it rarely matters. At small sizes, use squares.</p>
     <h3>My code says it does not scan. What now?</h3>
@@ -395,13 +395,16 @@
 
     // logo
     if (logoImg && logoPct > 0) {
-      var area = size * size * (logoPct / 100);
-      var side = Math.sqrt(area);
-      var lx = (size - side) / 2, ly = (size - side) / 2;
+      // logoPct ka matlab: code ka kitna hissa dhaka gaya, quiet zone chhod kar
+      // aur logo ke gird ka safed padding bhi isi mein shamil hai
+      var codeSide = n * cell;
+      var boxSide = Math.sqrt(codeSide * codeSide * (logoPct / 100));
       var pad = cell * 0.8;
+      var imgSide = Math.max(cell, boxSide - pad * 2);
+      var bx = (size - boxSide) / 2, by = (size - boxSide) / 2;
       ctx.fillStyle = bg;
-      roundRect(ctx, lx - pad, ly - pad, side + pad*2, side + pad*2, cell);
-      ctx.drawImage(logoImg, lx, ly, side, side);
+      roundRect(ctx, bx, by, boxSide, boxSide, cell);
+      ctx.drawImage(logoImg, bx + (boxSide - imgSide)/2, by + (boxSide - imgSide)/2, imgSide, imgSide);
     }
 
     // frame
@@ -436,7 +439,7 @@
     var cr = contrast(fg, bg);
     var notes = [];
     if (cr < 4) notes.push("Contrast is only " + cr.toFixed(1) + " to 1. Aim for 4 or higher.");
-    if (logoPct > 20 && logoImg) notes.push("The logo covers " + logoPct + "% of the code. Our testing found level H fails above about 21%.");
+    if (logoPct > 15 && logoImg) notes.push("The logo covers " + logoPct + "% of the code. Our testing found level H failed above 19% on a clean image, so 15% is the safer ceiling.");
     if (lum(fg) > lum(bg)) notes.push("This is an inverted code, light on dark. Many scanners refuse these.");
 
     if (res && res.data === $("dsData").value.trim()) {
