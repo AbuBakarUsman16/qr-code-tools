@@ -28,6 +28,7 @@
 <meta name="twitter:image" content="https://qrotto.com/images/example-url-qr-code.png">
 <meta name="author" content="QRotto">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<script src="nav.js"></script>
 <script src="canonical-url.js"></script>
 <script src="analytics.js"></script>
 <script type="application/ld+json">
@@ -71,25 +72,37 @@
       </svg>
       <span class="logo-text">QR<span>otto</span></span>
     </a>
- <nav class="tool-nav">
- <a href="url-qr-code-generator">URL QR</a>
- <a href="vcard-qr-code-generator">vCard QR</a>
- <a href="wifi-qr-code-generator">WiFi QR</a>
- <a href="text-qr-code-generator">Text QR</a>
- <a href="email-qr-code-generator">Email QR</a>
- <a href="sms-qr-code-generator">SMS QR</a>
- <a href="phone-qr-code-generator">Phone QR</a>
- <a href="calendar-qr-code-generator">Event QR</a>
- <a href="appointment-qr-code-generator" class="active">Appointment QR</a>
- <a href="location-qr-code-generator">Location QR</a>
- <a href="social-media-qr-code-generator">Social QR</a>
- <a href="bulk-qr-code-generator">Bulk QR</a>
- <a href="qr-code-scanner">Scanner</a>
- <a href="qr-code-designer">Designer</a>
- <a href="qr-code-stress-test">Stress Test</a>
- <a href="blog/">Blog</a>
- <a href="about">About</a>
- <a href="faq">FAQ</a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop is-active">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="url-qr-code-generator">URL</a>
+    <a href="vcard-qr-code-generator">vCard</a>
+    <a href="wifi-qr-code-generator">WiFi</a>
+    <a href="text-qr-code-generator">Text</a>
+    <a href="email-qr-code-generator">Email</a>
+    <a href="sms-qr-code-generator">SMS</a>
+    <a href="phone-qr-code-generator">Phone</a>
+    <a href="calendar-qr-code-generator">Event</a>
+    <a href="appointment-qr-code-generator" class="active" aria-current="page">Appointment</a>
+    <a href="booking-qr-code-generator">Booking</a>
+    <a href="feedback-qr-code-generator">Feedback</a>
+    <a href="location-qr-code-generator">Location</a>
+    <a href="social-media-qr-code-generator">Social media</a>
+    <a href="bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="qr-code-scanner">Scanner</a>
+  <a href="qr-code-designer">Designer</a>
+  <a href="qr-code-stress-test">Stress test</a>
+  <a href="blog/">Blog</a>
+  <a href="services">Services</a>
+  <a href="about">About</a>
+  <a href="faq">FAQ</a>
  </nav>
  </div>
 </header>

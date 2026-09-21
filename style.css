@@ -57,15 +57,133 @@ header.site-header {
 
 .logo-text span { color: var(--accent); }
 
-nav.tool-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 18px;
-  font-size: 0.95rem;
-  font-weight: 500;
+/* ---------- header navigation ---------- */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.nav-toggle .nav-bars { display: block; width: 17px; height: 11px; position: relative; }
+.nav-toggle .nav-bars::before,
+.nav-toggle .nav-bars::after,
+.nav-toggle .nav-bars span {
+  content: ""; position: absolute; left: 0; right: 0; height: 2px;
+  background: currentColor; border-radius: 2px;
+}
+.nav-toggle .nav-bars::before { top: 0; }
+.nav-toggle .nav-bars span { top: 4.5px; }
+.nav-toggle .nav-bars::after { bottom: 0; }
+
+nav.tool-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-nav.tool-nav a:hover, nav.tool-nav a.active { color: var(--accent); }
+nav.tool-nav > a, .nav-drop > summary {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+nav.tool-nav > a:hover, .nav-drop > summary:hover { color: var(--accent); background: var(--accent-soft, #eef1ff); }
+nav.tool-nav > a.active { color: var(--accent); font-weight: 600; }
+
+/* the generators dropdown */
+.nav-drop { position: relative; }
+.nav-drop > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-drop > summary::-webkit-details-marker { display: none; }
+.nav-drop > summary::after {
+  content: "";
+  width: 6px; height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .15s;
+}
+.nav-drop[open] > summary::after { transform: translateY(1px) rotate(-135deg); }
+.nav-drop.is-active > summary { color: var(--accent); font-weight: 600; }
+
+.nav-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 40;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(16, 20, 40, 0.13);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 2px 8px;
+  min-width: 340px;
+}
+.nav-panel a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.nav-panel a:hover { background: var(--accent-soft, #eef1ff); color: var(--accent); }
+.nav-panel a.active { color: var(--accent); font-weight: 600; }
+.nav-panel .nav-group {
+  grid-column: 1 / -1;
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 10px 10px 4px;
+}
+
+@media (max-width: 900px) {
+  .js .nav-toggle { display: inline-flex; }
+  .js nav.tool-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+  .js .site-header.nav-open nav.tool-nav { display: flex; }
+  nav.tool-nav > a, .nav-drop > summary { padding: 11px 10px; font-size: 1rem; }
+  .nav-drop { position: static; }
+  .nav-panel {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 2px 0 8px 10px;
+    min-width: 0;
+    grid-template-columns: 1fr;
+  }
+  .nav-panel .nav-group { padding-top: 12px; }
+}
 
 main {
   max-width: 1100px;
@@ -528,8 +646,6 @@ table.cmp tr:last-child td { border-bottom: none; }
   .nav-wrap { padding: 12px 14px; gap: 8px; }
   .logo { font-size: 1.1rem; gap: 7px; }
   .logo-mark { width: 26px; height: 26px; }
-  nav.tool-nav { display: flex; flex-wrap: wrap; gap: 10px 14px; }
-  nav.tool-nav a { margin-left: 0; font-size: 0.88rem; }
 
   .toc { padding: 16px 18px; }
   .author-box { padding: 16px; gap: 12px; }
