@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk QR Codes: What Goes Wrong in a Batch of 500</title>
+<meta name="description" content="We generated 500 QR codes and measured what breaks. Unpadded numbering makes codes different sizes, SVG is half the weight of print PNGs, and accents can silently mangle.">
+<link rel="canonical" href="https://qrotto.com/blog/bulk-qr-codes-for-a-print-run">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Bulk QR Codes: What Goes Wrong in a Batch of 500">
+<meta property="og:description" content="We generated 500 QR codes and measured what breaks. Unpadded numbering makes codes different sizes, SVG is half the weight of print PNGs, and accents can silently mangle.">
+<meta property="og:url" content="https://qrotto.com/blog/bulk-qr-codes-for-a-print-run">
+<meta property="og:image" content="https://qrotto.com/images/bulk-qr-uniform-test.png">
+<meta property="article:published_time" content="2026-09-21">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bulk QR Codes: What Goes Wrong in a Batch of 500">
+<meta name="twitter:description" content="We generated 500 QR codes and measured what breaks. Unpadded numbering makes codes different sizes, SVG is half the weight of print PNGs, and accents can silently mangle.">
+<meta name="twitter:image" content="https://qrotto.com/images/bulk-qr-uniform-test.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bulk QR Codes: What Goes Wrong in a Batch of 500",
+  "description": "We generated 500 QR codes and measured what breaks. Unpadded numbering makes codes different sizes, SVG is half the weight of print PNGs, and accents can silently mangle.",
+  "image": "https://qrotto.com/images/bulk-qr-uniform-test.png",
+  "datePublished": "2026-09-21",
+  "dateModified": "2026-09-21",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://qrotto.com/blog/bulk-qr-codes-for-a-print-run" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Bulk QR Codes for a Print Run", "item": "https://qrotto.com/blog/bulk-qr-codes-for-a-print-run" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <nav class="tool-nav">
+ <a href="../url-qr-code-generator">URL QR</a>
+ <a href="../vcard-qr-code-generator">vCard QR</a>
+ <a href="../wifi-qr-code-generator">WiFi QR</a>
+ <a href="../text-qr-code-generator">Text QR</a>
+ <a href="../email-qr-code-generator">Email QR</a>
+ <a href="../sms-qr-code-generator">SMS QR</a>
+ <a href="../phone-qr-code-generator">Phone QR</a>
+ <a href="../calendar-qr-code-generator">Event QR</a>
+ <a href="../appointment-qr-code-generator">Appointment QR</a>
+ <a href="../booking-qr-code-generator">Booking QR</a>
+ <a href="../feedback-qr-code-generator">Feedback QR</a>
+ <a href="../location-qr-code-generator">Location QR</a>
+ <a href="../social-media-qr-code-generator">Social QR</a>
+ <a href="../bulk-qr-code-generator">Bulk QR</a>
+ <a href="../qr-code-scanner">Scanner</a>
+ <a href="../qr-code-designer">Designer</a>
+ <a href="../qr-code-stress-test">Stress Test</a>
+ <a href="./" class="active">Blog</a>
+ <a href="../about">About</a>
+ <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Bulk QR Codes for a Print Run</p>
+
+ <div class="hero">
+ <h1>Bulk QR Codes: What Goes Wrong in a Batch of 500</h1>
+ <p>Generating one code is easy. Generating five hundred that all print the same size, and checking every one is correct before the run, is where it goes wrong.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-21">21 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-numbering-trap">The numbering trap</a></li>
+        <li><a href="#svg-or-png">SVG or PNG for a print run</a></li>
+        <li><a href="#the-characters-that-break-a-batch">The characters that break a batch</a></li>
+        <li><a href="#verify-the-whole-batch">Verify the whole batch, not a sample</a></li>
+        <li><a href="#naming-the-files">Naming the files so the printer can use them</a></li>
+        <li><a href="#a-checklist">A checklist before you send the run</a></li>
+        <li><a href="#how-we-tested-this">How we tested this</a></li>
+        <li><a href="#the-summary">The summary</a></li>
+      </ol>
+    </nav>
+
+    <p>Table numbers for a restaurant. Asset tags for a maintenance team. Seat codes for a venue. Unique links on a thousand product inserts. These jobs all start the same way: a list goes in, a folder of images comes out, and the folder goes to a printer.</p>
+    <p>We generated 500 codes to find out what actually goes wrong at that scale. Three things did, and the first one is invisible until the codes are printed and laid out on a sheet.</p>
+
+    <h2 id="the-numbering-trap">The numbering trap</h2>
+    <p>Here is the finding that matters most, and it has nothing to do with QR codes being difficult.</p>
+    <p>QR codes come in fixed version steps, not a smooth scale. Add one character to your data and usually nothing happens, but occasionally the code jumps to the next version and gains four modules on every side. In a batch numbered sequentially, that jump happens partway through the list.</p>
+
+    <figure>
+      <img src="../images/bulk-qr-uniform-test.png" width="906" height="592" loading="lazy"
+           alt="Two rows of QR codes. The top row uses unpadded numbering and the last two codes are 29 by 29 while the first two are 25 by 25. The bottom row uses four digit padding and every code is 25 by 25.">
+      <figcaption>Same URLs, same generator. The top row crosses from four digits to five and the codes change size partway along. The bottom row is padded, and every code in the batch is identical in size.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>URL</th><th>Chars</th><th>Grid</th></tr></thead>
+        <tbody>
+          <tr><td><code>https://example.com/t/1</code></td><td>23</td><td>25 x 25</td></tr>
+          <tr><td><code>https://example.com/t/9999</code></td><td>26</td><td>25 x 25</td></tr>
+          <tr><td><code>https://example.com/t/10000</code></td><td>27</td><td><strong>29 x 29</strong></td></tr>
+          <tr><td><code>https://example.com/t/20000</code></td><td>27</td><td><strong>29 x 29</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>One extra digit and the grid grows by 16%. Print that batch at a fixed 20 mm square and the codes after 9999 have visibly smaller modules than the ones before it, which means they scan less well in exactly the same conditions. Nobody notices until someone complains that "some of the table cards do not work".</p>
+    <div class="takeaway">
+      <p><strong>The fix costs nothing.</strong> Pad your numbers to a fixed width before you generate. Use <code>/t/0001</code> rather than <code>/t/1</code>. We regenerated the same 500 code batch with four digit padding and every single code came out 25 by 25, so a single print size works for the whole run.</p>
+    </div>
+    <p>The same logic applies to any varying field, not just numbers. If half your codes carry a short product name and half carry a long one, the batch will not be uniform. Decide the longest value first and check that one.</p>
+
+    <h2 id="svg-or-png">SVG or PNG for a print run</h2>
+    <p>We measured both, at the sizes a print job actually needs:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Output</th><th>One code</th><th>A batch of 500</th></tr></thead>
+        <tbody>
+          <tr><td>PNG, 256 px</td><td>3.5 KB</td><td>1.7 MB</td></tr>
+          <tr><td>PNG, 512 px</td><td>14.5 KB</td><td>7.1 MB</td></tr>
+          <tr><td>PNG, 1024 px</td><td>41.1 KB</td><td>19.7 MB</td></tr>
+          <tr><td>PNG, 2048 px</td><td>116.0 KB</td><td>56.6 MB</td></tr>
+          <tr><td><strong>SVG</strong></td><td><strong>17.6 KB</strong></td><td><strong>8.4 MB</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>SVG is less than half the weight of a print resolution PNG, and unlike the PNG it has no resolution at all. The same file prints crisply on a business card or a shop window. For anything going to a designer or a printer, SVG is the right answer and it is not close.</p>
+    <p>PNG earns its place in two situations: when the code is going into something that cannot take vector art, such as a spreadsheet, a label printer's own software or an email, and when you want to look at the batch quickly without opening design software.</p>
+    <p>One thing not to do is export small PNGs to keep the folder tidy. A 256 px PNG is 3.5 KB and looks fine on screen, and it will be upscaled by the printer into something soft. Our <a href="why-qr-codes-fail-to-scan">scan limits test</a> found blur is what kills codes, and upscaling a small PNG is a way of manufacturing blur.</p>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="the-characters-that-break-a-batch">The characters that break a batch</h2>
+    <p>We ran a list of awkward inputs through our own bulk tool to see what survived a round trip. Most things did. Commas, quotes, ampersands in query strings, semicolons, backslashes and a 200 character URL all came back exactly as they went in.</p>
+    <p>Two things did not, and both are worth knowing about whatever tool you use:</p>
+    <ul>
+      <li><strong>Characters outside plain ASCII.</strong> Accented names, non Latin scripts and emoji are encoded as multiple bytes, and a generator that assumes one character is one byte will mangle them. This is not theoretical: it was true of our own tool until this test found it, and it is why we now encode as UTF-8 everywhere and say so.</li>
+      <li><strong>Leading and trailing spaces.</strong> A stray space copied from a spreadsheet becomes part of the data. Most tools trim it, ours included, but not all do, and a URL with a space in front of it will not open.</li>
+    </ul>
+    <p>If your list contains a single accented name, generate that one first and decode it before running the other 499.</p>
+
+    <h2 id="verify-the-whole-batch">Verify the whole batch, not a sample</h2>
+    <p>The usual quality check on a batch is to scan two or three codes with a phone and assume the rest are fine. That catches a broken generator. It does not catch the error that actually happens, which is a row being wrong in the source list.</p>
+    <p>A wrong row produces a perfectly valid QR code pointing at the wrong thing. It scans beautifully. You find out when a customer lands on table 47's menu at table 12.</p>
+    <p>The check that catches it is to decode every image and compare the result against the line it came from. That is what we do to our own generators before publishing anything, and it is the only reason we trust the numbers in these articles. If you are producing a batch for a client, it is worth the twenty minutes.</p>
+    <p>For a single code, our <a href="../qr-code-scanner">scanner</a> shows you exactly what is inside before you commit, and the <a href="../qr-code-stress-test">stress test</a> shows how much abuse it tolerates.</p>
+
+    <h2 id="naming-the-files">Naming the files so the printer can use them</h2>
+    <p>A folder of 500 files called <code>qr-code.png</code>, <code>qr-code-1.png</code> and so on is a problem for whoever has to lay them out. Useful names:</p>
+    <ul>
+      <li><strong>Name each file after the thing it identifies</strong>, not its position in the list. <code>table-0012.svg</code> beats <code>code-12.svg</code>, because the layout person can match it to the artwork without counting.</li>
+      <li><strong>Pad the numbers here too,</strong> so files sort correctly. Without padding, most systems sort 10 before 2.</li>
+      <li><strong>Avoid spaces and punctuation</strong> in file names. They survive a zip but not always a design tool's import.</li>
+      <li><strong>Keep the source list with the folder.</strong> When someone later asks which code went on which card, the list is the answer and it is always lost.</li>
+    </ul>
+    <p>Our <a href="../bulk-qr-code-generator">bulk generator</a> names files from the content of each line and exports the batch as a zip of SVGs, a zip of PNGs, or a PDF sheet for printing directly.</p>
+
+    <h2 id="a-checklist">A checklist before you send the run</h2>
+    <ol>
+      <li>Numbers padded to a fixed width, so every code in the batch is the same grid size.</li>
+      <li>The longest value in the list checked, because it sets the size everything else must match.</li>
+      <li>Any accented or non Latin entry generated and decoded first.</li>
+      <li>SVG for the printer, PNG only where vector cannot go.</li>
+      <li>Every image decoded and compared against its source line.</li>
+      <li>One code printed at the real size, on the real stock, and scanned by a phone that is not yours.</li>
+    </ol>
+    <p>Step six catches things the other five cannot, including paper that is too glossy and a print size decided on screen. Our <a href="qr-code-size-for-print">sizing guide</a> covers how to pick that size from the scanning distance.</p>
+
+    <h2 id="how-we-tested-this">How we tested this</h2>
+    <ul>
+      <li><strong>500 sequential URLs</strong> of the form <code>https://example.com/t/0001</code>, generated with our own bulk tool in the browser, at error correction level M.</li>
+      <li><strong>Grid sizes read from the encoder</strong> rather than measured off an image, so they are exact.</li>
+      <li><strong>File sizes measured from the tool's own output</strong>, PNG at four sizes and SVG, then multiplied across the batch.</li>
+      <li><strong>Twelve awkward inputs</strong> covering accents, Japanese, emoji, commas, quotes, ampersands, semicolons, backslashes, leading spaces and a 200 character URL, each decoded back and compared character by character.</li>
+    </ul>
+    <p>The honest limit: this is a software test of the files, not of printing. It tells you which files are correct and which will be uniform. It cannot tell you how your printer's ink behaves on your stock, which is why the last item on the checklist is a physical test.</p>
+
+    <h2 id="the-summary">The summary</h2>
+    <p>Bulk QR generation is not hard. The failures are mundane: a numbering scheme that changes the code size partway through, small PNGs upscaled into blur, an accented name silently mangled, and one wrong row in the source list that produces a perfect code pointing at the wrong place.</p>
+    <div class="takeaway">
+      <p><strong>Pad your numbers, export SVG, and decode every single one before it goes to print.</strong> The first two take a second. The third is the only check that finds the error that actually costs money.</p>
+    </div>
+    <p>Our <a href="../bulk-qr-code-generator">bulk QR code generator</a> takes a list, previews every code, and exports the batch as SVG, PNG or a PDF sheet. Like everything here it runs in your browser, so the list never leaves your machine.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="qr-code-size-for-print">QR Code Size for Print</a>
+      <a href="qr-codes-for-cafes-and-restaurants">QR Codes for Cafés and Restaurants</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
