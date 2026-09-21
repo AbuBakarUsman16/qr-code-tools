@@ -147,6 +147,29 @@
  </div>
  </div>
 
+ <div class="checkbox-row">
+ <input type="checkbox" id="dsGrad">
+ <label for="dsGrad">Use a gradient for the code colour</label>
+ </div>
+ <div class="ds-row" id="dsGradRow" hidden>
+ <div class="form-group">
+ <label for="dsFg2">Gradient second colour</label>
+ <input type="color" id="dsFg2" value="#7b1fa2">
+ </div>
+ <div class="form-group">
+ <label for="dsGradType">Gradient direction</label>
+ <select id="dsGradType">
+ <option value="linear">Diagonal</option>
+ <option value="radial">From the centre</option>
+ </select>
+ </div>
+ </div>
+
+ <div class="checkbox-row">
+ <input type="checkbox" id="dsTransparent">
+ <label for="dsTransparent">Transparent background</label>
+ </div>
+
  <div class="ds-row">
  <div class="form-group">
  <label for="dsStyle">Module style</label>
@@ -167,6 +190,22 @@
  </div>
  </div>
  <p class="ds-note" id="ecNote"></p>
+
+ <div class="ds-row">
+ <div class="form-group">
+ <label for="dsEyeStyle">Corner style</label>
+ <select id="dsEyeStyle">
+ <option value="square">Square, most reliable</option>
+ <option value="rounded">Rounded</option>
+ <option value="circle">Circle</option>
+ <option value="leaf">Leaf</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="dsEyeColour">Corner colour</label>
+ <input type="color" id="dsEyeColour" value="#14161f">
+ </div>
+ </div>
 
  <div class="form-group">
  <label for="dsLogoFile">Logo (optional)</label>
@@ -193,6 +232,7 @@
  <div class="ds-preview" id="dsOut"></div>
  <div class="qr-actions">
  <button class="btn btn-outline" onclick="downloadPng()">Download PNG</button>
+ <button class="btn btn-outline" onclick="downloadSvg()">Download SVG</button>
  </div>
  <div class="ds-check" id="dsCheck" hidden>
  <span class="ds-verdict" id="dsVerdict"></span>
@@ -217,6 +257,8 @@
         <li><a href="#what-the-limits-are-and-where-they-come-from">What the limits are, and where they come from</a></li>
         <li><a href="#getting-a-logo-right">Getting a logo right</a></li>
         <li><a href="#colour-choices-that-survive-contact-with-reality">Colour choices that survive contact with reality</a></li>
+        <li><a href="#styling-the-corners">Styling the corners, and why we changed our mind</a></li>
+        <li><a href="#gradients-and-transparent-backgrounds">Gradients and transparent backgrounds</a></li>
         <li><a href="#adding-text-below-the-qr-code">Adding text below the QR code</a></li>
         <li><a href="#test-the-printed-version-not-just-the-preview">Test the printed version, not just the preview</a></li>
         <li><a href="#common-questions">Common questions</a></li>
@@ -241,7 +283,7 @@
           <tr><td>Error correction with a logo</td><td>Anything below H fails quickly once modules are covered</td><td>Forces H automatically when a logo is added</td></tr>
           <tr><td>Inverted codes</td><td>A light on dark code failed to decode at all in our test</td><td>Warns you when the foreground is lighter than the background</td></tr>
           <tr><td>Contrast</td><td>Low contrast decodes in software but struggles with real cameras</td><td>Warns below a ratio of 4 to 1</td></tr>
-          <tr><td>Corner markers</td><td>Removing a single module from one corner killed the code outright</td><td>Never styles or covers the three corner patterns</td></tr>
+          <tr><td>Corner markers</td><td>Removing a single module from one corner killed the code outright, but reshaping one while keeping its structure did not</td><td>Offers four corner shapes, never removes or covers modules, and decodes the result every time</td></tr>
         </tbody>
       </table>
     </div>
@@ -266,6 +308,15 @@
       <li><strong>Gradients.</strong> Contrast varies across the pattern, so part of the code is always the weakest link.</li>
       <li><strong>Transparent backgrounds.</strong> The code ends up over a photo or a coloured panel and the contrast becomes unpredictable.</li>
     </ul>
+
+    <h2 id="styling-the-corners">Styling the corners, and why we changed our mind</h2>
+    <p>The three large squares in the corners are position markers. Our <a href="blog/qr-code-damage-test">damage test</a> found that removing a single module from one kills the code outright, while the same code shrugged off 19% of its area being covered in the middle. On that basis this tool originally refused to touch them at all.</p>
+    <p>That was too blunt. Removing part of a marker and reshaping one are different things. We tested four corner shapes, in a matching colour and in a contrasting one, and <strong>every combination decoded</strong>. The decoder locates the markers by their proportions, and rounding the outside of a shape leaves those proportions intact.</p>
+    <p>So the corner styles are here now, with the rule that actually matters kept in place: nothing is ever removed from a marker, and the result is decoded on every change. If a combination does break, the verdict under the preview will say so rather than leaving you to find out in print.</p>
+
+    <h2 id="gradients-and-transparent-backgrounds">Gradients and transparent backgrounds</h2>
+    <p>A gradient works as long as <strong>both ends stay dark</strong> against the background. The scanner is looking at contrast, and a gradient that fades towards light has a section where there is not enough of it. The check below measures the weaker end rather than the colour you picked first, so a gradient that fails will be caught for the right reason.</p>
+    <p>A transparent background is not really a background. The code takes the colour of whatever you place it on. We check it against white, which is the common case, but drop the same file onto a dark photo and it becomes an inverted code, and many scanners refuse those. If the destination is dark, set a light background colour instead of going transparent.</p>
 
     <h2 id="adding-text-below-the-qr-code">Adding text below the QR code</h2>
     <p>Tick the box above and the tool draws a label strip under the code with whatever wording you type. This is the single most useful thing on this page, and it does more for your scan rate than any amount of colour or dot styling.</p>
@@ -340,6 +391,48 @@
     return (hi + 0.05) / (lo + 0.05);
   }
 
+  // The three corner markers are drawn as whole shapes rather than module by
+  // module. Reshaping them is safe, we tested every style below and all of
+  // them decode. Removing modules from them is not: see the damage test.
+  function drawEyes(ctx, n, quiet, cell, eyeStyle, eyeColour, holeStyle) {
+    var corners = [[0, 0], [0, n - 7], [n - 7, 0]];
+    for (var i = 0; i < corners.length; i++) {
+      var er = corners[i][0], ec2 = corners[i][1];
+      var X = (ec2 + quiet) * cell, Y = (er + quiet) * cell, S = 7 * cell;
+
+      function ring(inset, radius, fill) {
+        var x = X + inset * cell, y = Y + inset * cell, w = S - inset * 2 * cell;
+        if (fill === null) { ctx.clearRect(x, y, w, w); return; }
+        ctx.fillStyle = fill;
+        if (eyeStyle === "circle") {
+          ctx.beginPath();
+          ctx.arc(X + S/2, Y + S/2, w/2, 0, Math.PI*2);
+          ctx.fill();
+        } else if (eyeStyle === "square") {
+          ctx.fillRect(x, y, w, w);
+        } else if (eyeStyle === "leaf") {
+          // two opposite corners rounded hard, two left square
+          var r = Math.min(radius, w / 2);
+          ctx.beginPath();
+          ctx.moveTo(x + r, y);
+          ctx.lineTo(x + w, y);
+          ctx.lineTo(x + w, y + w - r);
+          ctx.quadraticCurveTo(x + w, y + w, x + w - r, y + w);
+          ctx.lineTo(x, y + w);
+          ctx.lineTo(x, y + r);
+          ctx.quadraticCurveTo(x, y, x + r, y);
+          ctx.closePath();
+          ctx.fill();
+        } else {
+          roundRect(ctx, x, y, w, w, radius);
+        }
+      }
+      ring(0, eyeStyle === "leaf" ? cell*3 : cell*1.6, eyeColour);
+      ring(1, eyeStyle === "leaf" ? cell*2.3 : cell*1.1, holeStyle);
+      ring(2, eyeStyle === "leaf" ? cell*1.5 : cell*0.8, eyeColour);
+    }
+  }
+
   function isFinder(r, c, n) {
     return (r < 7 && c < 7) || (r < 7 && c >= n-7) || (r >= n-7 && c < 7);
   }
@@ -361,6 +454,13 @@
 
     var fg = $("dsFg").value, bg = $("dsBg").value;
     var style = $("dsStyle").value;
+    var useGrad = $("dsGrad").checked;
+    var fg2 = $("dsFg2").value;
+    var gradType = $("dsGradType").value;
+    var transparent = $("dsTransparent").checked;
+    var eyeStyle = $("dsEyeStyle").value;
+    var eyeColour = $("dsEyeColour").value;
+    $("dsGradRow").hidden = !useGrad;
     var logoPct = parseInt($("dsLogoSize").value, 10);
     var frameText = $("dsFrameText").value.trim();
     var useFrame = $("dsFrame").checked;
@@ -383,16 +483,36 @@
     cv.height = size + frameH;
     var ctx = cv.getContext("2d", { willReadFrequently: true });
 
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, cv.width, cv.height);
-    ctx.fillStyle = fg;
+    if (!transparent) {
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, cv.width, cv.height);
+    } else {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+    }
 
+    // the "hole" colour inside a corner marker has to match whatever sits
+    // behind the code, which is the background, or nothing when transparent
+    var holeStyle = transparent ? null : bg;
+
+    var bodyFill = fg;
+    if (useGrad) {
+      var g;
+      if (gradType === "radial") {
+        g = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/1.4);
+      } else {
+        g = ctx.createLinearGradient(0, 0, size, size);
+      }
+      g.addColorStop(0, fg);
+      g.addColorStop(1, fg2);
+      bodyFill = g;
+    }
+
+    // body, skipping the three corner markers
+    ctx.fillStyle = bodyFill;
     for (var r = 0; r < n; r++) {
       for (var c = 0; c < n; c++) {
-        if (!q.isDark(r, c)) continue;
+        if (!q.isDark(r, c) || isFinder(r, c, n)) continue;
         var x = (c + quiet) * cell, y = (r + quiet) * cell;
-
-        if (isFinder(r, c, n)) { ctx.fillRect(x, y, cell, cell); continue; }
 
         if (style === "dots") {
           ctx.beginPath();
@@ -405,6 +525,8 @@
         }
       }
     }
+
+    drawEyes(ctx, n, quiet, cell, eyeStyle, eyeColour, holeStyle);
 
     // logo
     if (logoImg && logoPct > 0) {
@@ -440,20 +562,41 @@
     img.style.maxWidth = "100%";
     out.appendChild(img);
 
-    checkScannable(cv, fg, bg, logoPct);
+    checkScannable(cv, fg, bg, logoPct, useGrad ? fg2 : null, transparent);
   }
 
-  function checkScannable(cv, fg, bg, logoPct) {
+  function checkScannable(cv, fg, bg, logoPct, fg2, transparent) {
     var verdict = $("dsVerdict"), detail = $("dsDetail");
-    var ctx = cv.getContext("2d", { willReadFrequently: true });
-    var d = ctx.getImageData(0, 0, cv.width, cv.height);
+
+    // a transparent code is really a code on whatever it is placed on, so
+    // check it the way it will most often be used, flattened onto white
+    var test = cv;
+    if (transparent) {
+      test = document.createElement("canvas");
+      test.width = cv.width; test.height = cv.height;
+      var tx = test.getContext("2d", { willReadFrequently: true });
+      tx.fillStyle = "#ffffff";
+      tx.fillRect(0, 0, test.width, test.height);
+      tx.drawImage(cv, 0, 0);
+    }
+    var ctx = test.getContext("2d", { willReadFrequently: true });
+    var d = ctx.getImageData(0, 0, test.width, test.height);
     var res = (typeof jsQR !== "undefined") ? jsQR(d.data, d.width, d.height, { inversionAttempts: "attemptBoth" }) : null;
 
-    var cr = contrast(fg, bg);
+    var against = transparent ? "#ffffff" : bg;
+    // with a gradient the weaker of the two colours is what decides readability
+    var cr = contrast(fg, against);
+    var worst = fg;
+    if (fg2) {
+      var cr2 = contrast(fg2, against);
+      if (cr2 < cr) { cr = cr2; worst = fg2; }
+    }
+
     var notes = [];
-    if (cr < 4) notes.push("Contrast is only " + cr.toFixed(1) + " to 1. Aim for 4 or higher.");
+    if (cr < 4) notes.push("Contrast is only " + cr.toFixed(1) + " to 1" + (fg2 && worst === fg2 ? ", at the lighter end of the gradient" : "") + ". Aim for 4 or higher.");
     if (logoPct > 15 && logoImg) notes.push("The logo covers " + logoPct + "% of the code. Our testing found level H failed above 19% on a clean image, so 15% is the safer ceiling.");
-    if (lum(fg) > lum(bg)) notes.push("This is an inverted code, light on dark. Many scanners refuse these.");
+    if (lum(worst) > lum(against)) notes.push("This is an inverted code, light on dark. Many scanners refuse these.");
+    if (transparent) notes.push("A transparent background takes the colour of whatever you place it on. We checked it against white. On a dark surface it becomes an inverted code.");
 
     if (res && res.data === $("dsData").value.trim()) {
       verdict.textContent = "Scans correctly";
@@ -497,12 +640,112 @@
     a.click();
   }
 
+  // SVG is rebuilt from the settings rather than traced from the canvas, so it
+  // stays resolution independent. A logo is raster, so it is not included.
+  function buildSvg() {
+    var data = $("dsData").value.trim();
+    if (!data) return null;
+    var ec = logoImg ? "H" : $("dsEC").value;
+    var q = qrcode(0, ec);
+    q.addData(data); q.make();
+    var n = q.getModuleCount(), quiet = 4, cell = 10;
+    var size = (n + quiet * 2) * cell;
+    var fg = $("dsFg").value, bg = $("dsBg").value;
+    var useGrad = $("dsGrad").checked, fg2 = $("dsFg2").value;
+    var gradType = $("dsGradType").value;
+    var transparent = $("dsTransparent").checked;
+    var style = $("dsStyle").value;
+    var eyeStyle = $("dsEyeStyle").value, eyeColour = $("dsEyeColour").value;
+
+    var out = [];
+    out.push('<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size +
+             '" viewBox="0 0 ' + size + ' ' + size + '" shape-rendering="crispEdges">');
+    if (useGrad) {
+      out.push("<defs>");
+      out.push(gradType === "radial"
+        ? '<radialGradient id="g" cx="50%" cy="50%" r="72%"><stop offset="0" stop-color="' + fg + '"/><stop offset="1" stop-color="' + fg2 + '"/></radialGradient>'
+        : '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + fg + '"/><stop offset="1" stop-color="' + fg2 + '"/></linearGradient>');
+      out.push("</defs>");
+    }
+    if (!transparent) out.push('<rect width="' + size + '" height="' + size + '" fill="' + bg + '"/>');
+    var fill = useGrad ? 'url(#g)' : fg;
+
+    out.push('<g fill="' + fill + '">');
+    for (var r = 0; r < n; r++) {
+      for (var c = 0; c < n; c++) {
+        if (!q.isDark(r, c) || isFinder(r, c, n)) continue;
+        var x = (c + quiet) * cell, y = (r + quiet) * cell;
+        if (style === "dots") {
+          out.push('<circle cx="' + (x + cell/2) + '" cy="' + (y + cell/2) + '" r="' + (cell/2) + '"/>');
+        } else if (style === "rounded") {
+          out.push('<rect x="' + x + '" y="' + y + '" width="' + cell + '" height="' + cell + '" rx="' + (cell*0.25) + '"/>');
+        } else {
+          out.push('<rect x="' + x + '" y="' + y + '" width="' + cell + '" height="' + cell + '"/>');
+        }
+      }
+    }
+    out.push("</g>");
+
+    // The corner marker is drawn as a ring plus a centre. The ring is one path
+    // holding the outer and middle shapes with an even odd fill, which punches
+    // a real hole. Filling the middle with the background colour instead would
+    // leave a solid block whenever the background is transparent, and a solid
+    // block is not a finder pattern.
+    function shapePath(cx, cy, x, y, w, rad) {
+      if (eyeStyle === "circle") {
+        var r = w / 2;
+        return "M" + (cx - r) + "," + cy + "a" + r + "," + r + " 0 1,0 " + (2*r) + ",0a" + r + "," + r + " 0 1,0 " + (-2*r) + ",0Z";
+      }
+      var q2 = Math.min(rad, w / 2);
+      if (q2 <= 0) return "M" + x + "," + y + "h" + w + "v" + w + "h" + (-w) + "Z";
+      if (eyeStyle === "leaf") {
+        return "M" + (x + q2) + "," + y +
+               "H" + (x + w) +
+               "V" + (y + w - q2) +
+               "Q" + (x + w) + "," + (y + w) + " " + (x + w - q2) + "," + (y + w) +
+               "H" + x +
+               "V" + (y + q2) +
+               "Q" + x + "," + y + " " + (x + q2) + "," + y + "Z";
+      }
+      return "M" + (x + q2) + "," + y +
+             "h" + (w - 2*q2) + "a" + q2 + "," + q2 + " 0 0 1 " + q2 + "," + q2 +
+             "v" + (w - 2*q2) + "a" + q2 + "," + q2 + " 0 0 1 " + (-q2) + "," + q2 +
+             "h" + (-(w - 2*q2)) + "a" + q2 + "," + q2 + " 0 0 1 " + (-q2) + "," + (-q2) +
+             "v" + (-(w - 2*q2)) + "a" + q2 + "," + q2 + " 0 0 1 " + q2 + "," + (-q2) + "Z";
+    }
+    var radii = eyeStyle === "square" ? [0, 0, 0]
+              : (eyeStyle === "leaf" ? [cell*3, cell*2.3, cell*1.5] : [cell*1.6, cell*1.1, cell*0.8]);
+    var corners = [[0, 0], [0, n - 7], [n - 7, 0]];
+    for (var i = 0; i < corners.length; i++) {
+      var X = (corners[i][1] + quiet) * cell, Y = (corners[i][0] + quiet) * cell, S = 7 * cell;
+      var cx = X + S/2, cy = Y + S/2;
+      var outerP  = shapePath(cx, cy, X, Y, S, radii[0]);
+      var middleP = shapePath(cx, cy, X + cell, Y + cell, S - 2*cell, radii[1]);
+      var centreP = shapePath(cx, cy, X + 2*cell, Y + 2*cell, S - 4*cell, radii[2]);
+      out.push('<path d="' + outerP + middleP + '" fill="' + eyeColour + '" fill-rule="evenodd"/>');
+      out.push('<path d="' + centreP + '" fill="' + eyeColour + '"/>');
+    }
+    out.push("</svg>");
+    return out.join("");
+  }
+
+  function downloadSvg() {
+    var svg = buildSvg();
+    if (!svg) return;
+    var a = document.createElement("a");
+    a.href = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    a.download = "styled-qr-code.svg";
+    a.click();
+  }
+
   window.addEventListener("load", function () {
-    ["dsData","dsFg","dsBg","dsStyle","dsEC","dsFrameText"].forEach(function (id) {
+    ["dsData","dsFg","dsBg","dsFg2","dsStyle","dsEC","dsFrameText","dsEyeColour"].forEach(function (id) {
       $(id).addEventListener("input", render);
       $(id).addEventListener("change", render);
     });
-    $("dsFrame").addEventListener("change", render);
+    ["dsFrame","dsGrad","dsTransparent","dsGradType","dsEyeStyle"].forEach(function (id) {
+      $(id).addEventListener("change", render);
+    });
     $("dsLogoSize").addEventListener("input", function () {
       $("dsLogoVal").textContent = this.value + "%";
       render();
