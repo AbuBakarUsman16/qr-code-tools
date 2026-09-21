@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free QR Code Designer | Colours, Logo &amp; Frames</title>
-<meta name="description" content="Add your logo, colours, dot styles and a frame to a QR code, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
+<title>Free QR Code Generator With Text Below | Logo &amp; Colours</title>
+<meta name="description" content="Add text below your QR code, plus a logo, colours and dot styles, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
 <link rel="canonical" href="https://qrotto.com/qr-code-designer">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -18,13 +18,13 @@
 <link rel="stylesheet" href="style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="QRotto">
-<meta property="og:title" content="Free QR Code Designer | Colours, Logo &amp; Frames">
-<meta property="og:description" content="Add your logo, colours, dot styles and a frame to a QR code, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
+<meta property="og:title" content="Free QR Code Generator With Text Below | Logo &amp; Colours">
+<meta property="og:description" content="Add text below your QR code, plus a logo, colours and dot styles, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
 <meta property="og:url" content="https://qrotto.com/qr-code-designer">
 <meta property="og:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free QR Code Designer | Colours, Logo &amp; Frames">
-<meta name="twitter:description" content="Add your logo, colours, dot styles and a frame to a QR code, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
+<meta name="twitter:title" content="Free QR Code Generator With Text Below | Logo &amp; Colours">
+<meta name="twitter:description" content="Add text below your QR code, plus a logo, colours and dot styles, and see immediately whether it still scans. Built on our own testing of where styled codes fail.">
 <meta name="twitter:image" content="https://qrotto.com/images/qr-damage-test.png">
 <meta name="author" content="QRotto">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -38,7 +38,7 @@
   "url": "https://qrotto.com/qr-code-designer",
   "applicationCategory": "DesignApplication",
   "operatingSystem": "Any (web browser)",
-  "description": "Add your logo, colours, dot styles and a frame to a QR code, and see immediately whether it still scans. Built on our own testing of where styled codes fail.",
+  "description": "Add text below your QR code, plus a logo, colours and dot styles, and see immediately whether it still scans. Built on our own testing of where styled codes fail.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -125,7 +125,7 @@
 <main>
  <p class="breadcrumb"><a href="./">Home</a> / QR Code Designer</p>
  <div class="hero">
- <h1>QR Code Designer</h1>
+ <h1>QR Code Generator With Text Below</h1>
  <p>Add colours, a logo, dot styles and a frame, and see straight away whether the code still scans.</p>
  </div>
 
@@ -181,7 +181,7 @@
 
  <div class="checkbox-row">
  <input type="checkbox" id="dsFrame">
- <label for="dsFrame">Add a frame with a call to action</label>
+ <label for="dsFrame">Add text below the code, such as SCAN ME</label>
  </div>
  <div class="form-group">
  <label for="dsFrameText">Frame text</label>
@@ -217,7 +217,7 @@
         <li><a href="#what-the-limits-are-and-where-they-come-from">What the limits are, and where they come from</a></li>
         <li><a href="#getting-a-logo-right">Getting a logo right</a></li>
         <li><a href="#colour-choices-that-survive-contact-with-reality">Colour choices that survive contact with reality</a></li>
-        <li><a href="#frames-and-why-they-help-more-than-styling-does">Frames and why they help more than styling does</a></li>
+        <li><a href="#adding-text-below-the-qr-code">Adding text below the QR code</a></li>
         <li><a href="#test-the-printed-version-not-just-the-preview">Test the printed version, not just the preview</a></li>
         <li><a href="#common-questions">Common questions</a></li>
         <li><a href="#related-tools">Related tools</a></li>
@@ -267,9 +267,11 @@
       <li><strong>Transparent backgrounds.</strong> The code ends up over a photo or a coloured panel and the contrast becomes unpredictable.</li>
     </ul>
 
-    <h2 id="frames-and-why-they-help-more-than-styling-does">Frames and why they help more than styling does</h2>
-    <p>If you want a code to get scanned more often, a frame with a short instruction does more than any amount of visual styling. An unlabelled code on a poster gets very few scans, because people do not scan things when they do not know what will happen.</p>
-    <p>"Scan for the menu" outperforms a beautifully styled unlabelled code, every time. The frame here adds that line without touching the code area.</p>
+    <h2 id="adding-text-below-the-qr-code">Adding text below the QR code</h2>
+    <p>Tick the box above and the tool draws a label strip under the code with whatever wording you type. This is the single most useful thing on this page, and it does more for your scan rate than any amount of colour or dot styling.</p>
+    <p>An unlabelled code on a poster gets very few scans, because people do not scan things when they cannot predict what will happen. "Scan for the menu" beats a beautifully styled code with nothing written on it.</p>
+    <p>The important detail is <strong>where</strong> the text goes. It sits below the code, outside the quiet zone, so it never touches the code area and cannot affect whether it scans. Putting text inside the code, or over it, or cropping the white border to make room for it, is how people break codes that were working. Our <a href="blog/why-qr-codes-fail-to-scan">scan limits test</a> covers what actually breaks a scan.</p>
+    <p>Keep the line short. Four or five words fit cleanly at any printed size. A long sentence shrinks the type until it is unreadable at the distance the code is meant to be scanned from, and our <a href="blog/qr-code-size-for-print">sizing guide</a> covers picking that distance.</p>
 
     <h2 id="test-the-printed-version-not-just-the-preview">Test the printed version, not just the preview</h2>
     <p>The check in this tool decodes a clean digital image, which is the most forgiving case. A phone camera pointed at printed paper in a dim room is a harder test.</p>
