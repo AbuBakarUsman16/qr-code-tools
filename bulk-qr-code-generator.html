@@ -295,6 +295,12 @@
     return s.replace(/[^a-zA-Z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "code";
   }
 
+  // qrcode-generator defaults to a Latin-1 style byte conversion, which mangles
+  // any character outside ASCII. Switch it to UTF-8 before encoding anything.
+  if (typeof qrcode !== "undefined" && qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs["UTF-8"]) {
+    qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
+  }
+
   function makeQR(data, ec) {
     var q = qrcode(0, ec);
     q.addData(data);

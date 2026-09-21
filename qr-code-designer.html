@@ -318,6 +318,12 @@
   var logoImg = null;
   var lastCanvas = null;
 
+  // qrcode-generator defaults to a Latin-1 style byte conversion, which mangles
+  // any character outside ASCII. Switch it to UTF-8 before encoding anything.
+  if (typeof qrcode !== "undefined" && qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs["UTF-8"]) {
+    qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
+  }
+
   function $(id) { return document.getElementById(id); }
 
   function lum(hex) {

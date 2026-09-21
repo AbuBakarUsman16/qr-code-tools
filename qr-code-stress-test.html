@@ -252,6 +252,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
 (function () {
+  // qrcode-generator defaults to a Latin-1 style byte conversion, which mangles
+  // any character outside ASCII. Switch it to UTF-8 before encoding anything.
+  if (typeof qrcode !== "undefined" && qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs["UTF-8"]) {
+    qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
+  }
+
   function $(id) { return document.getElementById(id); }
   var baseImg = null, modules = 0;
 
