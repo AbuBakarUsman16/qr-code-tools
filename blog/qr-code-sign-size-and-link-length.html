@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Signs: How Long Your Link Can Be at Each Print Size</title>
+<meta name="description" content="A 20 mm code tolerates 0.24 mm of blur, a 150 mm one tolerates 1.82 mm. We worked out the module size, blur budget and maximum link length for six printed sign sizes.">
+<link rel="canonical" href="https://qrotto.com/blog/qr-code-sign-size-and-link-length">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="QR Signs: How Long Your Link Can Be at Each Print Size">
+<meta property="og:description" content="A 20 mm code tolerates 0.24 mm of blur, a 150 mm one tolerates 1.82 mm. We worked out the module size, blur budget and maximum link length for six printed sign sizes.">
+<meta property="og:url" content="https://qrotto.com/blog/qr-code-sign-size-and-link-length">
+<meta property="og:image" content="https://qrotto.com/images/sign-size-comparison.png">
+<meta property="article:published_time" content="2026-09-23">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Signs: How Long Your Link Can Be at Each Print Size">
+<meta name="twitter:description" content="A 20 mm code tolerates 0.24 mm of blur, a 150 mm one tolerates 1.82 mm. We worked out the module size, blur budget and maximum link length for six printed sign sizes.">
+<meta name="twitter:image" content="https://qrotto.com/images/sign-size-comparison.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "QR Signs: How Long Your Link Can Be at Each Print Size",
+  "description": "A 20 mm code tolerates 0.24 mm of blur, a 150 mm one tolerates 1.82 mm. We worked out the module size, blur budget and maximum link length for six printed sign sizes.",
+  "image": "https://qrotto.com/images/sign-size-comparison.png",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://qrotto.com/blog/qr-code-sign-size-and-link-length" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Sign Size and Link Length", "item": "https://qrotto.com/blog/qr-code-sign-size-and-link-length" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Sign Size and Link Length</p>
+
+ <div class="hero">
+ <h1>QR Signs: How Long Your Link Can Be at Each Print Size</h1>
+ <p>The same code on a business card and on a window sign are not the same object. One of them forgives a quarter of a millimetre of blur. The other forgives nearly two.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-23">23 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-number-that-matters">The number that actually matters</a></li>
+        <li><a href="#what-each-sign-gives-you">What each sign size gives you</a></li>
+        <li><a href="#how-long-can-the-link-be">How long can the link be?</a></li>
+        <li><a href="#the-floor-is-not-a-cliff">The floor is not a cliff</a></li>
+        <li><a href="#what-to-do-with-this">What to do with this</a></li>
+        <li><a href="#how-we-worked-it-out">How we worked it out</a></li>
+        <li><a href="#the-summary">The summary</a></li>
+      </ol>
+    </nav>
+
+    <p>Advice about QR code size stops at the sign. Print it this big for that distance, and there the guide ends. It leaves out the thing that decides whether the sign works: what the printed size does to each individual black square, and how much of that you spend on the length of your link.</p>
+    <p>So we worked it out for the six printed objects people actually make.</p>
+    <p>The short version: <strong>a 20 mm code on a business card gives you 0.61 mm modules and tolerates about 0.24 mm of blur. A 150 mm window sign gives 4.55 mm modules and tolerates 1.82 mm. That is seven times the forgiveness for the same code.</strong></p>
+
+    <h2 id="the-number-that-matters">The number that actually matters</h2>
+    <p>A QR code is a grid of squares called modules. Printed size divided by module count gives you the width of one square, and that single number governs everything else.</p>
+    <p>It governs blur most of all. Our <a href="why-qr-codes-fail-to-scan">scan limits test</a> found that a code stopped decoding once the image was blurred by roughly four tenths of one module. That is a proportion, so it converts straight into millimetres once you know the module width. It is the closest thing we have to a physical tolerance for a printed code.</p>
+
+    <figure>
+      <img src="../images/sign-size-comparison.png" width="2402" height="864" loading="lazy"
+           alt="The same QR code drawn at six printed sizes to scale, from a 20 mm business card code up to a 150 mm window sign, with the module width labelled under each.">
+      <figcaption>The same code, the same data, drawn to scale at each printed size. Nothing about the pattern changes. The only difference is how much room each black square gets, which is the whole game.</figcaption>
+    </figure>
+
+    <h2 id="what-each-sign-gives-you">What each sign size gives you</h2>
+    <p>With a short link, 19 characters, every one of these is a 25 by 25 grid. Add the four module quiet zone on each side and you are dividing the printed width by 33:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Sign</th><th>Code size</th><th>One module</th><th>Blur it tolerates</th></tr></thead>
+        <tbody>
+          <tr><td>Business card back</td><td>20 mm</td><td>0.61 mm</td><td>0.24 mm</td></tr>
+          <tr><td>Sticker</td><td>35 mm</td><td>1.06 mm</td><td>0.42 mm</td></tr>
+          <tr><td>Table tent</td><td>45 mm</td><td>1.36 mm</td><td>0.55 mm</td></tr>
+          <tr><td>Counter card</td><td>60 mm</td><td>1.82 mm</td><td>0.73 mm</td></tr>
+          <tr><td>Wall poster</td><td>100 mm</td><td>3.03 mm</td><td>1.21 mm</td></tr>
+          <tr><td>Window sign</td><td>150 mm</td><td>4.55 mm</td><td>1.82 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Put the first row next to something real. A quarter of a millimetre is roughly the thickness of three sheets of paper. That is the entire blur budget of a business card code, and it has to cover the printer's ink spread, the paper's absorbency and whatever focus error the phone contributes. It is no mystery why small printed codes are the ones that fail.</p>
+
+    <div class="takeaway">
+      <p><strong>This is why moving the sign up one size helps so much.</strong> Going from a 35 mm sticker to a 45 mm table tent is not a 29% improvement in a vague sense. It is 0.42 mm of blur tolerance becoming 0.55 mm, in a range where a tenth of a millimetre is the difference between working and not.</p>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="how-long-can-the-link-be">How long can the link be?</h2>
+    <p>Everything above assumed a short link. A longer one raises the module count, and since the printed size is fixed, every module gets smaller. Eventually they drop below the practical print floor of about 0.4 mm.</p>
+    <p>Working backwards from that floor gives a character budget for each sign:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Sign</th><th>Code size</th><th>Link budget</th><th>Grid at the limit</th></tr></thead>
+        <tbody>
+          <tr><td>Business card back</td><td>20 mm</td><td>about 85 characters</td><td>41 x 41</td></tr>
+          <tr><td>Sticker</td><td>35 mm</td><td>about 365 characters</td><td>77 x 77</td></tr>
+          <tr><td>Table tent</td><td>45 mm</td><td>about 670 characters</td><td>101 x 101</td></tr>
+          <tr><td>Counter card</td><td>60 mm</td><td>over 1,300 characters</td><td>141 x 141</td></tr>
+          <tr><td>Wall poster</td><td>100 mm</td><td colspan="2">The format runs out before the print size does</td></tr>
+          <tr><td>Window sign</td><td>150 mm</td><td colspan="2">The format runs out before the print size does</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The business card row is the one worth remembering. <strong>85 characters</strong> is not much. It is a domain and a short path. Add tracking parameters, which routinely run to 60 or 80 characters on their own, and you are past it without noticing.</p>
+    <p>From the counter card upwards the printed size stops being the constraint. A QR code tops out at version 40, a 177 by 177 grid holding 2,331 bytes at error correction level M, and on a poster you hit that ceiling long before the modules get too small to print. We measured that ceiling separately when testing <a href="vcard-qr-code-with-photo">whether a photo fits in a vCard code</a>.</p>
+
+    <h2 id="the-floor-is-not-a-cliff">The floor is not a cliff</h2>
+    <p>We then rendered these codes and decoded them, which is where the honest caveat comes in.</p>
+    <p>Codes at exactly the limit decoded, as expected. But so did several past it. A 120 character link on a 20 mm business card, giving 0.38 mm modules, decoded fine. So did a 900 character link on a table tent at 0.37 mm. Only one case past the floor actually failed.</p>
+
+    <div class="takeaway">
+      <p><strong>So what is the 0.4 mm floor for?</strong> Not the decoder. On a clean digital image the decoder copes well below it. It is a margin for the physical world: ink spreading into the paper, a camera that has not quite focused, a laminate catching the light, a phone held by someone walking past. The budgets above are where you still have room for those. Below them you are betting that nothing goes wrong.</p>
+    </div>
+
+    <p>This matches what we found measuring <a href="qr-code-damage-test">damage tolerance</a> and <a href="why-qr-codes-fail-to-scan">scan limits</a>: a software decoder reading a clean file is the best case, every time. Design for the worst one.</p>
+
+    <h2 id="what-to-do-with-this">What to do with this</h2>
+    <ol>
+      <li><strong>Shorten the link before you shrink the code.</strong> It is the only move that helps both numbers at once. A short path on a domain you control also lets you change the destination later without reprinting.</li>
+      <li><strong>Strip tracking parameters from printed codes.</strong> They are the commonest way an 85 character budget gets blown, and a printed code cannot be attributed the way a clicked link can anyway.</li>
+      <li><strong>If the link has to be long, go up a size.</strong> A table tent instead of a sticker buys you roughly twice the characters and a third more blur tolerance.</li>
+      <li><strong>Measure the printed code with a ruler once.</strong> If it is smaller than intended, your printer is scaling to fit, and every number here moves with it.</li>
+    </ol>
+    <p>Our <a href="../qr-code-sign-maker">sign maker</a> applies these sizes automatically and decodes the finished sign before you download it, so a link that is too long for the size you picked is caught rather than printed. Our <a href="qr-code-size-for-print">print sizing guide</a> covers choosing the size from scanning distance in the first place.</p>
+
+    <h2 id="how-we-worked-it-out">How we worked it out</h2>
+    <ul>
+      <li><strong>Module width</strong> is printed size divided by the module count plus the eight modules of quiet zone. Read from the encoder, so it is exact.</li>
+      <li><strong>Blur tolerance</strong> is 0.4 of a module, the failure point from our own scan limits test, converted to millimetres.</li>
+      <li><strong>Link budgets</strong> were found by growing a realistic URL until the module width dropped below 0.4 mm, at error correction level M throughout.</li>
+      <li><strong>The decode check</strong> rendered each case at 600 dpi, then resampled to a phone like capture resolution before reading it back and comparing character by character.</li>
+    </ul>
+    <p>Two limits worth stating. The 0.4 mm floor is a widely used working figure for laser printing rather than something we measured on a press, and your stock will move it. And the decode test is software on a clean render, which is exactly why the section above says the floor is a margin rather than a threshold.</p>
+
+    <h2 id="the-summary">The summary</h2>
+    <p>Choosing a sign size is really choosing how much physical error you can absorb. The printed millimetres per module is the number, and your link length spends it.</p>
+    <div class="takeaway">
+      <p><strong>On a business card you have 0.24 mm of blur and about 85 characters. On a window sign you have 1.82 mm and more than the format can hold.</strong> If your link is long, the answer is a shorter link or a bigger sign, not a smaller code.</p>
+    </div>
+    <p>Our <a href="../qr-code-sign-maker">QR code sign maker</a> builds table tents, posters, stickers and window signs at these sizes and checks the result decodes first. If you already have artwork, the <a href="../qr-code-stress-test">stress test</a> will tell you how much blur it survives.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="qr-code-size-for-print">QR Code Size for Print</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+      <a href="qr-code-for-business-card">QR Code for a Business Card</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
