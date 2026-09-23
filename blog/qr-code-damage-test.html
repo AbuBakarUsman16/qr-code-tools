@@ -180,7 +180,7 @@
       <li><strong>One piece of data throughout</strong>, a 41 character URL, so the only variable was the error correction level.</li>
       <li><strong>Three damage types:</strong> a solid block in the centre, the same total area scattered as individual modules, and damage to a corner finder pattern.</li>
       <li><strong>The solid block grown one module at a time</strong>, centred and aligned to the module grid, recording the last size that still decoded.</li>
-      <li><strong>Scattered damage run twenty times at each step</strong> with a different random pattern each time, because where the missing modules land changes the answer. A single run would have given us a number we could not stand behind.</li>
+      <li><strong>Scattered damage run forty times at each step</strong> with a different random pattern each time, because where the missing modules land changes the answer. The random seeds are fixed, so the table reproduces exactly rather than shifting between runs. A single run would have given us a number we could not stand behind.</li>
       <li><strong>Every code checked undamaged first.</strong> This turned out to matter, see the note on level Q below.</li>
       <li><strong>Decoding done in software</strong> on clean digital images, using OpenCV's QR detector.</li>
     </ul>
@@ -218,22 +218,24 @@
 
     <h2 id="result-2-scattered-damage-is-far-worse">Result 2: scattered damage is far worse</h2>
     <p>Here is the finding we did not expect. We took the same total area and, instead of one block, removed individual modules at random across the code.</p>
-    <p>Scattered damage does not have a clean threshold, because it depends on where the missing modules happen to land. So we ran twenty random patterns at each step and counted how many still decoded:</p>
+    <p>Scattered damage does not have a clean threshold, because it depends on where the missing modules happen to land. So we ran forty random patterns at each step and counted how many still decoded. The seeds are fixed, so the table below reproduces exactly:</p>
     <div class="table-wrap">
       <table class="cmp">
         <thead><tr><th>Area removed</th><th>L decoded</th><th>M decoded</th><th>H decoded</th></tr></thead>
         <tbody>
-          <tr><td>1%</td><td>14 of 20</td><td>19 of 20</td><td>16 of 20</td></tr>
-          <tr><td>2%</td><td>8 of 20</td><td>8 of 20</td><td>9 of 20</td></tr>
-          <tr><td>3%</td><td>3 of 20</td><td>9 of 20</td><td>7 of 20</td></tr>
-          <tr><td>4%</td><td>0 of 20</td><td>8 of 20</td><td>2 of 20</td></tr>
-          <tr><td>5%</td><td>&mdash;</td><td>0 of 20</td><td>2 of 20</td></tr>
-          <tr><td>8%</td><td>&mdash;</td><td>&mdash;</td><td>0 of 20</td></tr>
+          <tr><td>1%</td><td>31 of 40</td><td>35 of 40</td><td>27 of 40</td></tr>
+          <tr><td>2%</td><td>20 of 40</td><td>23 of 40</td><td>13 of 40</td></tr>
+          <tr><td>3%</td><td>3 of 40</td><td>17 of 40</td><td>10 of 40</td></tr>
+          <tr><td>4%</td><td>0 of 40</td><td>9 of 40</td><td>3 of 40</td></tr>
+          <tr><td>5%</td><td>0 of 40</td><td>4 of 40</td><td>4 of 40</td></tr>
+          <tr><td>6%</td><td>0 of 40</td><td>0 of 40</td><td>2 of 40</td></tr>
+          <tr><td>8%</td><td>0 of 40</td><td>0 of 40</td><td>1 of 40</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Read that against the solid block column: level H tolerated a 19% solid block every time, but scattered damage had already become a coin flip at 2%, and only one pattern in twenty survived at 6%.</p>
-    <p>This is also why a single number would have been misleading. Run this test once and you might record 5% as the limit for level H, because two patterns in twenty do survive there. Run it twenty times and the honest answer is that you cannot rely on 2%.</p>
+    <p>Read that against the solid block column. Level H tolerated a 19% solid block every single time. Scattered, it was already failing more often than not at 2%, and at 4% only three patterns in forty survived.</p>
+    <p>There is a second finding in that table that we did not expect, and it is the reason we published all three columns rather than just H. <strong>Level H is not better than level M against scattered damage.</strong> At every step from 1% to 4% it did worse. The reason is that raising the error correction level makes the grid bigger, 37 by 37 at H against 29 by 29 at M for the same URL, so the same <em>percentage</em> of area is a larger number of modules, spread across more of the code. Scattered damage is punished by how many data blocks it touches, not by how much area it covers, and a bigger grid gives it more blocks to touch.</p>
+    <p>This is also why a single number would have been misleading. Run this test once and you might record 8% as the limit for level H, because one pattern in forty does survive there. Run it forty times and the honest answer is that you cannot rely on 2%.</p>
     <p>The reason is how Reed Solomon error correction is organised. It works on blocks of data, and it can fully rebuild a limited number of blocks. A solid square destroys a few blocks completely, which is exactly the situation the correction is designed for. Scattered damage puts a little corruption into <em>many</em> blocks at once, and the budget runs out long before the total area does.</p>
     <div class="takeaway">
       <p><strong>Why this matters in the real world:</strong> the damage that actually happens to printed codes is scattered, not solid. Ink spatter, fading, dust, a scuffed surface, a low quality print. Those land in the few percent column, not the 19% one.</p>
@@ -279,7 +281,7 @@
 
     <h2 id="the-summary">The summary</h2>
     <div class="takeaway">
-      <p><strong>Location beats quantity.</strong> A level H code survived 19% of its area covered in one block, became a coin flip at 2% once that damage was scattered, and failed outright with one module missing from a corner marker. If you remember one thing, protect the corners.</p>
+      <p><strong>Location beats quantity.</strong> A level H code survived 19% of its area covered in one block, failed more often than not at 2% once that damage was scattered, and failed outright with one module missing from a corner marker. If you remember one thing, protect the corners.</p>
     </div>
     <p>Making a code you want to last? All of our <a href="../services">generators</a> produce static codes, so nothing on our end can break them later, and you can test any of them the way we did here.</p>
  </article>
