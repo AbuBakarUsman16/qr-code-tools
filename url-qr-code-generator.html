@@ -102,6 +102,10 @@
     <a href="vcard-qr-code-generator">vCard</a>
     <a href="wifi-qr-code-generator">WiFi</a>
     <a href="text-qr-code-generator">Text</a>
+    <a href="pdf-qr-code-generator">PDF</a>
+    <a href="image-qr-code-generator">Image</a>
+    <a href="file-qr-code-generator">File or media</a>
+    <a href="google-drive-qr-code-generator">Google Drive</a>
     <a href="email-qr-code-generator">Email</a>
     <a href="sms-qr-code-generator">SMS</a>
     <a href="phone-qr-code-generator">Phone</a>
@@ -245,6 +249,9 @@
 
  <h3>Does the web address have to be short?</h3>
  <p>It does not have to be, but shorter is genuinely better. Every character raises the module count, and at a fixed printed size that makes each black square smaller and less tolerant of blur. We measured exactly how much in our <a href="blog/location-qr-code-format-test">format comparison</a>: a long copied link produced a code 5.2 times the area of a short one.</p>
+
+ <h3>What if the link points at a file rather than a page?</h3>
+ <p>It still works, the code does not care what is at the other end. But each file type behaves differently once a phone opens it, so we built tools that flag the traps: the <a href="pdf-qr-code-generator">PDF generator</a>, the <a href="image-qr-code-generator">image generator</a>, the <a href="file-qr-code-generator">file and media generator</a> for video, audio and Office files, and the <a href="google-drive-qr-code-generator">Google Drive generator</a>, which rewrites Drive links so they preview instead of opening the editor.</p>
 
  <h3>Is there a length limit?</h3>
  <p>Technically the format allows a lot of characters, but practically, long URLs make dense codes that scan poorly. Keep links under about 80 characters where you can.</p>
