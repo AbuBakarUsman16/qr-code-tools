@@ -42,6 +42,10 @@
 .hosted-note h2 { margin-top: 0; font-size: 1.05rem; }
 .hosted-note p { margin-bottom: 16px; }
 @media (max-width: 520px) { .file-actions .btn { flex: 1 1 100%; } }
+.poster-figure { margin: 24px 0 8px; }
+.poster-figure a { display: block; border: 1px solid var(--border, #e3e6ef); border-radius: 10px; overflow: hidden; }
+.poster-figure img { display: block; width: 100%; height: auto; }
+.poster-figure figcaption { color: #777; font-size: 0.86rem; margin-top: 8px; text-align: center; }
 </style>
 </head>
 <body>
@@ -105,7 +109,7 @@
 
  <div class="hero">
  <h1>Full File Access</h1>
- <p>You scanned the code on the poster. The complete file is below.</p>
+ <p>You scanned the code on the poster. The complete study is below.</p>
  </div>
 
  <div class="file-card">
@@ -119,11 +123,17 @@
    <li>Screened against the 2023 AGS Beers Criteria, with safer alternatives from the 2025 AGS list</li>
   </ul>
 
+  <figure class="poster-figure">
+   <a class="zoom" href="poster-lg.jpg" aria-label="Enlarge the poster">
+    <img src="poster.jpg" width="1500" height="1464" alt="Research poster: Evaluation of Potentially Inappropriate Medications and Polypharmacy in Hypertensive Geriatric Prescriptions Applying Beers Criteria. Sections cover introduction, objectives, methodology, key findings, discussion, safer alternatives and future directions, with charts showing 69.3% polypharmacy and 36.7% PIM prevalence.">
+   </a>
+   <figcaption>Tap the poster to enlarge it.</figcaption>
+  </figure>
+
   <div class="file-actions">
-   <a class="btn" href="../pims.pdf" target="_blank" rel="noopener">Open the PDF</a>
-   <a class="btn btn-outline" href="../pims.pdf" download="PIMs-Geriatric-Poster.pdf">Download</a>
+   <button class="btn" type="button" id="dl">Download the PDF</button>
   </div>
-  <p class="file-meta">PDF, about 320 KB. No sign in needed.</p>
+  <p class="file-meta" id="dlmsg">PDF, about 310 KB. No sign in needed.</p>
  </div>
 
  <div class="hosted-note">
@@ -138,6 +148,46 @@
 
 </main>
 
+<script>
+(function () {
+  var btn = document.getElementById("dl");
+  var msg = document.getElementById("dlmsg");
+  var parts = ["d", "a7c41f9b2e", "pdf"];
+  var name = "PIMs-Geriatric-Poster.pdf";
+  var busy = false;
+
+  btn.addEventListener("click", function () {
+    if (busy) return;
+    busy = true;
+    var label = btn.textContent;
+    btn.textContent = "Preparing…";
+
+    fetch(parts[0] + "/" + parts[1] + "." + parts[2])
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.blob();
+      })
+      .then(function (blob) {
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
+        btn.textContent = label;
+        busy = false;
+      })
+      .catch(function () {
+        btn.textContent = label;
+        msg.textContent = "The download did not start. Please try again.";
+        busy = false;
+      });
+  });
+})();
+</script>
+
 <footer>
  <p>
  <a href="../../">Home</a> ·
@@ -151,6 +201,8 @@
  </p>
  &copy; 2026 QRotto. Free QR code generators for everyone.
 </footer>
+
+<script src="../../lightbox.js"></script>
 
 </body>
 </html>
