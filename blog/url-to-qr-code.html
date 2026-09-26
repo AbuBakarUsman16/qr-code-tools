@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL to QR Code: Which Form of Your Link to Encode</title>
+<meta name="description" content="Dropping https:// shrinks the code but changes what the scanner offers. We measured six forms of the same web address and tested what each one costs in print.">
+<link rel="canonical" href="https://qrotto.com/blog/url-to-qr-code">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="URL to QR Code: Which Form of Your Link to Encode">
+<meta property="og:description" content="Dropping https:// shrinks the code but changes what the scanner offers. We measured six forms of the same web address and tested what each one costs in print.">
+<meta property="og:url" content="https://qrotto.com/blog/url-to-qr-code">
+<meta property="og:image" content="https://qrotto.com/images/url-qr-link-forms.png">
+<meta property="article:published_time" content="2026-09-26">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="URL to QR Code: Which Form of Your Link to Encode">
+<meta name="twitter:description" content="Dropping https:// shrinks the code but changes what the scanner offers. We measured six forms of the same web address and tested what each one costs in print.">
+<meta name="twitter:image" content="https://qrotto.com/images/url-qr-link-forms.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to turn a URL into a QR code",
+  "description": "Copy the final address rather than a redirect, keep the https prefix, trim tracking parameters you do not need, generate the code and scan it back before printing.",
+  "totalTime": "PT2M",
+  "step": [
+    { "@type": "HowToStep", "name": "Open the page and copy the address", "text": "Load the page you want people to land on and copy the address from the browser bar, so you capture the final address rather than a redirect." },
+    { "@type": "HowToStep", "name": "Keep https:// and drop www if the site allows it", "text": "Leave the https prefix so scanners treat it as a link. Remove www only if the site loads without it." },
+    { "@type": "HowToStep", "name": "Trim what you do not need", "text": "Remove tracking parameters, session ids and anything the page does not require, since every character adds density." },
+    { "@type": "HowToStep", "name": "Generate the code", "text": "Paste the address into a URL QR code generator and download a PNG for screens or an SVG for print." },
+    { "@type": "HowToStep", "name": "Scan it and follow the link", "text": "Scan the code with a phone, tap through, and confirm the page that loads is the one you meant." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "URL to QR Code", "item": "https://qrotto.com/blog/url-to-qr-code" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / URL to QR Code</p>
+
+ <div class="hero">
+ <h1>URL to QR Code: Which Form of Your Link to Encode</h1>
+ <p>The same web address can be written six ways. They produce different codes, different print sizes, and different behaviour when someone scans them.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-26">26 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>9 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#the-short-version">The short version</a></li>
+        <li><a href="#what-we-measured">What we measured: six forms of one address</a></li>
+        <li><a href="#https">Should you keep https:// ?</a></li>
+        <li><a href="#www">Dropping www</a></li>
+        <li><a href="#uppercase">The uppercase trick, and why it usually does nothing</a></li>
+        <li><a href="#tracking">Tracking parameters are expensive</a></li>
+        <li><a href="#shorteners">Link shorteners: what you gain and what you give up</a></li>
+        <li><a href="#before-you-print">Five checks before you print</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <p>Turning a URL into a QR code takes about four seconds, which is why almost nobody thinks about it. Then the poster comes back from the printer and the code is denser than it needed to be, or it points at a redirect that stopped working, or half the width was spent on campaign tags nobody reads.</p>
+    <p>None of that is the generator's fault. It encoded exactly what you pasted. The decisions that matter all happen before you paste.</p>
+
+    <h2 id="the-short-version">The short version</h2>
+    <ol>
+      <li>Open the page and copy the address from the browser bar, so you get the address it settles on rather than the one you typed.</li>
+      <li>Keep <code>https://</code>.</li>
+      <li>Drop <code>www.</code> if the site loads without it.</li>
+      <li>Delete tracking parameters unless you genuinely need them.</li>
+      <li>Paste it into our <a href="../url-qr-code-generator">URL QR code generator</a>, download, then scan it and follow the link.</li>
+    </ol>
+
+    <h2 id="what-we-measured">What we measured: six forms of one address</h2>
+    <p>We encoded the same destination six ways at error correction level M, recorded the grid, and decoded every code back to confirm it matched. Print size is the smallest usable width, from the 0.4 mm per module floor plus the quiet zone.</p>
+
+    <figure>
+      <img src="../images/url-qr-link-forms.png" width="1130" height="480" loading="lazy"
+           alt="Three QR codes for the same web page. The address copied with www is 29 by 29 modules and needs 14.8 mm. The domain only form without https is 25 by 25 and needs 13.2 mm. The version with campaign tracking tags is 41 by 41 and needs 19.6 mm.">
+      <figcaption>One destination, three ways of writing it. The campaign tags cost more printed width than the whole rest of the address.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Form</th><th>Chars</th><th>Grid</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td><code>https://www.example.com/summer-sale/</code></td><td>36</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td><code>https://example.com/summer-sale/</code></td><td>32</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td><code>https://example.com/summer-sale</code></td><td>31</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td><code>example.com/summer-sale</code></td><td>23</td><td>25 x 25</td><td>13.2 mm</td></tr>
+          <tr><td><code>https://example.com/s</code> (short path)</td><td>21</td><td>25 x 25</td><td>13.2 mm</td></tr>
+          <tr><td>With three campaign tags</td><td>87</td><td>41 x 41</td><td>19.6 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>All six decoded. The interesting part is the first three rows, which are identical in grid despite differing by five characters.</p>
+    <p><strong>QR codes grow in steps, not per character.</strong> A code jumps from 25 by 25 to 29 by 29 to 33 by 33 and so on, and within a step extra characters are free. Deleting <code>www.</code> and the trailing slash saved five characters and changed nothing at all about the printed result. Tidier, not smaller.</p>
+    <p>That single fact contradicts a lot of advice about shortening links for QR codes. Trimming is only worth doing when it carries you across a step boundary. Shortening the path from <code>/summer-sale</code> to <code>/s</code> does cross one, which is why row five is a size smaller than row three.</p>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="https">Should you keep https:// ?</h2>
+    <p>Yes, in almost every case.</p>
+    <p>Row four shows that <code>example.com/summer-sale</code> is genuinely smaller, 25 by 25 against 29 by 29. It is the one trim in the table that pays. But what you are encoding is no longer a URL, it is a string that happens to look like one, and how a scanner treats it is then a guess rather than a rule. A scanner that recognises the pattern may offer to open it. One that does not will show it as plain text for the person to retype.</p>
+    <div class="takeaway">
+      <p><strong>1.6 mm is not worth the ambiguity.</strong> That is the entire saving from dropping the prefix. For a poster or a menu card, keep <code>https://</code> and print the code 1.6 mm wider. The only time the trim is tempting is at the smallest printed sizes, and that is exactly where a shorter path would serve you better anyway.</p>
+    </div>
+    <p>Never use <code>http://</code> when the site supports <code>https://</code>. It is the same length, and it invites a browser warning on a code you cannot reprint.</p>
+
+    <h2 id="www">Dropping www</h2>
+    <p>Free to do, as the table shows, and free is not the same as useful. Two rules:</p>
+    <ul>
+      <li>Test the version without <code>www.</code> in a browser first. Most sites redirect one to the other, but not all, and a printed code pointing at a hostname that does not resolve is unrecoverable.</li>
+      <li>A redirect costs the person scanning an extra round trip. Encode the address the browser settles on rather than the one that bounces.</li>
+    </ul>
+    <p>That second point matters more than the character count. Open the page, let it finish loading, then copy from the address bar. You will sometimes find the address you have been given is not the address the site actually uses.</p>
+
+    <h2 id="uppercase">The uppercase trick, and why it usually does nothing</h2>
+    <p>You may run into the advice that writing a URL in capitals makes a smaller QR code. It comes from a real feature of the format. QR has a compact alphanumeric mode for uppercase letters, digits and a handful of symbols, and a generator that uses it can fit more in.</p>
+    <p>We tested it. Encoding <code>HTTPS://EXAMPLE.COM/SUMMER-SALE</code> with a library that selects alphanumeric mode gave 25 by 25, against 29 by 29 for the lowercase form. Both decoded correctly. The saving is real.</p>
+    <p>Then we ran the same string through the library our own generator uses and got 29 by 29 for both cases. It encodes everything as bytes and never switches modes, so the capitals bought nothing. Whether the trick works at all depends on which generator you happen to be using, and most tools do not tell you.</p>
+    <div class="takeaway">
+      <p><strong>Two reasons we do not recommend it, even where it works.</strong> Domain names ignore case, but paths usually do not. <code>/Summer-Sale</code> and <code>/summer-sale</code> are different pages on most servers, so capitalising a path can point your code at a 404. And a shouting address printed under a code looks like a mistake. Use a shorter path instead. It gets you the same step down without either problem.</p>
+    </div>
+
+    <h2 id="tracking">Tracking parameters are expensive</h2>
+    <p>Adding three campaign tags took the address from 31 characters to 87, and the code from 29 by 29 to 41 by 41. That is 4.8 mm of extra printed width, a third more than the clean address needed in total, spent on text no human will ever read.</p>
+    <p>Sometimes that is the right trade. If the tags are how you find out whether the poster worked, pay the 4.8 mm. But there is usually a better way:</p>
+    <ul>
+      <li>Give the campaign its own short path, such as <code>example.com/poster</code>, and redirect it. You get a clean attribution in your analytics and a 25 by 25 code.</li>
+      <li>Drop <code>utm_campaign</code> if you only have one QR campaign running. Source and medium often answer the question by themselves.</li>
+      <li>Never encode a session id or a personalised token. They expire, and a printed code does not.</li>
+    </ul>
+
+    <h2 id="shorteners">Link shorteners: what you gain and what you give up</h2>
+    <p>A shortener gives you a small code and the ability to change the destination later, which a static code otherwise cannot do. Both are genuinely valuable for printed work.</p>
+    <p>What you give up is control. The short domain is somebody else's, the service can change its pricing or disappear, some corporate networks block the common shorteners outright, and the person scanning cannot see where they are going before they tap. That last one matters more than it used to, because hidden destinations are how QR code scams work. We covered the warning signs in <a href="are-qr-codes-safe">are QR codes safe</a>.</p>
+    <p>A short path on a domain you own gets you the same 25 by 25 code and the same ability to repoint it, with none of those drawbacks. If you own a domain, use it. The full comparison is in <a href="static-vs-dynamic-qr-codes">static vs dynamic QR codes</a>.</p>
+
+    <h2 id="before-you-print">Five checks before you print</h2>
+    <ol>
+      <li><strong>Scan it and follow the link.</strong> Not just decode it, tap through and watch the page load. A code can decode perfectly and still point somewhere wrong.</li>
+      <li><strong>Check it on mobile data,</strong> not office WiFi. Nobody scanning your poster is on your network.</li>
+      <li><strong>Check the page works on a phone.</strong> Every scan is a mobile visit. A desktop only page is a wasted print run.</li>
+      <li><strong>Use SVG for print.</strong> A PNG scaled up at the printer softens the module edges, and soft edges are the single biggest cause of scan failures. Our <a href="../qr-code-designer">customiser</a> exports SVG.</li>
+      <li><strong>Print one proof and scan it from the real distance.</strong> On paper, in the light it will actually live in.</li>
+    </ol>
+    <p>If you need many codes for different addresses, our <a href="../bulk-qr-code-generator">bulk generator</a> takes a list, and the <a href="bulk-qr-codes-for-a-print-run">batch guide</a> covers what goes wrong at volume.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Do QR codes for URLs expire?</h3>
+    <p>The code does not. It is a printed pattern holding an address and there is no account behind it. What expires is the page. If the address changes or the site moves, every printed copy stops working, which is the argument for pointing codes at a path you control.</p>
+
+    <h3>How long can the URL be?</h3>
+    <p>Far longer than any sensible address, but length shows up as printed size. At level M a 20 mm code holds about 106 characters, a 30 mm code about 287, and a 45 mm code about 711. The <a href="qr-code-sign-size-and-link-length">sign size guide</a> has the full table.</p>
+
+    <h3>Can I see how many people scanned it?</h3>
+    <p>Not from the code itself. Point it at a page on your own site and read your normal analytics, or give the campaign its own path so the visits are easy to separate.</p>
+
+    <h3>Why does my code open the wrong page?</h3>
+    <p>Usually a redirect, or a path whose capitalisation does not match. Open the address in a private browsing window exactly as encoded and see where it lands.</p>
+
+    <h3>Is a longer URL less reliable?</h3>
+    <p>Only through density. A longer address means more, smaller modules at the same printed width, and small modules are what blur and cheap cameras defeat. Printed larger, a long code is as reliable as a short one. We measured the failure points in <a href="why-qr-codes-fail-to-scan">why won't this QR code scan</a>.</p>
+
+    <h3>Should I put the address in text under the code?</h3>
+    <p>Yes, if it is short enough to read. It gives people a fallback if scanning fails, and it shows them where they are going before they tap, which is the simplest thing you can do to make a printed code trustworthy.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="text-qr-code-generator-guide">Text QR Codes: How Much Fits</a>
+      <a href="qr-code-sign-size-and-link-length">Sign Size and Link Length</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>

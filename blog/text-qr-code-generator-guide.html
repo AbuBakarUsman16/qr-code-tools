@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text QR Code Generator: How Much Text Actually Fits</title>
+<meta name="description" content="A plain text QR code shows words instead of opening a link. We measured what each length costs in print size, and when text is the wrong choice.">
+<link rel="canonical" href="https://qrotto.com/blog/text-qr-code-generator-guide">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Text QR Code Generator: How Much Text Actually Fits">
+<meta property="og:description" content="A plain text QR code shows words instead of opening a link. We measured what each length costs in print size, and when text is the wrong choice.">
+<meta property="og:url" content="https://qrotto.com/blog/text-qr-code-generator-guide">
+<meta property="og:image" content="https://qrotto.com/images/text-qr-length-growth.png">
+<meta property="article:published_time" content="2026-09-26">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text QR Code Generator: How Much Text Actually Fits">
+<meta name="twitter:description" content="A plain text QR code shows words instead of opening a link. We measured what each length costs in print size, and when text is the wrong choice.">
+<meta name="twitter:image" content="https://qrotto.com/images/text-qr-length-growth.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to make a plain text QR code",
+  "description": "Write the message, keep it short enough for the size you will print, generate the code, and check it on a phone before printing.",
+  "totalTime": "PT2M",
+  "step": [
+    { "@type": "HowToStep", "name": "Write the message", "text": "Type the exact words you want a scanner to show. Nothing is added or reformatted." },
+    { "@type": "HowToStep", "name": "Check the length against your print size", "text": "Around 100 characters suits a 20 mm code. Around 280 needs roughly 30 mm." },
+    { "@type": "HowToStep", "name": "Generate and download", "text": "Paste the text into a text QR code generator and download the PNG or SVG." },
+    { "@type": "HowToStep", "name": "Scan it before printing", "text": "Scan the code with a phone and read the result back. Confirm accents and symbols survived." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Text QR Code Generator Guide", "item": "https://qrotto.com/blog/text-qr-code-generator-guide" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Text QR Code Generator Guide</p>
+
+ <div class="hero">
+ <h1>Text QR Code Generator: How Much Text Actually Fits</h1>
+ <p>A plain text code does not open anything. It shows words. That makes it the simplest QR code there is, and the easiest one to make too big to scan.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-26">26 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-it-does">What a text QR code actually does</a></li>
+        <li><a href="#how-to-make-one">How to make one</a></li>
+        <li><a href="#what-we-measured">What we measured: length against print size</a></li>
+        <li><a href="#the-ceiling">The ceiling, and what happens when you hit it</a></li>
+        <li><a href="#error-correction">Error correction costs you length</a></li>
+        <li><a href="#accents-and-emoji">Accents, emoji and other non-English characters</a></li>
+        <li><a href="#when-to-use-text">When text is the right choice, and when it is not</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <p>Most QR codes are instructions. A link tells the phone to open a browser, a WiFi code tells it to join a network, a vCard tells it to offer a new contact. A plain text code is different. It carries words and nothing else, so the scanner has nowhere to send them. It simply displays them.</p>
+    <p>That is the whole feature, and it is genuinely useful for a serial number on a machine, a short instruction on a piece of equipment, or a note that has to be readable without an internet connection. It is also where people get into trouble, because text has no natural length limit the way a URL does, and every character you add makes the printed code harder to scan.</p>
+
+    <h2 id="what-it-does">What a text QR code actually does</h2>
+    <p>The code contains your characters exactly as you typed them. There is no prefix, no format, no wrapper. Scan a text code that says <code>Filter changed 04/09/2026 - next due 04/03/2027</code> and that string is what comes back.</p>
+    <p>What happens next is up to the app doing the scanning, and this is worth knowing before you print anything. A scanner that recognises a link can offer to open it. Given plain text there is nothing to open, so most scanners fall back to showing the text with a copy or share button. Some phone cameras are less helpful with plain text than they are with links, and may show a smaller prompt or none at all.</p>
+    <div class="takeaway">
+      <p><strong>Test with the camera app, not just a scanner app.</strong> A dedicated scanner will always show you plain text. The built in camera on a phone is tuned for links and may handle text more quietly. If your audience will be using their camera, check on a camera before you commit to print.</p>
+    </div>
+
+    <h2 id="how-to-make-one">How to make one</h2>
+    <ol>
+      <li>Open our <a href="../text-qr-code-generator">text QR code generator</a> and type the message.</li>
+      <li>Check the length against the size you intend to print, using the table below.</li>
+      <li>Download the PNG for screens, or an SVG from the <a href="../qr-code-designer">customiser</a> if it is going to a printer.</li>
+      <li>Scan it with a phone and read the result back before you print anything.</li>
+    </ol>
+    <p>That last step catches nearly everything: a typo, a line break you did not mean to include, an accented character that did not survive. It takes ten seconds.</p>
+
+    <h2 id="what-we-measured">What we measured: length against print size</h2>
+    <p>We encoded ordinary English prose at increasing lengths at error correction level M, recorded the grid each one produced, and decoded every code back to confirm it matched the input. The print size is the smallest usable width, from the 0.4 mm per module floor plus the quiet zone the format requires.</p>
+
+    <figure>
+      <img src="../images/text-qr-length-growth.png" width="1400" height="480" loading="lazy"
+           alt="Four QR codes holding the same kind of text at different lengths. 34 characters gives a 29 by 29 grid needing 14.8 mm. 280 characters gives 65 by 65 needing 29.2 mm. 600 characters gives 93 by 93 needing 40.4 mm. 1,800 characters gives 157 by 157 needing 66 mm.">
+      <figcaption>The same prose at four lengths. Six times the text roughly doubles the printed width, but the modules inside get far finer, which is what actually breaks scanning.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>What you are encoding</th><th>Characters</th><th>Grid</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td>A single word</td><td>7</td><td>21 x 21</td><td>11.6 mm</td></tr>
+          <tr><td>A short line, such as a table number</td><td>34</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>A network name and password written out</td><td>48</td><td>33 x 33</td><td>16.4 mm</td></tr>
+          <tr><td>A sentence or two</td><td>140</td><td>49 x 49</td><td>22.8 mm</td></tr>
+          <tr><td>A short paragraph</td><td>280</td><td>65 x 65</td><td>29.2 mm</td></tr>
+          <tr><td>Half a page</td><td>600</td><td>93 x 93</td><td>40.4 mm</td></tr>
+          <tr><td>A full page</td><td>1,800</td><td>157 x 157</td><td>66.0 mm</td></tr>
+          <tr><td>The most level M will hold</td><td>2,331</td><td>177 x 177</td><td>74.0 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>All eight decoded correctly when we scanned them back, including the 2,331 character one. Fitting is not the problem. The problem is the print size those larger codes demand, and the fact that the floor in the last column is a floor rather than a recommendation.</p>
+    <p>A 66 mm code is bigger than a beer mat. If you were imagining a full page of text on a small equipment label, the numbers say no long before the format does.</p>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <h2 id="the-ceiling">The ceiling, and what happens when you hit it</h2>
+    <p>A QR code stops at version 40, a 177 by 177 grid. At error correction level M that holds 2,331 bytes. We tried 2,332 and the generator refused outright with a length overflow rather than producing a code that might have failed quietly later. That is the correct behaviour, and it is worth knowing that a generator which silently truncates your text instead would be a much worse tool.</p>
+    <p>The limit varies by error correction level, because correction data takes room that would otherwise hold your text:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Error correction</th><th>Maximum characters</th><th>Grid at that size</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td>L</td><td>2,953</td><td>177 x 177</td><td>74.0 mm</td></tr>
+          <tr><td>M</td><td>2,331</td><td>177 x 177</td><td>74.0 mm</td></tr>
+          <tr><td>Q</td><td>1,663</td><td>177 x 177</td><td>74.0 mm</td></tr>
+          <tr><td>H</td><td>1,273</td><td>177 x 177</td><td>74.0 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Note that the grid is identical in every row. At the ceiling you are always printing 177 by 177 modules. Choosing level L over level H does not buy you a smaller code there, it buys you more than twice the text in the same physical square, at the cost of damage tolerance. We put numbers on that tradeoff in <a href="qr-code-damage-test">our damage test</a>.</p>
+
+    <h2 id="error-correction">Error correction costs you length</h2>
+    <p>Below the ceiling the effect runs the other way. Here is the same 280 character paragraph at all four levels:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Level</th><th>Grid</th><th>Smallest usable print</th><th>Against level L</th></tr></thead>
+        <tbody>
+          <tr><td>L</td><td>61 x 61</td><td>27.6 mm</td><td>—</td></tr>
+          <tr><td>M</td><td>65 x 65</td><td>29.2 mm</td><td>+1.6 mm</td></tr>
+          <tr><td>Q</td><td>77 x 77</td><td>34.0 mm</td><td>+6.4 mm</td></tr>
+          <tr><td>H</td><td>85 x 85</td><td>37.2 mm</td><td>+9.6 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Going from L to H on the same text adds almost 10 mm to the smallest size you can print. That is a real cost on a label or a card, and it is why M is the sensible default for a text code: enough tolerance for a printed surface, without inflating a paragraph into something the size of a coaster.</p>
+    <p>Level H earns its place when the code will be handled, scuffed or partly obscured, or when you are putting a logo in the middle. For a laminated note on a wall, M is fine.</p>
+
+    <h2 id="accents-and-emoji">Accents, emoji and other non-English characters</h2>
+    <p>A QR code stores bytes, and how those bytes map back to characters depends on the encoding the generator chose. Get it wrong and <code>Café</code> comes back as <code>CafÃ©</code>, or as nothing at all.</p>
+    <p>Our generator encodes as UTF-8, which is what modern scanners expect, and we verify it by decoding the output and comparing it to the input character by character. We test with accented Latin text, Spanish names and Japanese, because those are the three cases that break naive implementations in different ways.</p>
+    <p>Emoji are the same problem in a more visible form. One emoji is four bytes, and older tools that default to a single byte encoding turn it into a stray control character rather than failing outright, so the code still generates and still scans. It just comes back wrong.</p>
+    <p>Two practical consequences. Non-English characters take more than one byte each, so a paragraph of Japanese fills a code faster than the same paragraph of English. And if you are pasting text from a word processor, watch for curly quotes and long dashes, which are also multi-byte characters and are easy to paste in without noticing.</p>
+    <div class="takeaway">
+      <p><strong>Scan the code and compare the text.</strong> Not glance at it, compare it. Encoding faults usually show up in exactly one character somewhere in the middle, which is the easiest thing in the world to miss on a quick look.</p>
+    </div>
+
+    <h2 id="when-to-use-text">When text is the right choice, and when it is not</h2>
+    <p>Text is the right choice when the information is short, will not change, and has to work without a network. A serial number on a pump, a rack location in a warehouse, a service date on an air conditioning unit, a short instruction on a machine. Nobody needs a website for those, and a code that works in a basement with no signal is worth something.</p>
+    <p>Text is the wrong choice in three cases, and in each one another format does the job better:</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>If you are writing</th><th>Use instead</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>A web address as plain text</td><td><a href="../url-qr-code-generator">URL generator</a></td><td>A proper link is offered as a tap rather than shown as words to retype</td></tr>
+          <tr><td>A network name and password</td><td><a href="../wifi-qr-code-generator">WiFi generator</a></td><td>Joins the network on scan instead of making guests type it</td></tr>
+          <tr><td>Contact details</td><td><a href="../vcard-qr-code-generator">vCard generator</a></td><td>Offers to save a contact rather than showing a block of text</td></tr>
+          <tr><td>More than a short paragraph</td><td>A link to a page</td><td>25 characters print at 13 mm. 600 characters need 40 mm and far finer modules</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>That last row is the one that catches people out. If you find yourself pasting several paragraphs into a text generator, what you actually want is a page with that text on it and a link to the page. The code shrinks from 93 by 93 to around 29 by 29, and you can fix a typo afterwards, which you can never do with a printed text code.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Does a text QR code need the internet?</h3>
+    <p>No. The text is inside the code. That is its main advantage over a link and the reason it suits equipment labels, basements, aircraft and anywhere else a signal is unreliable.</p>
+
+    <h3>Can I edit the text later?</h3>
+    <p>No. A text code is static, with nothing behind it to change. Reprinting is the only edit. If the wording might change, point a link at a page you control instead and see our guide to <a href="static-vs-dynamic-qr-codes">static and dynamic codes</a>.</p>
+
+    <h3>How many characters can a QR code hold?</h3>
+    <p>2,331 at error correction level M, 2,953 at level L, 1,663 at Q and 1,273 at H. Those are ceilings, not targets. At any of them you are printing a 177 by 177 grid, which needs 74 mm before it is comfortably scannable.</p>
+
+    <h3>Why did my long text code stop scanning?</h3>
+    <p>Almost always because it was printed too small for its density. A 157 by 157 code printed at 25 mm gives each module 0.16 mm, well under the 0.4 mm floor, so the camera cannot resolve them. Either print it larger or shorten the text. We measured where scanning breaks down in <a href="why-qr-codes-fail-to-scan">why won't this QR code scan</a>.</p>
+
+    <h3>Are line breaks allowed?</h3>
+    <p>Yes, and they are preserved. They also count as characters, so a list with many short lines costs more than the visible text suggests.</p>
+
+    <h3>Is the text private?</h3>
+    <p>No. Anyone who scans the code reads it, and anyone with a photo of the code can decode it later. Never put a password, a door code or anything confidential in a text QR code on public display.</p>
+
+    <h3>What size should I print it?</h3>
+    <p>Take the floor from the table above and add margin for how it will be scanned. A label people hold at arm's length is fine near the floor. Anything read from a distance needs to grow roughly in proportion. Our <a href="../qr-code-sign-maker">sign maker</a> handles the standard sizes, and the <a href="qr-code-sign-size-and-link-length">sign size guide</a> explains the reasoning.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="url-to-qr-code">URL to QR Code: Which Link to Encode</a>
+      <a href="qr-code-sign-size-and-link-length">Sign Size and Link Length</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
