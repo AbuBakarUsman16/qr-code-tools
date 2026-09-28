@@ -195,7 +195,7 @@
     <p>All eight decoded correctly when we scanned them back, including the 2,331 character one. Fitting is not the problem. The problem is the print size those larger codes demand, and the fact that the floor in the last column is a floor rather than a recommendation.</p>
     <p>A 66 mm code is bigger than a beer mat. If you were imagining a full page of text on a small equipment label, the numbers say no long before the format does.</p>
 
-    <div class="ad-slot">Advertisement</div>
+    <div class="ad-slot" data-ad-placeholder></div>
 
     <h2 id="the-ceiling">The ceiling, and what happens when you hit it</h2>
     <p>A QR code stops at version 40, a 177 by 177 grid. At error correction level M that holds 2,331 bytes. We tried 2,332 and the generator refused outright with a length overflow rather than producing a code that might have failed quietly later. That is the correct behaviour, and it is worth knowing that a generator which silently truncates your text instead would be a much worse tool.</p>
