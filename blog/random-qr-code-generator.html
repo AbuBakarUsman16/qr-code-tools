@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random QR Code Generator: What It Is and How It Works</title>
+<meta name="description" content="What a random QR code generator does, how it builds each code, and where random codes are used. Plus what we measured: longer tokens cost nothing in print.">
+<link rel="canonical" href="https://qrotto.com/blog/random-qr-code-generator">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Random QR Code Generator: What It Is and How It Works">
+<meta property="og:description" content="What a random QR code generator does, how it builds each code, and where random codes are used. Plus what we measured: longer tokens cost nothing in print.">
+<meta property="og:url" content="https://qrotto.com/blog/random-qr-code-generator">
+<meta property="og:image" content="https://qrotto.com/images/random-token-length.png">
+<meta property="article:published_time" content="2026-09-28">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Random QR Code Generator: What It Is and How It Works">
+<meta name="twitter:description" content="What a random QR code generator does, how it builds each code, and where random codes are used. Plus what we measured: longer tokens cost nothing in print.">
+<meta name="twitter:image" content="https://qrotto.com/images/random-token-length.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Random QR Code Generator: What It Is and How It Works",
+  "description": "A random QR code generator makes codes that each carry a different unpredictable value. This explains what it is, how it works, where random codes are used, and how long the random part needs to be.",
+  "image": "https://qrotto.com/images/random-token-length.png",
+  "datePublished": "2026-09-28",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/blog/random-qr-code-generator"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Random QR Code Generator", "item": "https://qrotto.com/blog/random-qr-code-generator" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Random QR Code Generator</p>
+
+ <div class="hero">
+ <h1>Random QR Code Generator: What It Is and How It Works</h1>
+ <p>Most QR codes carry the same thing on every copy. Sometimes you need the opposite: a thousand codes that are all different and none of them predictable.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-28">28 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>9 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-it-is">What a random QR code generator is</a></li>
+        <li><a href="#how-it-works">How a random QR code generator works</a></li>
+        <li><a href="#how-long">How long the random part has to be</a></li>
+        <li><a href="#free-length">What we measured: length is free</a></li>
+        <li><a href="#common-uses">Common uses for random QR codes</a></li>
+        <li><a href="#wrong-choice">When random is the wrong choice</a></li>
+        <li><a href="#making-a-batch">Making a batch yourself</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <p>A normal QR code generator takes one thing you type and turns it into one code. Print that code a thousand times and you have a thousand identical codes that all do the same job, which is exactly what you want on a menu card or a shop window.</p>
+    <p>A random QR code generator solves a different problem. It produces a batch where every single code carries a different, unpredictable value. That difference is what lets you tell one printed code from another, and it is the whole reason event tickets, discount vouchers and warranty labels work.</p>
+
+    <h2 id="what-it-is">What a random QR code generator is</h2>
+    <p>A random QR code generator is a tool that produces a set of QR codes where each one holds a different randomly chosen value.</p>
+    <p>The first thing to clear up is what the word random refers to, because the name misleads people. It is <strong>not</strong> the pattern of black and white squares that is random. That pattern is fully determined by the QR standard: feed the same text into any two generators and you get the same arrangement of modules, every time. There is no randomness in the drawing.</p>
+    <p>What is random is <strong>the data going in</strong>. Instead of encoding <code>https://example.com/menu</code> a thousand times, the tool encodes:</p>
+    <p><code>https://example.com/v/EGxtNYQx</code><br>
+       <code>https://example.com/v/pzCAHvba</code><br>
+       <code>https://example.com/v/GG24dtiQ</code></p>
+    <p>and so on for as many codes as you asked for. Each code now points somewhere slightly different. Your system knows which token belongs to which ticket, voucher or product, so scanning a code identifies that specific one.</p>
+    <div class="takeaway">
+      <p><strong>A random code is only half a system.</strong> The code carries an identifier and nothing else. The value lives in whatever you have on the other end that looks the token up, marks it as used, and refuses it the second time. Without that, you have printed a thousand pretty squares.</p>
+    </div>
+
+    <h2 id="how-it-works">How a random QR code generator works</h2>
+    <p>There are four steps, and only the last one has anything to do with QR codes at all.</p>
+
+    <h3>1. It draws a random value</h3>
+    <p>The tool asks a random number source for some unpredictable bits. This is the step that decides whether the whole thing is sound, and it is the step nobody looks at.</p>
+    <p>In a browser there are two sources. <code>Math.random()</code> is the familiar one, and browser documentation states plainly that it does not provide cryptographically secure numbers and should not be used for anything security related. Its output comes from a fast algorithm designed to look random for games and animations, not to resist someone working out what comes next. The other is <code>crypto.getRandomValues()</code>, which is built for exactly this purpose.</p>
+    <p>For a raffle among friends, either is fine. For anything worth money, the difference matters, because an attacker who can predict the sequence does not need to guess codes one at a time. They can generate the rest of your batch.</p>
+
+    <h3>2. It turns the value into a token</h3>
+    <p>Raw random bits are not printable, so they are mapped onto an alphabet. The common choice is the 62 characters <code>a to z</code>, <code>A to Z</code> and <code>0 to 9</code>, which packs just under 6 bits into every character. Some tools drop the letters that look alike, such as <code>O</code>, <code>0</code>, <code>I</code> and <code>l</code>, which costs a little density and saves a lot of confusion if anyone ever has to read a code out loud.</p>
+    <p>The result is a short string like <code>EGxtNYQx</code>. This is the token, and its length is the single most important decision in the whole process. We measure why below.</p>
+
+    <h3>3. It attaches the token to something</h3>
+    <p>A bare token on its own is just text. Scanning it shows the characters and nothing happens, because there is nowhere for the phone to go. So most tools put the token on the end of a web address you control:</p>
+    <p><code>https://yoursite.com/v/EGxtNYQx</code></p>
+    <p>Now a scan opens a page, your server reads the token, and you can do something useful: show the ticket holder's seat, apply a discount, mark the voucher as redeemed. A bare token is still the right answer for an inventory label that gets scanned by your own warehouse app, where the app already knows what to do with it.</p>
+
+    <h3>4. It encodes the string as a QR code</h3>
+    <p>This last step is completely ordinary. The string goes through the same encoder that handles a website link, a phone number or a WiFi password. There is no special random mode in the QR standard, and a code holding a random token is not different in any way from a code holding anything else of the same length.</p>
+    <p>Which is worth stating clearly, because it is the reason you can check the output with any scanner and the reason nothing about random codes makes them harder to scan.</p>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    <h2 id="how-long">How long the random part has to be</h2>
+    <p>Two different things go wrong when the token is too short, and they go wrong at different sizes.</p>
+
+    <h3>Collisions: two codes come out the same</h3>
+    <p>Pick random tokens often enough and eventually you pick the same one twice. Two vouchers with the same code means one customer redeems the other's. The chance is far higher than intuition suggests, and it climbs with the square of the batch size.</p>
+    <p>Here is the probability that a batch contains at least one duplicate, using the 62 character alphabet:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Codes in the batch</th><th>4 chars</th><th>6 chars</th><th>8 chars</th><th>10 chars</th><th>12 chars</th></tr></thead>
+        <tbody>
+          <tr><td>1,000</td><td>3.3%</td><td>1 in 114,000</td><td>1 in 430 million</td><td>negligible</td><td>negligible</td></tr>
+          <tr><td>10,000</td><td>97%</td><td>1 in 1,100</td><td>1 in 4.3 million</td><td>negligible</td><td>negligible</td></tr>
+          <tr><td>100,000</td><td>certain</td><td>8.4%</td><td>1 in 44,000</td><td>1 in 170 million</td><td>negligible</td></tr>
+          <tr><td>1,000,000</td><td>certain</td><td>certain</td><td>1 in 430</td><td>1 in 1.7 million</td><td>negligible</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Look at the four character column. At ten thousand codes a duplicate is not a risk, it is close to a certainty. Four characters of base 62 gives 14.8 million possible values, which sounds like plenty until you remember that every code has to differ from every other code, not just from one of them.</p>
+
+    <h3>Guessing: someone works out a live code</h3>
+    <p>The second problem only matters when the code is worth something. If a discount voucher is a short random string, what stops a person typing addresses until one works?</p>
+    <p>With ten thousand codes issued, here is roughly how many attempts it takes before hitting a live one:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Token length</th><th>Entropy</th><th>Attempts to hit a live code</th></tr></thead>
+        <tbody>
+          <tr><td>4 characters</td><td>23.8 bits</td><td>about 1,477</td></tr>
+          <tr><td>6 characters</td><td>35.7 bits</td><td>about 5.7 million</td></tr>
+          <tr><td>8 characters</td><td>47.6 bits</td><td>about 21.8 billion</td></tr>
+          <tr><td>10 characters</td><td>59.5 bits</td><td>about 83.9 trillion</td></tr>
+          <tr><td>12 characters</td><td>71.5 bits</td><td>about 322 quadrillion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>1,477 attempts is not an attack, it is an afternoon with a basic script. Four characters protects nothing. At eight characters the number is already large enough that a casual attempt is hopeless, and at twelve it stops being worth anyone's time.</p>
+
+    <h2 id="free-length">What we measured: length is free</h2>
+    <p>Here is the part that changes what you should actually do. We took a normal address, <code>https://example.com/v/</code>, appended random tokens of increasing length, encoded each one at error correction level M, and measured the grid it produced. Then we decoded every code back to confirm it matched.</p>
+
+    <figure>
+      <img src="../images/random-token-length.png" width="1400" height="480" loading="lazy"
+           alt="Four QR codes holding random tokens of different lengths on the same web address. The 4 character token makes a 25 by 25 code needing 13.2 mm. The 8, 12 and 20 character tokens all make an identical 29 by 29 code needing 14.8 mm, despite being vastly harder to guess.">
+      <figcaption>Three of these four codes are exactly the same size. The 20 character token is billions of times harder to guess than the 8 character one and takes up not one millimetre more.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Token length</th><th>Full address</th><th>Grid</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td>1 to 4 characters</td><td>23 to 26 chars</td><td>25 x 25</td><td>13.2 mm</td></tr>
+          <tr><td>5 to 20 characters</td><td>27 to 42 chars</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>21 characters and up</td><td>43 chars and up</td><td>33 x 33</td><td>16.4 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Every one of those decoded correctly when we scanned it back.</p>
+    <p><strong>A token of 5 characters and a token of 20 characters produce the identical code size.</strong> QR codes grow in fixed steps rather than character by character, so once you are inside a step, extra characters cost nothing at all. Going from 8 to 12 characters multiplies the work of guessing a live code by about fifteen million, and adds zero millimetres to what you print.</p>
+    <div class="takeaway">
+      <p><strong>So use 10 to 12 characters.</strong> There is no tradeoff to weigh here, which is unusual. The only reason short tokens exist is that someone assumed shorter meant smaller, and on a QR code that assumption is wrong most of the time.</p>
+    </div>
+    <p>One caveat worth knowing. The step boundaries move with the length of the rest of the address. On a short domain such as <code>https://qr.to/</code> the first step runs all the way to 12 characters, and the second to 28. The principle holds either way: find your step and use the whole of it.</p>
+
+    <h2 id="common-uses">Common uses for random QR codes</h2>
+
+    <h3>Event tickets and passes</h3>
+    <p>The most common use by far. Each ticket carries a unique token, the scanner at the door checks it against the guest list, and the system refuses it on the second scan. Without randomness, one photographed ticket admits everybody who saw the photo.</p>
+
+    <h3>Discount vouchers and promo codes</h3>
+    <p>Single use codes for a campaign. Random tokens stop the code being shared on a deals forum and redeemed ten thousand times, which is precisely what happens to predictable ones. This is a case where the guessing table above matters directly, because there is money on the other side.</p>
+
+    <h3>Raffles, prize draws and competitions</h3>
+    <p>Each entry form or product label carries one code. Someone scans it to enter, and you can see which codes have been used without collecting anything personal at the point of entry.</p>
+
+    <h3>Product authenticity labels</h3>
+    <p>A unique code inside the packaging that a buyer scans to confirm the item is genuine. The value comes entirely from the code being unguessable. A counterfeiter who can work out valid codes can print them on the fakes, which is why this is the use case that most deserves 12 characters.</p>
+
+    <h3>Inventory, asset and equipment tags</h3>
+    <p>Every laptop, tool or shelf gets its own code. Here the codes do not need to resist attack at all, since nobody gains anything from guessing your shelf numbers. They only need to be unique, so collision resistance is the only column that matters and eight characters is plenty.</p>
+
+    <h3>Attendance, check in and access</h3>
+    <p>Unique codes handed to staff, students or delegates, scanned at the door. Random tokens stop one person's code being copied and reused, provided your system actually logs the scans.</p>
+
+    <h3>Testing and quality control</h3>
+    <p>A quieter use, but a real one. If you are building anything that reads QR codes, you need batches of varied codes to test with. Random data gives you the range of lengths and densities that real use will produce, rather than the one tidy code you have been testing against all week.</p>
+
+    <h2 id="wrong-choice">When random is the wrong choice</h2>
+    <p>Random codes carry real costs, and plenty of jobs do not need them.</p>
+    <p><strong>If every code does the same thing, do not make them different.</strong> A menu, a WiFi code, a review link, a contact card. One code, printed as many times as you like. Making a thousand different codes for a thousand table cards gives you a thousand things to track and nothing in return.</p>
+    <p><strong>If you have nothing on the other end, random codes do nothing.</strong> This is the most common mistake. A unique code only has meaning if a system somewhere can look it up and record that it was used. Random tokens pointing at a page that treats everyone identically are just a longer link.</p>
+    <p><strong>If the codes are not worth anything, do not over engineer.</strong> Shelf labels do not need cryptographic randomness. A simple numbered sequence is easier to read out loud, easier to sort, and easier to debug when one goes missing.</p>
+    <p>And a reminder that applies to all of these: a printed code cannot be changed. Whatever the token points at needs to keep working for as long as the print exists, which is the argument for pointing them at a path on a domain you own. Our guide to <a href="static-vs-dynamic-qr-codes">static and dynamic codes</a> covers that tradeoff properly.</p>
+
+    <h2 id="making-a-batch">Making a batch yourself</h2>
+    <p>Our <a href="../bulk-qr-code-generator">bulk QR code generator</a> takes a list, one item per line, and gives you every code back as SVG, PNG or a printable PDF sheet. It does not invent the random tokens for you, so you generate those wherever you keep your data, in a spreadsheet, a script or your own system, and paste the finished list in.</p>
+    <p>That order is deliberate rather than a limitation. The tokens have to exist in your records before they exist on paper, because a code you cannot look up is worthless. Generating them in your own system first is what guarantees that.</p>
+    <p>Two practical notes from our guide to <a href="bulk-qr-codes-for-a-print-run">what goes wrong in a batch of 500</a>. Put a label before a vertical bar on each line so the downloaded files are named, otherwise fifty printed codes are indistinguishable once cut. And check a sample from the middle of the batch, not just the first one, because that is where mistakes hide.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Is the QR pattern itself random?</h3>
+    <p>No. The arrangement of squares follows the QR standard exactly and is the same in every generator for the same input. The randomness is entirely in the data you encode.</p>
+
+    <h3>How long should the random part be?</h3>
+    <p>Ten to twelve characters for anything of value, eight if the codes are only internal. Since a token anywhere from five to twenty characters produces an identical sized code on a normal domain, there is no reason to be stingy.</p>
+
+    <h3>Can two random QR codes come out the same?</h3>
+    <p>Yes, and the chance depends entirely on length. Four characters across ten thousand codes gives roughly a 97% chance of a duplicate somewhere in the batch. Eight characters brings that to about one in four million.</p>
+
+    <h3>Can a random QR code be guessed?</h3>
+    <p>A short one, easily. With ten thousand codes live, a four character token falls in about 1,477 attempts. Twelve characters takes around 322 quadrillion, which ends the conversation.</p>
+
+    <h3>Do random QR codes expire?</h3>
+    <p>The code does not. It is a printed pattern holding a token, with no account behind it. What expires is whatever your system decides: you can mark a token as used, refuse it after a date, or keep it valid forever. That control sits with you, not with the code.</p>
+
+    <h3>Can I track which codes were scanned?</h3>
+    <p>Yes, and this is the main practical advantage over a single shared code. Because each token is different, your normal analytics or your own database can tell you exactly which ones were used and when. A single code printed a thousand times can never tell you that.</p>
+
+    <h3>Are random QR codes harder to scan?</h3>
+    <p>No. The token is a few more characters, and within a size step those characters are free. Where a longer token does push the code into the next step, it grows by about 1.6 mm, which is not something a phone camera notices. Our guide to <a href="why-qr-codes-fail-to-scan">why QR codes fail to scan</a> covers what actually causes failures, and token length is nowhere near the list.</p>
+
+    <h3>What size should I print them?</h3>
+    <p>A random token on a normal domain needs at least 14.8 mm, and that is a floor rather than a target. For a ticket or a voucher in the hand, 20 to 25 mm is comfortable. The <a href="qr-code-sign-size-and-link-length">sign size guide</a> has the numbers for larger formats.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="bulk-qr-codes-for-a-print-run">Bulk QR Codes: What Goes Wrong in a Batch of 500</a>
+      <a href="static-vs-dynamic-qr-codes">Static vs Dynamic QR Codes</a>
+      <a href="are-qr-codes-safe">Are QR Codes Safe?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
