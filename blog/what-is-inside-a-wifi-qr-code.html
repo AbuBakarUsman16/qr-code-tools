@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Inside a WiFi QR Code, and Who Can Read It</title>
+<meta name="description" content="A WiFi QR code is one line of text holding your password in the clear. What each part means, who can read it, and the one character that breaks it silently.">
+<link rel="canonical" href="https://qrotto.com/blog/what-is-inside-a-wifi-qr-code">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="What Is Inside a WiFi QR Code, and Who Can Read It">
+<meta property="og:description" content="A WiFi QR code is one line of text holding your password in the clear. What each part means, who can read it, and the one character that breaks it silently.">
+<meta property="og:url" content="https://qrotto.com/blog/what-is-inside-a-wifi-qr-code">
+<meta property="og:image" content="https://qrotto.com/images/wifi-qr-contents.png">
+<meta property="article:published_time" content="2026-09-30">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is Inside a WiFi QR Code, and Who Can Read It">
+<meta name="twitter:description" content="A WiFi QR code is one line of text holding your password in the clear. What each part means, who can read it, and the one character that breaks it silently.">
+<meta name="twitter:image" content="https://qrotto.com/images/wifi-qr-contents.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Inside a WiFi QR Code, and Who Can Read It",
+  "description": "A WiFi QR code holds a single line of text that includes the network name and the password in the clear. This explains each field, what it means for privacy, what the code costs in printed size, and the escaping mistake that breaks codes silently.",
+  "image": "https://qrotto.com/images/wifi-qr-contents.png",
+  "datePublished": "2026-09-30",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/blog/what-is-inside-a-wifi-qr-code"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What Is Inside a WiFi QR Code", "item": "https://qrotto.com/blog/what-is-inside-a-wifi-qr-code" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / What Is Inside a WiFi QR Code</p>
+
+ <div class="hero">
+ <h1>What Is Inside a WiFi QR Code, and Who Can Read It</h1>
+ <p>Scanning one joins the network without typing anything, which makes it feel like a key. It is not a key. It is a line of text with your password written in it.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-09-30">30 September 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#whats-inside">What is actually inside</a></li>
+        <li><a href="#who-can-read-it">Who can read your password</a></li>
+        <li><a href="#what-that-means">What that means in practice</a></li>
+        <li><a href="#size">What we measured: password length and code size</a></li>
+        <li><a href="#the-character">The character that breaks it silently</a></li>
+        <li><a href="#hidden-and-open">Hidden networks and open networks</a></li>
+        <li><a href="#making-one">Making one</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <p>A WiFi QR code does something that looks like magic. A guest points a camera at a card on the table, taps once, and they are online. No password read aloud across a room, no typing a string of random characters on a phone keyboard.</p>
+    <p>Underneath, there is no magic at all, and the gap between how it feels and how it works is where every WiFi QR code problem comes from.</p>
+
+    <h2 id="whats-inside">What is actually inside</h2>
+    <p>A WiFi QR code holds one line of plain text in a small agreed format. That is the entire mechanism. Here is a real one, and what a scanner reads back from it:</p>
+
+    <figure>
+      <img src="../images/wifi-qr-contents.png" width="895" height="411" loading="lazy"
+           alt="A WiFi QR code beside the text it contains. The code is 29 by 29 modules and needs 14.8 mm. The text reads WIFI colon T colon WPA semicolon, which is the security type, then S colon CafeGuest semicolon, which is the network name, then P colon sunflower2026 semicolon semicolon, which is the password in plain text.">
+      <figcaption>The code on the left contains exactly the text on the right. The password is not encrypted, hashed or hidden. It is simply written down.</figcaption>
+    </figure>
+
+    <p>Three fields, in a fixed order:</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Field</th><th>Means</th><th>Typical values</th></tr></thead>
+        <tbody>
+          <tr><td><code>T:</code></td><td>Security type</td><td><code>WPA</code>, <code>WEP</code>, or <code>nopass</code> for an open network</td></tr>
+          <tr><td><code>S:</code></td><td>Network name, the SSID</td><td>Exactly as it appears in your WiFi list</td></tr>
+          <tr><td><code>P:</code></td><td>Password</td><td>In the clear, as typed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>One more field turns up sometimes, <code>H:true</code>, which tells the phone the network is hidden and will not appear in its list. We come back to that below.</p>
+    <p>That is the whole format. It is why every WiFi QR code generator produces the same code for the same network, and why a code made on one site scans identically to one made on another. There is nothing proprietary to get right.</p>
+
+    <h2 id="who-can-read-it">Who can read your password</h2>
+    <p>Anyone who can see the code.</p>
+    <p>Scan a WiFi QR code with a normal QR scanner rather than the camera's WiFi prompt, and the password appears as text on screen. Our own <a href="../qr-code-scanner">QR scanner</a> will do it, and so will any other. No tools, no skill, no trick. The information was never protected; it was printed.</p>
+    <div class="takeaway">
+      <p><strong>A photo is enough.</strong> Someone does not need to be near your network to read the password. A picture of the card taken across the room, or a photo of your printed sign posted in a review, carries the password with it. Treat a WiFi QR code exactly as you would treat the password written out in large letters, because that is what it is.</p>
+    </div>
+    <p>This is not a flaw in the format, and it is not something a better generator could fix. The phone has to learn the actual password in order to join the network, so the actual password has to be in the code.</p>
+
+    <h2 id="what-that-means">What that means in practice</h2>
+    <p>None of this makes WiFi QR codes a bad idea. It makes them a tool with one property worth knowing. Four practical consequences:</p>
+    <p><strong>Use a guest network.</strong> This is the single most useful thing you can do. A guest network has its own password and, on most routers, keeps visitors away from the devices on your main network. Share the guest password freely and the main one never leaves your household. Our <a href="wifi-qr-code-for-airbnb">Airbnb guide</a> walks through setting one up.</p>
+    <p><strong>Think about where the code is visible from.</strong> A card on a café table is seen by customers. A sign in a window is seen by the street. Those are different audiences, and the second one includes people who will never buy anything from you.</p>
+    <p><strong>Do not post a photo of it publicly.</strong> Hosts and cafés do this on social media without thinking, and it is the same as posting the password.</p>
+    <p><strong>Change the password when you need to, and accept the reprint.</strong> A printed WiFi code cannot be updated. When the password changes, every printed copy becomes wrong. That is a reason to keep guest passwords stable and to avoid printing hundreds of cards you cannot easily replace.</p>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    <h2 id="size">What we measured: password length and code size</h2>
+    <p>Because the password sits inside the code, a longer password makes a denser code that has to be printed larger. We measured this at error correction level M, with the network name <code>CafeGuest</code>, and the print size is the smallest usable width from the 0.4 mm per module floor plus the quiet zone.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Password</th><th>Whole line</th><th>Grid</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td>4 characters</td><td>31 chars</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>8 characters</td><td>35 chars</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>13 characters</td><td>40 chars</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>15 characters</td><td>42 chars</td><td>29 x 29</td><td>14.8 mm</td></tr>
+          <tr><td>28 characters</td><td>55 chars</td><td>33 x 33</td><td>16.4 mm</td></tr>
+          <tr><td>40 characters</td><td>67 chars</td><td>37 x 37</td><td>18.0 mm</td></tr>
+          <tr><td>63 characters, the WPA maximum</td><td>90 chars</td><td>41 x 41</td><td>19.6 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The useful part is the top four rows. <strong>Anything up to about 15 characters produces the same code.</strong> QR codes grow in fixed steps rather than character by character, so a 15 character password costs exactly as much printed space as a 4 character one.</p>
+    <p>There is no reason to shorten a guest password for the sake of the code. A strong one is free until you cross a step boundary, and even the longest password the standard allows only takes the code from 14.8 mm to 19.6 mm.</p>
+    <p>Error correction moves it more than the password does. The same 13 character password gives 29 x 29 at level L or M, 33 x 33 at Q, and 37 x 37 at H. Level M is the sensible default for a card or a sign. Level H is worth it if you are putting a logo in the middle, which our <a href="../qr-code-designer">customiser</a> handles.</p>
+
+    <h2 id="the-character">The character that breaks it silently</h2>
+    <p>Look at the format again and you will see that <code>;</code> separates the fields. So what happens when the password itself contains a semicolon?</p>
+    <p>We tested it. A password of <code>pa;ss</code> written straight into the line produces <code>WIFI:T:WPA;S:CafeGuest;P:pa;ss;;</code>, and a phone reading that sees the field ending at the semicolon. It reads the password as <code>pa</code>.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Your password</th><th>Written straight in</th><th>Written correctly</th></tr></thead>
+        <tbody>
+          <tr><td><code>pa;ss</code></td><td>Phone reads <code>pa</code></td><td>Phone reads <code>pa;ss</code></td></tr>
+          <tr><td><code>pa\ss</code></td><td>Phone reads <code>pass</code></td><td>Phone reads <code>pa\ss</code></td></tr>
+          <tr><td><code>My;Cafe,2026</code></td><td>Phone reads <code>My</code></td><td>Phone reads <code>My;Cafe,2026</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The fix is to put a backslash in front of those characters, which tells the reader they are part of the text rather than the structure. The characters that need it are <code>;</code> <code>,</code> <code>:</code> <code>\</code> and <code>"</code>.</p>
+    <p>What makes this worth a section of its own is how it fails. The code generates without complaint. It scans without complaint. The phone offers to join the network, and then the connection fails, because it is trying a password that is missing everything after the semicolon. Nothing anywhere tells you why. This is high on the list of reasons behind <a href="wifi-qr-code-not-working">a WiFi QR code that will not connect</a>.</p>
+    <div class="takeaway">
+      <p><strong>We tested our own tool on this.</strong> Passwords containing <code>;</code>, <code>,</code> and <code>\</code>, plus network names containing <code>;</code>, plus an accented SSID. Six cases, generated on the live site, decoded back, and each field compared against what was typed. All six came back correct. We would rather check than assume, and we would rather you did not have to.</p>
+    </div>
+
+    <h2 id="hidden-and-open">Hidden networks and open networks</h2>
+    <p>Two settings confuse people, and both are simple once you see the line of text.</p>
+    <p><strong>Hidden networks</strong> need <code>H:true</code> added, otherwise the phone looks for a network it cannot see and gives up. The flag costs a little space: our 13 character example went from 29 x 29 at 14.8 mm to 33 x 33 at 16.4 mm. Only tick hidden if your network genuinely does not broadcast its name. Ticking it for a normal network causes failures rather than preventing them.</p>
+    <p><strong>Open networks</strong> use <code>T:nopass</code> and leave the password empty. The line gets shorter, not longer, and in our test an open network still came out at 29 x 29. If your network has no password, do not enter a blank one under WPA, because the phone will try to authenticate against a network that is not asking for authentication.</p>
+    <p>Getting the security type wrong is its own quiet failure. WPA and WEP produce codes of identical size, so nothing visible tells you which one you picked. Check your router rather than guessing.</p>
+
+    <h2 id="making-one">Making one</h2>
+    <p>Our <a href="../wifi-qr-code-generator">free WiFi QR code generator</a> builds the line for you, escapes the characters that need it, and draws the code, all in your browser. Nothing you type is uploaded, which matters more here than on any other generator on this site, because what you are typing is your password.</p>
+    <p>That is not a claim you should take on trust from us or anyone else. Load the page, turn off your internet connection, and make a code. It still works, because the whole thing runs locally. A tool that needed to send your password somewhere would stop working the moment you disconnected.</p>
+    <p>Three things to do before printing, taking about a minute in total:</p>
+    <ol>
+      <li><strong>Scan it with a plain QR scanner first</strong> and read the text back. You will see the network name and password exactly as they will reach a guest, which catches a typo before it reaches paper.</li>
+      <li><strong>Test on a phone that has never joined the network.</strong> A phone that already knows the password will connect regardless of what the code says, so it tells you nothing.</li>
+      <li><strong>Print it at 25 mm or larger.</strong> 14.8 mm is the floor, not a target. Our <a href="../qr-code-sign-maker">sign maker</a> handles the standard card and sign sizes.</li>
+    </ol>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Is my WiFi password encrypted in the QR code?</h3>
+    <p>No. It is stored as plain text. Anyone who scans the code with an ordinary QR scanner can read it, and so can anyone with a photo of the code. The phone needs the real password to join, so the real password has to be in there.</p>
+
+    <h3>Can someone steal my WiFi from the code?</h3>
+    <p>Anyone who can see the code can join the network, which is the point of printing it. The question is who can see it. A card handed to a guest is fine. A sign visible from the street shares your network with the street. Use a guest network and the answer stops mattering much.</p>
+
+    <h3>Does the code expire?</h3>
+    <p>The code does not. It is a printed pattern with no account behind it and nothing to renew. It stops working when the password changes, because it still holds the old one.</p>
+
+    <h3>Why does my code scan but fail to connect?</h3>
+    <p>Most often a special character in the password that was not escaped, the wrong security type, or an SSID that does not match exactly. Scanning the code as plain text shows you which, because you can read the fields. We cover the full list in <a href="wifi-qr-code-not-working">WiFi QR code not working</a>.</p>
+
+    <h3>Does a longer password make a much bigger code?</h3>
+    <p>Less than people expect. Everything up to about 15 characters produces the same 29 x 29 code, and even a 63 character password only reaches 41 x 41, which is 19.6 mm against 14.8 mm. Do not weaken a password to save space.</p>
+
+    <h3>Will the same code work on iPhone and Android?</h3>
+    <p>The format is the same one both read, and a correctly built code contains nothing platform specific. Behaviour around the edges does differ, particularly with hidden networks and with phones that already know the network, so test on a device that has not joined before.</p>
+
+    <h3>Can I use one code for several networks?</h3>
+    <p>No. One code holds one network. If you have separate 2.4 GHz and 5 GHz names, they are two networks and need two codes, or you give guests the one you would rather they used.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="wifi-qr-code-not-working">WiFi QR Code Not Working? 7 Fixes</a>
+      <a href="wifi-qr-code-for-airbnb">WiFi QR Code for Your Airbnb</a>
+      <a href="are-qr-codes-safe">Are QR Codes Safe?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
