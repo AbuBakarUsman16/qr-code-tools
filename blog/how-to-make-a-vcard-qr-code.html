@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a vCard QR Code, and Which Format to Use</title>
+<meta name="description" content="Four steps to a contact QR code, which fields to include, and what we measured: MECARD prints 4.8 mm smaller than vCard, and a link smaller still.">
+<link rel="canonical" href="https://qrotto.com/blog/how-to-make-a-vcard-qr-code">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="How to Make a vCard QR Code, and Which Format to Use">
+<meta property="og:description" content="Four steps to a contact QR code, which fields to include, and what we measured: MECARD prints 4.8 mm smaller than vCard, and a link smaller still.">
+<meta property="og:url" content="https://qrotto.com/blog/how-to-make-a-vcard-qr-code">
+<meta property="og:image" content="https://qrotto.com/images/vcard-format-sizes.png">
+<meta property="article:published_time" content="2026-10-01">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Make a vCard QR Code, and Which Format to Use">
+<meta name="twitter:description" content="Four steps to a contact QR code, which fields to include, and what we measured: MECARD prints 4.8 mm smaller than vCard, and a link smaller still.">
+<meta name="twitter:image" content="https://qrotto.com/images/vcard-format-sizes.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to make a vCard QR code",
+  "description": "Choose which contact details to include, generate the code, scan it back to check the text, and test that it saves on a phone before printing.",
+  "totalTime": "PT3M",
+  "step": [
+    { "@type": "HowToStep", "name": "Decide what belongs in it", "text": "Name, one phone number and one email cover almost every use. Each extra field makes the printed code larger." },
+    { "@type": "HowToStep", "name": "Fill in the generator", "text": "Enter the details in a vCard QR code generator. The tool assembles the vCard text and draws the code." },
+    { "@type": "HowToStep", "name": "Scan it back as plain text", "text": "Read the code with an ordinary QR scanner and check the vCard text for typos before anything is printed." },
+    { "@type": "HowToStep", "name": "Test that it saves", "text": "Scan it with a phone and save the contact. Confirm the name, number and email all land in the right places." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "How to Make a vCard QR Code", "item": "https://qrotto.com/blog/how-to-make-a-vcard-qr-code" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / How to Make a vCard QR Code</p>
+
+ <div class="hero">
+ <h1>How to Make a vCard QR Code, and Which Format to Use</h1>
+ <p>Someone scans your card and your details are in their phone. The making takes a minute. Choosing what goes in is the part that decides whether it works.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-10-01">1 October 2026</time></span>
+ <span class="sep">·</span>
+ <span>9 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-it-is">What a vCard QR code is</a></li>
+        <li><a href="#four-steps">The four steps</a></li>
+        <li><a href="#which-fields">Which fields to include</a></li>
+        <li><a href="#formats">What we measured: three ways to encode the same person</a></li>
+        <li><a href="#versions">vCard 3.0 or 4.0</a></li>
+        <li><a href="#testing">Testing it before you print</a></li>
+        <li><a href="#mistakes">Mistakes that cost a print run</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <p>A vCard QR code carries contact details rather than a link. Scan one and the phone recognises a contact card and offers to save it, so a new acquaintance gets your name, number and email without typing a character or mishearing a digit.</p>
+    <p>The generating part is genuinely a minute of work. What takes thought is deciding what to put in, because every field you add makes the printed code denser, and a dense code on a small business card is the most common way these fail.</p>
+
+    <h2 id="what-it-is">What a vCard QR code is</h2>
+    <p>Inside the code is a short block of text in a format called vCard, the same format behind the <code>.vcf</code> files your phone exports when you share a contact. It looks like this:</p>
+    <p><code>BEGIN:VCARD</code><br>
+       <code>VERSION:3.0</code><br>
+       <code>FN:Sarah Mitchell</code><br>
+       <code>ORG:Northgate Design</code><br>
+       <code>TEL;TYPE=CELL:+14155550142</code><br>
+       <code>EMAIL:sarah@northgate.design</code><br>
+       <code>END:VCARD</code></p>
+    <p>That is all a vCard QR code is. The phone reads the text, recognises the <code>BEGIN:VCARD</code> opening, and offers to add a contact instead of opening a browser.</p>
+    <p>Two consequences worth knowing up front. The details are stored as plain text, so anyone who scans the code can read them, which is fine for a business card and worth thinking about for anything more private. And the code is static, so once printed it cannot be changed. New phone number, new code.</p>
+
+    <h2 id="four-steps">The four steps</h2>
+    <ol>
+      <li><strong>Decide what belongs in it.</strong> Name, one phone number and one email cover almost every use. More on this below.</li>
+      <li><strong>Fill in the generator.</strong> Our <a href="../vcard-qr-code-generator">vCard QR code generator</a> assembles the text and draws the code in your browser.</li>
+      <li><strong>Scan it back as plain text.</strong> Read the code with an ordinary scanner and check the vCard text with your own eyes.</li>
+      <li><strong>Test that it actually saves</strong> on a phone before anything goes to print.</li>
+    </ol>
+    <p>Steps three and four take twenty seconds together and catch nearly everything that goes wrong.</p>
+
+    <h2 id="which-fields">Which fields to include</h2>
+    <p>The temptation is to fill in everything. Resist it. A code holding a name, a phone number and an email is sparse, forgiving and prints small. The same code with a full postal address, a job title, a second number and a website is noticeably denser and has to be printed larger to stay readable.</p>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Field</th><th>Include it?</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Name</td><td><strong>Always</strong></td><td>Without it the saved contact is a nameless phone number</td></tr>
+          <tr><td>Phone</td><td><strong>Usually</strong></td><td>The main reason people save a contact</td></tr>
+          <tr><td>Email</td><td><strong>Usually</strong></td><td>Cheap in space and almost always wanted</td></tr>
+          <tr><td>Company</td><td>If relevant</td><td>Helps people remember who you are months later</td></tr>
+          <tr><td>Website</td><td>Only if short</td><td>A long URL costs more than it returns</td></tr>
+          <tr><td>Job title</td><td>Rarely</td><td>It is on the card already, in larger type</td></tr>
+          <tr><td>Postal address</td><td>Rarely</td><td>The most expensive field by a distance</td></tr>
+          <tr><td>Photo</td><td><strong>No</strong></td><td>It does not fit. We measured this in detail</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The photo row is not a style preference. A real photo cannot be made to fit inside a QR code at all, and even a tiny thumbnail pushes the code past what a business card can hold. We put numbers on it in <a href="vcard-qr-code-with-photo">can you put a photo in a vCard QR code</a>.</p>
+    <p>If you want the exact millimetre cost of each field against the space on a business card, that is <a href="qr-code-for-business-card">QR code for a business card</a>.</p>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    <h2 id="formats">What we measured: three ways to encode the same person</h2>
+    <p>vCard is not the only format a phone will recognise. We took one complete contact, name, company, job title, mobile, email, website and a full postal address, and encoded it three ways at error correction level M. Then we decoded each code back and confirmed it matched.</p>
+
+    <figure>
+      <img src="../images/vcard-format-sizes.png" width="1130" height="490" loading="lazy"
+           alt="The same contact encoded three ways. The vCard version is 270 characters, 65 by 65 modules and needs 29.2 mm. The MECARD version is 168 characters, 53 by 53 modules and needs 24.4 mm. A link to a contact page is 30 characters, 29 by 29 modules and needs 14.8 mm.">
+      <figcaption>One person, three encodings. All three decoded correctly. The difference is entirely in how much text each format needs to say the same thing.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Format</th><th>Characters</th><th>Grid</th><th>Smallest usable print</th></tr></thead>
+        <tbody>
+          <tr><td>vCard 3.0, full contact</td><td>270</td><td>65 x 65</td><td>29.2 mm</td></tr>
+          <tr><td>vCard 4.0, full contact</td><td>284</td><td>65 x 65</td><td>29.2 mm</td></tr>
+          <tr><td>MECARD, same contact</td><td>168</td><td>53 x 53</td><td>24.4 mm</td></tr>
+          <tr><td>vCard 3.0, name and mobile and email only</td><td>133</td><td>49 x 49</td><td>22.8 mm</td></tr>
+          <tr><td>MECARD, name and mobile and email only</td><td>71</td><td>37 x 37</td><td>18.0 mm</td></tr>
+          <tr><td>A link to a contact page</td><td>30</td><td>29 x 29</td><td>14.8 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>MECARD is the compact alternative.</strong> It carries the same information in a terser syntax, and in our test it saved 4.8 mm of printed width in both the full and the trimmed version. That is a real saving on a business card where you have perhaps 15 mm to spend.</p>
+    <p>The catch is support. vCard is what phones have handled for decades and what every scanner expects. MECARD is widely recognised but not as universally as vCard, and nothing on a printed card tells a person which one they are about to scan. For something you print once and hand out for a year, we would take the 4.8 mm penalty and use vCard.</p>
+    <div class="takeaway">
+      <p><strong>Trimming the fields beats changing the format.</strong> Dropping the address, title and website took vCard from 29.2 mm to 22.8 mm, a saving of 6.4 mm. That is more than MECARD bought us, it carries no compatibility question at all, and nobody misses the fields.</p>
+    </div>
+    <p>The last row is worth a thought if the code is going somewhere small. A link to a page with your details on it prints at 14.8 mm, half the width of the full vCard, and you can update the page afterwards. What you lose is the one scan that saves the contact directly, which is the whole appeal.</p>
+
+    <h2 id="versions">vCard 3.0 or 4.0</h2>
+    <p>You may see generators offering a choice of version. The short answer is that 3.0 is the safer default, and our generator uses it.</p>
+    <p>We measured whether the version costs anything, and it does not. The same contact came out at 270 characters in 3.0 and 284 in 4.0, and both produced an identical 65 by 65 code. The extra characters fell inside the same size step, so the version choice is free.</p>
+    <p>Since it is free either way, pick on compatibility rather than size. Version 3.0 has been around far longer and is what the widest range of phones and apps read without complaint. Version 4.0 is the newer standard with tidier handling of some fields, but there is nothing in a normal business contact that needs it.</p>
+
+    <h2 id="testing">Testing it before you print</h2>
+    <p>Two tests, and they check different things.</p>
+    <p><strong>Read the text.</strong> Scan the code with an ordinary QR scanner rather than letting the phone handle it as a contact. Our <a href="../qr-code-scanner">scanner</a> will show you the raw vCard text, and so will any other. You are looking for a typo in the number, a missing character in the email, an accent that did not survive. This catches content mistakes.</p>
+    <p><strong>Save the contact.</strong> Then scan it properly on a phone and go through with saving it. Open the saved contact afterwards and check the name landed in the name field and the number in the number field. This catches structure mistakes, which the first test cannot show you.</p>
+    <p>Do the second test on a phone that is not yours if you can. You know what the details are meant to say, which makes it easy to read past an error.</p>
+    <div class="takeaway">
+      <p><strong>We run the same checks on our own tool.</strong> We generate on the live site, decode the result back, and compare every field against what was typed, including accented names such as <code>José Muñoz</code> and company names with accents. All of it round trips correctly. We would rather verify than assume.</p>
+    </div>
+
+    <h2 id="mistakes">Mistakes that cost a print run</h2>
+    <p><strong>Printing it too small.</strong> The single most common one. A full vCard needs 29.2 mm as a floor, and a business card usually has 12 to 18 mm of room. The numbers do not meet, so either the fields come down or the code goes somewhere other than the card.</p>
+    <p><strong>A phone number without a country code.</strong> It works for people in your country and fails for everyone else. Write it in full international form, starting with a plus.</p>
+    <p><strong>Raising error correction without checking the size.</strong> Level H sounds safer and makes the code considerably larger for the same contact, which on a small card makes scanning worse rather than better. Level M is the right default here.</p>
+    <p><strong>Printing before testing on a phone.</strong> Everything above is recoverable at the generator stage and permanent once it is on five hundred cards.</p>
+    <p>If something already printed will not scan, the symptoms and their causes are in <a href="why-qr-codes-fail-to-scan">why won't this QR code scan</a>.</p>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Does a vCard QR code need the internet?</h3>
+    <p>No. The contact details are inside the code, so it works with no signal at all. That is its main advantage over printing a link to a contact page.</p>
+
+    <h3>Can I change the details later?</h3>
+    <p>Not on a printed code. It holds the text it was made with and nothing behind it can be edited. If your number changes often, point the code at a page you control instead and see <a href="static-vs-dynamic-qr-codes">static vs dynamic QR codes</a>.</p>
+
+    <h3>What is the difference between vCard and MECARD?</h3>
+    <p>Both carry contact details. MECARD uses a shorter syntax, which in our test produced a code 4.8 mm smaller for the same person. vCard is older and more universally supported, which is why it remains the safer choice for anything printed.</p>
+
+    <h3>Can I turn a .vcf file into a QR code?</h3>
+    <p>Yes, because a <code>.vcf</code> file is vCard text. Open it in a text editor and you will see the same <code>BEGIN:VCARD</code> block. Be aware that a contact exported from a phone often carries far more than you want to print, sometimes including a photo, so it is usually smaller and cleaner to type the few fields you need into a generator.</p>
+
+    <h3>How big should I print it?</h3>
+    <p>Take the floor from the table above and add margin. A trimmed vCard needs 22.8 mm as a minimum, so aim for 25 to 30 mm on a card someone holds. Our <a href="qr-code-sign-size-and-link-length">sign size guide</a> covers larger formats.</p>
+
+    <h3>Will it work on both iPhone and Android?</h3>
+    <p>vCard is the format both have read for years, and a correctly built code contains nothing platform specific. The wording of the prompt differs between them, which is cosmetic. Test on one of each if you have both to hand.</p>
+
+    <h3>Is my phone number safe in there?</h3>
+    <p>It is readable by anyone who scans the code or photographs it. For a business card that is the point. For anything you would not print on the card itself in plain type, use a link to a page you control instead.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="qr-code-for-business-card">QR Code for a Business Card: What Fits</a>
+      <a href="vcard-qr-code-with-photo">Can You Put a Photo in a vCard QR Code?</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
