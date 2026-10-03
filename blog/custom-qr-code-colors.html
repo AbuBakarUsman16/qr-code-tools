@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom QR Code Colors: Which Combinations Still Scan?</title>
+<meta name="description" content="We tested 20 colour pairs on one QR code with three decoder settings. Ten read in all three, nine depended on the scanner, and one failed everywhere.">
+<link rel="canonical" href="https://qrotto.com/blog/custom-qr-code-colors">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Custom QR Code Colors: Which Combinations Still Scan?">
+<meta property="og:description" content="We tested 20 colour pairs on one QR code with three decoder settings. Ten read in all three, nine depended on the scanner, and one failed everywhere.">
+<meta property="og:url" content="https://qrotto.com/blog/custom-qr-code-colors">
+<meta property="og:image" content="https://qrotto.com/images/qr-color-test.png">
+<meta property="article:published_time" content="2026-10-03">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Custom QR Code Colors: Which Combinations Still Scan?">
+<meta name="twitter:description" content="We tested 20 colour pairs on one QR code with three decoder settings. Ten read in all three, nine depended on the scanner, and one failed everywhere.">
+<meta name="twitter:image" content="https://qrotto.com/images/qr-color-test.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Custom QR Code Colors: Which Combinations Still Scan?",
+  "description": "We encoded one QR code in 20 colour pairs and tested each with three decoder settings. Dark on light with contrast of about 4 to 1 or better read everywhere. Low contrast and light on dark depended on the scanner.",
+  "image": "https://qrotto.com/images/qr-color-test.png",
+  "datePublished": "2026-10-03",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/blog/custom-qr-code-colors"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Custom QR Code Colors", "item": "https://qrotto.com/blog/custom-qr-code-colors" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Custom QR Code Colors</p>
+
+ <div class="hero">
+ <h1>Custom QR Code Colors: Which Combinations Still Scan?</h1>
+ <p>Everyone wants a QR code in their brand colours. Some of those codes work and some quietly do not. We tested 20 colour pairs to see where the line is.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-10-03">3 October 2026</time></span>
+ <span class="sep">·</span>
+ <span>9 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#short-answer">The short answer</a></li>
+        <li><a href="#how-we-tested">How we tested</a></li>
+        <li><a href="#results">The results, all 20</a></li>
+        <li><a href="#contrast-line">Where the contrast line sits</a></li>
+        <li><a href="#scanners-disagree">Scanners disagree near the edge</a></li>
+        <li><a href="#light-on-dark">Light on dark is a different problem</a></li>
+        <li><a href="#what-to-do">What to do with your brand colour</a></li>
+        <li><a href="#limits">What this test cannot tell you</a></li>
+        <li><a href="#common-questions">Common questions</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="short-answer">The short answer</h2>
+    <p><strong>Use a dark code on a light background, and keep the contrast at 4 to 1 or better.</strong> Every pair that met both conditions was read by every decoder we tried. Pairs that did not meet them were read by some scanners and not others, and one pair was read by none.</p>
+    <p>Almost any hue works as the code colour. Blue, red, green, purple, teal and pink all scanned. What matters is how much darker the code is than its background, not which colour it is.</p>
+    <p>If you would rather skip the reading, our <a href="../qr-code-designer">custom QR code generator</a> decodes your styled code on every change and warns you when contrast drops below 4 to 1.</p>
+
+    <h2 id="how-we-tested">How we tested</h2>
+    <p>We generated one QR code, a 29 by 29 grid holding a web address, at error correction level M. We then drew it 20 times in different foreground and background colours at the same size, and tried to decode each image three ways:</p>
+    <ul>
+      <li><strong>OpenCV</strong>, a widely used computer vision library with its own QR detector.</li>
+      <li><strong>jsQR in its default mode</strong>, the open source decoder our tools use.</li>
+      <li><strong>jsQR told to try the colours inverted as well</strong>, which is how a scanner that supports light on dark codes would behave.</li>
+    </ul>
+    <p>For each pair we also worked out the contrast ratio using the standard web accessibility formula, where 1 to 1 means identical brightness and 21 to 1 is black on white.</p>
+    <div class="takeaway">
+      <p><strong>Software decoders, not phones.</strong> Phone cameras use their own scanning code, and they will not all agree with ours. This test is a clean digital render with no print, no glare and no camera blur. Treat it as a map of where the risk is, then check your own code on real phones.</p>
+    </div>
+
+    <h2 id="results">The results, all 20</h2>
+    <figure>
+      <img src="../images/qr-color-test.png" width="1192" height="1080" loading="lazy"
+           alt="A grid of 20 QR codes in different colour pairs. Each is labelled with its contrast ratio and how many of three decoder settings could read it. Black, navy, blue, red, green, purple, teal and pink on white, black on yellow and black on light grey read in 3 of 3. Orange, light blue, yellow and light grey on white, white on black, white on navy, yellow on black, blue on red and mid grey on light grey read in 1 of 3. Red on green read in 0 of 3.">
+      <figcaption>Ten pairs read in all three decoder settings. Nine depended on the decoder. One, red on green, read in none.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Colour pair</th><th>Contrast</th><th>OpenCV</th><th>jsQR default</th><th>jsQR, inverted too</th></tr></thead>
+        <tbody>
+          <tr><td>Black on white</td><td>21 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Navy on white</td><td>16.11 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Blue on white</td><td>5.03 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Red on white</td><td>4.98 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Green on white</td><td>5.13 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Orange on white</td><td>3.08 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>Purple on white</td><td>9.39 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Teal on white</td><td>4.32 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Pink on white</td><td>3.76 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Light blue on white</td><td>2.21 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>Yellow on white</td><td>1.4 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>Light grey on white</td><td>1.88 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>White on black</td><td>21 : 1</td><td>Fails</td><td>Fails</td><td>Reads</td></tr>
+          <tr><td>White on navy</td><td>16.43 : 1</td><td>Fails</td><td>Fails</td><td>Reads</td></tr>
+          <tr><td>Yellow on black</td><td>15.05 : 1</td><td>Fails</td><td>Fails</td><td>Reads</td></tr>
+          <tr><td>Black on yellow</td><td>15.05 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Black on light grey</td><td>15.91 : 1</td><td>Reads</td><td>Reads</td><td>Reads</td></tr>
+          <tr><td>Red on green</td><td>1.03 : 1</td><td>Fails</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>Blue on red</td><td>1.15 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+          <tr><td>Mid grey on light grey</td><td>1.85 : 1</td><td>Reads</td><td>Fails</td><td>Fails</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    <h2 id="contrast-line">Where the contrast line sits</h2>
+    <p>Look only at the dark-on-light pairs. Pink on white, at 3.76 to 1, was read by every decoder, and so was everything with more contrast than that: teal, red, blue, green, purple, navy and black.</p>
+    <p>Orange on white, at 3.08 to 1, was not. OpenCV read it and both jsQR settings failed. So for this code, the line sits somewhere between 3.08 and 3.76.</p>
+    <p>That is one code, and the exact line will move a little with the code's size and density. It is why our designer warns below 4 to 1 rather than at the lowest figure that happened to work. A margin is worth having, because printing can take some contrast away.</p>
+    <p>In the designer we saw the same story. Blue on white scanned cleanly. Orange on white scanned with a warning that contrast was only 3.1 to 1. Yellow on white and light grey on white were flagged as not scanning, with contrasts of 1.4 and 1.9 to 1.</p>
+
+    <h2 id="scanners-disagree">Scanners disagree near the edge</h2>
+    <p>The most useful thing in the table is how differently the decoders behaved on the weak pairs.</p>
+    <p>OpenCV read yellow on white at 1.4 to 1, and mid grey on light grey at 1.85 to 1. Both jsQR settings failed them. Blue on red, at 1.15 to 1, split the same way.</p>
+    <p>If you test a pale colour on one phone and it works, that tells you about that phone. It does not tell you about the one belonging to the person scanning your poster. Nine of our 20 pairs sat in exactly this uncertain middle.</p>
+    <p>One pair sat outside it. Red on green, at 1.03 to 1, was read by nobody. To the eye red and green look very different, but they are nearly the same brightness, and a scanner works from brightness.</p>
+
+    <h2 id="light-on-dark">Light on dark is a different problem</h2>
+    <p>Three pairs had a lot of contrast and still failed: white on black, white on navy and yellow on black. Their contrast ratios are 21, 16.43 and 15.05 to 1.</p>
+    <p>The reason is not contrast. A standard QR code is dark modules on a light background, and these three are the other way round. OpenCV and default jsQR both failed all three. They only read when we explicitly told jsQR to try inverted images as well.</p>
+    <p>Compare yellow on black with black on yellow. The same two colours at the same 15.05 to 1 ratio, swapped. One read in all three settings and the other in just one. <strong>Which colour is darker matters more than which colours you chose.</strong></p>
+    <p>Some scanners do handle inverted codes and some do not, and a printed code cannot tell you which kind it will meet. If you want a dark design, keep the code dark and make the background light, or put a light panel behind the code on the dark design.</p>
+
+    <h2 id="what-to-do">What to do with your brand colour</h2>
+    <ol>
+      <li><strong>Make the code the dark colour and the background the light one.</strong> If your brand colour is pale, use it for the background or frame, and draw the code in a darker shade of it.</li>
+      <li><strong>Measure the contrast.</strong> Aim for 4 to 1 or more. For a code that will be scanned from a distance or printed on rough stock, aim well above that.</li>
+      <li><strong>Test with more than one scanner.</strong> Use a plain QR scanner such as ours, and at least one phone camera.</li>
+      <li><strong>Keep a plain version in reserve.</strong> A black on white file costs nothing and is the one that always works.</li>
+    </ol>
+    <p>On gradients: a gradient code changes colour across its width, so its contrast is set by its lightest end rather than its average. We did not test gradients in this round, so that is reasoning, not a measurement. Check the pale end against the background.</p>
+
+    <h2 id="limits">What this test cannot tell you</h2>
+    <p>We would rather be clear than impressive about this.</p>
+    <ul>
+      <li><strong>No phones.</strong> We used software decoders. A phone camera may do better or worse on any pair.</li>
+      <li><strong>No print.</strong> Ink spreads, paper reflects glare and colours shift between a screen and a printer. A pair that is borderline on screen is more borderline on paper.</li>
+      <li><strong>One code.</strong> Results were for one 29 by 29 code. A larger, denser code is harder to read at the same contrast.</li>
+      <li><strong>Clean images.</strong> We added no blur or tilt. Our earlier test of <a href="why-qr-codes-fail-to-scan">why QR codes fail to scan</a> shows how quickly those eat into a margin.</li>
+    </ul>
+
+    <h2 id="common-questions">Common questions</h2>
+
+    <h3>Can a QR code be any colour?</h3>
+    <p>Almost any hue works for the code, provided it is dark enough against its background. Blue, red, green, purple, teal and pink all scanned in our test. What fails is low contrast and light on dark.</p>
+
+    <h3>Does the background colour matter?</h3>
+    <p>Yes, as much as the code colour, because contrast is the gap between the two. A pale background with a dark code is the safest arrangement.</p>
+
+    <h3>Can I use a white QR code on a black background?</h3>
+    <p>Some scanners read it and some do not. In our test, white on black failed in OpenCV and in default jsQR, and read only when we asked jsQR to try inverted images. If it matters that everyone can scan it, use dark on light.</p>
+
+    <h3>Is yellow a bad colour for a QR code?</h3>
+    <p>Yellow as the code colour on white was poor: 1.4 to 1, and it read in only one of three settings. Yellow as the background with a black code was fine and read in all three.</p>
+
+    <h3>What contrast ratio should I aim for?</h3>
+    <p>4 to 1 or more as a minimum. In our test everything above 3.76 to 1 on a light background read everywhere, and the pair at 3.08 did not. More is better for print.</p>
+
+    <h3>Can I use a transparent background?</h3>
+    <p>A transparent background takes on whatever sits behind the code, so the contrast is decided by that, not by your colour choice. Use it only over a plain, light surface, and test the final result.</p>
+
+    <h3>How can I check my own colours?</h3>
+    <p>Our <a href="../qr-code-designer">custom QR code generator</a> decodes the code you are looking at after every change and reports whether it still reads, and what the contrast is. Our <a href="../qr-code-scanner">scanner</a> reads a saved image back as text, which is a second opinion.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+      <a href="qr-code-damage-test">We Damaged QR Codes Until They Broke</a>
+      <a href="qr-code-size-for-print">QR Code Size for Print</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>

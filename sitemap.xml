@@ -145,6 +145,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://qrotto.com/blog/custom-qr-code-colors</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://qrotto.com/blog/convert-a-link-into-a-qr-code</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
