@@ -145,6 +145,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://qrotto.com/blog/scan-qr-code-from-an-image</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://qrotto.com/blog/does-a-canva-qr-code-expire</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan a QR Code From an Image: 4 Ways That Work</title>
+<meta name="description" content="Four ways to scan a QR code from an image, plus what we measured when a picture will not read: borders, contrast, inverted colours and size, on two decoders.">
+<link rel="canonical" href="https://qrotto.com/blog/scan-qr-code-from-an-image">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3D5CFF">
+<link rel="stylesheet" href="../style.css">
+<style>article code{overflow-wrap:anywhere}</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Scan a QR Code From an Image: 4 Ways That Work">
+<meta property="og:description" content="Four ways to scan a QR code from an image, plus what we measured when a picture will not read: borders, contrast, inverted colours and size, on two decoders.">
+<meta property="og:url" content="https://qrotto.com/blog/scan-qr-code-from-an-image">
+<meta property="og:image" content="https://qrotto.com/images/qr-picture-fixes.png">
+<meta property="article:published_time" content="2026-10-08">
+<meta property="article:author" content="QRotto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scan a QR Code From an Image: 4 Ways That Work">
+<meta name="twitter:description" content="Four ways to scan a QR code from an image, plus what we measured when a picture will not read: borders, contrast, inverted colours and size, on two decoders.">
+<meta name="twitter:image" content="https://qrotto.com/images/qr-picture-fixes.png">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Scan a QR Code From an Image: 4 Ways That Work",
+  "description": "Four ways to scan a QR code that is saved as an image, and a test of which quick fixes rescue a picture that will not read.",
+  "image": "https://qrotto.com/images/qr-picture-fixes.png",
+  "datePublished": "2026-10-08",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/blog/scan-qr-code-from-an-image"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://qrotto.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Scan a QR Code From an Image", "item": "https://qrotto.com/blog/scan-qr-code-from-an-image" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect width="48" height="48" rx="11" fill="currentColor"/>
+        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
+        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
+        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
+        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
+      </svg>
+      <span class="logo-text">QR<span>otto</span></span>
+    </a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./" class="active" aria-current="page">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Blog</a> / Scan a QR Code From an Image</p>
+
+ <div class="hero">
+ <h1>Scan a QR Code From an Image: 4 Ways That Work</h1>
+ <p>The code is in a picture, and you cannot point a camera at your own screen. Here are four ways to read it, and what to do when the picture will not scan.</p>
+ </div>
+
+ <div class="article-meta">
+ <span>By <a href="../author">QRotto</a></span>
+ <span class="sep">·</span>
+ <span>Published <time datetime="2026-10-08">8 October 2026</time></span>
+ <span class="sep">·</span>
+ <span>8 min read</span>
+ </div>
+
+ <article class="content-block prose">
+    <nav class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#short-answer">The short answer</a></li>
+        <li><a href="#way-1">Way 1: Drop it into a browser scanner</a></li>
+        <li><a href="#way-2">Way 2: Use your phone's own photo tools</a></li>
+        <li><a href="#way-3">Way 3: Point another camera at the screen</a></li>
+        <li><a href="#way-4">Way 4: Fix the picture, then try again</a></li>
+        <li><a href="#which-way">Which way to pick</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <p>A QR code arrives as a screenshot, a forwarded photo, or a file in your downloads. The usual advice is to point your camera at it, and that fails when the code is on the same device as the camera. So you need a way to read the picture itself.</p>
+    <p>There are four ways that work. The first three are about getting the picture read. The fourth is for the case where the picture is the problem, and for that one we ran a test.</p>
+
+    <h2 id="short-answer">The short answer</h2>
+    <h3>Pick by your situation</h3>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Way</th><th>Works best when</th><th>What you need</th></tr></thead>
+        <tbody>
+          <tr><td>1. Browser scanner</td><td>You want to read the contents before anything opens</td><td>Any browser</td></tr>
+          <tr><td>2. Phone photo tools</td><td>The picture is already saved on your phone</td><td>A recent phone</td></tr>
+          <tr><td>3. Another camera</td><td>The picture is on a computer screen</td><td>A second device with a camera</td></tr>
+          <tr><td>4. Fix the picture</td><td>The first three say nothing was found</td><td>An image editor, or just a crop</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>If you only read one thing</h3>
+    <p>Read the address before you open it. A code from a message or an email deserves more suspicion than one on a menu, and a scanner that shows you the text first is the safest way to find out where it goes.</p>
+
+    <h2 id="way-1">Way 1: Drop it into a browser scanner</h2>
+    <h3>How to do it</h3>
+    <p>Open our <a href="../qr-code-scanner">QR code scanner</a>. You can choose an image file, drag one onto the box, or paste a copied image with Ctrl+V or Cmd+V. It reads the code and shows you what is inside.</p>
+    <h3>Why this is the safest way</h3>
+    <p>The scanner shows the text of the code and only then offers a button to open a link, so you see the full address first. It also decodes the image in your browser, and our scanner page states that nothing is uploaded. That matters if the code holds something private, such as a WiFi password.</p>
+    <p>We tested it on two codes, one holding an ordinary address and one holding a short redirect style address. For each, it displayed the exact address inside the code.</p>
+    <h3>If it says nothing was found</h3>
+    <p>That almost always means the picture is the problem, not the code. Skip to Way 4.</p>
+
+    <h2 id="way-2">Way 2: Use your phone's own photo tools</h2>
+    <h3>What to look for</h3>
+    <p>Many recent phones can recognise a QR code inside a saved picture, either when you open it in the photo viewer or through a search by image feature. Where the option sits, and what it is called, depends on the phone and its software version.</p>
+    <h3>What we could not check</h3>
+    <p>We did not test specific phones for this article, so we will not name buttons we have not pressed. Our guide to <a href="scan-qr-code-from-screenshot">scanning a QR code from a screenshot</a> covers the iPhone and Android routes in more detail. If your phone does not offer anything, Way 1 works on any phone with a browser.</p>
+
+    <h2 id="way-3">Way 3: Point another camera at the screen</h2>
+    <h3>When to use it</h3>
+    <p>If the picture is on a computer screen, a second device solves the problem the first one cannot: it can point its camera at the screen.</p>
+    <h3>Steps</h3>
+    <ol>
+      <li>Open the picture and make it as large as the screen allows.</li>
+      <li>Turn the screen brightness up.</li>
+      <li>Point the second device's camera at the code and hold it steady.</li>
+    </ol>
+    <h3>Tips</h3>
+    <p>Avoid glare from windows or lamps, which wash out the code. Do not zoom the picture past the point where its edges go soft, because a blurred code is harder to read, as we measured in <a href="why-qr-codes-fail-to-scan">why won't this QR code scan</a>.</p>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    <h2 id="way-4">Way 4: Fix the picture, then try again</h2>
+    <h3>What we tested</h3>
+    <p>We took one QR code and spoiled it eight ways: three sizes of small picture, no blank margin, a tiny code inside a screenshot, low contrast, inverted colours, and a blurred noisy photo. Then we applied a quick fix and tried again. Every picture held the same code, and we read each one with two software decoders, OpenCV and jsQR. These are software tests, not phones, and they do not always agree with each other.</p>
+    <figure>
+      <img src="../images/qr-picture-fixes.png" width="1200" height="1188" loading="lazy"
+           alt="Eight problem pictures of the same QR code, each with its fix and the result from two decoders. Small pictures, a missing border, low contrast and light on dark codes were rescued by enlarging, adding a border, boosting contrast or inverting. A blurred and noisy photo failed before and after.">
+      <figcaption>The same code, eight problems. Four fixes changed the result. One picture failed in both decoders, before and after.</figcaption>
+    </figure>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Problem</th><th>Fix</th><th>Before (OpenCV / jsQR)</th><th>After (OpenCV / jsQR)</th></tr></thead>
+        <tbody>
+          <tr><td>Small picture, 90 px wide</td><td>Enlarge it and sharpen</td><td>Reads / Reads</td><td>Reads / Reads</td></tr>
+          <tr><td>Small picture, 70 px wide</td><td>Enlarge it and sharpen</td><td>Fails / Reads</td><td>Fails / Reads</td></tr>
+          <tr><td>Small picture, 55 px wide</td><td>Enlarge it and sharpen</td><td>Fails / Reads</td><td>Reads / Reads</td></tr>
+          <tr><td>No blank border</td><td>Add a white border</td><td>Fails / Reads</td><td>Reads / Reads</td></tr>
+          <tr><td>Code tiny inside a screenshot</td><td>Crop to the code</td><td>Reads / Reads</td><td>Reads / Reads</td></tr>
+          <tr><td>Low contrast grey</td><td>Boost the contrast</td><td>Reads / Fails</td><td>Reads / Reads</td></tr>
+          <tr><td>Light code on dark</td><td>Invert the colours</td><td>Fails / Fails</td><td>Reads / Reads</td></tr>
+          <tr><td>Blurred and noisy photo</td><td>Boost the contrast</td><td>Fails / Fails</td><td>Fails / Fails</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>What helped</h3>
+    <ul>
+      <li><strong>Inverting a light on dark code.</strong> Both decoders failed it, and both read it once the colours were flipped. It was the clearest result of the test.</li>
+      <li><strong>Adding a white border.</strong> The code with no blank margin failed in OpenCV and read after we added one. A QR code needs a quiet margin around it, and cropped screenshots often lose it.</li>
+      <li><strong>Boosting contrast on a grey code.</strong> jsQR failed it and read it after the stretch.</li>
+      <li><strong>Enlarging a very small picture.</strong> At 55 pixels wide OpenCV failed and then read after we enlarged and sharpened it.</li>
+    </ul>
+    <h3>What did not help</h3>
+    <ul>
+      <li><strong>The blurred, noisy photo.</strong> Both decoders failed it and both still failed after a contrast boost. Once the squares have smeared together, editing cannot bring them back. Ask for the original instead of a copy.</li>
+      <li><strong>Enlarging the 70 pixel picture.</strong> OpenCV failed it before and after. Enlarging helps only when there is still enough detail to enlarge.</li>
+      <li><strong>Cropping the code out of a large screenshot.</strong> Both decoders read it either way, because this code was a reasonable size inside the screenshot. Cropping matters when the code is tiny, and it never hurts.</li>
+    </ul>
+    <h3>The two decoders disagreed, so try a second scanner</h3>
+    <p>jsQR read all three small pictures, including the 55 pixel one, and OpenCV did not read two of them. In our earlier size test a similar code stopped reading at 55 pixels, so the line depends on the decoder and the exact image. If one scanner says nothing was found, try another before you give up.</p>
+
+    <h2 id="which-way">Which way to pick</h2>
+    <h3>A simple order to try them in</h3>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Situation</th><th>Try</th></tr></thead>
+        <tbody>
+          <tr><td>The code came in a message and you want to check it first</td><td>Way 1</td></tr>
+          <tr><td>The picture is in your phone's photos</td><td>Way 2, then Way 1</td></tr>
+          <tr><td>The picture is on a computer screen</td><td>Way 3, or Way 1 on the computer</td></tr>
+          <tr><td>Nothing was found</td><td>Way 4, then a second scanner</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Why pictures fail to scan in the first place</h3>
+    <p>The usual causes are size, blur, a missing margin and low contrast, and we measured each of them in <a href="why-qr-codes-fail-to-scan">why won't this QR code scan</a>. Messaging apps also shrink pictures, so ask for the original file if you can.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <h3>Can I scan a QR code from an image without another phone?</h3>
+    <p>Yes. A browser scanner such as ours reads a picture saved on the same device, so you do not need a second one.</p>
+    <h3>Is it safe to scan a QR code from an image?</h3>
+    <p>Scanning is safe if you read the address before you open it. The risk is in tapping a link without looking. Our guide on <a href="are-qr-codes-safe">whether QR codes are safe</a> explains what to check.</p>
+    <h3>Why does my scanner say no QR code was found?</h3>
+    <p>Usually the picture is too small, too blurry, has lost its blank margin, is low contrast, or is light on dark. Each of those is in the test above.</p>
+    <h3>Do I need to install an app?</h3>
+    <p>Not for our scanner. It runs in a web browser, and you do not need an account.</p>
+    <h3>Is my image uploaded when I scan it?</h3>
+    <p>Our scanner page states that images are decoded in your browser and nothing is uploaded. You can check this yourself: load the page, switch off your internet connection, and scan a saved image. It still works.</p>
+    <h3>Can I scan a QR code from a screenshot?</h3>
+    <p>Yes, a screenshot is just a picture. If the code is small inside a large screenshot, crop to it first. Our <a href="scan-qr-code-from-screenshot">screenshot guide</a> goes through it.</p>
+ </article>
+
+  <div class="related">
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      <a href="scan-qr-code-from-screenshot">Scan a QR Code From a Screenshot</a>
+      <a href="why-qr-codes-fail-to-scan">Why Won't This QR Code Scan?</a>
+      <a href="are-qr-codes-safe">Are QR Codes Safe?</a>
+    </div>
+  </div>
+
+  <div class="author-box">
+ <div class="author-avatar" aria-hidden="true">QR</div>
+ <div>
+ <h3><a href="../author" style="color:inherit;text-decoration:none;">QRotto</a></h3>
+ <p>QRotto builds free browser based QR code generators and writes the guides that go with them. Every generator is verified by decoding the codes it produces and confirming the output matches the input exactly. See our <a href="../author">editorial standards</a>.</p>
+ </div>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+
+</body>
+</html>
