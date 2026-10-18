@@ -22,3 +22,23 @@ var GA_MEASUREMENT_ID = "G-LG2VQCRFXN";
   gtag("js", new Date());
   gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
 })();
+
+/* Microsoft Clarity
+ *
+ * Heatmaps and session recordings of on-page actions (clicks, scrolls,
+ * mouse movement). Text typed into the generators is masked by default.
+ * Project ID clarity.microsoft.com > Settings > Overview se milti hai.
+ * Khali chhorne par Clarity load hi nahi hoti.
+ */
+var CLARITY_PROJECT_ID = "yzhjzovyrp";
+
+(function () {
+  "use strict";
+  if (!CLARITY_PROJECT_ID) return;
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+})();
