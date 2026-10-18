@@ -37,10 +37,11 @@
   };
 
   /*
-   * A short scan check under the code. The print width uses the same rule
-   * as our sizing guide: 0.4 mm per module plus a quiet zone of 4 modules
-   * on each side. The density bands follow the module count, because a
-   * denser grid has smaller modules at any given print size.
+   * A short scan check under the code. The print width is never below the
+   * 2 cm floor our sizing guide sets for any printed code. Denser codes need
+   * more than that: 0.4 mm per module plus a quiet zone of 4 modules on each
+   * side, the rule the stress test uses. The density bands follow the module
+   * count, because a denser grid has smaller modules at any print size.
    */
   QRCodeEngine.prototype.showBadge = function (n) {
     if (!this.el || !this.el.parentNode) return;
@@ -49,7 +50,7 @@
       this.badge.setAttribute("aria-live", "polite");
       this.el.parentNode.insertBefore(this.badge, this.el.nextSibling);
     }
-    var mm = ((n + 8) * 0.4).toFixed(1);
+    var mm = String(Math.round(Math.max(20, (n + 8) * 0.4) * 10) / 10);
     var grid = n + " × " + n;
     var level, text;
     if (n <= 33) {

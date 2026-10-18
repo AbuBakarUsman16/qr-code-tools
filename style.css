@@ -1115,3 +1115,4 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .qr-scan-badge.is-low { background: #e8f6ec; color: #1d6b34; }
 .qr-scan-badge.is-mid { background: #fdf3e1; color: #8a5409; }
 .qr-scan-badge.is-high { background: #fbeded; color: #9e2020; }
+.qr-scan-badge[hidden] { display: none; }
