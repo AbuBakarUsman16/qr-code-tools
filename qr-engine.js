@@ -33,6 +33,38 @@
 
   QRCodeEngine.prototype.clear = function () {
     if (this.el) this.el.innerHTML = "";
+    if (this.badge) this.badge.hidden = true;
+  };
+
+  /*
+   * A short scan check under the code. The print width uses the same rule
+   * as our sizing guide: 0.4 mm per module plus a quiet zone of 4 modules
+   * on each side. The density bands follow the module count, because a
+   * denser grid has smaller modules at any given print size.
+   */
+  QRCodeEngine.prototype.showBadge = function (n) {
+    if (!this.el || !this.el.parentNode) return;
+    if (!this.badge) {
+      this.badge = document.createElement("p");
+      this.badge.setAttribute("aria-live", "polite");
+      this.el.parentNode.insertBefore(this.badge, this.el.nextSibling);
+    }
+    var mm = ((n + 8) * 0.4).toFixed(1);
+    var grid = n + " × " + n;
+    var level, text;
+    if (n <= 33) {
+      level = "is-low";
+      text = "Low density, " + grid + ". Print at least " + mm + " mm wide.";
+    } else if (n <= 57) {
+      level = "is-mid";
+      text = "Medium density, " + grid + ". Print at least " + mm + " mm wide and test one copy first.";
+    } else {
+      level = "is-high";
+      text = "High density, " + grid + ". Print at least " + mm + " mm wide, or shorten the content.";
+    }
+    this.badge.className = "qr-scan-badge " + level;
+    this.badge.textContent = text;
+    this.badge.hidden = false;
   };
 
   QRCodeEngine.prototype.makeCode = function (text) {
@@ -66,6 +98,7 @@
     cv.setAttribute("alt", "Your QR code");
     this.el.innerHTML = "";
     this.el.appendChild(cv);
+    this.showBadge(n);
   };
 
   global.QRCode = QRCodeEngine;
