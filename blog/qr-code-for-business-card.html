@@ -155,7 +155,7 @@
 
     <h2 id="the-space-you-have">The space you actually have</h2>
     <p>Printed QR codes have a floor. Below roughly 0.4 mm per module, ink spread and camera focus start working against you, and our <a href="why-qr-codes-fail-to-scan">scan limits test</a> found that focus is what actually breaks a scan, not size. Every code also needs a quiet zone of four blank modules on each side, which is part of the specification rather than decoration.</p>
-    <p>So the minimum printed width of any code is (modules + 8) x 0.4 mm. That single line of arithmetic is what the rest of this article is about.</p>
+    <p>So the minimum printed width of any code is (modules + 8) x 0.4 mm. That single line of arithmetic is what the rest of this article is about. The 2 cm floor from our <a href="qr-code-size-for-print">sizing guide</a> still applies on top of it, so a short code never prints smaller than that. What the formula shows is how much larger a dense code has to go.</p>
 
     <figure>
       <img src="../images/business-card-qr-size-test.png" width="1110" height="442" loading="lazy"
