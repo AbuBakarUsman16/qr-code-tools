@@ -43,6 +43,38 @@
    * side, the rule the stress test uses. The density bands follow the module
    * count, because a denser grid has smaller modules at any print size.
    */
+  function scanCheck(n) {
+    var mmNum = Math.round(Math.max(20, (n + 8) * 0.4) * 10) / 10;
+    var inches = Math.round(mmNum / 25.4 * 10) / 10;
+    var size = mmNum + " mm (" + inches + " in)";
+    var grid = n + "\u00a0×\u00a0" + n;
+    if (n <= 33) {
+      return { level: "is-low", title: "Ready to print",
+        detail: "Print it at least " + size + " wide. Simple code, " + grid + "." };
+    }
+    if (n <= 57) {
+      return { level: "is-mid", title: "Test one copy first",
+        detail: "Print it at least " + size + " wide. Busy code, " + grid + "." };
+    }
+    return { level: "is-high", title: "Hard to scan when small",
+      detail: "Print it at least " + size + " wide, or shorten the content. Very dense code, " + grid + "." };
+  }
+
+  // fills a badge element; the homepage demo uses this too
+  function fillBadge(el, n) {
+    var c = scanCheck(n);
+    el.className = "qr-scan-badge " + c.level;
+    el.textContent = "";
+    var wrap = document.createElement("span");
+    var strong = document.createElement("strong");
+    strong.textContent = c.title;
+    wrap.appendChild(strong);
+    wrap.appendChild(document.createTextNode(c.detail));
+    el.appendChild(wrap);
+    el.hidden = false;
+  }
+  global.QRScanBadge = fillBadge;
+
   QRCodeEngine.prototype.showBadge = function (n) {
     if (!this.el || !this.el.parentNode) return;
     if (!this.badge) {
@@ -50,22 +82,7 @@
       this.badge.setAttribute("aria-live", "polite");
       this.el.parentNode.insertBefore(this.badge, this.el.nextSibling);
     }
-    var mm = String(Math.round(Math.max(20, (n + 8) * 0.4) * 10) / 10);
-    var grid = n + " × " + n;
-    var level, text;
-    if (n <= 33) {
-      level = "is-low";
-      text = "Low density, " + grid + ". Print at least " + mm + " mm wide.";
-    } else if (n <= 57) {
-      level = "is-mid";
-      text = "Medium density, " + grid + ". Print at least " + mm + " mm wide and test one copy first.";
-    } else {
-      level = "is-high";
-      text = "High density, " + grid + ". Print at least " + mm + " mm wide, or shorten the content.";
-    }
-    this.badge.className = "qr-scan-badge " + level;
-    this.badge.textContent = text;
-    this.badge.hidden = false;
+    fillBadge(this.badge, n);
   };
 
   QRCodeEngine.prototype.makeCode = function (text) {

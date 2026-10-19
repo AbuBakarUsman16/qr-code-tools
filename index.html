@@ -14,7 +14,10 @@
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#3D5CFF">
+<meta name="theme-color" content="#0E1120">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="QRotto">
@@ -59,6 +62,8 @@
 <script src="canonical-url.js"></script>
 <script src="analytics.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+<script src="qr-engine.js" defer></script>
+<script src="script.js" defer></script>
 <meta name="google-adsense-account" content="ca-pub-6232027234522217">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
 </head>
@@ -66,19 +71,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="./" class="logo" aria-label="QRotto home">
-      <svg class="logo-mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
-        <rect width="48" height="48" rx="11" fill="currentColor"/>
-        <rect x="8" y="8" width="19" height="19" rx="3.5" fill="none" stroke="#fff" stroke-width="3.6"/>
-        <rect x="15.5" y="15.5" width="4" height="4" rx="1" fill="#fff"/>
-        <rect x="33" y="8"  width="7" height="7" rx="1.6" fill="#fff"/>
-        <rect x="33" y="20" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
-        <rect x="8"  y="33" width="7" height="7" rx="1.6" fill="#fff" opacity=".55"/>
-        <rect x="20" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
-        <rect x="33" y="33" width="7" height="7" rx="1.6" fill="#fff"/>
-      </svg>
-      <span class="logo-text">QR<span>otto</span></span>
-    </a>
+ <a href="./" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -119,27 +112,59 @@
  </div>
 </header>
 
-<main>
- <section class="home-hero">
-   <div class="home-hero-text">
-     <h1>Free QR code generators that tell you when a code will fail</h1>
-     <p>Twenty two tools for links, WiFi, contact cards, files, bookings and more. Everything runs in your browser, nothing is uploaded, and no code expires.</p>
-     <div class="home-hero-actions">
-       <a class="btn" href="#tools">Browse the tools</a>
-       <a class="btn btn-outline" href="qr-code-stress-test">Test a code you already have</a>
-     </div>
-   </div>
+<section class="home-band" aria-labelledby="home-title">
+ <div class="home-band-inner">
+  <h1 id="home-title">Make a free QR code</h1>
+  <p class="lede">Made on your device and checked before you print. No sign-up, and codes never expire.</p>
 
-   <div class="home-demo">
-     <label class="home-demo-label" for="heroText">Try it now</label>
-     <input type="text" id="heroText" value="https://qrotto.com" aria-label="Text or link to turn into a QR code" maxlength="300">
-     <div class="home-demo-out"><canvas id="heroCanvas" width="220" height="220" aria-label="A QR code of the text you typed" role="img"></canvas></div>
-     <a class="btn btn-small" id="heroDownload" download="qr-code.png">Download PNG</a>
-     <p class="home-demo-note" id="heroNote">Type anything. The code updates as you go.</p>
-   </div>
- </section>
+  <label class="maker-label" for="heroText">Paste a link, phone number, email or text</label>
+  <div class="maker-row">
+   <input type="text" id="heroText" value="https://qrotto.com" maxlength="300" autocomplete="off" spellcheck="false">
+   <button class="btn" type="button" id="heroMake">Make code</button>
+  </div>
+  <div class="detect">
+   <span class="detect-found" id="heroFound" aria-live="polite"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span id="heroFoundText">We found a website link</span></span>
+   <span class="detect-or">Not right? Pick one:</span>
+   <button class="chip" type="button" data-kind="link" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Link</button>
+   <button class="chip" type="button" data-kind="phone" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l2 5-2.5 1.5a12 12 0 0 0 5.5 5.5L16 12.5l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z"/></svg>Phone</button>
+   <button class="chip" type="button" data-kind="email" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</button>
+   <button class="chip" type="button" data-kind="text" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Text</button>
+   <a class="chip" href="wifi-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a11 11 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/></svg>WiFi</a>
+   <a class="chip" href="vcard-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 17c.7-1.8 2-2.7 3.5-2.7s2.8.9 3.5 2.7"/><path d="M15.5 10h4M15.5 13.5h4"/></svg>Contact</a>
+  </div>
 
- <h2 class="grid-heading" id="tools">Choose a generator</h2>
+  <div class="maker-out">
+   <canvas id="heroCanvas" width="220" height="220" role="img" aria-label="A QR code of what you typed"></canvas>
+   <div class="maker-info">
+    <p class="qr-scan-badge" id="heroBadge" aria-live="polite" hidden></p>
+    <div class="maker-actions">
+     <a class="btn" id="heroDownload" download="qr-code.png"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a>
+     <button class="btn btn-outline" type="button" id="heroPrint"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8"/><path d="M7 14h10v7H7z"/></svg>Print</button>
+     <button class="btn btn-outline" type="button" id="heroShare" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M5 12v8h14v-8"/></svg>Share</button>
+    </div>
+    <p class="maker-more" id="heroNote">PNG picture. Need SVG, PDF, colors or a logo? <a href="qr-code-designer">Open the designer</a></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="steps-band" aria-labelledby="how-title">
+ <div class="steps-inner">
+  <h2 id="how-title">Create a QR code in 3 steps</h2>
+  <p>No sign-up. Takes less than a minute.</p>
+  <ol class="steps">
+   <li><div class="step-top"><span class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><span class="step-num" aria-hidden="true">1</span></div>
+    <h3>Type or paste</h3><p>Add a website link, phone number, email, WiFi name or any text.</p></li>
+   <li><div class="step-top"><span class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8.5 12.5l2.5 2.5 5-5.5"/></svg></span><span class="step-num" aria-hidden="true">2</span></div>
+    <h3>Check the code</h3><p>Your code appears right away, with a scan check and the smallest safe print size.</p></li>
+   <li><div class="step-top"><span class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span><span class="step-num" aria-hidden="true">3</span></div>
+    <h3>Download or print</h3><p>Save it as a picture, print it, or share it. It never expires.</p></li>
+  </ol>
+ </div>
+</section>
+
+<main class="home-main">
+ <h2 class="grid-heading" id="tools">What do you want the code to do?</h2>
  <p class="grid-sub">Every one of these is free, needs no account, and produces a static code that keeps working forever.</p>
  <h3 class="grid-group">Most used</h3>
  <div class="tool-grid">
@@ -245,7 +270,7 @@
  <article class="content-block prose">
  <h2>Why Use These QR Code Generators?</h2>
  <p>QR codes have become the fastest way to move information from a screen or printed page directly into someone's phone. Whether you're sharing a business card at a networking event, giving guests quick access to your home WiFi, or linking customers to your website from a poster, a QR code removes the friction of typing anything by hand.</p>
- <p>All of the tools on this site run entirely in your browser. That means your contact details, WiFi password, or text never gets uploaded to a server, the QR code is generated locally on your device, which is faster and more private than most generators you'll find elsewhere.</p>
+ <div class="note-box"><span class="note-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><p>All of the tools on this site run entirely in your browser. That means your contact details, WiFi password, or text never gets uploaded to a server, the QR code is generated locally on your device, which is faster and more private than most generators you'll find elsewhere.</p></div>
 
  <h2>How to Choose the Right QR Code Type</h2>
  <p>If you want people to visit a webpage, use the URL generator. If you're handing out a digital business card, the vCard generator saves your full contact info straight into someone's phone contacts with one scan. For cafés, offices, or events where guests need internet access without reading out a password, the WiFi generator is the quickest option. And for anything else, a short message, an address, a code, the plain text generator handles it.</p>
@@ -257,11 +282,11 @@
 
  <h2>Getting a code to scan first time</h2>
  <p>Most QR codes that fail in the real world were sized to fit a layout rather than sized to be scanned. Four things decide whether yours works:</p>
- <ul>
- <li><strong>Size.</strong> A code should be at least one tenth as wide as the distance it is read from, about 2.5cm on a business card, 10cm on a wall poster. Never below 2cm.</li>
- <li><strong>Contrast.</strong> Dark code on a light background. Pale or coloured codes fail unpredictably.</li>
- <li><strong>Quiet zone.</strong> Leave the white margin around the code intact. Cropping to the edge breaks detection.</li>
- <li><strong>Finish.</strong> Matte, not gloss. Glossy lamination reflects overhead light into the camera.</li>
+ <ul class="tips">
+ <li><span class="tip-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6"/></svg></span><span><strong>Size</strong>A code should be at least one tenth as wide as the distance it is read from, about 2.5cm on a business card, 10cm on a wall poster. Never below 2cm.</span></li>
+ <li><span class="tip-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><span><strong>Contrast</strong>Dark code on a light background. Pale or coloured codes fail unpredictably.</span></li>
+ <li><span class="tip-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1" stroke-dasharray="3 3"/><rect x="8" y="8" width="8" height="8" fill="currentColor" stroke="none"/></svg></span><span><strong>Quiet zone</strong>Leave the white margin around the code intact. Cropping to the edge breaks detection.</span></li>
+ <li><span class="tip-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span><span><strong>Finish</strong>Matte, not gloss. Glossy lamination reflects overhead light into the camera.</span></li>
  </ul>
  <p>Our <a href="blog/qr-code-size-for-print">print sizing guide</a> covers this in detail, including a size table by placement.</p>
 
@@ -292,59 +317,115 @@
  </div>
 
  <h2>Testing a code before you print it</h2>
- <p>One test catches most problems, and almost everyone skips it: scan the code on a device that does not already know the answer.</p>
+ <div class="takeaway"><p><strong>One test catches most problems, and almost everyone skips it:</strong> scan the code on a device that does not already know the answer.</p></div>
  <p>For a WiFi code, that means a phone that has been made to forget the network. A phone already connected will appear to succeed even if your code contains a completely wrong password, it simply reconnects using what it already has, and you learn nothing. For a URL code, test on a device that has never visited the page, since your own browser may be logged in or holding a cached version that hides a problem a first time visitor will hit.</p>
  <p>Then scan it at the real distance, in the real lighting, on an ordinary phone rather than the newest one available. Do this before ordering a print run, not after.</p>
 
  <h2>Frequently Asked Questions</h2>
- <p><strong>Are these QR code generators really free?</strong> Yes, all tools on this site are completely free to use with no account or signup needed.</p>
- <p><strong>Do the QR codes expire?</strong> No. Because the data is embedded directly into the QR code image itself (not a redirect link), the codes never expire and will keep working indefinitely.</p>
- <p><strong>Can I use these QR codes for print?</strong> Yes, download the PNG and use it on business cards, posters, flyers, or packaging. For large prints, generate at a higher size for best scan reliability.</p>
+ <div class="faq">
+ <details open><summary>Are these QR code generators really free?</summary><p>Yes, all tools on this site are completely free to use with no account or signup needed.</p></details>
+ <details><summary>Do the QR codes expire?</summary><p>No. Because the data is embedded directly into the QR code image itself (not a redirect link), the codes never expire and will keep working indefinitely.</p></details>
+ <details><summary>Can I use these QR codes for print?</summary><p>Yes, download the PNG and use it on business cards, posters, flyers, or packaging. For large prints, generate at a higher size for best scan reliability.</p></details>
+ </div>
  </article>
 </main>
 
 <script>
-// the hero demo: a real code, drawn from whatever is in the box
+// the homepage maker: works out what was typed, draws a real code, checks it
 (function () {
+  var LABELS = {
+    link: "We found a website link",
+    phone: "We found a phone number",
+    email: "We found an email address",
+    text: "We will show this as text"
+  };
+  var chosen = null; // set when someone picks a type by hand
+
+  function detect(v) {
+    if (/^(https?:\/\/|www\.)/i.test(v) || /^[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(\/\S*)?$/i.test(v)) return "link";
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return "email";
+    if (/^\+?[\d\s().-]+$/.test(v) && v.replace(/\D/g, "").length >= 7) return "phone";
+    return "text";
+  }
+
+  function payload(kind, v) {
+    if (kind === "link") return /^https?:\/\//i.test(v) ? v : "https://" + v;
+    if (kind === "email") return "mailto:" + v;
+    if (kind === "phone") return "tel:" + v.replace(/[^\d+]/g, "");
+    return v;
+  }
+
+  function el(id) { return document.getElementById(id); }
+
   function draw() {
-    var input = document.getElementById("heroText");
-    var cv = document.getElementById("heroCanvas");
-    var note = document.getElementById("heroNote");
-    var dl = document.getElementById("heroDownload");
+    var input = el("heroText"), cv = el("heroCanvas"), badge = el("heroBadge");
+    var dl = el("heroDownload"), found = el("heroFoundText"), note = el("heroNote");
     if (!input || !cv || typeof qrcode === "undefined") return;
     if (qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs["UTF-8"]) {
       qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
     }
-    var text = input.value.trim();
+    var v = input.value.trim();
     var ctx = cv.getContext("2d");
-    if (!text) {
+    if (!v) {
       ctx.clearRect(0, 0, cv.width, cv.height);
-      note.textContent = "Type something to see a code.";
+      found.textContent = "Type something to make a code";
+      badge.hidden = true;
       dl.removeAttribute("href");
+      chosen = null;
+      syncChips(null);
       return;
     }
+    var kind = chosen || detect(v);
+    found.textContent = LABELS[kind];
+    syncChips(chosen);
     var q;
-    try { q = qrcode(0, "M"); q.addData(text); q.make(); }
-    catch (e) { note.textContent = "That is too long for one QR code."; return; }
+    try { q = qrcode(0, "M"); q.addData(payload(kind, v)); q.make(); }
+    catch (e) { found.textContent = "That is too long for one QR code"; badge.hidden = true; return; }
     var n = q.getModuleCount(), quiet = 4, total = n + quiet * 2;
     var cell = Math.max(1, Math.floor(440 / total));
     var px = cell * total;
     cv.width = px; cv.height = px;
     ctx = cv.getContext("2d");
     ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, px, px);
-    ctx.fillStyle = "#14161f";
+    ctx.fillStyle = "#0e1120";
     for (var r = 0; r < n; r++) {
       for (var c = 0; c < n; c++) {
         if (q.isDark(r, c)) ctx.fillRect((c + quiet) * cell, (r + quiet) * cell, cell, cell);
       }
     }
-    note.textContent = n + " by " + n + " modules. Scan it with your phone.";
+    if (window.QRScanBadge) window.QRScanBadge(badge, n);
     dl.href = cv.toDataURL("image/png");
   }
+
+  function syncChips(kind) {
+    document.querySelectorAll(".detect .chip[data-kind]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-kind") === kind ? "true" : "false");
+    });
+  }
+
   function start() {
-    var input = document.getElementById("heroText");
+    var input = el("heroText");
     if (!input) return;
     input.addEventListener("input", draw);
+    el("heroMake").addEventListener("click", function () { draw(); el("heroCanvas").scrollIntoView({ block: "nearest", behavior: "smooth" }); });
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") draw(); });
+    document.querySelectorAll(".detect .chip[data-kind]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = b.getAttribute("data-kind");
+        chosen = (chosen === k) ? null : k;
+        draw();
+      });
+    });
+    el("heroPrint").addEventListener("click", function () {
+      if (typeof printQRCode === "function") printQRCode(el("heroCanvas").toDataURL("image/png"));
+    });
+    if (navigator.share) {
+      var share = el("heroShare");
+      share.hidden = false;
+      share.addEventListener("click", function () {
+        if (typeof shareQRCode === "function") shareQRCode(el("heroCanvas").toDataURL("image/png"));
+      });
+    }
     draw();
   }
   if (document.readyState === "complete") start();

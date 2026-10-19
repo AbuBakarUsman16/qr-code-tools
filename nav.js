@@ -18,7 +18,55 @@ document.documentElement.classList.add("js");
     else document.addEventListener("DOMContentLoaded", fn);
   }
 
+  // header search: suggests every tool in the menu, opens the one picked
+  function addSearch() {
+    var wrap = document.querySelector(".nav-wrap");
+    var logo = wrap && wrap.querySelector(".logo");
+    if (!wrap || !logo || wrap.querySelector(".site-search")) return;
+    var links = Array.prototype.slice.call(document.querySelectorAll(".tool-nav a"));
+    if (!links.length) return;
+
+    var label = document.createElement("label");
+    label.className = "site-search";
+    label.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';
+    var input = document.createElement("input");
+    input.type = "search";
+    input.placeholder = "Search tools";
+    input.setAttribute("aria-label", "Search tools");
+    input.setAttribute("list", "site-search-list");
+    input.setAttribute("autocomplete", "off");
+    var list = document.createElement("datalist");
+    list.id = "site-search-list";
+    var seen = {};
+    links.forEach(function (a) {
+      var name = a.textContent.trim();
+      if (!name || seen[name]) return;
+      seen[name] = a.href;
+      var opt = document.createElement("option");
+      opt.value = name;
+      list.appendChild(opt);
+    });
+    function go() {
+      var q = input.value.trim().toLowerCase();
+      if (!q) return;
+      var names = Object.keys(seen);
+      var hit = names.filter(function (n) { return n.toLowerCase() === q; })[0] ||
+                names.filter(function (n) { return n.toLowerCase().indexOf(q) !== -1; })[0];
+      if (hit) window.location.href = seen[hit];
+    }
+    input.addEventListener("change", function () {
+      if (seen[input.value]) go();
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); go(); }
+    });
+    label.appendChild(input);
+    label.appendChild(list);
+    logo.insertAdjacentElement("afterend", label);
+  }
+
   ready(function () {
+    addSearch();
     var header = document.querySelector(".site-header");
     var toggle = document.querySelector(".nav-toggle");
     var nav = document.getElementById("sitenav");
