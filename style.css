@@ -866,6 +866,8 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 
 /* ---------- small helpers ---------- */
 .bk-hint { margin: 12px 0 0; color: var(--muted); min-height: 1.2em; }
+.bk-hint.is-error { color: var(--danger); font-weight: 700; }
+.bk-hint.is-warn { color: var(--warn); }
 .fb-help { margin: 6px 0 0; font-size: 0.95rem; color: var(--muted); }
 .sg-spec { margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); }
 .sg-hint { margin: 12px 0 0; font-size: 0.95rem; color: var(--muted); min-height: 1.2em; }

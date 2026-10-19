@@ -132,7 +132,7 @@
  <div class="panel">
  <div class="form-group">
  <label for="ssid">Network Name (SSID)</label>
- <input type="text" id="ssid" placeholder="MyHomeWiFi">
+ <input type="text" id="ssid" placeholder="MyHomeWiFi" aria-describedby="wifiNote">
  </div>
  <div class="form-group">
  <label for="wifiPassword">Password</label>
@@ -146,7 +146,14 @@
  <label><input type="radio" name="enc" value="nopass"> None (open)</label>
  </div>
  </div>
+ <div class="form-group">
+ <div class="radio-row">
+ <label><input type="checkbox" id="wifiHidden"> Hidden network</label>
+ </div>
+ <p class="fb-help">Tick this only if your router does not show the network name to nearby devices.</p>
+ </div>
  <button class="btn" onclick="generateWifiCode()">Generate QR Code</button>
+ <p class="bk-hint" id="wifiNote" aria-live="polite"></p>
  </div>
 
  <div class="panel qr-output">
@@ -261,7 +268,7 @@
  <p>Logos reduce the scannable area and increase failure rates, especially at small print sizes. For a functional code that guests must be able to scan first time, plain is better.</p>
 
  <h3>Can I use this for a hidden network?</h3>
- <p>Hidden SSIDs are inconsistently supported across phones when joining by QR. If you rely on QR access, it is more reliable to leave the guest network visible.</p>
+ <p>Yes. Tick <strong>Hidden network</strong> and the code includes the <code>H:true</code> flag that tells a phone to look for a name it cannot see. Even so, joining a hidden network by QR is inconsistently supported across phones. If you rely on QR access, it is more reliable to leave the guest network visible.</p>
 
  <h2>Other QR codes you might need</h2>
  <p>If you are setting up a rental or a café, the WiFi code is usually not the only one worth printing. A <a href="url-qr-code-generator">URL QR code</a> can point guests to your house manual, digital menu or review page. A <a href="vcard-qr-code-generator">vCard QR code</a> shares your contact details in one scan. And a <a href="text-qr-code-generator">text QR code</a> handles short instructions like bin day or checkout times. All of them are listed on our <a href="services">services page</a>.</p>
@@ -302,16 +309,46 @@
  height: 1024
  });
 
- function generateWifiCode() {
- const ssid = escapeVCardValue(document.getElementById("ssid").value);
- const pass = escapeVCardValue(document.getElementById("wifiPassword").value);
- const enc = document.querySelector('input[name="enc"]:checked').value;
+ // The WiFi format marks \ ; , " and : with a backslash. This is wider than
+ // the vCard rule in script.js, so WiFi keeps its own function.
+ function escapeWifiValue(value) {
+ return (value || "").replace(/([\\;,":])/g, "\\$1");
+ }
 
+ function generateWifiCode() {
+ const ssidField = document.getElementById("ssid");
+ const note = document.getElementById("wifiNote");
+ const rawSsid = ssidField.value;
+ note.textContent = "";
+ note.className = "bk-hint";
+ ssidField.removeAttribute("aria-invalid");
+
+ // a code without a network name connects to nothing, so stop here
+ if (!rawSsid.trim()) {
+ note.textContent = "Enter the network name first. A code without one will not connect.";
+ note.className = "bk-hint is-error";
+ ssidField.setAttribute("aria-invalid", "true");
+ ssidField.focus();
+ return;
+ }
+
+ const ssid = escapeWifiValue(rawSsid);
+ const pass = escapeWifiValue(document.getElementById("wifiPassword").value);
+ const enc = document.querySelector('input[name="enc"]:checked').value;
+ const hidden = document.getElementById("wifiHidden").checked ? "H:true;" : "";
  let payload;
  if (enc === "nopass") {
- payload = "WIFI:T:nopass;S:" + ssid + ";;";
+ payload = "WIFI:T:nopass;S:" + ssid + ";" + hidden + ";";
  } else {
- payload = "WIFI:T:" + enc + ";S:" + ssid + ";P:" + pass + ";;";
+ payload = "WIFI:T:" + enc + ";S:" + ssid + ";P:" + pass + ";" + hidden + ";";
+ }
+
+ // Some scanner apps read a name made only of 0-9 and A-F as a hex value.
+ // We warn rather than add quotes, because quotes may be kept as part of
+ // the name on phones that do not follow that rule.
+ if (/^[0-9a-fA-F]+$/.test(rawSsid)) {
+ note.textContent = "This name uses only the characters 0-9 and A-F, which some scanner apps read as a hex value. Test the printed code on a phone before printing many copies.";
+ note.className = "bk-hint is-warn";
  }
 
  qr.clear();
