@@ -69,11 +69,32 @@
     var strong = document.createElement("strong");
     strong.textContent = c.title;
     wrap.appendChild(strong);
-    wrap.appendChild(document.createTextNode(c.detail));
+    // the space keeps screen readers from running the title into the detail
+    wrap.appendChild(document.createTextNode(" " + c.detail));
     el.appendChild(wrap);
     el.hidden = false;
   }
   global.QRScanBadge = fillBadge;
+
+  /*
+   * On a laptop the code sits below the form, so after pressing Generate it
+   * can be off screen and the button looks like it did nothing. Bring it
+   * into view, but only right after a button press: several pages redraw on
+   * every keystroke, and scrolling then would pull the page away from the
+   * field being typed in.
+   */
+  var lastPress = 0;
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.closest && e.target.closest("button")) lastPress = Date.now();
+  }, true);
+
+  function reveal(el) {
+    var box = (el.closest && el.closest(".qr-output")) || el;
+    var r = box.getBoundingClientRect();
+    if (r.top >= 0 && r.bottom <= window.innerHeight) return;
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: r.top + window.pageYOffset - 12, behavior: calm ? "auto" : "smooth" });
+  }
 
   QRCodeEngine.prototype.showBadge = function (n) {
     if (!this.el || !this.el.parentNode) return;
@@ -117,6 +138,7 @@
     this.el.innerHTML = "";
     this.el.appendChild(cv);
     this.showBadge(n);
+    if (Date.now() - lastPress < 1500) reveal(this.el);
   };
 
   global.QRCode = QRCodeEngine;
