@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL QR Code: Documentation</title>
+<meta name="description" content="Reference for the QRotto URL QR code generator: what it writes into the code, how it handles addresses without https, size, and fixes.">
+<link rel="canonical" href="https://qrotto.com/docs/url-qr-code">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="URL QR Code: Documentation">
+<meta property="og:description" content="Reference for the QRotto URL QR code generator: what it writes into the code, how it handles addresses without https, size, and fixes.">
+<meta property="og:url" content="https://qrotto.com/docs/url-qr-code">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "URL QR Code: Documentation",
+  "description": "Reference for the QRotto URL QR code generator: what it writes into the code, how it handles addresses without https, size, and fixes.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/url-qr-code"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "URL QR code", "item": "https://qrotto.com/docs/url-qr-code" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / URL QR code</p>
+ <p class="docs-eyebrow">Docs · Generators</p>
+ <h1>URL QR code</h1>
+ <p class="docs-lead">Puts a web address into a code. Scanning it opens the page. This is the simplest generator, and the one most worth testing before you print.</p>
+ <div class="docs-actions"><a class="btn" href="../url-qr-code-generator">Open the URL generator</a></div>
+ <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code" aria-current="page">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#trouble">Troubleshooting</a></li></ol></nav>
+
+<h2 id="glance">At a glance</h2>
+<dl class="spec"><dt>Format written</dt><dd>The address exactly as you typed it</dd><dt>Empty field</dt><dd>Writes <code>https://example.com</code></dd><dt>Error correction</dt><dd>Level M</dd><dt>Typical size</dt><dd>25 × 25 modules for a short address</dd></dl>
+
+<h2 id="fields">Fields</h2>
+<div class="field"><h3>Website URL <span class="tag req">Required</span></h3><p>The full address, starting with <code>https://</code>. Spaces at the start and end are removed. Nothing else is changed.</p></div>
+
+<h2 id="payload">What the code contains</h2>
+<p class="payload-label">A full address</p>
+<pre class="payload"><span class="k">https://</span>example.com/menu</pre>
+<p class="payload-label">An address typed without https://</p>
+<pre class="payload">example.com/menu</pre>
+<div class="docs-warn"><p><strong>Type the https:// yourself</strong>This generator writes the address as typed. Without <code>https://</code>, some phone cameras treat it as plain text and offer a search instead of opening the page. The PDF, Image and File generators add it for you; this one does not.</p></div>
+
+<h2 id="limits">What it does not do</h2>
+<ul>
+ <li>It does not check that the page exists or loads on a phone.</li>
+ <li>It does not shorten long links. Long links make denser codes; see <a href="print-size-and-scan-badge">Print size and the scan badge</a>.</li>
+ <li>It does not track scans. Add your own analytics tags to the address if you need them.</li>
+</ul>
+
+<h2 id="trouble">Troubleshooting</h2>
+<h3>The phone shows text instead of opening the page</h3><p>Add <code>https://</code> to the start of the address and make the code again.</p><h3>The page opens but shows an error</h3><p>The code holds exactly what you typed, so the address itself is wrong or the page needs a sign in. Open the address in a private browser window to see what a stranger sees.</p>
+<p>Our guide <a href="../blog/convert-a-link-into-a-qr-code">Convert a link into a QR code</a> covers the checks worth running before printing.</p>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="glossary"><span>Previous</span>Glossary</a><a class="docs-next" href="vcard-qr-code"><span>Next</span>vCard</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>

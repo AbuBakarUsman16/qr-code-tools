@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Size and the Scan Badge: Documentation</title>
+<meta name="description" content="How the QRotto scan badge works: the three states, the 20 mm minimum, the 0.4 mm per module rule for dense codes, and what to do with each result.">
+<link rel="canonical" href="https://qrotto.com/docs/print-size-and-scan-badge">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Print Size and the Scan Badge: Documentation">
+<meta property="og:description" content="How the QRotto scan badge works: the three states, the 20 mm minimum, the 0.4 mm per module rule for dense codes, and what to do with each result.">
+<meta property="og:url" content="https://qrotto.com/docs/print-size-and-scan-badge">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Print Size and the Scan Badge: Documentation",
+  "description": "How the QRotto scan badge works: the three states, the 20 mm minimum, the 0.4 mm per module rule for dense codes, and what to do with each result.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/print-size-and-scan-badge"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "Print size and the scan badge", "item": "https://qrotto.com/docs/print-size-and-scan-badge" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / Print size and the scan badge</p>
+ <p class="docs-eyebrow">Docs · Start here</p>
+ <h1>Print size and the scan badge</h1>
+ <p class="docs-lead">The badge under every code gives you the smallest safe print width and a verdict in plain words. Here is exactly how it is worked out.</p>
+ 
+ 
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge" aria-current="page">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#states">The three states</a></li><li><a href="#width">How the width is worked out</a></li><li><a href="#examples">Worked examples</a></li><li><a href="#bigger">When to print bigger</a></li></ol></nav>
+
+<h2 id="states">The three states</h2>
+<div class="docs-badges">
+<p class="qr-scan-badge is-low"><span><strong>Ready to print</strong> Print it at least 20 mm (0.8 in) wide. Simple code, 25 × 25.</span></p>
+<p class="qr-scan-badge is-mid"><span><strong>Test one copy first</strong> Print it at least 22.8 mm (0.9 in) wide. Busy code, 49 × 49.</span></p>
+<p class="qr-scan-badge is-high"><span><strong>Hard to scan when small</strong> Print it at least 40.4 mm (1.6 in) wide, or shorten the content. Very dense code, 93 × 93.</span></p>
+</div>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>State</th><th>Grid size</th><th>What to do</th></tr></thead><tbody><tr><td>Ready to print</td><td>Up to 33 × 33</td><td>Print at the width shown or larger.</td></tr><tr><td>Test one copy first</td><td>37 × 37 to 57 × 57</td><td>Print one copy at its real size and scan it with a phone before printing many.</td></tr><tr><td>Hard to scan when small</td><td>61 × 61 and up</td><td>Shorten what is in the code, or print it well above the width shown.</td></tr></tbody></table></div>
+<p>Each state carries a word and an icon as well as a colour, so it reads the same for everyone.</p>
+
+<h2 id="width">How the width is worked out</h2>
+<p>Two rules, and the larger one wins:</p>
+<ol>
+ <li><strong>Never below 20 mm (0.8 in).</strong> This is the floor our <a href="../blog/qr-code-size-for-print">sizing guide</a> sets for any printed code. Below it, even close range scanning gets unreliable on older phones.</li>
+ <li><strong>0.4 mm per module, plus the quiet zone.</strong> The width is (modules + 8) × 0.4 mm, where 8 is the 4 module margin on each side. This only goes above 20 mm for codes of 45 × 45 and larger.</li>
+</ol>
+<p>The badge is a minimum for scanning up close, around 20 to 30 cm. Codes read from further away need to be bigger. A common rule is one tenth of the scanning distance: a code read from 1 m (about 3 ft) should be about 10 cm (4 in) wide.</p>
+
+<h2 id="examples">Worked examples</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Grid</th><th>0.4 mm rule</th><th>Badge shows</th></tr></thead><tbody><tr><td>25 × 25</td><td>13.2 mm</td><td>20 mm (0.8 in)</td></tr><tr><td>41 × 41</td><td>19.6 mm</td><td>20 mm (0.8 in)</td></tr><tr><td>49 × 49</td><td>22.8 mm</td><td>22.8 mm (0.9 in)</td></tr><tr><td>93 × 93</td><td>40.4 mm</td><td>40.4 mm (1.6 in)</td></tr></tbody></table></div>
+
+<h2 id="bigger">When to print bigger</h2>
+<ul>
+ <li>The code will be read from more than an arm's length away.</li>
+ <li>It goes on a curved, shiny or textured surface.</li>
+ <li>It is printed in colour rather than black on white, or carries a logo.</li>
+ <li>The badge says Test one copy first or Hard to scan when small.</li>
+</ul>
+<p>The <a href="sign-maker">Sign maker</a> sizes codes for common sign formats, and the <a href="stress-test">Stress test</a> shows where a particular code stops scanning.</p>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="how-qrotto-works"><span>Previous</span>How QRotto works</a><a class="docs-next" href="static-codes-and-privacy"><span>Next</span>Static codes and privacy</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Scanner: Documentation</title>
+<meta name="description" content="Reference for the QRotto online QR code scanner: reading from an image, a pasted screenshot or the camera, what it reports, and its messages.">
+<link rel="canonical" href="https://qrotto.com/docs/qr-code-scanner">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="QR Code Scanner: Documentation">
+<meta property="og:description" content="Reference for the QRotto online QR code scanner: reading from an image, a pasted screenshot or the camera, what it reports, and its messages.">
+<meta property="og:url" content="https://qrotto.com/docs/qr-code-scanner">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "QR Code Scanner: Documentation",
+  "description": "Reference for the QRotto online QR code scanner: reading from an image, a pasted screenshot or the camera, what it reports, and its messages.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/qr-code-scanner"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "QR code scanner", "item": "https://qrotto.com/docs/qr-code-scanner" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / QR code scanner</p>
+ <p class="docs-eyebrow">Docs · Other tools</p>
+ <h1>QR code scanner</h1>
+ <p class="docs-lead">Reads a QR code from a picture or your camera, in the browser, and shows you exactly what is inside before you open anything.</p>
+ <div class="docs-actions"><a class="btn" href="../qr-code-scanner">Open the scanner</a></div>
+ <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner" aria-current="page">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#ways">Three ways in</a></li><li><a href="#reports">What it reports</a></li><li><a href="#messages">Messages</a></li><li><a href="#privacy">Privacy</a></li></ol></nav>
+
+<h2 id="glance">At a glance</h2>
+<dl class="spec"><dt>Inputs</dt><dd>An image file, a dragged image, a pasted image, or the camera</dd><dt>Decoder</dt><dd>jsQR 1.4.0, run in your browser</dd><dt>Light on dark codes</dt><dd>Read as well as dark on light</dd><dt>Upload</dt><dd>None. Images and video stay on your device.</dd></dl>
+
+<h2 id="ways">Three ways in</h2>
+<ul>
+ <li><strong>Choose an image</strong> picks a photo or screenshot from your device.</li>
+ <li><strong>Drag or paste</strong>: drop an image onto the page, or copy one and paste it with Ctrl+V or Cmd+V.</li>
+ <li><strong>Use camera</strong> reads from your webcam or phone camera until it finds a code. Stop camera ends it.</li>
+</ul>
+
+<h2 id="reports">What it reports</h2>
+<p>It names the kind of code and prints the full contents as plain text, so you can read a link before you open it.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>It recognises</th><th>From contents starting with or shaped like</th></tr></thead><tbody><tr><td>Website link</td><td><code>http://</code> or <code>https://</code></td></tr><tr><td>WiFi network</td><td><code>WIFI:</code></td></tr><tr><td>Contact card</td><td><code>BEGIN:VCARD</code></td></tr><tr><td>Calendar event</td><td><code>BEGIN:VEVENT</code></td></tr><tr><td>Email</td><td><code>mailto:</code></td></tr><tr><td>Phone number</td><td><code>tel:</code></td></tr><tr><td>Text message</td><td><code>SMSTO:</code></td></tr><tr><td>Location</td><td><code>geo:</code></td></tr><tr><td>Plain text</td><td>Anything else</td></tr></tbody></table></div>
+<p>For a website link, an email or a phone number it also offers an Open this link button. Codes in other formats, such as a calendar file starting <code>BEGIN:VCALENDAR</code>, are shown as plain text, with the full contents still visible.</p>
+
+<h2 id="messages">Messages</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>When</th><th>It says</th></tr></thead><tbody><tr><td>No code in the image</td><td>No code detected in that image. Try a tighter crop around the code.</td></tr><tr><td>Camera running, nothing found yet</td><td>Still looking. Hold the code steady and fill more of the frame.</td></tr><tr><td>Camera permission refused</td><td>Camera access was refused. Upload a photo of the code instead.</td></tr><tr><td>Browser has no camera support</td><td>This browser cannot open the camera. Upload a photo of the code instead.</td></tr></tbody></table></div>
+<p>If a picture will not read, <a href="../blog/scan-qr-code-from-an-image">Scan a QR code from an image</a> lists fixes we measured.</p>
+
+<h2 id="privacy">Privacy</h2>
+<div class="note-box"><span class="note-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><p>Images and camera video are decoded on your device and are not uploaded. Once the page has loaded, scanning a saved image works with the connection off.</p></div>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="bulk-qr-codes"><span>Previous</span>Bulk</a><a class="docs-next" href="qr-code-designer"><span>Next</span>Designer</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>

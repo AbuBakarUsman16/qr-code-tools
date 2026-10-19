@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How QRotto Works: Documentation</title>
+<meta name="description" content="What happens when you make a code on QRotto: where it runs, what goes into the code, the error correction we use, and the three ways to save it.">
+<link rel="canonical" href="https://qrotto.com/docs/how-qrotto-works">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="How QRotto Works: Documentation">
+<meta property="og:description" content="What happens when you make a code on QRotto: where it runs, what goes into the code, the error correction we use, and the three ways to save it.">
+<meta property="og:url" content="https://qrotto.com/docs/how-qrotto-works">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "How QRotto Works: Documentation",
+  "description": "What happens when you make a code on QRotto: where it runs, what goes into the code, the error correction we use, and the three ways to save it.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/how-qrotto-works"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "How QRotto works", "item": "https://qrotto.com/docs/how-qrotto-works" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / How QRotto works</p>
+ <p class="docs-eyebrow">Docs · Start here</p>
+ <h1>How QRotto works</h1>
+ <p class="docs-lead">Every tool on this site makes a code in your browser and checks it before you print. This page explains what that means and what you get.</p>
+ 
+ 
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works" aria-current="page">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#runs">Where the work happens</a></li><li><a href="#inside">What goes into a code</a></li><li><a href="#settings">Fixed settings</a></li><li><a href="#save">Download, print and share</a></li><li><a href="#check">The scan check</a></li></ol></nav>
+
+<h2 id="runs">Where the work happens</h2>
+<p>When you press a button such as Generate QR Code, the code is drawn by JavaScript running on your own device. What you type is not sent to us or anyone else to make the code. The page needs an internet connection to load, and after that the drawing happens locally.</p>
+<p>The encoder is the open source <a href="https://github.com/kazuhikoarase/qrcode-generator" rel="nofollow noopener" target="_blank">qrcode-generator</a> library, version 1.4.4, loaded from cdnjs.</p>
+
+<h2 id="inside">What goes into a code</h2>
+<p>A QR code holds text. Each tool turns your details into the text that phones expect for that kind of code, then encodes it. A link is the link itself. A WiFi code is a line starting with <code>WIFI:</code>. A contact card is a short vCard. Each generator's page in these docs shows the exact text, decoded from a code the tool made.</p>
+<p>Nothing else is added. There is no tracking address, no redirect through our site and no hidden data, which is why the codes do not expire. See <a href="static-codes-and-privacy">Static codes and privacy</a>.</p>
+
+<h2 id="settings">Fixed settings</h2>
+<dl class="spec"><dt>Error correction</dt><dd>Level M on every generator, which can recover from roughly 15% of the code being damaged. The Bulk tool, Designer and Stress test let you choose L, M, Q or H.</dd><dt>Text encoding</dt><dd>UTF-8, so accents and other alphabets come through intact.</dd><dt>Quiet zone</dt><dd>A white margin 4 modules wide on every side, included in the image.</dd><dt>Size</dt><dd>The smallest grid that fits your text, chosen automatically. Longer text means more modules.</dd></dl>
+
+<h2 id="save">Download, print and share</h2>
+<p>Every generator gives you three ways to keep the code:</p>
+<ul>
+ <li><strong>Download</strong> saves a PNG about 1,000 pixels wide, black on white, with the quiet zone.</li>
+ <li><strong>Print</strong> opens the code on its own page at 60 mm (2.4 in) and starts your browser's print dialog.</li>
+ <li><strong>Share</strong> opens your device's share sheet with the PNG attached. It only appears where the browser supports sharing files.</li>
+</ul>
+<p>For SVG files, colours, a logo or text under the code, use the <a href="qr-code-designer">Designer</a>. For print ready signs, use the <a href="sign-maker">Sign maker</a>.</p>
+
+<h2 id="check">The scan check</h2>
+<p>Under every code is a badge that tells you how dense the code is and the smallest width to print it. <a href="print-size-and-scan-badge">Print size and the scan badge</a> explains how it is worked out.</p>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><span></span><a class="docs-next" href="print-size-and-scan-badge"><span>Next</span>Print size and the scan badge</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiFi QR Code: Documentation</title>
+<meta name="description" content="Reference for the QRotto WiFi QR code generator: the fields, the exact text written into the code, escaped characters, hidden networks and fixes.">
+<link rel="canonical" href="https://qrotto.com/docs/wifi-qr-code">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="WiFi QR Code: Documentation">
+<meta property="og:description" content="Reference for the QRotto WiFi QR code generator: the fields, the exact text written into the code, escaped characters, hidden networks and fixes.">
+<meta property="og:url" content="https://qrotto.com/docs/wifi-qr-code">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "WiFi QR Code: Documentation",
+  "description": "Reference for the QRotto WiFi QR code generator: the fields, the exact text written into the code, escaped characters, hidden networks and fixes.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/wifi-qr-code"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "WiFi QR code", "item": "https://qrotto.com/docs/wifi-qr-code" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / WiFi QR code</p>
+ <p class="docs-eyebrow">Docs · Generators</p>
+ <h1>WiFi QR code</h1>
+ <p class="docs-lead">Makes a code that a phone reads to join your network without typing the password. Every field, the exact text the tool writes, and what it does not do.</p>
+ <div class="docs-actions"><a class="btn" href="../wifi-qr-code-generator">Open the WiFi generator</a></div>
+ <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code" aria-current="page">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#characters">Special characters</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#trouble">Troubleshooting</a></li><li><a href="#privacy">Privacy</a></li></ol></nav>
+
+<h2 id="glance">At a glance</h2>
+<dl class="spec"><dt>Format written</dt><dd><code>WIFI:T:&lt;type&gt;;S:&lt;name&gt;;P:&lt;password&gt;;;</code>, with <code>H:true;</code> for hidden networks</dd><dt>Security types</dt><dd>WPA/WPA2, WEP, None (open)</dd><dt>Characters escaped</dt><dd><code>\</code> <code>;</code> <code>,</code> <code>"</code> <code>:</code></dd><dt>Hidden networks</dt><dd>Supported, with the <code>H:true</code> flag</dd><dt>Text encoding</dt><dd>UTF-8, so accented names work</dd><dt>Error correction</dt><dd>Level M</dd><dt>Typical size</dt><dd>29 × 29 modules for a short name and password</dd></dl>
+
+<h2 id="fields">Fields</h2>
+<div class="field"><h3>Network Name (SSID) <span class="tag req">Required</span></h3><p>The name of your network exactly as phones list it. Capitals, spaces and accents all count, so <code>CafeGuest</code> and <code>cafeguest</code> are different networks. The WiFi standard allows up to 32 bytes.</p><p>With the name empty, the tool does not make a code and says: <em>Enter the network name first. A code without one will not connect.</em></p><p>A name made only of the characters 0 to 9 and A to F gets this warning: <em>This name uses only the characters 0-9 and A-F, which some scanner apps read as a hex value. Test the printed code on a phone before printing many copies.</em></p></div>
+<div class="field"><h3>Password <span class="tag">WPA and WEP</span></h3><p>Written into the code as plain text. With None (open) chosen, it is left out even if the field has something in it. A WPA password is 8 to 63 characters under the WiFi standard. A 63 character password took our test code from 29 × 29 to 41 × 41.</p></div>
+<div class="field"><h3>Security Type <span class="tag">Default WPA/WPA2</span></h3><ul><li><strong>WPA/WPA2</strong> writes <code>T:WPA</code>. Right for almost every home and office router.</li><li><strong>WEP</strong> writes <code>T:WEP</code>, for very old equipment.</li><li><strong>None (open)</strong> writes <code>T:nopass</code> and leaves the password out.</li></ul></div>
+<div class="field"><h3>Hidden network <span class="tag">Optional</span></h3><p>Tick only if your router does not broadcast the network name. It adds <code>H:true</code> so the phone looks for a name it cannot see. Joining a hidden network by QR works on some phones and not others, so a visible guest network is more reliable.</p></div>
+
+<h2 id="payload">What the code contains</h2>
+<p>One line in the format phone cameras recognise, first described by the <a href="https://github.com/zxing/zxing/wiki/Barcode-Contents" rel="nofollow noopener" target="_blank">ZXing project</a>.</p>
+<p class="payload-label">WPA network</p>
+<pre class="payload"><span class="k">WIFI:</span>T:WPA;S:CafeGuest;P:sunflower2026;;</pre>
+<p class="payload-label">Open network, with a password typed but ignored</p>
+<pre class="payload"><span class="k">WIFI:</span>T:nopass;S:CafeGuest;;</pre>
+<p class="payload-label">Hidden WPA network</p>
+<pre class="payload"><span class="k">WIFI:</span>T:WPA;S:CafeGuest;P:sunflower2026;H:true;;</pre>
+<p class="payload-label">Accented name and password</p>
+<pre class="payload"><span class="k">WIFI:</span>T:WPA;S:Café Été;P:pässwörd;;</pre>
+
+<h2 id="characters">Special characters</h2>
+<p>Five characters have a meaning inside the format, so a backslash is put before each one in the name and password. Everything else, spaces and accents included, is written as typed.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>You type</th><th>Written as</th></tr></thead><tbody><tr><td><code>\</code></td><td><code>\\</code></td></tr><tr><td><code>;</code></td><td><code>\;</code></td></tr><tr><td><code>,</code></td><td><code>\,</code></td></tr><tr><td><code>"</code></td><td><code>\"</code></td></tr><tr><td><code>:</code></td><td><code>\:</code></td></tr></tbody></table></div>
+<p class="payload-label">Name Cafe;Guest, password pa;ss,wo\rd</p>
+<pre class="payload"><span class="k">WIFI:</span>T:WPA;S:Cafe\;Guest;P:pa\;ss\,wo\\rd;;</pre>
+<p class="payload-label">Name Home:5G, password pass:word"x"</p>
+<pre class="payload"><span class="k">WIFI:</span>T:WPA;S:Home\:5G;P:pass\:word\"x\";;</pre>
+
+<h2 id="limits">What it does not do</h2>
+<ul>
+ <li><strong>Enterprise WiFi.</strong> Networks that ask for a username as well as a password (WPA2-EAP) are not supported.</li>
+ <li><strong>Quotes around hex looking names.</strong> The ZXing format suggests wrapping a name like <code>ABCD1234</code> in double quotes. The tool warns you instead, because a phone that does not follow that rule may keep the quotes as part of the name and look for the wrong network.</li>
+</ul>
+
+<h2 id="trouble">Troubleshooting</h2>
+<h3>The phone cannot find the network</h3><p>Check the name letter by letter, including capitals, and that the phone is in range. If the network is hidden, tick Hidden network and make the code again.</p><h3>The phone says the password is wrong</h3><p>Retype it and check that the security type matches the one set on your router.</p><h3>The camera does not react</h3><p>The code is usually too small, too low in contrast or cropped. Print it at the size the badge shows, dark on light, with its white margin.</p>
+<p>Our <a href="../blog/wifi-qr-code-not-working">WiFi QR code not working</a> guide goes through more checks.</p>
+
+<h2 id="privacy">Privacy</h2>
+<div class="note-box"><span class="note-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><p>The code is made on your device. Once printed, though, the password can be read by anyone who scans or photographs it, because the format stores it as plain text. Use a guest network for any code on display.</p></div>
+<p><a href="../blog/what-is-inside-a-wifi-qr-code">What is inside a WiFi QR code</a> shows this in detail.</p>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="vcard-qr-code"><span>Previous</span>vCard</a><a class="docs-next" href="text-qr-code"><span>Next</span>Text</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>

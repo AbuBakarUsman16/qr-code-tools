@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk QR Codes: Documentation</title>
+<meta name="description" content="Reference for the QRotto bulk QR code generator: the list format, labels and file names, the 250 code limit, error correction and the three downloads.">
+<link rel="canonical" href="https://qrotto.com/docs/bulk-qr-codes">
+<meta name="google-adsense-account" content="ca-pub-6232027234522217">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QRotto">
+<meta property="og:title" content="Bulk QR Codes: Documentation">
+<meta property="og:description" content="Reference for the QRotto bulk QR code generator: the list format, labels and file names, the 250 code limit, error correction and the three downloads.">
+<meta property="og:url" content="https://qrotto.com/docs/bulk-qr-codes">
+<meta name="author" content="QRotto">
+<meta name="robots" content="index, follow">
+<script src="../nav.js"></script>
+<script src="../canonical-url.js"></script>
+<script src="../analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Bulk QR Codes: Documentation",
+  "description": "Reference for the QRotto bulk QR code generator: the list format, labels and file names, the 250 code limit, error correction and the three downloads.",
+  "dateModified": "2026-10-19",
+  "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
+  "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
+  "mainEntityOfPage": "https://qrotto.com/docs/bulk-qr-codes"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrotto.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://qrotto.com/docs/" },
+    { "@type": "ListItem", "position": 3, "name": "Bulk QR codes", "item": "https://qrotto.com/docs/bulk-qr-codes" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="../blog/">Blog</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+
+<main class="docs-page">
+ <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / Bulk QR codes</p>
+ <p class="docs-eyebrow">Docs · Generators</p>
+ <h1>Bulk QR codes</h1>
+ <p class="docs-lead">Paste a list and get every code at once, then download them as PNG files, SVG files or a printable PDF sheet.</p>
+ <div class="docs-actions"><a class="btn" href="../bulk-qr-code-generator">Open the bulk generator</a></div>
+ <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes" aria-current="page">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
+ <article class="prose docs-prose">
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#format">The list format</a></li><li><a href="#payload">Example</a></li><li><a href="#downloads">Downloads</a></li><li><a href="#limits">Limits</a></li></ol></nav>
+
+<h2 id="glance">At a glance</h2>
+<dl class="spec"><dt>Input</dt><dd>One item per line, each becomes one code</dd><dt>Labels</dt><dd>Optional, before a vertical bar: <code>Table 1|https://...</code></dd><dt>Most per batch</dt><dd>250 codes</dd><dt>Error correction</dt><dd>L, M, Q or H. M is recommended.</dd><dt>Downloads</dt><dd>PNG zip, SVG zip, A4 PDF sheet</dd></dl>
+
+<h2 id="format">The list format</h2>
+<ul>
+ <li>Each line is encoded exactly as written, after trimming spaces at the ends. Empty lines are skipped.</li>
+ <li>To name a code, start the line with a label of up to 60 characters and a vertical bar. The label names the file and is printed under the code on the PDF sheet; it is not part of the code.</li>
+ <li>Lines without a label are named code-1, code-2 and so on, by position.</li>
+</ul>
+
+<h2 id="payload">Example</h2>
+<p class="payload-label">This list</p>
+<pre class="payload">Table 1|https://example.com/menu?t=1
+Table 2|https://example.com/menu?t=2
+https://example.com/about</pre>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Label</th><th>Code contains</th><th>Grid</th></tr></thead><tbody><tr><td>Table 1</td><td><code>https://example.com/menu?t=1</code></td><td>29 × 29</td></tr><tr><td>Table 2</td><td><code>https://example.com/menu?t=2</code></td><td>29 × 29</td></tr><tr><td>code-3</td><td><code>https://example.com/about</code></td><td>25 × 25</td></tr></tbody></table></div>
+<p>The tool reports <em>3 codes generated.</em></p>
+
+<h2 id="downloads">Downloads</h2>
+<ul>
+ <li><strong>PNG zip:</strong> one image per code, named from its label. Repeated labels get -2, -3 added.</li>
+ <li><strong>SVG zip:</strong> the same as vector files, for printers and design software.</li>
+ <li><strong>PDF sheet:</strong> A4 pages with 12 codes each in 3 columns, every code 48 mm (1.9 in) wide with its label under it. Labels longer than 26 characters are cut short on the sheet.</li>
+</ul>
+
+<h2 id="limits">Limits</h2>
+<ul>
+ <li>More than 250 lines: <em>That is 251 codes. The limit is 250 per batch, split the list.</em></li>
+ <li>No lines: <em>Add at least one line first.</em></li>
+ <li>A line too long for any QR code is skipped and counted in the status message.</li>
+ <li>The bulk tool makes plain codes. For colours or a logo, use the <a href="qr-code-designer">Designer</a> one code at a time.</li>
+</ul>
+
+ </article>
+ <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="social-media-qr-code"><span>Previous</span>Social media</a><a class="docs-next" href="qr-code-scanner"><span>Next</span>Scanner</a></nav>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="../blog/">Blog</a> ·
+ <a href="./">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+
+<script src="../lightbox.js"></script>
+</body>
+</html>
