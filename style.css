@@ -180,6 +180,7 @@ header.site-header {
   outline: none;
 }
 .site-search input::placeholder { color: #a9adbd; }
+.site-search input { text-overflow: ellipsis; }
 .site-search:focus-within { border-color: var(--accent-bright); }
 
 .nav-toggle {
@@ -281,7 +282,13 @@ nav.tool-nav > a.active { color: #ffffff; text-decoration: underline; text-decor
   padding: 10px 10px 4px;
 }
 
-@media (max-width: 1040px) {
+/* one row on wide screens: the search box gives way before the menu wraps */
+@media (min-width: 1121px) {
+  .nav-wrap { flex-wrap: nowrap; }
+  .site-search { min-width: 120px; }
+}
+
+@media (max-width: 1120px) {
   .js .nav-toggle { display: inline-flex; }
   .js nav.tool-nav {
     display: none;
@@ -1176,4 +1183,19 @@ main.docs-home { max-width: 1040px; padding-top: 40px; }
   .docs-tasks, .docs-words, .docs-duo { grid-template-columns: 1fr; }
   .docs-task { padding: 14px 16px; }
 }
+
+/* docs home footer row: fix link on the left, last checked date on the right */
+.docs-home-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 1rem; color: var(--muted); }
+
+/* "/ Docs" beside the logo on docs pages */
+.logo-sep { color: #4a4f66; font-size: 1.4rem; line-height: 1; margin: 0 -8px; }
+.logo-section { color: #ffffff; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+.logo-section:hover { color: var(--accent-bright); }
+/* keep "qrotto / Docs" together; the free space goes after it */
+.logo-section { margin-right: auto; }
+
+/* the suggestion list needs no dropdown arrow inside a search box */
+.docs-search input::-webkit-calendar-picker-indicator,
+.site-search input::-webkit-calendar-picker-indicator { display: none !important; }
+.docs-search input { text-overflow: ellipsis; }
 /* docs:end */

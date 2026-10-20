@@ -55,7 +55,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a><span class="logo-sep" aria-hidden="true">/</span><a class="logo-section" href="./">Docs</a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -114,8 +114,8 @@
 <dl class="spec"><dt>Format written</dt><dd><code>SMSTO:&lt;number&gt;:&lt;message&gt;</code></dd><dt>Number cleaning</dt><dd>Spaces are removed. Brackets and dashes are kept.</dd><dt>Error correction</dt><dd>Level M</dd></dl>
 
 <h2 id="fields">Fields</h2>
-<div class="field"><h3>Phone Number <span class="tag req">Required</span></h3><p>Your number in international format, starting with + and the country code. Type it as digits: spaces are removed, but brackets and dashes would stay in the code.</p></div>
-<div class="field"><h3>Prefilled Message <span class="tag">Optional</span></h3><p>Text that appears in the message box, written as typed. A keyword such as BOOK at the start makes replies easy to sort.</p></div>
+<div class="field"><h3 id="phone-number">Phone Number <span class="tag req">Required</span></h3><p>Your number in international format, starting with + and the country code. Type it as digits: spaces are removed, but brackets and dashes would stay in the code.</p></div>
+<div class="field"><h3 id="prefilled-message">Prefilled Message <span class="tag">Optional</span></h3><p>Text that appears in the message box, written as typed. A keyword such as BOOK at the start makes replies easy to sort.</p></div>
 
 <h2 id="payload">What the code contains</h2>
 <p class="payload-label">Number +1 555 123 4567 with a message</p>

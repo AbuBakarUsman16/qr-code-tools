@@ -62,7 +62,9 @@ document.documentElement.classList.add("js");
     });
     label.appendChild(input);
     label.appendChild(list);
-    logo.insertAdjacentElement("afterend", label);
+    // on docs pages the search sits after "qrotto / Docs", not between them
+    var after = wrap.querySelector(".logo-section") || logo;
+    after.insertAdjacentElement("afterend", label);
   }
 
   ready(function () {

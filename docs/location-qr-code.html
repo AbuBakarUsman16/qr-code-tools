@@ -55,7 +55,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a><span class="logo-sep" aria-hidden="true">/</span><a class="logo-section" href="./">Docs</a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -114,9 +114,9 @@
 <dl class="spec"><dt>Modes</dt><dd>An address, or GPS coordinates</dd><dt>Formats</dt><dd>Google Maps link, or <code>geo:</code> for coordinates</dd><dt>Error correction</dt><dd>Level M</dd></dl>
 
 <h2 id="fields">Fields</h2>
-<div class="field"><h3>Address <span class="tag">Address mode</span></h3><p>Any address or place name. It is encoded into a Google Maps search link.</p></div>
-<div class="field"><h3>Latitude and Longitude <span class="tag">Coordinates mode</span></h3><p>Decimal degrees, such as 53.959965 and -1.087298. Both are needed. They are written as typed.</p></div>
-<div class="field"><h3>Format <span class="tag">Coordinates mode</span></h3><p>Maps link (works everywhere) or geo: code (works offline). Address mode always makes a Maps link.</p></div>
+<div class="field"><h3 id="address">Address <span class="tag">Address mode</span></h3><p>Any address or place name. It is encoded into a Google Maps search link.</p></div>
+<div class="field"><h3 id="latitude-and-longitude">Latitude and Longitude <span class="tag">Coordinates mode</span></h3><p>Decimal degrees, such as 53.959965 and -1.087298. Both are needed. They are written as typed.</p></div>
+<div class="field"><h3 id="format">Format <span class="tag">Coordinates mode</span></h3><p>Maps link (works everywhere) or geo: code (works offline). Address mode always makes a Maps link.</p></div>
 
 <h2 id="payload">What the code contains</h2>
 <p class="payload-label">Address</p>

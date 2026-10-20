@@ -55,7 +55,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a><span class="logo-sep" aria-hidden="true">/</span><a class="logo-section" href="./">Docs</a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -114,9 +114,9 @@
 <dl class="spec"><dt>Format written</dt><dd>The link, with <code>https://</code> added if missing</dd><dt>Shows the final link</dt><dd>Yes, in The link that goes in the code</dd><dt>Updates</dt><dd>As you type</dd><dt>Error correction</dt><dd>Level M</dd></dl>
 
 <h2 id="fields">Fields</h2>
-<div class="field"><h3>Link to your file <span class="tag req">Required</span></h3><p>The address of the file. It must already be online.</p></div>
-<div class="field"><h3>Make Dropbox serve the file directly <span class="tag">Dropbox only</span></h3><p>Appears only for Dropbox links. When ticked, <code>dl=0</code> becomes <code>dl=1</code>, or <code>dl=1</code> is added, so the phone gets the file rather than Dropbox's preview page.</p></div>
-<div class="field"><h3>The link that goes in the code <span class="tag">Read only</span></h3><p>The exact address that will be encoded, after any changes.</p></div>
+<div class="field"><h3 id="link-to-your-file">Link to your file <span class="tag req">Required</span></h3><p>The address of the file. It must already be online.</p></div>
+<div class="field"><h3 id="make-dropbox-serve-the-file-directly">Make Dropbox serve the file directly <span class="tag">Dropbox only</span></h3><p>Appears only for Dropbox links. When ticked, <code>dl=0</code> becomes <code>dl=1</code>, or <code>dl=1</code> is added, so the phone gets the file rather than Dropbox's preview page.</p></div>
+<div class="field"><h3 id="the-link-that-goes-in-the-code">The link that goes in the code <span class="tag">Read only</span></h3><p>The exact address that will be encoded, after any changes.</p></div>
 
 <h2 id="types">File types it recognises</h2>
 <div class="table-wrap"><table class="cmp"><thead><tr><th>Type</th><th>Extensions</th></tr></thead><tbody><tr><td>Video</td><td>mp4, mov, m4v, webm, avi, mkv</td></tr><tr><td>Audio</td><td>mp3, wav, m4a, aac, ogg, flac</td></tr><tr><td>Word document</td><td>doc, docx, rtf, odt</td></tr><tr><td>Spreadsheet</td><td>xls, xlsx, csv, ods</td></tr><tr><td>Presentation</td><td>ppt, pptx, odp</td></tr><tr><td>Archive</td><td>zip, rar, 7z, tar, gz</td></tr><tr><td>PDF</td><td>pdf</td></tr><tr><td>Image</td><td>jpg, jpeg, png, gif, webp, avif, svg</td></tr></tbody></table></div>

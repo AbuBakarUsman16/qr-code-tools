@@ -55,7 +55,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a><span class="logo-sep" aria-hidden="true">/</span><a class="logo-section" href="./">Docs</a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -114,13 +114,13 @@
 <dl class="spec"><dt>Format written</dt><dd>A full iCalendar file: <code>VCALENDAR</code> holding one <code>VEVENT</code></dd><dt>Required</dt><dd>Title and start time</dd><dt>End time</dt><dd>Worked out from the start and the length you pick</dd><dt>Reminder</dt><dd>1 day before unless you change it, written as a <code>VALARM</code></dd><dt>Error correction</dt><dd>Level M</dd></dl>
 
 <h2 id="fields">Fields</h2>
-<div class="field"><h3>Appointment title <span class="tag req">Required</span></h3><p>Written as <code>SUMMARY</code>.</p></div>
-<div class="field"><h3>Starts <span class="tag req">Required</span></h3><p>Written as <code>DTSTART</code>, as local clock time with no time zone.</p></div>
-<div class="field"><h3>Length <span class="tag">Default 30 minutes</span></h3><p>15, 30 or 45 minutes, 1 hour, 1 hour 30 or 2 hours. The tool adds it to the start to write <code>DTEND</code>.</p></div>
-<div class="field"><h3>Where <span class="tag">Optional</span></h3><p>Written as <code>LOCATION</code>.</p></div>
-<div class="field"><h3>Reschedule or booking link <span class="tag">Optional</span></h3><p>Written as <code>URL</code>, and also added to the notes as Reschedule: followed by the link, since some calendars only show the notes.</p></div>
-<div class="field"><h3>Reminder <span class="tag">Default 1 day before</span></h3><p>No reminder, or 15 minutes, 1 hour, 1 day or 2 days before. It starts set to 1 day before, so choose No reminder if you do not want one.</p></div>
-<div class="field"><h3>Notes <span class="tag">Optional</span></h3><p>Written as <code>DESCRIPTION</code>.</p></div>
+<div class="field"><h3 id="appointment-title">Appointment title <span class="tag req">Required</span></h3><p>Written as <code>SUMMARY</code>.</p></div>
+<div class="field"><h3 id="starts">Starts <span class="tag req">Required</span></h3><p>Written as <code>DTSTART</code>, as local clock time with no time zone.</p></div>
+<div class="field"><h3 id="length">Length <span class="tag">Default 30 minutes</span></h3><p>15, 30 or 45 minutes, 1 hour, 1 hour 30 or 2 hours. The tool adds it to the start to write <code>DTEND</code>.</p></div>
+<div class="field"><h3 id="where">Where <span class="tag">Optional</span></h3><p>Written as <code>LOCATION</code>.</p></div>
+<div class="field"><h3 id="reschedule-or-booking-link">Reschedule or booking link <span class="tag">Optional</span></h3><p>Written as <code>URL</code>, and also added to the notes as Reschedule: followed by the link, since some calendars only show the notes.</p></div>
+<div class="field"><h3 id="reminder">Reminder <span class="tag">Default 1 day before</span></h3><p>No reminder, or 15 minutes, 1 hour, 1 day or 2 days before. It starts set to 1 day before, so choose No reminder if you do not want one.</p></div>
+<div class="field"><h3 id="notes">Notes <span class="tag">Optional</span></h3><p>Written as <code>DESCRIPTION</code>.</p></div>
 
 <h2 id="payload">What the code contains</h2>
 <p class="payload-label">Every field filled, 30 minutes, reminder 1 hour before</p>

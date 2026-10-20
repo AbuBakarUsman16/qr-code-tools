@@ -68,32 +68,47 @@
     });
   }
 
-  // docs home search: suggests every page in the "All docs" list
+  // docs home search: every page and every section on it, from docs/search-index.js.
+  // A query matches when all of its words appear, so "hidden network" finds the
+  // Hidden network field on the WiFi page.
   function docsSearch() {
     var input = document.getElementById("docs-search");
     if (!input) return;
-    var pages = {};
+    var entries = (window.QROTTO_DOCS || []).slice();
+    if (!entries.length) {
+      document.querySelectorAll(".docs-az a, .docs-tasks a").forEach(function (a) {
+        entries.push({ label: a.textContent.trim(), url: a.getAttribute("href") });
+      });
+    }
+    var byLabel = {};
     var list = document.createElement("datalist");
     list.id = "docs-search-list";
-    document.querySelectorAll(".docs-az a").forEach(function (a) {
-      var name = a.textContent.trim();
-      if (pages[name]) return;
-      pages[name] = a.href;
+    entries.forEach(function (e) {
+      if (byLabel[e.label]) return;
+      byLabel[e.label] = e.url;
       var o = document.createElement("option");
-      o.value = name;
+      o.value = e.label;
       list.appendChild(o);
     });
     input.setAttribute("list", list.id);
     input.parentNode.appendChild(list);
-    function go() {
-      var q = input.value.trim().toLowerCase();
-      if (!q) return;
-      var names = Object.keys(pages);
-      var hit = names.filter(function (n) { return n.toLowerCase() === q; })[0] ||
-                names.filter(function (n) { return n.toLowerCase().indexOf(q) !== -1; })[0];
-      if (hit) window.location.href = pages[hit];
+    function find(q) {
+      q = q.trim().toLowerCase();
+      if (!q) return null;
+      var words = q.split(/\s+/);
+      var labels = Object.keys(byLabel);
+      return labels.filter(function (l) { return l.toLowerCase() === q; })[0] ||
+             labels.filter(function (l) { return l.toLowerCase().split(" › ").pop() === q; })[0] ||
+             labels.filter(function (l) {
+               var t = l.toLowerCase();
+               return words.every(function (w) { return t.indexOf(w) !== -1; });
+             })[0] || null;
     }
-    input.addEventListener("change", function () { if (pages[input.value]) go(); });
+    function go() {
+      var hit = find(input.value);
+      if (hit) window.location.href = byLabel[hit];
+    }
+    input.addEventListener("change", function () { if (byLabel[input.value]) go(); });
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); go(); } });
     document.addEventListener("keydown", function (e) {
       var t = e.target.tagName;

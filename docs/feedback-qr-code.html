@@ -55,7 +55,7 @@
 
 <header class="site-header">
  <div class="nav-wrap">
- <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a><span class="logo-sep" aria-hidden="true">/</span><a class="logo-section" href="./">Docs</a>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
   <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
  </button>
@@ -114,9 +114,9 @@
 <dl class="spec"><dt>Modes</dt><dd>Google review, A form, Email</dd><dt>Google review</dt><dd>From a Place ID, or a review link you already have</dd><dt>Error correction</dt><dd>Level M</dd></dl>
 
 <h2 id="modes">Modes and fields</h2>
-<div class="field"><h3>Google review <span class="tag">Default</span></h3><p><strong>Your Google Place ID</strong> builds a link to the write a review box. <strong>Or paste a review link you already have</strong> uses your link instead. If both are filled, your own link wins.</p></div>
-<div class="field"><h3>A form <span class="tag">Optional</span></h3><p>Any form address: Google Forms, Typeform or a page on your site. <code>https://</code> is added if missing.</p></div>
-<div class="field"><h3>Email <span class="tag">Optional</span></h3><p>Where feedback should go, a subject (Feedback by default) and an optional opening line. Makes a <code>mailto:</code> link.</p></div>
+<div class="field"><h3 id="google-review">Google review <span class="tag">Default</span></h3><p><strong>Your Google Place ID</strong> builds a link to the write a review box. <strong>Or paste a review link you already have</strong> uses your link instead. If both are filled, your own link wins.</p></div>
+<div class="field"><h3 id="a-form">A form <span class="tag">Optional</span></h3><p>Any form address: Google Forms, Typeform or a page on your site. <code>https://</code> is added if missing.</p></div>
+<div class="field"><h3 id="email">Email <span class="tag">Optional</span></h3><p>Where feedback should go, a subject (Feedback by default) and an optional opening line. Makes a <code>mailto:</code> link.</p></div>
 
 <h2 id="payload">What the code contains</h2>
 <p class="payload-label">Google review from a Place ID</p>
