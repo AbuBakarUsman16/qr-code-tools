@@ -839,9 +839,11 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-
 /* ---------- QR designer ---------- */
 .ds-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: start; }
 @media (max-width: 800px) { .ds-layout { grid-template-columns: 1fr; } }
-.ds-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.ds-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; }  /* controls line up even when one label wraps */
 .ds-row .form-group { flex: 1; min-width: 130px; }
-input[type="color"] { width: 100%; height: 48px; padding: 3px; border: 1.5px solid var(--input-border); border-radius: var(--radius); background: #fff; cursor: pointer; }
+.ds-row .form-group.ds-wide { flex: 2; }  /* room for "Square, most reliable" */
+@media (max-width: 640px) { .ds-row .form-group, .ds-row .form-group.ds-wide { flex: 1 1 100%; } }  /* one control per row on phones */
+input[type="color"] { width: 100%; height: 52px; padding: 3px; border: 1.5px solid var(--input-border); border-radius: var(--radius); background: #fff; cursor: pointer; }
 input[type="range"] { width: 100%; accent-color: var(--accent); }
 .ds-slider-label { display: flex; justify-content: space-between; align-items: baseline; }
 .ds-slider-label span { font-weight: 400; color: var(--muted); font-size: 0.95rem; }
@@ -1202,3 +1204,19 @@ main.docs-home { max-width: 1040px; padding-top: 40px; }
 .site-search input::-webkit-calendar-picker-indicator { display: none !important; }
 .docs-search input { text-overflow: ellipsis; }
 /* docs:end */
+
+/* file pickers: the browser's grey button, restyled as a secondary button */
+input[type="file"] { font: inherit; font-size: 1rem; color: var(--muted); width: 100%; min-width: 0; }  /* min-width 0 lets it shrink in a narrow panel */
+input[type="file"]::file-selector-button {
+  min-height: 44px;
+  margin-right: 12px;
+  padding: 0 16px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button:hover { border-color: var(--accent); }
