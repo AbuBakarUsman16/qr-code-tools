@@ -89,6 +89,7 @@
   <a href="../qr-code-sign-maker">Signs</a>
   <a href="../qr-code-stress-test">Stress test</a>
   <a href="../blog/">Blog</a>
+  <a href="../docs/" class="active" aria-current="page">Docs</a>
   <a href="../services">Services</a>
   <a href="../about">About</a>
   <a href="../faq">FAQ</a>
@@ -96,6 +97,8 @@
  </div>
 </header>
 
+<div class="docs-shell">
+<aside class="docs-side" aria-label="All docs"><div class="docs-side-inner"><label class="docs-filter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" placeholder="Filter docs" aria-label="Filter the docs list"></label><nav class="docs-side-nav"><a class="docs-side-home" href="./">Docs home</a><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary" aria-current="page">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></nav></div></aside>
 <main class="docs-page">
  <p class="breadcrumb"><a href="../">Home</a> / <a href="./">Docs</a> / Glossary</p>
  <p class="docs-eyebrow">Docs · Start here</p>
@@ -107,11 +110,14 @@
  <article class="prose docs-prose">
  
 
-<h3>Module</h3><p>One square of the QR grid. A 25 × 25 code has 25 modules on each side. Print size is easiest to think about in modules.</p><h3>Quiet zone</h3><p>The blank margin around a code. Scanners use it to find the edge. The standard asks for 4 modules on every side, and QRotto includes it in every image.</p><h3>Finder patterns</h3><p>The three large squares in the corners. A scanner locates the code by them, and they have no error correction, so damage there breaks a code fastest.</p><h3>Version</h3><p>The size step of a code, from version 1 (21 × 21) to version 40 (177 × 177). Each step adds 4 modules per side. The tools pick the smallest version that fits.</p><h3>Error correction</h3><p>Extra data that lets a damaged code still read. Level L recovers about 7%, M about 15%, Q about 25% and H about 30%. Higher levels make the code denser.</p><h3>Payload</h3><p>The text inside a code, such as a link or a line starting <code>WIFI:</code>. The docs show the payload each tool writes.</p><h3>Density</h3><p>How many modules a code has. Denser codes have smaller modules at any print size and are harder to scan.</p><h3>Static code</h3><p>A code that holds its content directly. It cannot expire and cannot be edited. Every QRotto code is static.</p><h3>Dynamic code</h3><p>A code that holds a short address on a provider's server, which forwards to the real destination. It can be edited, and stops working if the provider stops it.</p><h3>Escaping</h3><p>Putting a backslash before a character that has a meaning in a format, such as <code>;</code> in a WiFi code, so it is read as part of the text.</p><h3>UTF-8</h3><p>The way text is turned into bytes so that accents and other alphabets survive. All QRotto tools use it.</p><h3>vCard</h3><p>A standard format for contact details, starting <code>BEGIN:VCARD</code>. Phones offer to save it as a contact.</p><h3>iCalendar event</h3><p>A standard format for calendar entries, starting <code>BEGIN:VEVENT</code> or <code>BEGIN:VCALENDAR</code>. Phones offer to add it to a calendar.</p><h3>Scheme</h3><p>The start of a payload that tells the phone what to do: <code>https:</code> opens a page, <code>tel:</code> starts a call, <code>mailto:</code> an email, <code>SMSTO:</code> a text message, <code>geo:</code> a map.</p>
+<h3 id="module">Module</h3><p>One square of the QR grid. A 25 × 25 code has 25 modules on each side. Print size is easiest to think about in modules.</p><h3 id="quiet-zone">Quiet zone</h3><p>The blank margin around a code. Scanners use it to find the edge. The standard asks for 4 modules on every side, and QRotto includes it in every image.</p><h3 id="finder-patterns">Finder patterns</h3><p>The three large squares in the corners. A scanner locates the code by them, and they have no error correction, so damage there breaks a code fastest.</p><h3 id="version">Version</h3><p>The size step of a code, from version 1 (21 × 21) to version 40 (177 × 177). Each step adds 4 modules per side. The tools pick the smallest version that fits.</p><h3 id="error-correction">Error correction</h3><p>Extra data that lets a damaged code still read. Level L recovers about 7%, M about 15%, Q about 25% and H about 30%. Higher levels make the code denser.</p><h3 id="payload">Payload</h3><p>The text inside a code, such as a link or a line starting <code>WIFI:</code>. The docs show the payload each tool writes.</p><h3 id="density">Density</h3><p>How many modules a code has. Denser codes have smaller modules at any print size and are harder to scan.</p><h3 id="static-code">Static code</h3><p>A code that holds its content directly. It cannot expire and cannot be edited. Every QRotto code is static.</p><h3 id="dynamic-code">Dynamic code</h3><p>A code that holds a short address on a provider's server, which forwards to the real destination. It can be edited, and stops working if the provider stops it.</p><h3 id="escaping">Escaping</h3><p>Putting a backslash before a character that has a meaning in a format, such as <code>;</code> in a WiFi code, so it is read as part of the text.</p><h3 id="utf-8">UTF-8</h3><p>The way text is turned into bytes so that accents and other alphabets survive. All QRotto tools use it.</p><h3 id="vcard">vCard</h3><p>A standard format for contact details, starting <code>BEGIN:VCARD</code>. Phones offer to save it as a contact.</p><h3 id="icalendar-event">iCalendar event</h3><p>A standard format for calendar entries, starting <code>BEGIN:VEVENT</code> or <code>BEGIN:VCALENDAR</code>. Phones offer to add it to a calendar.</p><h3 id="scheme">Scheme</h3><p>The start of a payload that tells the phone what to do: <code>https:</code> opens a page, <code>tel:</code> starts a call, <code>mailto:</code> an email, <code>SMSTO:</code> a text message, <code>geo:</code> a map.</p>
 
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="static-codes-and-privacy"><span>Previous</span>Static codes and privacy</a><a class="docs-next" href="url-qr-code"><span>Next</span>URL</a></nav>
+ <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"></div></aside>
+</div>
 
 <footer>
  <p>
@@ -130,5 +136,6 @@
 </footer>
 
 <script src="../lightbox.js"></script>
+<script src="../docs.js" defer></script>
 </body>
 </html>
