@@ -159,6 +159,9 @@ header.site-header {
 .site-search {
   flex: 0 1 300px;
   margin-left: auto;
+  margin-bottom: 0;              /* it is a <label>; the form label margin would lift it 4px */
+  font-weight: 400;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 8px;
