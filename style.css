@@ -794,6 +794,15 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-
 .bulk-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
 .bulk-status { font-size: 1rem; color: var(--muted); margin: 14px 0 0; }
 .bulk-panel { grid-column: 1 / -1; }
+/* random QR code generator */
+.panel-title { font-size: 1.15rem; margin: 0 0 14px; }
+.range-row { display: flex; align-items: center; gap: 10px; }
+.range-row input { flex: 1; min-width: 0; }
+.reveal-box { margin-top: 16px; border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 10px 12px; background: var(--surface); }
+.reveal-box summary { cursor: pointer; font-weight: 700; }
+.reveal-box p { margin: 8px 0 0; overflow-wrap: anywhere; }
+.batch-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0 16px; align-items: end; }
+.bulk-panel + .article-meta, .generator-layout + .bulk-panel { margin-top: 24px; }
 
 /* ---------- scanner ---------- */
 .scan-drop {
