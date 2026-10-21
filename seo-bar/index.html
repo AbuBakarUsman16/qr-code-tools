@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qrotto SEO Bar Setup | Free Domain Rating Key</title>
+<meta name="description" content="Set up the Qrotto SEO Bar Chrome extension: domain age and keyword ideas work at once, and Domain Rating needs a free Ahrefs API key that takes about a minute.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://qrotto.com/seo-bar/">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#0E1120">
+<link rel="preload" href="../fonts/atkinson-hyperlegible-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<style>
+.sb-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin:0 0 20px}
+.sb-card h2{font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.sb-feat{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.sb-ok{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem}
+.sb-feat p,.sb-steps p{margin:2px 0 0;color:var(--muted)}
+.sb-steps{list-style:none;counter-reset:s;margin:0;padding:0}
+.sb-steps li{counter-increment:s;position:relative;padding:0 0 18px 46px}
+.sb-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;background:var(--accent);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.sb-steps .btn{margin-top:10px}
+.sb-note{background:var(--accent-soft);border-radius:var(--radius-lg);padding:14px 16px;margin:0 0 20px}
+</style>
+<script src="../nav.js"></script>
+<script src="../analytics.js"></script>
+</head>
+<body>
+<header class="site-header">
+ <div class="nav-wrap">
+ <a href="../" class="logo" aria-label="QRotto home"><span class="logo-text">qrotto</span><span class="logo-dot" aria-hidden="true"></span></a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sitenav">
+  <span class="nav-bars" aria-hidden="true"><span></span></span> Menu
+ </button>
+ <nav class="tool-nav" id="sitenav" aria-label="Site">
+  <details class="nav-drop">
+   <summary>Generators</summary>
+   <div class="nav-panel">
+    <span class="nav-group">Make a code</span>
+    <a href="../url-qr-code-generator">URL</a>
+    <a href="../vcard-qr-code-generator">vCard</a>
+    <a href="../wifi-qr-code-generator">WiFi</a>
+    <a href="../text-qr-code-generator">Text</a>
+    <a href="../pdf-qr-code-generator">PDF</a>
+    <a href="../image-qr-code-generator">Image</a>
+    <a href="../file-qr-code-generator">File or media</a>
+    <a href="../google-drive-qr-code-generator">Google Drive</a>
+    <a href="../email-qr-code-generator">Email</a>
+    <a href="../sms-qr-code-generator">SMS</a>
+    <a href="../phone-qr-code-generator">Phone</a>
+    <a href="../calendar-qr-code-generator">Event</a>
+    <a href="../appointment-qr-code-generator">Appointment</a>
+    <a href="../booking-qr-code-generator">Booking</a>
+    <a href="../feedback-qr-code-generator">Feedback</a>
+    <a href="../location-qr-code-generator">Location</a>
+    <a href="../social-media-qr-code-generator">Social media</a>
+    <a href="../bulk-qr-code-generator">Bulk</a>
+    <a href="../random-qr-code-generator">Random</a>
+   </div>
+  </details>
+  <a href="../qr-code-scanner">Scanner</a>
+  <a href="../qr-code-designer">Customise</a>
+  <a href="../qr-code-sign-maker">Signs</a>
+  <a href="../qr-code-stress-test">Stress test</a>
+  <a href="./">Blog</a>
+  <a href="../docs/">Docs</a>
+  <a href="../services">Services</a>
+  <a href="../about">About</a>
+  <a href="../faq">FAQ</a>
+ </nav>
+ </div>
+</header>
+<main>
+ <p class="breadcrumb"><a href="../">Home</a> / SEO Bar setup</p>
+ <div class="hero">
+ <h1>Qrotto SEO Bar: setup</h1>
+ <p>The extension adds SEO details to your Google results. Two features work right away. Domain Rating needs a free Ahrefs key, which takes about a minute.</p>
+ </div>
+ <div class="content-block">
+ <div class="sb-card">
+ <h2>Working already, no setup</h2>
+ <div class="sb-feat"><span class="sb-ok" aria-hidden="true">&#10003;</span><div><b>Domain age</b><p>How long each result's domain has been registered.</p></div></div>
+ <div class="sb-feat"><span class="sb-ok" aria-hidden="true">&#10003;</span><div><b>Keyword ideas</b><p>Related searches in a side panel. Click one to search it.</p></div></div>
+ </div>
+ <div class="sb-card">
+ <h2>One minute setup for Domain Rating</h2>
+ <ol class="sb-steps">
+ <li><b>Open your Ahrefs API keys page</b><p>Sign in if asked. A free Ahrefs account is enough.</p><a class="btn" href="https://app.ahrefs.com/account/api-keys" target="_blank" rel="noopener">Open Ahrefs API keys</a></li>
+ <li><b>Generate a key</b><p>Click <code>Generate API key for public endpoints</code>, give it any title such as "Qrotto", then click <code>Generate</code>.</p></li>
+ <li><b>Copy it</b><p>Click <code>Copy</code>. The key is shown only once, so copy it now.</p></li>
+ <li><b>Paste it into Qrotto SEO Bar</b><p>Click the Qrotto SEO Bar icon in your Chrome toolbar, paste the key and press <code>Save key</code>.</p></li>
+ </ol>
+ </div>
+ <div class="sb-note"><b>That's it.</b> Search on Google and a DR chip appears next to each result. Your key stays in your browser and is sent only to Ahrefs, never to Qrotto.</div>
+ <p class="fb-help">Domain Rating by Ahrefs, used under the Ahrefs Domain Rating License.</p>
+ </div>
+</main>
+
+<footer>
+ <p>
+ <a href="../">Home</a> ·
+ <a href="./">Blog</a> ·
+ <a href="../docs/">Docs</a> ·
+ <a href="../services">Services</a> ·
+ <a href="../about">About</a> ·
+    <a href="../author">Editorial</a> ·
+ <a href="../faq">FAQ</a> ·
+ <a href="../contact">Contact</a> ·
+ <a href="../privacy-policy">Privacy Policy</a> ·
+ <a href="../terms">Terms</a>
+ </p>
+ &copy; 2026 QRotto. Free QR code generators for everyone.
+</footer>
+</body>
+</html>
