@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>vCard QR Code Generator With Photo: What Actually Fits</title>
+<title>vCard QR Code Generator With Photo: What Fits, How to Make</title>
 <meta name="description" content="Looking for a vCard QR code generator with photo? We measured it. A 32 pixel thumbnail needs 53 mm of print, and a real photo does not fit the format at all.">
 <link rel="canonical" href="https://qrotto.com/blog/vcard-qr-code-with-photo">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -19,14 +19,14 @@
 <link rel="stylesheet" href="../style.css">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="QRotto">
-<meta property="og:title" content="vCard QR Code Generator With Photo: What Actually Fits">
+<meta property="og:title" content="vCard QR Code Generator With Photo: What Fits, How to Make">
 <meta property="og:description" content="Looking for a vCard QR code generator with photo? We measured it. A 32 pixel thumbnail needs 53 mm of print, and a real photo does not fit the format at all.">
 <meta property="og:url" content="https://qrotto.com/blog/vcard-qr-code-with-photo">
 <meta property="og:image" content="https://qrotto.com/images/vcard-photo-qr-test.png">
 <meta property="article:published_time" content="2026-09-21">
 <meta property="article:author" content="QRotto">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="vCard QR Code Generator With Photo: What Actually Fits">
+<meta name="twitter:title" content="vCard QR Code Generator With Photo: What Fits, How to Make">
 <meta name="twitter:description" content="Looking for a vCard QR code generator with photo? We measured it. A 32 pixel thumbnail needs 53 mm of print, and a real photo does not fit the format at all.">
 <meta name="twitter:image" content="https://qrotto.com/images/vcard-photo-qr-test.png">
 <meta name="author" content="QRotto">
@@ -38,11 +38,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "vCard QR Code Generator With Photo: What Actually Fits",
+  "headline": "vCard QR Code Generator With Photo: What Fits, How to Make",
   "description": "Looking for a vCard QR code generator with photo? We measured it. A 32 pixel thumbnail needs 53 mm of print, and a real photo does not fit the format at all.",
   "image": "https://qrotto.com/images/vcard-photo-qr-test.png",
   "datePublished": "2026-09-21",
-  "dateModified": "2026-09-21",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://qrotto.com/blog/vcard-qr-code-with-photo" }
@@ -134,8 +134,10 @@
         <li><a href="#the-hard-ceiling">The hard ceiling nobody mentions</a></li>
         <li><a href="#why-a-photo-is-so-expensive">Why a photo is so expensive</a></li>
         <li><a href="#what-to-do-instead">What to do instead</a></li>
+        <li><a href="#how-to-make-one">How to make a vCard QR code with a photo</a></li>
         <li><a href="#how-we-tested-this">How we tested this</a></li>
         <li><a href="#the-summary">The summary</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
     </nav>
 
@@ -204,11 +206,42 @@
     <h2 id="what-to-do-instead">What to do instead</h2>
     <p>Everyone asking this wants the same outcome: the person who scans your card ends up with your face next to your name in their phone. There are two honest ways to get that, and neither involves putting the image in the code.</p>
     <ol>
-      <li><strong>Point the code at a contact page you control.</strong> The page can show the photo at any size and offer a downloadable contact file that includes it. The code itself stays under 15 mm because it only carries a short URL. This is the approach we would use for anything printed.</li>
+      <li><strong>Point the code at a contact page you control.</strong> The page can show the photo at any size and offer a downloadable contact file that includes it. The code itself stays at the 2 cm (0.8 in) minimum because it only carries a short URL. This is the approach we would use for anything printed.</li>
       <li><strong>Use a plain vCard code and let their phone find the photo.</strong> Save a contact with an email address and most phones will pull a profile picture from the linked account or from the person's own address book sync. You get the photo without paying for it in millimetres.</li>
     </ol>
     <p>There is a third option people try that we would avoid: putting your photo <em>next to</em> the code on the card, and a plain vCard inside it. That is fine, and it is what most well designed cards already do. It just is not the same thing as a photo in the code, and it works precisely because the photo is not in the code.</p>
     <p>Our <a href="../vcard-qr-code-generator">vCard generator</a> deliberately does not offer a photo field, for the reasons above. If you want to test any code you have made, including one from another tool with a photo in it, our <a href="../qr-code-stress-test">stress test</a> will show you how much blur and how small a print it survives.</p>
+
+
+    <h2 id="how-to-make-one">How to make a vCard QR code with a photo</h2>
+    <p>Our <a href="../vcard-qr-code-generator">vCard QR code generator</a> deliberately has no photo field, for the size reasons below. You can still build a code with a photo, because a vCard code is just text, and our <a href="../text-qr-code-generator">text QR code generator</a> encodes exactly what you paste. We tested that on the live page with a multi-line vCard containing a photo line, and the code read back identical to what we pasted.</p>
+<h3>Step 1: Choose how the photo is attached</h3>
+    <p>This is the decision that sets the size. The measurements above show what each route costs.</p>
+
+    <h3>Step 2: Write the contact text</h3>
+    <p>For the link route, a complete card looks like this:</p>
+    <p style="overflow-wrap:anywhere"><code>BEGIN:VCARD</code><br>
+       <code>VERSION:3.0</code><br>
+       <code>FN:Sarah Mitchell</code><br>
+       <code>N:Mitchell;Sarah;;;</code><br>
+       <code>ORG:Northgate Design</code><br>
+       <code>TEL;TYPE=CELL:+14155550142</code><br>
+       <code>EMAIL:sarah@northgate.design</code><br>
+       <code>PHOTO;VALUE=uri:https://northgate.design/sarah.jpg</code><br>
+       <code>END:VCARD</code></p>
+    <p>The <code>PHOTO;VALUE=uri:</code> line followed by the picture's address is the part that adds the photo. The format allows it. Whether a particular phone then goes and downloads that picture when it saves the contact is something we have not tested, so check on the devices that matter to you.</p>
+
+    <h3>Step 3: Generate the code</h3>
+    <p>Paste the finished text into the text generator and download the code. Use PNG for screens and SVG if anything is going to a printer.</p>
+
+    <h3>Step 4: Scan it back and test on a phone</h3>
+    <p>Read the code with a plain <a href="../qr-code-scanner">QR scanner</a> first and check the text for typos. Then scan it with a phone, save the contact, and open the saved entry to see whether the name, number and photo all landed. Do this before anything is printed.</p>
+
+    <figure>
+      <img src="../images/vcard-photo-routes.png" width="1515" height="955" loading="lazy"
+           alt="Three QR codes for the same contact drawn at the same module size. With no photo it is 53 by 53 modules and needs 24.4 mm. With a link to a photo it is 57 by 57 modules and needs 26.0 mm. With a 32 pixel thumbnail embedded it is 137 by 137 modules, much larger, and needs 58.0 mm.">
+      <figcaption>The same contact three ways, drawn at the same module size. The photo link adds a little. The embedded thumbnail dwarfs everything else. This used a different contact from the test above, so the embedded size here is 58 mm rather than 53 mm.</figcaption>
+    </figure>
 
     <h2 id="how-we-tested-this">How we tested this</h2>
     <ul>
@@ -224,9 +257,32 @@
     <h2 id="the-summary">The summary</h2>
     <p>You can put a photo in a vCard QR code. The specification allows it, the encoder will do it, and the result decodes. It is still the wrong thing to do, because the code you get needs more printed space than the card it was meant to go on.</p>
     <div class="takeaway">
-      <p><strong>A 32 pixel thumbnail costs you 32 mm of extra printed width.</strong> Point the code at a page with the photo on it instead, and keep the code under 15 mm.</p>
+      <p><strong>A 32 pixel thumbnail costs you 32 mm of extra printed width.</strong> Point the code at a page with the photo on it instead, and keep the code near the 2 cm (0.8 in) minimum.</p>
     </div>
     <p>If you want the contact card itself, our <a href="../vcard-qr-code-generator">vCard QR code generator</a> builds one from the fields that are worth carrying, and our <a href="qr-code-for-business-card">business card guide</a> has the millimetre by millimetre breakdown of what each field costs.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <h3>Can a vCard QR code hold a photo?</h3>
+    <p>A very small thumbnail can be embedded, but it makes the code several times larger. In our test a 32 pixel thumbnail took the code from 24.4 mm to 58.0 mm. A photo of ordinary size does not fit in a QR code at all.</p>
+
+    <h3>Will the photo show up when someone saves my contact?</h3>
+    <p>That depends on the phone and on how the photo was attached. We did not test this across devices, so we cannot promise it. Scan your own finished code on the phones that matter to you and open the saved contact.</p>
+
+    <h3>What is the easiest way to get my photo in front of people?</h3>
+    <p>Print it beside the code on the card, or link to a contact page that shows it. Both give people your face without asking the code to carry it.</p>
+
+    <h3>Can I put a picture in the middle of the QR code instead?</h3>
+    <p>That is a logo, not contact data. It covers some of the code's modules and uses up error correction, so it needs a higher level and a check that the code still reads. Our <a href="../qr-code-designer">custom QR code generator</a> decodes the styled code after each change and tells you whether it still scans.</p>
+
+    <h3>Does a vCard QR code expire?</h3>
+    <p>A static one does not. It is a printed pattern holding the contact text, with nothing behind it that can lapse.</p>
+
+    <h3>Can I change the details after printing?</h3>
+    <p>No. A static code cannot be edited. If your details may change, link to a page you control and update the page instead.</p>
+
+    <h3>Is it free to make a vCard QR code?</h3>
+    <p>Yes. Our <a href="../vcard-qr-code-generator">vCard generator</a> and <a href="../text-qr-code-generator">text generator</a> are free, need no signup, and build the code in your browser, so nothing you type is uploaded.</p>
  </article>
 
   <div class="related">
