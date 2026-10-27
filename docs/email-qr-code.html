@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Email QR Code: Documentation",
   "description": "Reference for the QRotto email QR code generator: the mailto link it writes, how subject and message are encoded, and what the scanner sees.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/email-qr-code"
@@ -106,10 +106,10 @@
  <h1>Email QR code</h1>
  <p class="docs-lead">Makes a code that opens a new email to you, already addressed, with an optional subject and message. The person still presses send.</p>
  <div class="docs-actions"><a class="btn" href="../email-qr-code-generator">Open the email generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code" aria-current="page">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#size">Message length and size</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd><code>mailto:</code> link, with <code>subject</code> and <code>body</code> when filled</dd><dt>Encoding</dt><dd>Subject and message are percent encoded, so spaces become <code>%20</code></dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -133,11 +133,29 @@
  <li>On a phone with no mail app set up, the code may do nothing useful.</li>
 </ul>
 
+<h2 id="size">Message length and size</h2>
+<p>Every space in the subject and message becomes <code>%20</code>, three characters instead of one, so email codes grow faster than you expect.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Content</th><th>Grid</th><th>Smallest print width</th></tr></thead><tbody><tr><td>Address only</td><td>25 × 25</td><td>20 mm (0.8 in)</td></tr><tr><td>Address, subject and a one line message</td><td>45 × 45</td><td>21.2 mm (0.8 in)</td></tr><tr><td>Address, subject and a 300 character message</td><td>73 × 73</td><td>32.4 mm (1.3 in)</td></tr></tbody></table></div>
+<p>Keep the message to a short first line such as <em>Hi, I would like a quote for</em> and let the person finish it.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>A space before or after the address</h3>
+<p>Copying an address from a document often brings a space with it. The tool trims it, so this is safe. Typed as <code>" hello@example.com "</code> with a two line message, the code contains:</p>
+<pre class="payload"><span class="k">mailto:</span>hello@example.com?subject=Hi%20there&amp;body=Line%20one%0ALine%20two</pre>
+<p>The line break is kept as <code>%0A</code>, so the message arrives on two lines.</p>
+<h3>Expecting the code to send the email</h3>
+<p>It only opens a draft. If you need the message to reach you without the person pressing send, use a form instead, for example with the <a href="feedback-qr-code">feedback generator</a>.</p>
+<h3>Using a personal address on printed material</h3>
+<p>Anyone who scans can read the address, and printed codes stay around for years. A shared address such as hello@ or bookings@ is easier to keep and hand over.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Will the email code work if the phone has no mail app?</h3><p>On a phone with no mail account set up, the phone may ask which app to use or do nothing useful. Most phones have one, but print your address under the code as a backup.</p><h3>Can I add CC or an attachment?</h3><p>No. The generator writes the address, subject and message only.</p><h3>Is the email sent from my address?</h3><p>No, it is sent from the address of the person who scans, after they press send. The code only fills in where it goes.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="google-drive-qr-code"><span>Previous</span>Google Drive</a><a class="docs-next" href="sms-qr-code"><span>Next</span>SMS</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../email-qr-code-generator">Open the email generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#size">Message length and size</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../email-qr-code-generator">Open the email generator</a></div></div></aside>
 </div>
 
 <footer>

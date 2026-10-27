@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Social Media QR Code: Documentation",
   "description": "Reference for the QRotto social media QR code generator: the ten platforms, the profile link each builds, and how usernames are cleaned.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/social-media-qr-code"
@@ -106,10 +106,10 @@
  <h1>Social media QR code</h1>
  <p class="docs-lead">Pick a platform and type your username. The tool builds your profile link and puts it in the code.</p>
  <div class="docs-actions"><a class="btn" href="../social-media-qr-code-generator">Open the social media generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code" aria-current="page">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#platforms">Platforms and links</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#platforms">Platforms and links</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd><code>https://</code> plus the platform address plus your username</dd><dt>Username cleaning</dt><dd>A leading @ and all spaces are removed</dd><dt>Preview</dt><dd>The link is shown under the field as you type</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -132,11 +132,26 @@
  <li>One platform per code. For several, link to one page that lists them all; see <a href="../blog/one-qr-code-for-all-social-media">One QR code for all social media</a>.</li>
 </ul>
 
+<h2 id="test">What we tested</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Platform</th><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td>Instagram</td><td><code>@qrotto</code></td><td><code>https://instagram.com/qrotto</code></td></tr><tr><td>YouTube</td><td><code>@qrotto</code></td><td><code>https://youtube.com/@qrotto</code></td></tr><tr><td>TikTok</td><td><code>qrotto</code></td><td><code>https://tiktok.com/@qrotto</code></td></tr><tr><td>LinkedIn</td><td><code>jane doe</code></td><td><code>https://linkedin.com/in/janedoe</code></td></tr><tr><td>Instagram</td><td><code>https://instagram.com/qrotto</code></td><td><code>https://instagram.com/https://instagram.com/qrotto</code></td></tr></tbody></table></div>
+<p>Typing the @ or leaving it out gives the same link. The last row is a mistake covered below.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Pasting the whole profile link</h3>
+<p>The field wants the username only. Pasting a full profile address puts the platform address in twice, and the code opens a page that does not exist. To use a full link you already have, paste it into the <a href="url-qr-code">URL generator</a> instead.</p>
+<h3>Typing your display name</h3>
+<p>Spaces are removed, so <code>jane doe</code> becomes <code>janedoe</code>. That is only right if <code>janedoe</code> is really your username. Copy it from your profile address rather than typing your name.</p>
+<h3>Changing your username after printing</h3>
+<p>The username is inside the code. If you rename your account, every printed code opens the old address. Print once you are sure of the name.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Does it open the app or the website?</h3><p>The code holds a normal web address. If the app is installed, the phone usually opens the profile there; if not, it opens in the browser.</p><h3>Can I put all my social accounts in one code?</h3><p>Not in one of these codes. Make a single page that lists them and link to it; see <a href='../blog/one-qr-code-for-all-social-media'>One QR code for all social media</a>.</p><h3>How big should I print it?</h3><p>Our Instagram test made a 29 × 29 grid, so 20 mm (0.8 in) is enough.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="location-qr-code"><span>Previous</span>Location</a><a class="docs-next" href="bulk-qr-codes"><span>Next</span>Bulk</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#platforms">Platforms and links</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../social-media-qr-code-generator">Open the social media generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#platforms">Platforms and links</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../social-media-qr-code-generator">Open the social media generator</a></div></div></aside>
 </div>
 
 <footer>

@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Phone QR Code: Documentation",
   "description": "Reference for the QRotto phone QR code generator: the tel link it writes, how the number is cleaned, and when a plus sign is added.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/phone-qr-code"
@@ -106,10 +106,10 @@
  <h1>Phone QR code</h1>
  <p class="docs-lead">Makes a code that opens the phone's dialler with your number filled in. The caller still presses call.</p>
  <div class="docs-actions"><a class="btn" href="../phone-qr-code-generator">Open the phone generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code" aria-current="page">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd><code>tel:</code> followed by the number</dd><dt>Number cleaning</dt><dd>Spaces, brackets, dashes and dots are removed</dd><dt>Plus sign</dt><dd>Added when the number starts with neither + nor 0</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -132,11 +132,27 @@
  <li>It cannot add an extension reliably. Print the extension next to the code.</li>
 </ul>
 
+<h2 id="test">What we tested</h2>
+<p>We typed the same kind of number five ways into the live generator and decoded each code it drew.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td><code>+1 (555) 123-4567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>15551234567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>0300 1234567</code></td><td><code>tel:03001234567</code></td></tr><tr><td><code>555.123.4567</code></td><td><code>tel:+5551234567</code></td></tr><tr><td><code>+1 555 123 4567 ext 22</code></td><td><code>tel:+15551234567ext22</code></td></tr></tbody></table></div>
+<p>The first two are correct. A plain digit string gets a plus in front, which is right when it already starts with the country code. The last two show the mistakes below.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>A US number without the 1</h3>
+<p>Typed as <code>555.123.4567</code>, the tool adds a plus and the code dials <code>+5551234567</code>. That is read as an international number, not a US one, so the call fails. Type <code>+1</code> first, or the full <code>15551234567</code>.</p>
+<h3>Writing the extension into the number</h3>
+<p>Letters are kept, so <code>ext 22</code> ends up glued to the number as <code>ext22</code>. Phones handle this differently, and many drop it or fail. Leave the extension out of the code and print it next to it.</p>
+<h3>Using a local number on something people take home</h3>
+<p>A number starting with 0 only dials correctly inside that country. For flyers, business cards and anything that may travel, use the international form.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Does scanning the code call the number straight away?</h3><p>No. The phone opens its dialler with the number filled in and waits for the person to press call.</p><h3>Can one code hold two numbers?</h3><p>No, one code holds one number. For several numbers, a <a href='vcard-qr-code'>vCard code</a> or a link to a contact page works better.</p><h3>How big should I print it?</h3><p>Our test number made a 25 × 25 grid, so 20 mm (0.8 in) is enough. Phone codes are short and among the easiest to scan.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="sms-qr-code"><span>Previous</span>SMS</a><a class="docs-next" href="event-qr-code"><span>Next</span>Event</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../phone-qr-code-generator">Open the phone generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../phone-qr-code-generator">Open the phone generator</a></div></div></aside>
 </div>
 
 <footer>

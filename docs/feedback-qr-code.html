@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Feedback QR Code: Documentation",
   "description": "Reference for the QRotto feedback QR code generator: Google review, form and email modes, the links each writes, and which input wins.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/feedback-qr-code"
@@ -106,10 +106,10 @@
  <h1>Feedback QR code</h1>
  <p class="docs-lead">Sends people straight to where you want feedback: your Google review box, a form, or an email to you.</p>
  <div class="docs-actions"><a class="btn" href="../feedback-qr-code-generator">Open the feedback generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code" aria-current="page">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#modes">Modes and fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#modes">Modes and fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#which">Which mode to choose</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Modes</dt><dd>Google review, A form, Email</dd><dt>Google review</dt><dd>From a Place ID, or a review link you already have</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -135,11 +135,27 @@
  <li>It collects no feedback itself and shows you no results.</li>
 </ul>
 
+<h2 id="which">Which mode to choose</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Mode</th><th>Best for</th><th>Grid in our test</th></tr></thead><tbody><tr><td>Google review</td><td>Getting more public reviews on your Google listing</td><td>37 × 37</td></tr><tr><td>A form</td><td>Private feedback with your own questions</td><td>25 × 25</td></tr><tr><td>Email</td><td>A quick note to you, with no form to set up</td><td>37 × 37</td></tr></tbody></table></div>
+<p>All three are static codes. They point straight to Google, your form or your inbox, with no QRotto page in between.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Using the listing link instead of the review link</h3>
+<p>A link to your business on Google Maps opens the listing, and the person still has to find the review button. The Place ID mode writes the address that opens the review box directly:</p>
+<pre class="payload"><span class="k">https://</span>search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4</pre>
+<h3>Pasting a form link without https://</h3>
+<p>This one is safe: the tool adds it. Typed as <code>forms.gle/AbC123</code>, the code contains <code>https://forms.gle/AbC123</code>.</p>
+<h3>Filling both Place ID and your own link</h3>
+<p>When both are filled, your own link wins and the Place ID is ignored. Clear the one you do not want, so you know which link is printed.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Where do I find my Google Place ID?</h3><p>Search for your business in Google's Place ID Finder. It starts with <code>ChIJ</code>. Copy the whole string.</p><h3>Can I see how many people scanned it?</h3><p>Not from the code, because it is static. Google shows your new reviews, and form tools show their own response counts.</p><h3>Is it allowed to offer a reward for reviews?</h3><p>Google's review policy does not allow offering incentives for reviews. Ask everyone, not only happy customers.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="booking-qr-code"><span>Previous</span>Booking</a><a class="docs-next" href="location-qr-code"><span>Next</span>Location</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#modes">Modes and fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../feedback-qr-code-generator">Open the feedback generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#modes">Modes and fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#which">Which mode to choose</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../feedback-qr-code-generator">Open the feedback generator</a></div></div></aside>
 </div>
 
 <footer>

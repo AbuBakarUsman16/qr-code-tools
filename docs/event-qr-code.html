@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Event QR Code: Documentation",
   "description": "Reference for the QRotto event QR code generator: the iCalendar VEVENT text it writes, how dates and times are stored, escaping, and limits.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/event-qr-code"
@@ -106,10 +106,10 @@
  <h1>Event QR code</h1>
  <p class="docs-lead">Makes a code that offers to add an event to the phone's calendar, with a name, start and end, place and notes.</p>
  <div class="docs-actions"><a class="btn" href="../calendar-qr-code-generator">Open the event generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code" aria-current="page">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#times">Dates and times</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#times">Dates and times</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#special">Commas, semicolons and line breaks</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd>An iCalendar <code>VEVENT</code>, one property per line</dd><dt>Required</dt><dd>Event name</dd><dt>Characters escaped</dt><dd><code>\</code> <code>;</code> <code>,</code> and line breaks</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -143,11 +143,33 @@ END:VEVENT</pre>
  <li>The event is written without the outer <code>VCALENDAR</code> wrapper that the Appointment generator adds. Test with the phones your guests use.</li>
 </ul>
 
+<h2 id="special">Commas, semicolons and line breaks</h2>
+<p>Commas and semicolons have a meaning inside calendar text, so the tool puts a backslash before them, and a line break in the notes is written as <code>\n</code>. We tested a name, place and notes full of them:</p>
+<p class="payload-label">Name Quiz night; teams of 4, prizes, with a two line note</p>
+<pre class="payload"><span class="k">BEGIN:VEVENT</span>
+SUMMARY:Quiz night\; teams of 4\, prizes
+DTSTART:20261114T190000
+LOCATION:The Crown\, High St
+DESCRIPTION:Line one\nLine two
+END:VEVENT</pre>
+<p>The phone shows the text without the backslashes. There is no end time here because we left that field empty.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Expecting it to adjust for time zones</h3>
+<p>Times are clock times with no zone, so 7 pm is 7 pm on every phone. For an online event with people in other countries, write the time zone in the notes, for example <em>7 pm New York time</em>.</p>
+<h3>Long notes</h3>
+<p>Every field is inside the code. Our full test event made a 53 × 53 grid, printed at least 24.4 mm (1 in) wide. Keep notes to one line and put the rest on your website.</p>
+<h3>Printing before the details are final</h3>
+<p>The date and place are written into the code. If the event moves, the printed codes still add the old one to people's calendars. For an event that may change, link to an event page with the <a href="url-qr-code">URL generator</a>.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Does the event code add the event automatically?</h3><p>No. The phone shows the event and asks before adding it to the calendar.</p><h3>Do event codes work on iPhone?</h3><p>Support for calendar codes in phone cameras varies by phone and app. Test with the phones your guests use, and print the date and time next to the code too.</p><h3>Can I add a reminder?</h3><p>Not with this generator. The <a href='appointment-qr-code'>Appointment generator</a> adds a reminder.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="phone-qr-code"><span>Previous</span>Phone</a><a class="docs-next" href="appointment-qr-code"><span>Next</span>Appointment</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#times">Dates and times</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../calendar-qr-code-generator">Open the event generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#times">Dates and times</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#special">Commas, semicolons and line breaks</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../calendar-qr-code-generator">Open the event generator</a></div></div></aside>
 </div>
 
 <footer>

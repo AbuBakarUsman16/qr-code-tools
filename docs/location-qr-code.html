@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Location QR Code: Documentation",
   "description": "Reference for the QRotto location QR code generator: address and coordinate modes, Google Maps links versus geo: codes, and which to choose.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/location-qr-code"
@@ -106,10 +106,10 @@
  <h1>Location QR code</h1>
  <p class="docs-lead">Opens a map at your place. Give an address or GPS coordinates, and choose a Google Maps link or a geo: code.</p>
  <div class="docs-actions"><a class="btn" href="../location-qr-code-generator">Open the location generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code" aria-current="page">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#choose">Maps link or geo:</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#choose">Maps link or geo:</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Modes</dt><dd>An address, or GPS coordinates</dd><dt>Formats</dt><dd>Google Maps link, or <code>geo:</code> for coordinates</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -130,11 +130,24 @@
 <h2 id="choose">Maps link or geo:</h2>
 <p>A <code>geo:</code> code is shorter and does not go through a website: the phone hands it straight to its default map app. Support is good on Android and less consistent on iPhone. The Google Maps link works on any phone with a browser, so it is the safer choice when you cannot predict who will scan. Our <a href="../blog/location-qr-code-format-test">location format test</a> compares them.</p>
 
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Commas instead of decimal points</h3>
+<p>Coordinates are written as typed. In countries that write decimals with a comma, it is easy to type <code>53,959965</code>. The code then contains:</p>
+<pre class="payload"><span class="k">https://</span>maps.google.com/?q=53,959965,-1,087298</pre>
+<p>The map reads that as four numbers, not two, and the pin lands in the wrong place or nowhere. Use a dot for decimals.</p>
+<h3>Latitude and longitude the wrong way round</h3>
+<p>Latitude comes first. Swapped, our York test point became <code>geo:-1.087298,53.959965</code>, a point in the Indian Ocean. Google Maps shows latitude first when you click a point, so copy from there.</p>
+<h3>An address that matches several places</h3>
+<p>Address mode makes a Google Maps search, so a short address such as <em>Main Street</em> can match many towns. Include the town and postcode, or use coordinates for a field, car park or back entrance with no clear address.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Does a location code work offline?</h3><p>A <code>geo:</code> code is handed straight to the map app, so it can open offline if the app has offline maps. The Google Maps link needs a connection to load.</p><h3>Can it start turn by turn directions?</h3><p>It opens the map at your place. The person taps Directions from there.</p><h3>How big should I print it?</h3><p>Our address code made a 37 × 37 grid (20 mm (0.8 in)). The <code>geo:</code> code was 25 × 25 (20 mm (0.8 in)), the smallest of the three.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="feedback-qr-code"><span>Previous</span>Feedback</a><a class="docs-next" href="social-media-qr-code"><span>Next</span>Social media</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#choose">Maps link or geo:</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../location-qr-code-generator">Open the location generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#choose">Maps link or geo:</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../location-qr-code-generator">Open the location generator</a></div></div></aside>
 </div>
 
 <footer>

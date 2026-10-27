@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Text QR Code: Documentation",
   "description": "Reference for the QRotto text QR code generator: what it writes, how it handles accents and empty input, how long text affects size, and limits.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/text-qr-code"
@@ -106,10 +106,10 @@
  <h1>Text QR code</h1>
  <p class="docs-lead">Puts plain text into a code. Scanning it shows the text on screen, with no link to open and no internet needed.</p>
  <div class="docs-actions"><a class="btn" href="../text-qr-code-generator">Open the text generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code" aria-current="page">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#length">Length and size</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#length">Length and size</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd>Your text exactly, trimmed at both ends</dd><dt>Text encoding</dt><dd>UTF-8</dd><dt>Error correction</dt><dd>Level M</dd><dt>Most it can hold</dt><dd>2,331 bytes at level M, in the largest code</dd></dl>
@@ -134,11 +134,22 @@
  <li>Text cannot be changed after printing. For anything that may change, link to a page instead.</li>
 </ul>
 
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Putting a web address in a text code</h3>
+<p>A text code holds the words exactly, with nothing added. Typed as <code>example.com/menu</code>, the code contains <code>example.com/menu</code> with no <code>https://</code>. A phone may show it as plain words rather than a link. Use the <a href="url-qr-code">URL generator</a> for links.</p>
+<h3>Writing a whole page of text</h3>
+<p>A 500 character note made a 85 × 85 grid that needs printing at least 37.2 mm (1.5 in) wide, and reading a long block on a phone after scanning is not pleasant. Keep text codes to a few lines.</p>
+<h3>Printing without checking the box</h3>
+<p>An empty box makes a code with a single space in it, which looks fine on paper and shows nothing when scanned. Scan your printed copy before you print more.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Do text codes need the internet?</h3><p>No. The text is inside the code, so the phone shows it with no connection. That makes them good for places with no signal.</p><h3>Can I use other languages?</h3><p>Yes. Text is written as UTF-8, so accents, Arabic, Urdu and other scripts work. Each such character takes more space than a plain letter, so the code grows faster.</p><h3>Can a text code be edited after printing?</h3><p>No. Nothing is stored online, so there is nothing to edit. Print a new code.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="wifi-qr-code"><span>Previous</span>WiFi</a><a class="docs-next" href="pdf-qr-code"><span>Next</span>PDF</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#length">Length and size</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../text-qr-code-generator">Open the text generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#length">Length and size</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../text-qr-code-generator">Open the text generator</a></div></div></aside>
 </div>
 
 <footer>

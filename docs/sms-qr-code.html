@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "SMS QR Code: Documentation",
   "description": "Reference for the QRotto SMS QR code generator: the SMSTO text it writes, how the number is cleaned, the prefilled message, and limits.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/sms-qr-code"
@@ -106,10 +106,10 @@
  <h1>SMS QR code</h1>
  <p class="docs-lead">Makes a code that opens a text message to your number, with a message already typed. The person still presses send.</p>
  <div class="docs-actions"><a class="btn" href="../sms-qr-code-generator">Open the SMS generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code" aria-current="page">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#size">Message length and size</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd><code>SMSTO:&lt;number&gt;:&lt;message&gt;</code></dd><dt>Number cleaning</dt><dd>Spaces are removed. Brackets and dashes are kept.</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -131,11 +131,32 @@
  <li>Standard message rates apply to the person sending.</li>
 </ul>
 
+<h2 id="size">Message length and size</h2>
+<p>The number and the message both go inside the code, so every character you add makes the grid bigger. We made two codes with the same number:</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Message</th><th>Grid</th><th>Smallest print width</th></tr></thead><tbody><tr><td>BOOK table for 2 (16 characters)</td><td>29 × 29</td><td>20 mm (0.8 in)</td></tr><tr><td>160 characters, one full text message</td><td>53 × 53</td><td>24.4 mm (1 in)</td></tr></tbody></table></div>
+<p>A short keyword is enough. The person can type the rest themselves, and a small code scans faster from a poster or a table card.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Typing the number with brackets and dashes</h3>
+<p>Spaces are removed, but brackets and dashes stay. Typed as <code>+1 (555) 123-4567</code>, the code contains:</p>
+<pre class="payload"><span class="k">SMSTO:</span>+1(555)123-4567:Hi</pre>
+<p>Most phones cope, but some messaging apps treat the brackets as part of the number. Type digits only, starting with + and the country code.</p>
+<h3>Leaving out the country code</h3>
+<p>A local number only works for people in your country. Tourists and anyone on a foreign SIM will text the wrong place. Always start with + and the country code.</p>
+<h3>Worrying about colons in the message</h3>
+<p>The format uses a colon to split the number from the message, so people expect a colon in the text to break it. It does not: everything after the second colon is the message.</p>
+<p class="payload-label">Message BOOK: 2 people, 7:30pm</p>
+<pre class="payload"><span class="k">SMSTO:</span>+15551234567:BOOK: 2 people, 7:30pm</pre>
+<p>We scanned this with jsQR and the whole message came back as typed.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Does the SMS code send the text by itself?</h3><p>No. Scanning opens the messaging app with the number and message filled in. Nothing is sent until the person presses send, and the normal message rate applies to them.</p><h3>Can I change the number after printing?</h3><p>No. The number is written into the code itself. If the number may change, put a link to a page with your contact details in the code instead, using the <a href='url-qr-code'>URL generator</a>.</p><h3>Does it work on both iPhone and Android?</h3><p>SMSTO is the common format for text message codes, but camera apps differ. Test one printed copy on the phones your customers use before you print a batch.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="email-qr-code"><span>Previous</span>Email</a><a class="docs-next" href="phone-qr-code"><span>Next</span>Phone</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../sms-qr-code-generator">Open the SMS generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#fields">Fields</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#size">Message length and size</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../sms-qr-code-generator">Open the SMS generator</a></div></div></aside>
 </div>
 
 <footer>

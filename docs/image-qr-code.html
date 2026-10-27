@@ -33,7 +33,7 @@
   "@type": "TechArticle",
   "headline": "Image QR Code: Documentation",
   "description": "Reference for the QRotto image QR code generator: why it holds a link not the picture, how it spots page links, and what to check.",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/docs/image-qr-code"
@@ -106,10 +106,10 @@
  <h1>Image QR code</h1>
  <p class="docs-lead">A QR code cannot hold a picture. This tool puts the address of an image into a code and warns when the address looks like a page rather than the picture itself.</p>
  <div class="docs-actions"><a class="btn" href="../image-qr-code-generator">Open the image generator</a></div>
- <p class="docs-checked">Checked against the live tool on 19 October 2026 by decoding the codes it made.</p>
+ <p class="docs-checked">Checked against the live tool on 27 October 2026 by decoding the codes it made.</p>
  <details class="docs-all"><summary>All docs</summary><div class="docs-all-list"><h2>Start here</h2><ul><li><a href="how-qrotto-works">How QRotto works</a></li><li><a href="print-size-and-scan-badge">Print size and the scan badge</a></li><li><a href="static-codes-and-privacy">Static codes and privacy</a></li><li><a href="glossary">Glossary</a></li></ul><h2>Generators</h2><ul><li><a href="url-qr-code">URL</a></li><li><a href="vcard-qr-code">vCard</a></li><li><a href="wifi-qr-code">WiFi</a></li><li><a href="text-qr-code">Text</a></li><li><a href="pdf-qr-code">PDF</a></li><li><a href="image-qr-code" aria-current="page">Image</a></li><li><a href="file-qr-code">File or media</a></li><li><a href="google-drive-qr-code">Google Drive</a></li><li><a href="email-qr-code">Email</a></li><li><a href="sms-qr-code">SMS</a></li><li><a href="phone-qr-code">Phone</a></li><li><a href="event-qr-code">Event</a></li><li><a href="appointment-qr-code">Appointment</a></li><li><a href="booking-qr-code">Booking</a></li><li><a href="feedback-qr-code">Feedback</a></li><li><a href="location-qr-code">Location</a></li><li><a href="social-media-qr-code">Social media</a></li><li><a href="bulk-qr-codes">Bulk</a></li></ul><h2>Other tools</h2><ul><li><a href="qr-code-scanner">Scanner</a></li><li><a href="qr-code-designer">Designer</a></li><li><a href="sign-maker">Sign maker</a></li><li><a href="stress-test">Stress test</a></li></ul></div></details>
  <article class="prose docs-prose">
- <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#notes">The notes it shows</a></li><li><a href="#limits">What it does not do</a></li></ol></nav>
+ <nav class="toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#glance">At a glance</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#notes">The notes it shows</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 
 <h2 id="glance">At a glance</h2>
 <dl class="spec"><dt>Format written</dt><dd>The link, with <code>https://</code> added if missing</dd><dt>Picture formats recognised</dt><dd>jpg, jpeg, png, gif, webp, avif, svg, bmp, tif, tiff</dd><dt>Updates</dt><dd>As you type</dd><dt>Error correction</dt><dd>Level M</dd></dl>
@@ -127,11 +127,25 @@
  <li>It cannot put the picture itself into the code; even a small photo is many times what the largest code holds.</li>
 </ul>
 
+<h2 id="test">What we tested</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Link</th><th>Grid</th><th>The tool says</th></tr></thead><tbody><tr><td><code>https://example.com/poster.jpg</code></td><td>29 × 29</td><td>30 characters. Open it in a fresh tab first and check you see the picture on its own.</td></tr><tr><td>A Google Drive file link</td><td>33 × 33</td><td>That is a Google link. Our Drive generator rewrites it so the image previews properly.</td></tr><tr><td>A 114 character picture link</td><td>45 × 45</td><td>At 114 characters this is a long link, which makes a dense code that needs printing larger.</td></tr></tbody></table></div>
+
+<h2 id="mistakes">Common mistakes</h2>
+<h3>Linking to a gallery page instead of the picture</h3>
+<p>A page that shows the picture is fine to link to, but it loads slowly and may show adverts or a cookie banner first. A direct link ending in <code>.jpg</code> or <code>.png</code> opens the picture on its own.</p>
+<h3>A private Drive or cloud link</h3>
+<p>If the picture is only shared with you, everyone else sees a sign in page. Set the file to anyone with the link, then open the link in a private browser window to check. The <a href="google-drive-qr-code">Google Drive generator</a> also rewrites the link so the picture previews properly.</p>
+<h3>Deleting or moving the picture later</h3>
+<p>The code only holds the address. Rename, move or delete the file and every printed code breaks. Keep the picture at the same address for as long as the code is in use.</p>
+
+<h2 id="faq">Questions</h2>
+<h3>Can a QR code show a picture without the internet?</h3><p>No. The largest code holds 2,331 bytes at level M, far less than even a small photo. The phone needs a connection to load the picture from its link.</p><h3>Where should I host the picture?</h3><p>Your own website, or any service that gives a public link that does not change. Avoid links that expire, such as some file transfer services.</p><h3>How do I check the link before printing?</h3><p>Open it on your phone with WiFi off, using mobile data. If the picture appears on its own, the code will work for others too.</p>
+
  </article>
  <nav class="docs-pager" aria-label="Previous and next"><a class="docs-prev" href="pdf-qr-code"><span>Previous</span>PDF</a><a class="docs-next" href="file-qr-code"><span>Next</span>File or media</a></nav>
  <p class="docs-fix">Found a mistake on this page? <a href="https://github.com/AbuBakarUsman16/qr-code-tools/issues/new" rel="noopener" target="_blank">Suggest a fix on GitHub</a></p>
 </main>
-<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#notes">The notes it shows</a></li><li><a href="#limits">What it does not do</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../image-qr-code-generator">Open the image generator</a></div></div></aside>
+<aside class="docs-rail" aria-label="On this page"><div class="docs-rail-inner"><p class="docs-rail-title">On this page</p><nav><ol><li><a href="#glance">At a glance</a></li><li><a href="#payload">What the code contains</a></li><li><a href="#notes">The notes it shows</a></li><li><a href="#limits">What it does not do</a></li><li><a href="#test">What we tested</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Questions</a></li></ol></nav><div class="docs-try"><p>Try it</p><a class="btn btn-small" href="../image-qr-code-generator">Open the image generator</a></div></div></aside>
 </div>
 
 <footer>

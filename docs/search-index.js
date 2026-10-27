@@ -277,6 +277,14 @@ window.QROTTO_DOCS = [
 "url": "text-qr-code#limits"
 },
 {
+"label": "Text QR code › Common mistakes",
+"url": "text-qr-code#mistakes"
+},
+{
+"label": "Text QR code › Questions",
+"url": "text-qr-code#faq"
+},
+{
 "label": "PDF QR code",
 "url": "pdf-qr-code"
 },
@@ -323,6 +331,18 @@ window.QROTTO_DOCS = [
 {
 "label": "Image QR code › What it does not do",
 "url": "image-qr-code#limits"
+},
+{
+"label": "Image QR code › What we tested",
+"url": "image-qr-code#test"
+},
+{
+"label": "Image QR code › Common mistakes",
+"url": "image-qr-code#mistakes"
+},
+{
+"label": "Image QR code › Questions",
+"url": "image-qr-code#faq"
 },
 {
 "label": "File or media QR code",
@@ -421,6 +441,18 @@ window.QROTTO_DOCS = [
 "url": "email-qr-code#limits"
 },
 {
+"label": "Email QR code › Message length and size",
+"url": "email-qr-code#size"
+},
+{
+"label": "Email QR code › Common mistakes",
+"url": "email-qr-code#mistakes"
+},
+{
+"label": "Email QR code › Questions",
+"url": "email-qr-code#faq"
+},
+{
 "label": "SMS QR code",
 "url": "sms-qr-code"
 },
@@ -449,6 +481,18 @@ window.QROTTO_DOCS = [
 "url": "sms-qr-code#limits"
 },
 {
+"label": "SMS QR code › Message length and size",
+"url": "sms-qr-code#size"
+},
+{
+"label": "SMS QR code › Common mistakes",
+"url": "sms-qr-code#mistakes"
+},
+{
+"label": "SMS QR code › Questions",
+"url": "sms-qr-code#faq"
+},
+{
 "label": "Phone QR code",
 "url": "phone-qr-code"
 },
@@ -471,6 +515,18 @@ window.QROTTO_DOCS = [
 {
 "label": "Phone QR code › What it does not do",
 "url": "phone-qr-code#limits"
+},
+{
+"label": "Phone QR code › What we tested",
+"url": "phone-qr-code#test"
+},
+{
+"label": "Phone QR code › Common mistakes",
+"url": "phone-qr-code#mistakes"
+},
+{
+"label": "Phone QR code › Questions",
+"url": "phone-qr-code#faq"
 },
 {
 "label": "Event QR code",
@@ -511,6 +567,18 @@ window.QROTTO_DOCS = [
 {
 "label": "Event QR code › What it does not do",
 "url": "event-qr-code#limits"
+},
+{
+"label": "Event QR code › Commas, semicolons and line breaks",
+"url": "event-qr-code#special"
+},
+{
+"label": "Event QR code › Common mistakes",
+"url": "event-qr-code#mistakes"
+},
+{
+"label": "Event QR code › Questions",
+"url": "event-qr-code#faq"
 },
 {
 "label": "Appointment QR code",
@@ -617,6 +685,18 @@ window.QROTTO_DOCS = [
 "url": "feedback-qr-code#limits"
 },
 {
+"label": "Feedback QR code › Which mode to choose",
+"url": "feedback-qr-code#which"
+},
+{
+"label": "Feedback QR code › Common mistakes",
+"url": "feedback-qr-code#mistakes"
+},
+{
+"label": "Feedback QR code › Questions",
+"url": "feedback-qr-code#faq"
+},
+{
 "label": "Location QR code",
 "url": "location-qr-code"
 },
@@ -649,6 +729,14 @@ window.QROTTO_DOCS = [
 "url": "location-qr-code#choose"
 },
 {
+"label": "Location QR code › Common mistakes",
+"url": "location-qr-code#mistakes"
+},
+{
+"label": "Location QR code › Questions",
+"url": "location-qr-code#faq"
+},
+{
 "label": "Social media QR code",
 "url": "social-media-qr-code"
 },
@@ -667,6 +755,18 @@ window.QROTTO_DOCS = [
 {
 "label": "Social media QR code › What it does not do",
 "url": "social-media-qr-code#limits"
+},
+{
+"label": "Social media QR code › What we tested",
+"url": "social-media-qr-code#test"
+},
+{
+"label": "Social media QR code › Common mistakes",
+"url": "social-media-qr-code#mistakes"
+},
+{
+"label": "Social media QR code › Questions",
+"url": "social-media-qr-code#faq"
 },
 {
 "label": "Bulk QR codes",
