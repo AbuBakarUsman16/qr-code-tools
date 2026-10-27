@@ -45,7 +45,7 @@
   "description": "Four ways to scan a QR code that is saved as an image, and a test of which quick fixes rescue a picture that will not read.",
   "image": "https://qrotto.com/images/qr-picture-fixes.png",
   "datePublished": "2026-10-08",
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-10-27",
   "author": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/author" },
   "publisher": { "@type": "Organization", "name": "QRotto", "url": "https://qrotto.com/" },
   "mainEntityOfPage": "https://qrotto.com/blog/scan-qr-code-from-an-image"
@@ -135,6 +135,7 @@
         <li><a href="#way-2">Way 2: Use your phone's own photo tools</a></li>
         <li><a href="#way-3">Way 3: Point another camera at the screen</a></li>
         <li><a href="#way-4">Way 4: Fix the picture, then try again</a></li>
+        <li><a href="#webcam">No picture yet? Scan with your webcam</a></li>
         <li><a href="#which-way">Which way to pick</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
@@ -227,6 +228,58 @@
     <h3>The two decoders disagreed, so try a second scanner</h3>
     <p>jsQR read all three small pictures, including the 55 pixel one, and OpenCV did not read two of them. In our earlier size test a similar code stopped reading at 55 pixels, so the line depends on the decoder and the exact image. If one scanner says nothing was found, try another before you give up.</p>
 
+    <h2 id="webcam">No picture yet? Scan with your webcam</h2>
+    <p>If the code is printed and you are at a laptop, you do not need a picture first. The same scanner can read it live from your webcam.</p>
+    <h3>How to do it</h3>
+    <ol>
+      <li>Open the <a href="../qr-code-scanner">scanner</a> and press <strong>Use camera</strong>.</li>
+      <li>Your browser asks for permission to use the camera. Allow it.</li>
+      <li>Hold the printed code in front of the webcam and keep it still.</li>
+    </ol>
+    <p>The scanner page says the video never leaves your device. The permission prompt is the browser's, so you can refuse it, and the scanner then suggests uploading a photo instead.</p>
+    <h3>What we tested</h3>
+    <p>We cannot hold a code up to every webcam, so we did the next best thing. We started Chrome with a video file standing in for the camera, opened our live scanner page, pressed Use camera, and watched whether it read the code. We repeated it with the code filling less and less of the frame. This is a software test, not a real webcam.</p>
+    <figure>
+      <img src="../images/camera-test.png" width="1200" height="760" loading="lazy"
+           alt="Results of feeding our online scanner a fake webcam. A clean video was read with the code at 70, 50, 35, 25, 18 and 12 percent of the frame height, and not at 8 percent. A second test added random grain: the scanner read 30 of 30 tries up to a noise level of 4, then failed at 6 and above for larger codes.">
+      <figcaption>Top: how small the code can be in a clean frame. Bottom: how much grain it takes before reading breaks down.</figcaption>
+    </figure>
+    <h3>Size in the frame</h3>
+    <p>With a clean picture the scanner read the code at every size from 70% of the frame height down to 12%, and failed at 8%. At 12% on a 640 by 480 frame the code was only about 57 pixels wide. So in good conditions you do not need to hold the code close.</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Code size in frame</th><th>70%</th><th>50%</th><th>35%</th><th>25%</th><th>18%</th><th>12%</th><th>8%</th></tr></thead>
+        <tbody>
+          <tr><td>Scanner result</td><td>Reads</td><td>Reads</td><td>Reads</td><td>Reads</td><td>Reads</td><td>Reads</td><td>Fails</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Grain is what to watch</h3>
+    <p>A real webcam in a dim room produces grain. To mimic that we added random noise to every pixel of every frame, 30 tries at each level.</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Code size</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>6</th><th>8</th><th>12</th></tr></thead>
+        <tbody>
+          <tr><td>70% of frame height</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>0/30</td><td>0/30</td><td>0/30</td></tr>
+          <tr><td>35% of frame height</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>0/30</td><td>0/30</td><td>1/30</td></tr>
+          <tr><td>18% of frame height</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>30/30</td><td>14/30</td><td>10/30</td><td>11/30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>It read every try up to a noise level of 4, then dropped sharply at 6. The larger codes failed outright, and the smaller one only wavered. Our scanner uses the jsQR decoder, and in a separate test OpenCV, a different decoder, read most of the same noisy frames at the larger sizes. So this is a property of one decoder, not of QR codes.</p>
+    <div class="takeaway">
+      <p><strong>What to do with that.</strong> Do not trust our synthetic noise scale to match your webcam, because real cameras differ. The practical lesson is simpler: light matters, and if the live scan hesitates, take a photo or a screenshot and use Way 1, which does not depend on a live feed.</p>
+    </div>
+    <h3>Tips for a better live scan</h3>
+    <ul>
+      <li>Face a window or a lamp so the code is evenly lit, and avoid glare on glossy paper.</li>
+      <li>Keep the code flat and steady, with its blank margin visible.</li>
+      <li>If it will not read, move to a photo instead of holding the code in place for a long time.</li>
+    </ul>
+
+    <div class="ad-slot" data-ad-placeholder></div>
+
+    
     <h2 id="which-way">Which way to pick</h2>
     <h3>A simple order to try them in</h3>
     <div class="table-wrap">
@@ -258,6 +311,10 @@
     <p>Our scanner page states that images are decoded in your browser and nothing is uploaded. You can check this yourself: load the page, switch off your internet connection, and scan a saved image. It still works.</p>
     <h3>Can I scan a QR code from a screenshot?</h3>
     <p>Yes, a screenshot is just a picture. If the code is small inside a large screenshot, crop to it first. Our <a href="scan-qr-code-from-screenshot">screenshot guide</a> goes through it.</p>
+    <h3>Does it work on a phone?</h3>
+    <p>Yes. The same page works in a phone's browser, with the choose image option for saved pictures and the camera option for printed codes.</p>
+    <h3>Why will my webcam not read the code?</h3>
+    <p>The usual causes are dim light, glare, a code held at an angle, or a missing blank margin. In our fake webcam test grain was the main thing that broke reading, so improve the light first.</p>
  </article>
 
   <div class="related">
