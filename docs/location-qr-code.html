@@ -132,9 +132,9 @@
 
 <h2 id="mistakes">Common mistakes</h2>
 <h3>Commas instead of decimal points</h3>
-<p>Coordinates are written as typed. In countries that write decimals with a comma, it is easy to type <code>53,959965</code>. The code then contains:</p>
-<pre class="payload"><span class="k">https://</span>maps.google.com/?q=53,959965,-1,087298</pre>
-<p>The map reads that as four numbers, not two, and the pin lands in the wrong place or nowhere. Use a dot for decimals.</p>
+<p>Maps need a dot for decimals: a comma makes four numbers out of two, and the pin lands in the wrong place. Many countries write <code>53,959965</code>, so the tool turns a decimal comma into a dot. Typed that way, the code contains:</p>
+<pre class="payload"><span class="k">https://</span>maps.google.com/?q=53.959965,-1.087298</pre>
+<p>Numbers outside the possible range, such as a latitude over 90, are refused with a message.</p>
 <h3>Latitude and longitude the wrong way round</h3>
 <p>Latitude comes first. Swapped, our York test point became <code>geo:-1.087298,53.959965</code>, a point in the Indian Ocean. Google Maps shows latitude first when you click a point, so copy from there.</p>
 <h3>An address that matches several places</h3>

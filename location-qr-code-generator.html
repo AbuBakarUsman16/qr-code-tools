@@ -297,9 +297,14 @@
       if (!a) return;
       payload = "https://maps.google.com/?q=" + encodeURIComponent(a);
     } else {
-      const lat = document.getElementById("locLat").value.trim();
-      const lng = document.getElementById("locLng").value.trim();
+      // accept a decimal comma, as written in much of Europe
+      const lat = document.getElementById("locLat").value.trim().replace(",", ".").replace(/\s+/g, "");
+      const lng = document.getElementById("locLng").value.trim().replace(",", ".").replace(/\s+/g, "");
       if (!lat || !lng) return;
+      if (!/^-?\d+(\.\d+)?$/.test(lat) || !/^-?\d+(\.\d+)?$/.test(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) {
+        alert("Those coordinates do not look right. Latitude is between -90 and 90, longitude between -180 and 180, written like 53.959965.");
+        return;
+      }
       payload = (type === "geo")
         ? "geo:" + lat + "," + lng
         : "https://maps.google.com/?q=" + lat + "," + lng;

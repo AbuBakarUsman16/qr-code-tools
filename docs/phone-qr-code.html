@@ -134,14 +134,14 @@
 
 <h2 id="test">What we tested</h2>
 <p>We typed the same kind of number five ways into the live generator and decoded each code it drew.</p>
-<div class="table-wrap"><table class="cmp"><thead><tr><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td><code>+1 (555) 123-4567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>15551234567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>0300 1234567</code></td><td><code>tel:03001234567</code></td></tr><tr><td><code>555.123.4567</code></td><td><code>tel:+5551234567</code></td></tr><tr><td><code>+1 555 123 4567 ext 22</code></td><td><code>tel:+15551234567ext22</code></td></tr></tbody></table></div>
-<p>The first two are correct. A plain digit string gets a plus in front, which is right when it already starts with the country code. The last two show the mistakes below.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td><code>+1 (555) 123-4567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>15551234567</code></td><td><code>tel:+15551234567</code></td></tr><tr><td><code>0300 1234567</code></td><td><code>tel:03001234567</code></td></tr><tr><td><code>555.123.4567</code></td><td><code>tel:+5551234567</code></td></tr><tr><td><code>+1 555 123 4567 ext 22</code></td><td><code>tel:+15551234567</code></td></tr></tbody></table></div>
+<p>The first two are correct. A plain digit string gets a plus in front, which is right when it already starts with the country code. The last two show the mistakes below, and the tool now warns about both.</p>
 
 <h2 id="mistakes">Common mistakes</h2>
 <h3>A US number without the 1</h3>
-<p>Typed as <code>555.123.4567</code>, the tool adds a plus and the code dials <code>+5551234567</code>. That is read as an international number, not a US one, so the call fails. Type <code>+1</code> first, or the full <code>15551234567</code>.</p>
+<p>Typed as <code>555.123.4567</code>, the tool adds a plus and the code dials <code>+5551234567</code>. That is read as an international number, not a US one, so the call fails. The tool cannot know your country, so it does not guess. It shows this note instead: <em>No country code? If this is a US or Canada number, type +1 first, or the code may dial the wrong number.</em></p>
 <h3>Writing the extension into the number</h3>
-<p>Letters are kept, so <code>ext 22</code> ends up glued to the number as <code>ext22</code>. Phones handle this differently, and many drop it or fail. Leave the extension out of the code and print it next to it.</p>
+<p>Phones handle extensions in a code differently, and many drop them or fail to dial. So the tool leaves the extension out: typed as <code>+1 555 123 4567 ext 22</code>, the code holds <code>tel:+15551234567</code> and the page says: <em>The extension was left out of the code. Print it next to the code instead.</em></p>
 <h3>Using a local number on something people take home</h3>
 <p>A number starting with 0 only dials correctly inside that country. For flyers, business cards and anything that may travel, use the international form.</p>
 

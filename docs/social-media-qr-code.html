@@ -133,12 +133,12 @@
 </ul>
 
 <h2 id="test">What we tested</h2>
-<div class="table-wrap"><table class="cmp"><thead><tr><th>Platform</th><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td>Instagram</td><td><code>@qrotto</code></td><td><code>https://instagram.com/qrotto</code></td></tr><tr><td>YouTube</td><td><code>@qrotto</code></td><td><code>https://youtube.com/@qrotto</code></td></tr><tr><td>TikTok</td><td><code>qrotto</code></td><td><code>https://tiktok.com/@qrotto</code></td></tr><tr><td>LinkedIn</td><td><code>jane doe</code></td><td><code>https://linkedin.com/in/janedoe</code></td></tr><tr><td>Instagram</td><td><code>https://instagram.com/qrotto</code></td><td><code>https://instagram.com/https://instagram.com/qrotto</code></td></tr></tbody></table></div>
-<p>Typing the @ or leaving it out gives the same link. The last row is a mistake covered below.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Platform</th><th>You type</th><th>The code contains</th></tr></thead><tbody><tr><td>Instagram</td><td><code>@qrotto</code></td><td><code>https://instagram.com/qrotto</code></td></tr><tr><td>YouTube</td><td><code>@qrotto</code></td><td><code>https://youtube.com/@qrotto</code></td></tr><tr><td>TikTok</td><td><code>qrotto</code></td><td><code>https://tiktok.com/@qrotto</code></td></tr><tr><td>LinkedIn</td><td><code>jane doe</code></td><td><code>https://linkedin.com/in/janedoe</code></td></tr><tr><td>Instagram</td><td><code>https://instagram.com/qrotto</code></td><td><code>https://instagram.com/qrotto</code></td></tr><tr><td>TikTok</td><td><code>https://www.tiktok.com/@qrotto?lang=en</code></td><td><code>https://tiktok.com/@qrotto</code></td></tr><tr><td>LinkedIn</td><td><code>linkedin.com/in/jane-doe/</code></td><td><code>https://linkedin.com/in/jane-doe</code></td></tr></tbody></table></div>
+<p>Typing the @ or leaving it out gives the same link. A pasted profile link also works: the tool keeps only the username and drops the rest.</p>
 
 <h2 id="mistakes">Common mistakes</h2>
-<h3>Pasting the whole profile link</h3>
-<p>The field wants the username only. Pasting a full profile address puts the platform address in twice, and the code opens a page that does not exist. To use a full link you already have, paste it into the <a href="url-qr-code">URL generator</a> instead.</p>
+<h3>Pasting a link from a different platform</h3>
+<p>A pasted link is trimmed to the username only when it matches the platform you picked. Check the platform menu first, and look at the preview under the field before you download.</p>
 <h3>Typing your display name</h3>
 <p>Spaces are removed, so <code>jane doe</code> becomes <code>janedoe</code>. That is only right if <code>janedoe</code> is really your username. Copy it from your profile address rather than typing your name.</p>
 <h3>Changing your username after printing</h3>

@@ -288,7 +288,13 @@
 <script src="script.js"></script>
 <script>
   function clean(h) {
-    return h.trim().replace(/^@+/, "").replace(/\s+/g, "");
+    // a pasted profile link: keep only what comes after the platform address
+    h = h.trim().replace(/^https?:\/\//i, "").replace(/^(www\.|m\.)/i, "");
+    const base = document.getElementById("platform").value;
+    const host = base.split("/")[0];
+    if (h.toLowerCase().startsWith(base.toLowerCase())) h = h.slice(base.length);
+    else if (h.toLowerCase().startsWith(host.toLowerCase() + "/")) h = h.slice(host.length + 1).replace(/^(in|add|user)\//, "");
+    return h.replace(/^@+/, "").replace(/[\/?#].*$/, "").replace(/\s+/g, "");
   }
   function updateHint() {
     const base = document.getElementById("platform").value;

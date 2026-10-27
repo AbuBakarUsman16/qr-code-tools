@@ -137,6 +137,7 @@
         <input type="tel" id="telNum" placeholder="+1 555 123 4567">
       </div>
       <p style="font-size:0.85rem;color:var(--muted);margin:-6px 0 14px;">Include the country code. Spaces and dashes are removed automatically.</p>
+      <p id="telNote" role="status" style="font-size:0.85rem;color:#b45309;margin:-6px 0 14px;" hidden></p>
       <button class="btn" onclick="generatePhoneCode()">Generate QR Code</button>
  </div>
  <div class="panel qr-output">
@@ -279,8 +280,18 @@
 
   function generatePhoneCode() {
     let num = document.getElementById("telNum").value.trim();
+    const note = document.getElementById("telNote"), notes = [];
+    // phones handle extensions inconsistently, so leave them out of the code
+    if (/\s*(ext\.?|extension|x)\s*\d+$/i.test(num)) {
+      num = num.replace(/\s*(ext\.?|extension|x)\s*\d+$/i, "");
+      notes.push("The extension was left out of the code. Print it next to the code instead.");
+    }
     num = num.replace(/[\s()\-\.]/g, "");
     if (!num) return;
+    // ten digits with no + or 0 is usually a US or Canada number typed without the 1
+    if (/^[2-9]\d{9}$/.test(num)) notes.push("No country code? If this is a US or Canada number, type +1 first, or the code may dial the wrong number.");
+    note.textContent = notes.join(" ");
+    note.hidden = !notes.length;
     if (num.charAt(0) !== "+" && num.charAt(0) !== "0") num = "+" + num;
     qr.clear();
     qr.makeCode("tel:" + num);
