@@ -929,12 +929,13 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   align-items: center;
   gap: 8px;
   min-height: 38px;
-  padding: 0 12px;
-  background: #ffffff;
-  border: 1.5px solid var(--accent);
-  border-radius: var(--radius);
+  padding: 0 4px 0 0;
+  /* a status message, not a button: no border or fill, so people do not try to click it */
+  background: none;
+  border: 0;
   font-weight: 700;
   color: var(--accent-dark);
+  cursor: default;
 }
 .detect-or { color: var(--muted); margin-left: 4px; }
 .chip {
