@@ -87,6 +87,38 @@
 </script>
 <meta name="google-adsense-account" content="ca-pub-6232027234522217">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Can you scan a QR code from a screenshot?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. A screenshot contains the same encoded data as the original, so it decodes exactly the same way. You just cannot use the camera, you have to open the image and use Live Text on iPhone or Google Lens on Android."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why will my screenshot not scan?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Almost always because the image is too small. We tested this: the same code decoded down to 92 pixels and failed at 55. Compression turned out not to matter, the code survived JPEG quality 5."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I scan a QR code from a PDF?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, but crop a screenshot of just the code first. A full page screenshot leaves the code too small to decode."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 

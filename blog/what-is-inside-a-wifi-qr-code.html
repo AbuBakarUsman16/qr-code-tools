@@ -60,6 +60,70 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Is my WiFi password encrypted in the QR code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It is stored as plain text. Anyone who scans the code with an ordinary QR scanner can read it, and so can anyone with a photo of the code. The phone needs the real password to join, so the real password has to be in there."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can someone steal my WiFi from the code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Anyone who can see the code can join the network, which is the point of printing it. The question is who can see it. A card handed to a guest is fine. A sign visible from the street shares your network with the street. Use a guest network and the answer stops mattering much."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the code expire?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The code does not. It is a printed pattern with no account behind it and nothing to renew. It stops working when the password changes, because it still holds the old one."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does my code scan but fail to connect?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Most often a special character in the password that was not escaped, the wrong security type, or an SSID that does not match exactly. Scanning the code as plain text shows you which, because you can read the fields. We cover the full list in WiFi QR code not working."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does a longer password make a much bigger code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Less than people expect. Everything up to about 15 characters produces the same 29 x 29 code, and even a 63 character password only reaches 41 x 41, which is 19.6 mm against 14.8 mm. Do not weaken a password to save space."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will the same code work on iPhone and Android?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The format is the same one both read, and a correctly built code contains nothing platform specific. Behaviour around the edges does differ, particularly with hidden networks and with phones that already know the network, so test on a device that has not joined before."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use one code for several networks?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. One code holds one network. If you have separate 2.4 GHz and 5 GHz names, they are two networks and need two codes, or you give guests the one you would rather they used."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 

@@ -1,0 +1,113 @@
+# QRotto
+
+> QRotto (qrotto.com) is a set of free, static QR code generators that run in the browser. There is no account and no scan tracking, codes never expire because the content is written into the code itself, and every code shows the smallest safe print size (never below 20 mm / 0.8 in). Guides and documentation are based on codes we generated and decoded ourselves.
+
+Key facts:
+- Static codes only: no redirect service, so nothing can lapse or start charging.
+- Codes are generated in the visitor's browser; the content typed is not uploaded.
+- Print rule used across the site: about 0.4 mm per module plus a 4 module quiet zone, with a 20 mm minimum.
+- Also available as a free WordPress plugin: https://wordpress.org/plugins/qrotto/
+
+## Generators and tools
+
+- [Free URL to QR Code Generator](https://qrotto.com/url-qr-code-generator): Convert a URL to a QR code free. Paste any web address, get a high resolution code instantly. No account, no expiry, nothing leaves your browser.
+- [Free vCard QR Code Generator](https://qrotto.com/vcard-qr-code-generator): Create a free vCard QR code with your name, phone, email and company. Scan to save contact details straight to any phone. No signup, no watermark.
+- [Free WiFi QR Code Generator](https://qrotto.com/wifi-qr-code-generator): Create a free WiFi QR code so guests connect by scanning, no password typing. No signup, never expires, and your password never leaves your browser.
+- [Offline QR Code Generator](https://qrotto.com/text-qr-code-generator): Free offline QR code generator: turn text into a QR code that scans with no internet. Once this page loads, it keeps working with your connection off.
+- [Free PDF QR Code Generator](https://qrotto.com/pdf-qr-code-generator): Turn a link to your PDF into a free QR code. No upload, no account, and no service that can switch your printed code off later.
+- [Free Image QR Code Generator](https://qrotto.com/image-qr-code-generator): Turn a link to your image into a free QR code. Includes what we measured about why a picture cannot fit inside a QR code at all.
+- [Free File QR Code Generator](https://qrotto.com/file-qr-code-generator): Turn a link to any file into a QR code. Video, audio, Word, Excel, zip. Warns about the link traps on Dropbox, Drive and transfer services.
+- [Free Google Drive QR Code Generator](https://qrotto.com/google-drive-qr-code-generator): Turn a Google Drive, Docs, Sheets or Slides link into a QR code, rewritten so it opens a clean preview or downloads, instead of the editor.
+- [Free Email QR Code Generator](https://qrotto.com/email-qr-code-generator): Create a free email QR code that opens a new message with your address, subject and body already filled in. No signup, generated in your browser.
+- [Free SMS QR Code Generator](https://qrotto.com/sms-qr-code-generator): Create a free SMS QR code that opens a text to your number with the wording already typed. Ideal for table service, signage and quick enquiries.
+- [Free Phone QR Code Generator](https://qrotto.com/phone-qr-code-generator): Create a free QR code that opens the phone dialler with your number ready to call. International format guidance included, and nothing leaves your browser.
+- [Free Calendar Event QR Code Generator](https://qrotto.com/calendar-qr-code-generator): Create a free QR code that adds an event to someone's calendar: title, date, time, location and notes. Uses the standard iCalendar format, no signup needed.
+- [Free Appointment QR Code Generator](https://qrotto.com/appointment-qr-code-generator): Free appointment QR code generator. One scan saves the appointment to their calendar, sets a reminder, and keeps your reschedule link with it.
+- [Free Booking QR Code Generator](https://qrotto.com/booking-qr-code-generator): Make a booking QR code for a restaurant, salon or clinic. Send people to your booking page, or straight into a prefilled text or WhatsApp booking request.
+- [Free Feedback QR Code Generator](https://qrotto.com/feedback-qr-code-generator): Free feedback QR code generator for Google reviews, a form, or a prefilled email. Includes what Google's review policy actually prohibits.
+- [Free Location QR Code Generator](https://qrotto.com/location-qr-code-generator): Create a free QR code that opens a place on a map, from an address or GPS coordinates. Works with Google Maps, Apple Maps and offline geo codes. No signup.
+- [Free Social Media QR Code Generator](https://qrotto.com/social-media-qr-code-generator): Create a free QR code for your Instagram, TikTok, YouTube, Facebook, X or LinkedIn profile. Enter your username, we build the right link. No signup needed.
+- [Free Bulk QR Code Generator](https://qrotto.com/bulk-qr-code-generator): Generate hundreds of QR codes at once from a list, then download them as SVG, PNG or a printable PDF sheet. No signup, all done in your browser.
+- [Random QR Code Generator](https://qrotto.com/random-qr-code-generator): Make a random QR code to scan for fun or testing, or a batch of unique random codes for vouchers and tickets. Secure randomness, free, runs in your browser.
+- [QR Code Scanner From Image: Free, Nothing Uploaded](https://qrotto.com/qr-code-scanner): Scan a QR code from an image, a screenshot or your camera, and read what it contains before opening it. Works in your browser, nothing is uploaded.
+- [Custom QR Code Generator](https://qrotto.com/qr-code-designer): Free custom QR code generator. Gradients, corner shapes, a logo, colours and text below the code. Download PNG or SVG, with a live scan check.
+- [QR Code Poster and Sign Maker](https://qrotto.com/qr-code-sign-maker): Make a printable QR code sign, table tent, poster, sticker or window sign. The code is sized automatically for the distance people will scan it from.
+- [QR Code Stress Test](https://qrotto.com/qr-code-stress-test): Upload a QR code and we blur, tilt and shrink it until it fails. Find out where yours stops scanning before you send it to print. Free, no upload.
+
+## Guides
+
+- [QR Code for Office Files: Word, Excel and PowerPoint](https://qrotto.com/blog/qr-code-for-office-files): A QR code cannot hold a Word, Excel or PowerPoint file. Here is why, how to link to one instead, and the different advice that fits each of the three.
+- [QR Code for an Audio File (MP3)](https://qrotto.com/blog/qr-code-for-audio-file): You cannot fit an MP3 inside a QR code, but you can link to one. Here is the arithmetic, how to host the file, and what we tested in our file QR tool.
+- [QR Code Writer Free: How to Write Any QR Code in 3 Steps](https://qrotto.com/blog/qr-code-writer-free): How to write a QR code in 3 steps, the exact text each type writes inside the code, and what free means here. Tested on nine of our generators.
+- [Scan a QR Code From an Image: 4 Ways That Work](https://qrotto.com/blog/scan-qr-code-from-an-image): Use a free QR code scanner from image to read a code in a photo or screenshot, plus what we measured when a picture will not read: borders, contrast and size.
+- [Does a Canva QR Code Expire? Check Yours in a Minute](https://qrotto.com/blog/does-a-canva-qr-code-expire): Whether a Canva QR code expires depends on if it is static or a redirect. Scan it, read the address, and you will know in a minute.
+- [Canva QR Code Generator: 6 Things to Check Before You Print](https://qrotto.com/blog/canva-qr-code-generator-things-to-check): Six checks for a QR code made in Canva or anywhere else, from static versus dynamic to contrast, size and testing, with numbers from our own tests.
+- [QRStuff QR Code Generator: What It Does and What to Check](https://qrotto.com/blog/qrstuff-qr-code-generator): What QRStuff offers, what its own pages say about expiry, scan limits and paid plans, and the checks worth running before you print a code made with it.
+- [Custom QR Code Colors: Which Combinations Still Scan?](https://qrotto.com/blog/custom-qr-code-colors): We tested 20 colour pairs on one QR code with three decoder settings. Ten read in all three, nine depended on the scanner, and one failed everywhere.
+- [Online QR Code Generator: What to Check Before You Use One](https://qrotto.com/blog/online-qr-code-generator-what-to-check): Six things worth checking in any online QR code generator, and what we measured about download resolution. The result surprised us and changed our advice.
+- [How to Make a vCard QR Code, and Which Format to Use](https://qrotto.com/blog/how-to-make-a-vcard-qr-code): Four steps to a contact QR code, which fields to include, and what we measured: MECARD prints 4.8 mm smaller than vCard, and a link smaller still.
+- [What Is Inside a WiFi QR Code, and Who Can Read It](https://qrotto.com/blog/what-is-inside-a-wifi-qr-code): A WiFi QR code is one line of text holding your password in the clear. What each part means, who can read it, and the one character that breaks it silently.
+- [Random QR Code Generator: Free, Plus How It Works](https://qrotto.com/blog/random-qr-code-generator): Make random QR codes free: one surprise code to scan, or a batch of unique codes for tickets and vouchers. Plus how it works and what we measured.
+- [URL to QR Code: Which Form of Your Link to Encode](https://qrotto.com/blog/url-to-qr-code): Dropping https:// shrinks the code but changes what the scanner offers. We measured six forms of the same web address and tested what each one costs in print.
+- [Text QR Code Generator: How Much Text Actually Fits](https://qrotto.com/blog/text-qr-code-generator-guide): A plain text QR code shows words instead of opening a link. We measured what each length costs in print size, and when text is the wrong choice.
+- [How to Create a QR Code for Google Drive (2026 Guide)](https://qrotto.com/blog/qr-code-for-google-drive): Step by step: share the file correctly, pick the right link form, make the code, and test it. Plus what we measured about which Drive link prints smallest.
+- [QR Signs: How Long Your Link Can Be at Each Print Size](https://qrotto.com/blog/qr-code-sign-size-and-link-length): A 20 mm QR code tolerates 0.24 mm of blur and about 85 characters. A 150 mm one tolerates 1.82 mm. Measured for six printed sign sizes.
+- [vCard QR Code Generator With Photo: What Fits, How to Make](https://qrotto.com/blog/vcard-qr-code-with-photo): Looking for a vCard QR code generator with photo? We measured it. A 32 pixel thumbnail needs 53 mm of print, and a real photo does not fit the format at all.
+- [QR Code for a Business Card: What Actually Fits](https://qrotto.com/blog/qr-code-for-business-card): We measured what a vCard QR code costs in printed millimetres. A full contact card needs 27.6 mm, half the height of a business card. A link needs 14.8 mm.
+- [Bulk QR Codes: What Goes Wrong in a Batch of 500](https://qrotto.com/blog/bulk-qr-codes-for-a-print-run): We generated 500 QR codes and measured what breaks. Unpadded numbering changes the code size partway through a batch, and SVG beats print PNGs.
+- [One QR Code for All Your Social Media? We Tested Four Ways](https://qrotto.com/blog/one-qr-code-for-all-social-media): Can one QR code hold five social profiles? We measured every option. The surprise: a link page you own makes a smaller code than a single Instagram link.
+- [Why Won't This QR Code Scan? We Measured Blur, Angle and Size](https://qrotto.com/blog/why-qr-codes-fail-to-scan): We decoded one QR code hundreds of times while tilting, blurring and shrinking it. Angle and size barely matter. Blur kills it almost instantly.
+- [Location QR Codes: We Tested Which Format Prints Smallest](https://qrotto.com/blog/location-qr-code-format-test): One address encoded five ways produced codes from 25x25 to 57x57 modules. The link you copy from the browser bar is the worst. Here is what to use instead.
+- [QR Code for Google Reviews: Get More Reviews at the Counter](https://qrotto.com/blog/qr-code-for-google-reviews): How to create a QR code that opens your Google review form directly, where to place it, what to write next to it, and the rules that protect your listing.
+- [Add a QR Code to Your Email Signature: Gmail & Outlook](https://qrotto.com/blog/qr-code-email-signature): Step by step instructions for adding a QR code to your email signature in Gmail and Outlook, plus the right image size and the mistakes to avoid.
+- [Are QR Codes Safe? How to Spot a Malicious QR Code](https://qrotto.com/blog/are-qr-codes-safe): How QR code scams actually work, the warning signs before you tap, and what businesses should do to stop their own printed codes being tampered with.
+- [QR Codes for Hotels: Guest WiFi, Check in and Room Service](https://qrotto.com/blog/qr-codes-for-hotels): Which QR codes a hotel needs, including the room service code most hotels get wrong, where each belongs, print sizes, and the accessibility rules.
+- [How to Create a WiFi QR Code for Your Airbnb (2026 Guide)](https://qrotto.com/blog/wifi-qr-code-for-airbnb): A step by step guide for Airbnb hosts: create a WiFi QR code, print it so it scans first time, and stop answering late night password messages.
+- [WiFi QR Code Not Working? 7 Fixes That Actually Solve It](https://qrotto.com/blog/wifi-qr-code-not-working): Your WiFi QR code scans but won't connect, or won't scan at all. Here are the seven real causes, in the order you should check them.
+- [QR Code Size for Print: Minimum Size in cm and Inches](https://qrotto.com/blog/qr-code-size-for-print): What size should a QR code be? Never under 2 cm (0.8 in). A size table in cm and inches, from business cards to billboards, plus the mistakes that stop scans.
+- [Static vs Dynamic QR Codes: Which One Do You Actually Need?](https://qrotto.com/blog/static-vs-dynamic-qr-codes): The real differences between static and dynamic QR codes, what you gain, what you risk, and a simple way to get editable links without paying a subscription.
+- [QR Codes for Cafés and Restaurants: A Practical Setup Guide](https://qrotto.com/blog/qr-codes-for-cafes-and-restaurants): Which QR codes a café actually needs, where to put them, how big to print them, and the mistakes that make customers give up and ask a member of staff.
+- [WhatsApp QR Code: Free wa.me Link Generator Guide](https://qrotto.com/blog/qr-code-for-whatsapp): How to make a WhatsApp QR code that opens a chat with your number and a prefilled message. Includes the country code mistake that breaks most attempts.
+- [Scan a QR Code From a Screenshot: iPhone & Android](https://qrotto.com/blog/scan-qr-code-from-screenshot): You cannot point your camera at your own screen. Here is how to scan a QR code saved on your phone, on iPhone, Android and desktop, plus what breaks it.
+- [We Damaged QR Codes Until They Broke: The Real Limits](https://qrotto.com/blog/qr-code-damage-test): Everyone repeats that QR codes survive 30% damage. We tested it. Level H managed 19% in one place and failed on a single missing module in another.
+
+## Documentation
+
+- [How QRotto Works: Documentation](https://qrotto.com/docs/how-qrotto-works): What happens when you make a code on QRotto: where it runs, what goes into the code, the error correction we use, and the three ways to save it.
+- [Print Size and the Scan Badge: Documentation](https://qrotto.com/docs/print-size-and-scan-badge): How the QRotto scan badge works: the three states, the 20 mm minimum, the 0.4 mm per module rule for dense codes, and what to do with each result.
+- [Static Codes and Privacy: Documentation](https://qrotto.com/docs/static-codes-and-privacy): Why QRotto codes never expire, what static means, what data the site collects, and what anyone who scans your code can read.
+- [QR Code Glossary: Documentation](https://qrotto.com/docs/glossary): Plain definitions of the QR code terms used across QRotto: module, quiet zone, error correction, version, payload, static and dynamic codes and more.
+- [URL QR Code: Documentation](https://qrotto.com/docs/url-qr-code): Reference for the QRotto URL QR code generator: what it writes into the code, how it handles addresses without https, size, and fixes.
+- [vCard QR Code: Documentation](https://qrotto.com/docs/vcard-qr-code): Reference for the QRotto vCard QR code generator: the fields, the vCard 3.0 text it writes, which characters are escaped, and its limits.
+- [WiFi QR Code: Documentation](https://qrotto.com/docs/wifi-qr-code): Reference for the QRotto WiFi QR code generator: the fields, the exact text written into the code, escaped characters, hidden networks and fixes.
+- [Text QR Code: Documentation](https://qrotto.com/docs/text-qr-code): Reference for the QRotto text QR code generator: what it writes, how it handles accents and empty input, how long text affects size, and limits.
+- [PDF QR Code: Documentation](https://qrotto.com/docs/pdf-qr-code): Reference for the QRotto PDF QR code generator: why it holds a link not the file, the notes it shows, how it treats Google Drive links, and limits.
+- [Image QR Code: Documentation](https://qrotto.com/docs/image-qr-code): Reference for the QRotto image QR code generator: why it holds a link not the picture, how it spots page links, and what to check.
+- [File or Media QR Code: Documentation](https://qrotto.com/docs/file-qr-code): Reference for the QRotto file and media QR code generator: the file types it recognises, the Dropbox option, transfer service warnings and limits.
+- [Google Drive QR Code: Documentation](https://qrotto.com/docs/google-drive-qr-code): Reference for the QRotto Google Drive QR code generator: the link types it recognises, the preview, download and open modes, and sharing settings.
+- [Email QR Code: Documentation](https://qrotto.com/docs/email-qr-code): Reference for the QRotto email QR code generator: the mailto link it writes, how subject and message are encoded, and what the scanner sees.
+- [SMS QR Code: Documentation](https://qrotto.com/docs/sms-qr-code): Reference for the QRotto SMS QR code generator: the SMSTO text it writes, how the number is cleaned, the prefilled message, and limits.
+- [Phone QR Code: Documentation](https://qrotto.com/docs/phone-qr-code): Reference for the QRotto phone QR code generator: the tel link it writes, how the number is cleaned, and when a plus sign is added.
+- [Event QR Code: Documentation](https://qrotto.com/docs/event-qr-code): Reference for the QRotto event QR code generator: the iCalendar VEVENT text it writes, how dates and times are stored, escaping, and limits.
+- [Appointment QR Code: Documentation](https://qrotto.com/docs/appointment-qr-code): Reference for the QRotto appointment QR code generator: the iCalendar text it writes, length and reminder options, the reschedule link, and limits.
+- [Booking QR Code: Documentation](https://qrotto.com/docs/booking-qr-code): Reference for the QRotto booking QR code generator: the four ways to take a booking, the exact link each writes, and the preset messages.
+- [Feedback QR Code: Documentation](https://qrotto.com/docs/feedback-qr-code): Reference for the QRotto feedback QR code generator: Google review, form and email modes, the links each writes, and which input wins.
+- [Location QR Code: Documentation](https://qrotto.com/docs/location-qr-code): Reference for the QRotto location QR code generator: address and coordinate modes, Google Maps links versus geo: codes, and which to choose.
+- [Social Media QR Code: Documentation](https://qrotto.com/docs/social-media-qr-code): Reference for the QRotto social media QR code generator: the ten platforms, the profile link each builds, and how usernames are cleaned.
+- [Bulk QR Codes: Documentation](https://qrotto.com/docs/bulk-qr-codes): Reference for the QRotto bulk QR code generator: the list format, labels and file names, the 250 code limit, error correction and the three downloads.
+- [QR Code Scanner: Documentation](https://qrotto.com/docs/qr-code-scanner): Reference for the QRotto online QR code scanner: reading from an image, a pasted screenshot or the camera, what it reports, and its messages.
+- [QR Code Designer: Documentation](https://qrotto.com/docs/qr-code-designer): Reference for the QRotto QR code designer: colours, gradients, module and corner styles, logos, frame text, the scan check and the PNG and SVG downloads.
+- [QR Code Sign Maker: Documentation](https://qrotto.com/docs/sign-maker): Reference for the QRotto QR code sign maker: the six formats and their code sizes, the text fields, the scan check and the PDF and PNG downloads.
+- [QR Code Stress Test: Documentation](https://qrotto.com/docs/stress-test): Reference for the QRotto QR code stress test: what it does to a code, the four results, the verdict thresholds, and how to read them.
+
+## Optional
+
+- [Blog index](https://qrotto.com/blog/)
+- [Docs home](https://qrotto.com/docs/)
+- [Our QR Code Generators](https://qrotto.com/services)
+- [FAQ](https://qrotto.com/faq)
+- [Editorial Standards](https://qrotto.com/author)
+- [About QRotto](https://qrotto.com/about)
+- [Contact QRotto](https://qrotto.com/contact)
+- [Privacy Policy](https://qrotto.com/privacy-policy)
+- [Terms of Service](https://qrotto.com/terms)

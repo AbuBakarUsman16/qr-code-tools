@@ -62,6 +62,70 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Does a vCard QR code need the internet?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The contact details are inside the code, so it works with no signal at all. That is its main advantage over printing a link to a contact page."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I change the details later?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Not on a printed code. It holds the text it was made with and nothing behind it can be edited. If your number changes often, point the code at a page you control instead and see static vs dynamic QR codes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between vCard and MECARD?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Both carry contact details. MECARD uses a shorter syntax, which in our test produced a code 4.8 mm smaller for the same person. vCard is older and more universally supported, which is why it remains the safer choice for anything printed."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I turn a .vcf file into a QR code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, because a .vcf file is vCard text. Open it in a text editor and you will see the same BEGIN:VCARD block. Be aware that a contact exported from a phone often carries far more than you want to print, sometimes including a photo, so it is usually smaller and cleaner to type the few fields you need into a generator."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How big should I print it?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Take the floor from the table above and add margin. A trimmed vCard needs 22.8 mm as a minimum, so aim for 25 to 30 mm on a card someone holds. Our sign size guide covers larger formats."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will it work on both iPhone and Android?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "vCard is the format both have read for years, and a correctly built code contains nothing platform specific. The wording of the prompt differs between them, which is cosmetic. Test on one of each if you have both to hand."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is my phone number safe in there?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It is readable by anyone who scans the code or photographs it. For a business card that is the point. For anything you would not print on the card itself in plain type, use a link to a page you control instead."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 

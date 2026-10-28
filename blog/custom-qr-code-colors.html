@@ -60,6 +60,70 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Can a QR code be any colour?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Almost any hue works for the code, provided it is dark enough against its background. Blue, red, green, purple, teal and pink all scanned in our test. What fails is low contrast and light on dark."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the background colour matter?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, as much as the code colour, because contrast is the gap between the two. A pale background with a dark code is the safest arrangement."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use a white QR code on a black background?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Some scanners read it and some do not. In our test, white on black failed in OpenCV and in default jsQR, and read only when we asked jsQR to try inverted images. If it matters that everyone can scan it, use dark on light."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is yellow a bad colour for a QR code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yellow as the code colour on white was poor: 1.4 to 1, and it read in only one of three settings. Yellow as the background with a black code was fine and read in all three."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What contrast ratio should I aim for?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "4 to 1 or more as a minimum. In our test everything above 3.76 to 1 on a light background read everywhere, and the pair at 3.08 did not. More is better for print."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use a transparent background?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A transparent background takes on whatever sits behind the code, so the contrast is decided by that, not by your colour choice. Use it only over a plain, light surface, and test the final result."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How can I check my own colours?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Our custom QR code generator decodes the code you are looking at after every change and reports whether it still reads, and what the contrast is. Our scanner reads a saved image back as text, which is a second opinion."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 

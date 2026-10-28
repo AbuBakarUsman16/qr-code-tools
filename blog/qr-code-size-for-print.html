@@ -87,6 +87,38 @@
 <script src="../analytics.js"></script>
 <meta name="google-adsense-account" content="ca-pub-6232027234522217">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6232027234522217" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is the minimum size for a QR code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "About 2cm per side for anything printed, and that assumes close range scanning with short data. Below that, phone cameras cannot resolve the individual modules reliably."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can a QR code be too big?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Not really, though very large codes need the scanner to stand further back to fit the whole code in frame. The failure mode at large sizes is being too close, not the size itself."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the colour of a QR code matter?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Dark modules on a light background is the only combination that reads reliably everywhere. We tested an inverted code, light on dark, and a standard detector failed to read it at all."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 

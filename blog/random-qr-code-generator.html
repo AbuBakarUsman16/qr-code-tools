@@ -61,6 +61,78 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Is the QR pattern itself random?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The arrangement of squares follows the QR standard exactly and is the same in every generator for the same input. The randomness is entirely in the data you encode."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How long should the random part be?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ten to twelve characters for anything of value, eight if the codes are only internal. Since a token anywhere from five to twenty characters produces an identical sized code on a normal domain, there is no reason to be stingy."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can two random QR codes come out the same?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, and the chance depends entirely on length. Four characters across ten thousand codes gives roughly a 97% chance of a duplicate somewhere in the batch. Eight characters brings that to about one in four million."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can a random QR code be guessed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A short one, easily. With ten thousand codes live, a four character token falls in about 1,477 attempts. Twelve characters takes around 322 quadrillion, which ends the conversation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do random QR codes expire?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The code does not. It is a printed pattern holding a token, with no account behind it. What expires is whatever your system decides: you can mark a token as used, refuse it after a date, or keep it valid forever. That control sits with you, not with the code."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I track which codes were scanned?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, and this is the main practical advantage over a single shared code. Because each token is different, your normal analytics or your own database can tell you exactly which ones were used and when. A single code printed a thousand times can never tell you that."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are random QR codes harder to scan?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The token is a few more characters, and within a size step those characters are free. Where a longer token does push the code into the next step, it grows by about 1.6 mm, which is not something a phone camera notices. Our guide to why QR codes fail to scan covers what actually causes failures, and token length is nowhere near the list."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What size should I print them?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A random token on a normal domain makes a light code, so the 2 cm floor from our sizing guide is all it needs. For a ticket or a voucher in the hand, 20 to 25 mm is comfortable. The sign size guide has the numbers for larger formats."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
