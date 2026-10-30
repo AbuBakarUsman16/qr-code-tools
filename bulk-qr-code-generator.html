@@ -134,7 +134,7 @@
  <p class="breadcrumb"><a href="./">Home</a> / Bulk QR Code Generator</p>
  <div class="hero">
  <h1>Bulk QR Code Generator</h1>
- <p>Paste a list, get every code at once, then download as SVG, PNG or a printable PDF sheet.</p>
+ <p>Paste a list, get every code at once, then download as SVG, PNG, a printable PDF sheet or Avery size label sheets.</p>
  </div>
 
  <div class="panel bulk-panel">
@@ -158,17 +158,30 @@
 
  <div class="bulk-grid" id="bulkGrid"></div>
 
- <div class="bulk-actions" id="bulkActions" hidden>
+ <div id="bulkActionsWrap" class="bulk-actions-wrap" hidden style="margin-top:20px;padding-top:18px;border-top:1px solid var(--border);">
+ <div class="form-group">
+ <label for="bulkSheet">PDF sheet layout</label>
+ <select id="bulkSheet">
+ <option value="grid-a4">Cut-out grid, A4 (12 per page)</option>
+ <option value="grid-letter">Cut-out grid, US Letter (12 per page)</option>
+ <option value="avery5160">Labels: Avery 5160 / 8160 size, 1 x 2-5/8 in (30 per sheet)</option>
+ <option value="avery5163">Labels: Avery 5163 / 8163 size, 2 x 4 in (10 per sheet)</option>
+ </select>
+ <p class="fb-help">For label sheets, print at 100% (Actual size), not Fit to page. Test on plain paper first and hold it behind a label sheet against the light.</p>
+ </div>
+ <div class="bulk-actions" id="bulkActions" style="margin-top:0;padding-top:0;border-top:0;">
  <button class="btn btn-outline" onclick="downloadZip('svg')">Download SVG (ZIP)</button>
  <button class="btn btn-outline" onclick="downloadZip('png')">Download PNG (ZIP)</button>
  <button class="btn btn-outline" onclick="downloadPdf()">Download PDF sheet</button>
+ </div>
+ <p class="bulk-status" id="bulkPdfNote"></p>
  </div>
  </div>
 
  <div class="article-meta">
  <span>By <a href="author">QRotto</a></span>
  <span class="sep">·</span>
- <span>Updated <time datetime="2026-09-17">17 September 2026</time></span>
+ <span>Updated <time datetime="2026-10-30">30 October 2026</time></span>
  <span class="sep">·</span>
  <span>6 min read</span>
  </div>
@@ -208,11 +221,12 @@
         <tbody>
           <tr><td><strong>SVG</strong></td><td>Print, signage, any size</td><td>Vector, so it stays perfectly sharp at any scale. Scale it to a billboard and the edges stay crisp.</td></tr>
           <tr><td><strong>PNG</strong></td><td>Screens, documents, email</td><td>Works everywhere without conversion.</td></tr>
-          <tr><td><strong>PDF sheet</strong></td><td>Printing and cutting</td><td>Twelve codes per A4 page with labels and cut guides.</td></tr>
+          <tr><td><strong>PDF sheet</strong></td><td>Printing and cutting, or label sheets</td><td>Twelve codes per A4 or US Letter page with cut guides, or one code per label on Avery 5160 and 5163 size sheets.</td></tr>
         </tbody>
       </table>
     </div>
     <p>If the codes are going to a printer, <strong>use SVG</strong>. It is the one format where enlarging costs you nothing, and print shops prefer it. PNG enlarged past its native size gets soft edges, which is exactly what makes a code fail to scan.</p>
+    <p>Printing onto sticker labels? Pick the 5160 or 5163 size under PDF sheet layout. Our guide to <a href="blog/bulk-qr-code-labels">bulk QR code labels</a> covers how long a link each label can hold and how to line the sheet up.</p>
 
 
     <div class="ad-slot" data-ad-placeholder></div>
@@ -365,12 +379,12 @@
 
     if (!items.length) {
       status.textContent = "Add at least one line first.";
-      document.getElementById("bulkActions").hidden = true;
+      document.getElementById("bulkActionsWrap").hidden = true;
       return;
     }
     if (items.length > 250) {
       status.textContent = "That is " + items.length + " codes. The limit is 250 per batch, split the list.";
-      document.getElementById("bulkActions").hidden = true;
+      document.getElementById("bulkActionsWrap").hidden = true;
       return;
     }
 
@@ -400,7 +414,7 @@
 
     status.textContent = codes.length + " code" + (codes.length === 1 ? "" : "s") + " generated"
       + (failed ? ", " + failed + " line" + (failed === 1 ? "" : "s") + " too long to encode" : "") + ".";
-    document.getElementById("bulkActions").hidden = codes.length === 0;
+    document.getElementById("bulkActionsWrap").hidden = codes.length === 0;
   }
 
   function dl(blob, name) {
@@ -430,23 +444,55 @@
     });
   }
 
+  // Label sizes in inches, from the Avery templates (margins and pitch match
+  // Avery's own Word layouts). Each code sits inside its label with padding,
+  // so a printer that is off by a millimetre still lands it on the label.
+  var IN = 25.4;
+  var SHEETS = {
+    "grid-a4": { format: "a4", grid: true, cols: 3, rows: 4, size: 48, x0: 18, y0: 22, dx: 63, dy: 66 },
+    "grid-letter": { format: "letter", grid: true, cols: 3, rows: 4, size: 48, x0: 19, y0: 14, dx: 63, dy: 66 },
+    "avery5160": { format: "letter", cols: 3, rows: 10, w: 2.625 * IN, h: 1 * IN, x0: 0.1875 * IN, y0: 0.5 * IN, dx: 2.75 * IN, dy: 1 * IN, pad: 2.5, font: 8 },
+    "avery5163": { format: "letter", cols: 2, rows: 5, w: 4 * IN, h: 2 * IN, x0: 0.15625 * IN, y0: 0.5 * IN, dx: 4.1875 * IN, dy: 2 * IN, pad: 4, font: 12 }
+  };
+
+  // smallest printed size that scans reliably: 0.4 mm per module plus the
+  // quiet zone, never under 20 mm
+  function minPrintMm(modules) { return Math.max(20, 0.4 * (modules + 8)); }
+
   function downloadPdf() {
     if (!codes.length || !window.jspdf) return;
-    var doc = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
-    var cols = 3, size = 48, gapX = 63, gapY = 66, x0 = 18, y0 = 22, perPage = 12;
+    var key = document.getElementById("bulkSheet").value;
+    var L = SHEETS[key];
+    var doc = new window.jspdf.jsPDF({ unit: "mm", format: L.format });
+    var perPage = L.cols * L.rows, tooSmall = 0;
 
     codes.forEach(function (c, i) {
       var onPage = i % perPage;
       if (i && onPage === 0) doc.addPage();
-      var col = onPage % cols, row = Math.floor(onPage / cols);
-      var x = x0 + col * gapX, y = y0 + row * gapY;
-      doc.addImage(c.canvas.toDataURL("image/png"), "PNG", x, y, size, size);
-      doc.setFontSize(9);
-      doc.text(String(c.label).slice(0, 26), x, y + size + 5);
-      doc.setDrawColor(210);
-      doc.rect(x - 2, y - 2, size + 4, size + 10);
+      var col = onPage % L.cols, row = Math.floor(onPage / L.cols);
+      var x = L.x0 + col * L.dx, y = L.y0 + row * L.dy;
+      var png = c.canvas.toDataURL("image/png");
+      if (L.grid) {
+        doc.addImage(png, "PNG", x, y, L.size, L.size);
+        doc.setFontSize(9);
+        doc.text(String(c.label).slice(0, 26), x, y + L.size + 5);
+        doc.setDrawColor(210);
+        doc.rect(x - 2, y - 2, L.size + 4, L.size + 10);
+        return;
+      }
+      var q = L.h - 2 * L.pad;
+      if (minPrintMm(c.modules) > q + 0.01) tooSmall++;
+      doc.addImage(png, "PNG", x + L.pad, y + L.pad, q, q);
+      var tx = x + L.pad + q + 2.5, tw = L.w - (tx - x) - L.pad;
+      doc.setFontSize(L.font);
+      var lines = doc.splitTextToSize(String(c.label), tw).slice(0, Math.floor((L.h - 2 * L.pad) / (L.font * 0.45)));
+      doc.text(lines, tx, y + L.h / 2 - (lines.length - 1) * L.font * 0.2, { baseline: "middle" });
     });
-    doc.save("qr-codes-sheet.pdf");
+    doc.save(L.grid ? "qr-codes-sheet.pdf" : "qr-labels-" + key.replace("avery", "") + ".pdf");
+
+    document.getElementById("bulkPdfNote").textContent = tooSmall
+      ? tooSmall + " of " + codes.length + " codes hold too much data for this label and may not scan. Shorten those links, use error correction L, or pick the 2 x 4 in labels."
+      : "";
   }
 
 </script>
