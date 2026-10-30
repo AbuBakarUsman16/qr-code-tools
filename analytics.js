@@ -6,9 +6,21 @@
  */
 var GA_MEASUREMENT_ID = "G-LG2VQCRFXN";
 
+// Sirf asli site par gino: localhost ke test aur apne visits bahar.
+// Apne browser ko bahar karne ke liye ek dafa qrotto.com/?internal=1 kholein
+// (wapas ginti ke liye ?internal=0).
+var QROTTO_TRACK = (function () {
+  try {
+    var m = location.search.match(/[?&]internal=([01])/);
+    if (m) localStorage.setItem("qrottoInternal", m[1]);
+    if (localStorage.getItem("qrottoInternal") === "1") return false;
+  } catch (e) {}
+  return /(^|\.)qrotto\.com$/.test(location.hostname);
+})();
+
 (function () {
   "use strict";
-  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf("G-") !== 0) return;
+  if (!QROTTO_TRACK || !GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf("G-") !== 0) return;
 
   var s = document.createElement("script");
   s.async = true;
@@ -59,7 +71,7 @@ var CLARITY_PROJECT_ID = "yzhjzovyrp";
 
 (function () {
   "use strict";
-  if (!CLARITY_PROJECT_ID) return;
+  if (!QROTTO_TRACK || !CLARITY_PROJECT_ID) return;
   (function (c, l, a, r, i, t, y) {
     c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
     t = l.createElement(r); t.async = 1;

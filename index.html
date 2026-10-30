@@ -130,7 +130,7 @@
    <button class="chip" type="button" data-kind="email" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</button>
    <button class="chip" type="button" data-kind="text" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Text</button>
    <a class="chip" href="wifi-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a11 11 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/></svg>WiFi</a>
-   <a class="chip" href="vcard-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 17c.7-1.8 2-2.7 3.5-2.7s2.8.9 3.5 2.7"/><path d="M15.5 10h4M15.5 13.5h4"/></svg>Contact</a>
+   <a class="chip" href="vcard-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 17c.7-1.8 2-2.7 3.5-2.7s2.8.9 3.5 2.7"/><path d="M15.5 10h4M15.5 13.5h4"/></svg>Contact card</a>
   </div>
 
   <div class="maker-out">
@@ -427,6 +427,8 @@
     if (!input) return;
     input.addEventListener("input", draw);
     el("heroMake").addEventListener("click", function () { draw(); el("heroCanvas").scrollIntoView({ block: "nearest", behavior: "smooth" }); });
+    // Clarity: log is label par click karte the; ab ye bhi code tak le jata hai.
+    el("heroFound").addEventListener("click", function () { el("heroMake").click(); });
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") draw(); });
     document.querySelectorAll(".detect .chip[data-kind]").forEach(function (b) {
       b.addEventListener("click", function () {

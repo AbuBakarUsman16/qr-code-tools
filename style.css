@@ -930,12 +930,12 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   gap: 8px;
   min-height: 38px;
   padding: 0 4px 0 0;
-  /* a status message, not a button: no border or fill, so people do not try to click it */
+  /* people click this status line anyway, so a click shows the code (same as Make code) */
   background: none;
   border: 0;
   font-weight: 700;
   color: var(--accent-dark);
-  cursor: default;
+  cursor: pointer;
 }
 .detect-or { color: var(--muted); margin-left: 4px; }
 .chip {
