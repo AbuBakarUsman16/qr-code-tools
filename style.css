@@ -938,6 +938,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   cursor: pointer;
 }
 .detect-or { color: var(--muted); margin-left: 4px; }
+.chip-go { color: var(--muted); }
+.detect-more { margin: 8px 0 0; }
+.detect-more a { font-weight: 700; color: var(--accent-dark); }
 .chip {
   display: inline-flex;
   align-items: center;

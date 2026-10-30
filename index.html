@@ -129,9 +129,10 @@
    <button class="chip" type="button" data-kind="phone" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l2 5-2.5 1.5a12 12 0 0 0 5.5 5.5L16 12.5l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z"/></svg>Phone</button>
    <button class="chip" type="button" data-kind="email" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</button>
    <button class="chip" type="button" data-kind="text" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Text</button>
-   <a class="chip" href="wifi-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a11 11 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/></svg>WiFi</a>
-   <a class="chip" href="vcard-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 17c.7-1.8 2-2.7 3.5-2.7s2.8.9 3.5 2.7"/><path d="M15.5 10h4M15.5 13.5h4"/></svg>Contact card</a>
+   <a class="chip" href="wifi-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a11 11 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/></svg>WiFi <span class="chip-go" aria-hidden="true">→</span></a>
+   <a class="chip" href="vcard-qr-code-generator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 17c.7-1.8 2-2.7 3.5-2.7s2.8.9 3.5 2.7"/><path d="M15.5 10h4M15.5 13.5h4"/></svg>Contact card <span class="chip-go" aria-hidden="true">→</span></a>
   </div>
+  <p class="detect-more" id="heroMore" hidden><a id="heroMoreLink" href="#"></a></p>
 
   <div class="maker-out">
    <canvas id="heroCanvas" width="220" height="220" role="img" aria-label="A QR code of what you typed"></canvas>
@@ -165,7 +166,7 @@
 
 <main class="home-main">
  <h2 class="grid-heading" id="tools">What do you want the code to do?</h2>
- <p class="grid-sub">Every one of these is free, needs no account, and produces a static code that keeps working forever.</p>
+ <p class="grid-sub">Need more than the quick box above? Each tool opens its own page with extra fields. All are free, need no account, and make static codes that keep working forever.</p>
  <h3 class="grid-group">Most used</h3>
  <div class="tool-grid">
  <a class="tool-card" href="url-qr-code-generator">
@@ -358,6 +359,11 @@
     email: "We found an email address",
     text: "We will show this as text"
   };
+  // the quick box only fills the basics; these point to the full tool for more
+  var MORE = {
+    email: ["email-qr-code-generator", "Add a subject or message →"],
+    phone: ["sms-qr-code-generator", "Open a text message instead →"]
+  };
   var chosen = null; // set when someone picks a type by hand
 
   function detect(v) {
@@ -388,6 +394,7 @@
     if (!v) {
       ctx.clearRect(0, 0, cv.width, cv.height);
       found.textContent = "Type something to make a code";
+      el("heroMore").hidden = true;
       badge.hidden = true;
       dl.removeAttribute("href");
       chosen = null;
@@ -396,6 +403,8 @@
     }
     var kind = chosen || detect(v);
     found.textContent = LABELS[kind];
+    el("heroMore").hidden = !MORE[kind];
+    if (MORE[kind]) { el("heroMoreLink").href = MORE[kind][0]; el("heroMoreLink").textContent = MORE[kind][1]; }
     syncChips(chosen);
     var q;
     try { q = qrcode(0, "M"); q.addData(payload(kind, v)); q.make(); }
