@@ -11,6 +11,7 @@ Key facts:
 ## Generators and tools
 
 - [Free URL to QR Code Generator](https://qrotto.com/url-qr-code-generator): Convert a URL to a QR code free. Paste any web address, get a high resolution code instantly. No account, no expiry, nothing leaves your browser.
+- [Free Dynamic QR Code Generator](https://qrotto.com/dynamic-qr-code-generator): Edit the link after printing, scan counts by country and device, no account, no ads when scanned, plain QR export so you are never locked in. The tool runs at https://q.qrotto.com/.
 - [Free vCard QR Code Generator](https://qrotto.com/vcard-qr-code-generator): Create a free vCard QR code with your name, phone, email and company. Scan to save contact details straight to any phone. No signup, no watermark.
 - [Free WiFi QR Code Generator](https://qrotto.com/wifi-qr-code-generator): Create a free WiFi QR code so guests connect by scanning, no password typing. No signup, never expires, and your password never leaves your browser.
 - [Offline QR Code Generator](https://qrotto.com/text-qr-code-generator): Free offline QR code generator: turn text into a QR code that scans with no internet. Once this page loads, it keeps working with your connection off.
