@@ -120,7 +120,7 @@
      <p class="scan-or">or test a code made from text</p>
      <div class="st-gen">
        <label class="st-label" for="stText">Text or link</label>
-       <input type="text" id="stText" value="https://qrotto.com" placeholder="https://example.com">
+       <input type="text" id="stText" value="https://qrotto.com" placeholder="https://example.com" onfocus="var i=this;setTimeout(function(){i.select()},0)">
        <label class="st-label" for="stEc">Error correction</label>
        <select id="stEc">
          <option value="L">L, lowest</option>

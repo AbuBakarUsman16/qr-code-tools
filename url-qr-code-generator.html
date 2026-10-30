@@ -134,7 +134,7 @@
  <div class="panel">
  <div class="form-group">
  <label for="urlInput">Website URL</label>
- <input type="url" id="urlInput" placeholder="https://example.com" value="https://example.com">
+ <input type="url" id="urlInput" placeholder="https://example.com" value="https://example.com" onfocus="var i=this;setTimeout(function(){i.select()},0)">
  </div>
  <button class="btn" onclick="generateURLCode()">Generate QR Code</button>
  </div>
