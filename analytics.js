@@ -21,6 +21,31 @@ var GA_MEASUREMENT_ID = "G-LG2VQCRFXN";
 
   gtag("js", new Date());
   gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+
+  // Har download ek "qr_download" event bhejta hai. Tools file ko <a download>
+  // se save karte hain: kuch user ke click se, kuch a.click() ya jsPDF ke
+  // dispatchEvent se, is liye teeno raaste pakde hain. Sirf file ka naam
+  // jata hai, us ke andar ka data nahi.
+  function track(a) {
+    if (!a || a.qrTracked || !a.hasAttribute || !a.hasAttribute("download")) return;
+    a.qrTracked = true;
+    setTimeout(function () { a.qrTracked = false; }, 0);
+    var name = a.getAttribute("download") || "";
+    gtag("event", "qr_download", {
+      file_name: name,
+      file_extension: (name.split(".").pop() || "").toLowerCase()
+    });
+  }
+  var click = HTMLAnchorElement.prototype.click;
+  HTMLAnchorElement.prototype.click = function () { track(this); return click.apply(this, arguments); };
+  var dispatch = EventTarget.prototype.dispatchEvent;
+  EventTarget.prototype.dispatchEvent = function (e) {
+    if (e && e.type === "click" && this instanceof HTMLAnchorElement) track(this);
+    return dispatch.apply(this, arguments);
+  };
+  document.addEventListener("click", function (e) {
+    track(e.target && e.target.closest && e.target.closest("a[download]"));
+  }, true);
 })();
 
 /* Microsoft Clarity
