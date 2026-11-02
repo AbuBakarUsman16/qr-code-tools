@@ -100,6 +100,14 @@
   },
   {
    "@type": "Question",
+   "name": "What format does a vCard QR code use?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It uses the vCard text format, the same one a phone exports when you share a contact. The text starts with BEGIN:VCARD and VERSION:3.0, then one line per field, such as FN for the display name, N for the name in parts, ORG, TEL, EMAIL and URL, and it ends with END:VCARD. Version 3.0 is the safer default for compatibility, and it is what our vCard generator writes. A PHOTO line can be added in the same format, as shown in step 2 above."
+   }
+  },
+  {
+   "@type": "Question",
    "name": "Does a vCard QR code expire?",
    "acceptedAnswer": {
     "@type": "Answer",
@@ -339,6 +347,9 @@
 
     <h3>Can I put a picture in the middle of the QR code instead?</h3>
     <p>That is a logo, not contact data. It covers some of the code's modules and uses up error correction, so it needs a higher level and a check that the code still reads. Our <a href="../qr-code-designer">custom QR code generator</a> decodes the styled code after each change and tells you whether it still scans.</p>
+
+    <h3>What format does a vCard QR code use?</h3>
+    <p>It uses the vCard text format, the same one a phone exports when you share a contact. The text starts with <code>BEGIN:VCARD</code> and <code>VERSION:3.0</code>, then one line per field, such as <code>FN</code> for the display name, <code>N</code> for the name in parts, <code>ORG</code>, <code>TEL</code>, <code>EMAIL</code> and <code>URL</code>, and it ends with <code>END:VCARD</code>. Version 3.0 is the safer default for compatibility, and it is what our <a href="../vcard-qr-code-generator">vCard generator</a> writes. A <code>PHOTO</code> line can be added in the same format, as shown in <a href="#how-to-make-one">step 2 above</a>.</p>
 
     <h3>Does a vCard QR code expire?</h3>
     <p>A static one does not. It is a printed pattern holding the contact text, with nothing behind it that can lapse.</p>
