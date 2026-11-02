@@ -938,6 +938,13 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   cursor: pointer;
 }
 .detect-or { color: var(--muted); margin-left: 4px; }
+#heroCanvas.flash { animation: hero-flash 0.9s ease-out; }
+@keyframes hero-flash {
+  0% { box-shadow: 0 0 0 0 var(--accent); }
+  30% { box-shadow: 0 0 0 8px var(--accent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) { #heroCanvas.flash { animation: none; outline: 3px solid var(--accent); } }
 .chip-go { color: var(--muted); }
 .detect-more { margin: 8px 0 0; }
 .detect-more a { font-weight: 700; color: var(--accent-dark); }

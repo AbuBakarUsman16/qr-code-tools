@@ -430,6 +430,14 @@
     dl.href = cv.toDataURL("image/png");
   }
 
+  // Code ke gird ek pal ki roshni, taake click ka asar nazar aaye.
+  function flash() {
+    var c = el("heroCanvas");
+    c.classList.remove("flash");
+    void c.offsetWidth;
+    c.classList.add("flash");
+  }
+
   function syncChips(kind) {
     document.querySelectorAll(".detect .chip[data-kind]").forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-kind") === kind ? "true" : "false");
@@ -442,7 +450,14 @@
     input.addEventListener("input", draw);
     el("heroMake").addEventListener("click", function () { draw(); el("heroCanvas").scrollIntoView({ block: "nearest", behavior: "smooth" }); });
     // Clarity: log is label par click karte the; ab ye bhi code tak le jata hai.
-    el("heroFound").addEventListener("click", function () { el("heroMake").click(); });
+    el("heroFound").addEventListener("click", function () { el("heroMake").click(); flash(); });
+    // Clarity: khaali box par Download dabane se kuch nahi hota tha; ab batata hai kya karna hai.
+    el("heroDownload").addEventListener("click", function (e) {
+      if (el("heroDownload").getAttribute("href")) return;
+      e.preventDefault();
+      el("heroText").focus();
+      flash();
+    });
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") draw(); });
     document.querySelectorAll(".detect .chip[data-kind]").forEach(function (b) {
       b.addEventListener("click", function () {
